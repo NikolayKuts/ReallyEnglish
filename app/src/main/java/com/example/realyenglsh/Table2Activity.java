@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -19,15 +20,8 @@ import java.util.Random;
 import static com.example.realyenglsh.Table1Activity.getWordFromList;
 
 public class Table2Activity extends AppCompatActivity {
-    public TextView textView0;
-    private TextView textView1;
-    private TextView textView2;
-    private TextView textView3;
-    private TextView textView4;
-    private TextView textView5;
-    private TextView textView6;
-    private TextView textView7;
-    private TextView textView8;
+    public TextView textView0, textView1, textView2, textView3
+            , textView4, textView5, textView6, textView7, textView8;
     private TextView textViewSentence;
     private TextView textViewHistory;
     private TextView textViewIrregularVerb;
@@ -166,9 +160,11 @@ public class Table2Activity extends AppCompatActivity {
             }
         } else if (numberRandom == 1 ||numberRandom == 4 || numberRandom == 7) {
             String strongVerb = getWordFromList(listOfVerbsStrong);
-            sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
-            wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
-
+            if (numberRandom != 4 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
+                strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
+            }
+                sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
+                wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
         } else {
              String simpleIrregularVerb1 = getWordFromList(listOfVerbsSimpleIrregular);
              sentence = String.format("%s %s %s", name, simpleIrregularVerb, simpleIrregularVerb1);
