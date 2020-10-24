@@ -4,15 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#333333"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="364dp"
+        android:layout_marginTop="356dp"
+        android:background="#474646"
         android:onClick="onClickNextActivity"
         android:text="1"
+        android:textSize="20sp"
+        android:textColor="#777777"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +26,15 @@
         android:id="@+id/buttonPutIntoDBWrongSentence"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="2"
+        android:background="#474646"
         android:onClick="onClickToTable2"
+        android:text="2"
+        android:textSize="20sp"
+        android:textColor="#777777"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.035" />
 </androidx.constraintlayout.widget.ConstraintLayout>
