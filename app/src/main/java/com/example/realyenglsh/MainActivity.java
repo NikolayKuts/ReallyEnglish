@@ -44,4 +44,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void onClickToAlgorithmLesson(View view) {
+        Intent intent = new Intent(this, AlgorithmActivity.class);
+        startActivity(intent);
+    }
 }
