@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        this.deleteDatabase("really_english.db");
 
-        ArrayList<String> arrayListTest = getArrayListFromResources(getResources().getString(R.string.simple_verbs));
+        ArrayList<String> arrayListTest = getArrayListFromResources(getResources().getString(R.string.simple_verbs_1));
         Log.i("arrayList", arrayListTest.toString());
     }
 

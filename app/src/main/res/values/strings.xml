@@ -20,17 +20,21 @@
     </string-array>
 
 
-    <string name="simple_verbs">
+    <string name="simple_verbs_1">
         like,want,need,ask,listen,start,love,finish,live,hate,work,play,learn,look,help,wait,explain,rest,hope,pay,stay,answer,
     </string>
 
 
-    <string name="irregular_verbs">
+    <string name="irregular_verbs_1">
         get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go,have
     </string>
 
-    <string name="irregular_verbs_past">
-        got,came,understood,told,put,taught,bought,saw,heard,let,red,drank,slept,known,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,wont,had
+    <string name="irregular_verbs_past_1">
+        got,came,understood,told,put,taught,bought,saw,heard,let,red,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went,had
+    </string>
+
+    <string name="irregular_verbs_v3_1">
+        got,come,understood,told,put,taught,bought,seen,heard,let,red,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone,had
     </string>
 
     <string name="subjects">

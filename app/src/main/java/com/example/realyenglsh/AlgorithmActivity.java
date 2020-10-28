@@ -40,7 +40,8 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfVerbsIrregularPast;
     private List<String> listOfVerbsStrong;
     private List<String> listOfAdjective;
-    List<Integer> listOfBackgroundImages;
+    private List<String> listOfVerbsIrregularV3;
+    private List<Integer> listOfBackgroundImages;
 
     private String wrongSentence;
     private int randomNumberOfTense = -1;
@@ -81,12 +82,12 @@ public class AlgorithmActivity extends AppCompatActivity {
         String[] stringArgsPersonalPronouns = getArrayFromArrayResources(R.array.personal_pronouns);
         listOfNames = getArrayListForSentence(stringArgsNames, stringArgsPersonalPronouns);
 
-        String[] stringArgsVerbsSimple = getArrayFromResources(R.string.simple_verbs);
-        String[] stringArgsVerbsIrregular = getArrayFromResources(R.string.irregular_verbs);
+        String[] stringArgsVerbsSimple = getArrayFromResources(R.string.simple_verbs_1);
+        String[] stringArgsVerbsIrregular = getArrayFromResources(R.string.irregular_verbs_1);
         listOfVerbsSimpleIrregular = getArrayListForSentence(stringArgsVerbsSimple, stringArgsVerbsIrregular);
         listOfVerbsIrregular = getArrayListForSentence(stringArgsVerbsIrregular);
 
-        String[] stringArgsVerbsIrregularPast = getArrayFromResources(R.string.irregular_verbs_past);
+        String[] stringArgsVerbsIrregularPast = getArrayFromResources(R.string.irregular_verbs_past_1);
         listOfVerbsIrregularPast = getArrayListForSentence(stringArgsVerbsIrregularPast);
 
         String[] stringArgsVerbsStrong = getArrayFromArrayResources(R.array.strong_verbs);
@@ -94,6 +95,9 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         String[] stringArgsAdjective = getArrayFromResources(R.string.adjective);
         listOfAdjective = getArrayListForSentence(stringArgsAdjective);
+
+        String[] stringArgsVerbsIrregularV3 = getArrayFromResources(R.string.irregular_verbs_v3_1);
+        listOfVerbsIrregularV3 = getArrayListForSentence(stringArgsVerbsIrregularV3);
 
         buttonPutIntoDBWrongSentence.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -157,16 +161,20 @@ public class AlgorithmActivity extends AppCompatActivity {
             sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
             wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
         } else {
-            if (random.nextInt(2) == 0) {
+            int randomNumberOfToBe = random.nextInt(3);
+            if (randomNumberOfToBe == 0) {
                 if (simpleIrregularVerb.endsWith("e")) {
                     simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1);
                 } else if (simpleIrregularVerb.endsWith("ie")) {
                     simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 2);
                 }
                 sentence = String.format("%s %sing", name, simpleIrregularVerb);
-            } else {
+            } else if (randomNumberOfToBe == 1) {
                 String adjective = getWordFromList(listOfAdjective);
                 sentence = String.format("%s %s", name, adjective);
+            } else {
+                String irregularVerbV3 = getWordFromList(listOfVerbsIrregularV3);
+                sentence = String.format("%s %s", name, irregularVerbV3);
             }
         }
 

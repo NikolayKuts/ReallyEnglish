@@ -60,25 +60,25 @@ public class Table2Activity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         buttonPutIntoDBWrongSentence = findViewById(R.id.buttonPutIntoDBWrongSentence);
 
-        String[] stringArgsNames = getString(R.string.names).split("@");
+        String[] stringArgsNames = getString(R.string.names).split(",");
         String[] stringArgsPersonalPronouns = getResources().getStringArray(R.array.personal_pronouns);
         listOfNames = new ArrayList<>(Arrays.asList(stringArgsNames));
         listOfNames.addAll(Arrays.asList(stringArgsPersonalPronouns));
 
-        String[] stringArgsVerbsSimple = getResources().getString(R.string.simple_verbs).split("@");
-        String[] stringArgsVerbsIrregular = getResources().getString(R.string.irregular_verbs).split("@");
+        String[] stringArgsVerbsSimple = getResources().getString(R.string.simple_verbs_1).split(",");
+        String[] stringArgsVerbsIrregular = getResources().getString(R.string.irregular_verbs_1).split(",");
         listOfVerbsSimpleIrregular = new ArrayList<>(Arrays.asList(stringArgsVerbsSimple));
         listOfVerbsSimpleIrregular.addAll(Arrays.asList(stringArgsVerbsIrregular));
 
         listOfVerbsIrregular = new ArrayList<>(Arrays.asList(stringArgsVerbsIrregular));
 
-        String[] stringArgsVerbsIrregularPast = getResources().getString(R.string.irregular_verbs_past).split("@");
+        String[] stringArgsVerbsIrregularPast = getResources().getString(R.string.irregular_verbs_past_1).split(",");
         listOfVerbsIrregularPast = new ArrayList<>(Arrays.asList(stringArgsVerbsIrregularPast));
 
         String[] stringArgsVerbsStrong = getResources().getStringArray(R.array.strong_verbs);
         listOfVerbsStrong = new ArrayList<>(Arrays.asList(stringArgsVerbsStrong));
 
-        String[] stringArgsAdjective = getResources().getString(R.string.adjective).split("@");
+        String[] stringArgsAdjective = getResources().getString(R.string.adjective).split(",");
         listOfAdjective = new ArrayList<>(Arrays.asList(stringArgsAdjective));
 
 
