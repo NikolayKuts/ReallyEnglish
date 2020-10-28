@@ -25,6 +25,7 @@ import static com.example.realyenglsh.Table1Activity.getWordFromList;
 
 public class AlgorithmActivity extends AppCompatActivity {
     private ImageView imageViewTenseObject;
+    private ImageView imageViewTypeOfSentence;
     private List<Integer> idTenseObject;
     private TextView textViewSentence;
     private TextView textViewIrregularVerbPast;
@@ -42,6 +43,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfAdjective;
     private List<String> listOfVerbsIrregularV3;
     private List<Integer> listOfBackgroundImages;
+    private List<Integer> listOfImageTypeOfSentence;
 
     private String wrongSentence;
     private int randomNumberOfTense = -1;
@@ -57,6 +59,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_algorithm);
         imageViewTenseObject = findViewById(R.id.imageTenseObject);
         imageViewTenseObject.setImageResource(R.drawable.coach);
+        imageViewTypeOfSentence = findViewById(R.id.imageViewTypeOfSentence);
         textViewSentence = findViewById(R.id.textViewSentence);
         textViewSentence = findViewById(R.id.textViewSentence);
         textViewIrregularVerbPast = findViewById(R.id.textViewIrregularVerbPast);
@@ -76,6 +79,10 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfBackgroundImages.add(R.drawable.tense_way_future);
         listOfBackgroundImages.add(R.drawable.tense_way_present);
         listOfBackgroundImages.add(R.drawable.tense_way_past);
+
+        listOfImageTypeOfSentence = new ArrayList<>();
+        addDrawableResources(listOfImageTypeOfSentence, R.drawable.minus, R.drawable.plus, R.drawable.qa_mark);
+
 
 
         String[] stringArgsNames = getArrayFromResources(R.string.names);
@@ -137,6 +144,8 @@ public class AlgorithmActivity extends AppCompatActivity {
         setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
         imageViewTenseObject.setImageResource(idTenseObject.get(randomNumberOfTense));
         imageViewTenseObject.setVisibility(View.VISIBLE);
+        int randomNumberImageTypeOfSentence = random.nextInt(listOfImageTypeOfSentence.size());
+        imageViewTypeOfSentence.setImageResource(listOfImageTypeOfSentence.get(randomNumberImageTypeOfSentence));
         textViewIrregularVerbPast.setText("--//--");
         int randomNumberOfSentence = random.nextInt(3);  // 0 - simple verbs, 1 - strong verbs, 2 - ing & adjective
         wrongSentence = "";
@@ -186,6 +195,10 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
+    private void setImageTypeOfSentence() {
+
+    }
+
     private void setConstraintLayoutBackgroundImage(boolean b) {
         if (b) {
             constraintLayout.setBackground(getResources().getDrawable(listOfBackgroundImages.get(randomNumberOfTense)));
@@ -211,4 +224,9 @@ public class AlgorithmActivity extends AppCompatActivity {
         return list;
     }
 
+    private void addDrawableResources(List<Integer> list, int...id) {
+        for (int i : id) {
+            list.add(i);
+        }
+    }
 }
