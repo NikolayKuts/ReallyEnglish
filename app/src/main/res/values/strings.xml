@@ -21,27 +21,27 @@
 
 
     <string name="simple_verbs">
-        like@want@need@ask@listen@start@love@finish@live@hate@work@play@learn@look@help@wait@explain@rest@hope@pay@stay@answer
+        like,want,need,ask,listen,start,love,finish,live,hate,work,play,learn,look,help,wait,explain,rest,hope,pay,stay,answer,
     </string>
 
 
     <string name="irregular_verbs">
-        get@come@understand@tell@put@teach@buy@see@hear@let@read@drink@sleep@know@speak@eat@write@make@fight@do@give@drive@take@sit@run@go@have
+        get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go,have
     </string>
 
     <string name="irregular_verbs_past">
-        got@came@understood@told@put@taught@bought@saw@heard@let@red@drank@slept@known@spoke@ate@wrote@made@fought@did@gave@drove@took@sat@ran@wont@had
+        got,came,understood,told,put,taught,bought,saw,heard,let,red,drank,slept,known,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,wont,had
     </string>
 
     <string name="subjects">
-        Sam@Frank@defense@girl@government@people@hamburger@dog@grandfather@party@bird@shark@
+        Sam,Frank,defense,girl,government,people,hamburger,dog,grandfather,party,bird,shark,manager,friend,
     </string>
 
     <string name="names">
-        Sam@Frank@Britney@Selena@Bruno@Rebecca@Justin@Avril Lavigne@Alexandra@Taylor
+        Sam,Frank,Britney,Selena,Bruno,Rebecca,Justin,Avril Lavigne,Alexandra,Taylor
     </string>
 
     <string name="adjective">
-        hungry@crazy@funny@big@unique@red@dark@green@rich@young@strong@smart@
+        hungry,crazy,funny,big,unique,red,dark,green,rich,young,strong,smart,lazy
     </string>
 </resources>

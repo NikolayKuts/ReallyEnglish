@@ -2,6 +2,7 @@ package com.example.realyenglsh;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -126,18 +127,34 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     public void onClickNext(View view) {
         Random random = new Random();
-        randomNumberOfTense = random.nextInt(3);
+        randomNumberOfTense = random.nextInt(3);  // 0 - future, 1 - present, 2 - past
         setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
         imageViewTenseObject.setImageResource(idTenseObject.get(randomNumberOfTense));
         imageViewTenseObject.setVisibility(View.VISIBLE);
         textViewIrregularVerbPast.setText("--//--");
-        int randomNumber = random.nextInt(3);
+        int randomNumberOfSentence = random.nextInt(3);  // 0 - simple verbs, 1 - strong verbs, 2 - ing & adjective
         wrongSentence = "";
         String sentence = "";
         String name = getWordFromList(listOfNames);
         String simpleIrregularVerb = getWordFromList(listOfVerbsSimpleIrregular);
 
-        if (randomNumber == 2) {
+        if (randomNumberOfSentence == 0) {
+            String simpleIrregularVerb1 = getWordFromList(listOfVerbsSimpleIrregular);
+            sentence = String.format("%s %s %s", name, simpleIrregularVerb, simpleIrregularVerb1);
+            wrongSentence = String.format("%s_%s", simpleIrregularVerb, simpleIrregularVerb1);
+
+            if (listOfVerbsIrregular.contains(simpleIrregularVerb) && randomNumberOfTense == 2) {
+                int index = listOfVerbsIrregular.indexOf(simpleIrregularVerb);
+                textViewIrregularVerbPast.setText(listOfVerbsIrregularPast.get(index));
+            }
+        } else if (randomNumberOfSentence == 1) {
+            String strongVerb = getWordFromList(listOfVerbsStrong);
+            if (randomNumberOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
+                strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
+            }
+            sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
+            wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
+        } else {
             if (random.nextInt(2) == 0) {
                 if (simpleIrregularVerb.endsWith("e")) {
                     simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1);
@@ -148,22 +165,6 @@ public class AlgorithmActivity extends AppCompatActivity {
             } else {
                 String adjective = getWordFromList(listOfAdjective);
                 sentence = String.format("%s %s", name, adjective);
-            }
-        } else if (randomNumber == 0) {
-            String strongVerb = getWordFromList(listOfVerbsStrong);
-            if (randomNumberOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
-                strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
-            }
-            sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
-            wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
-        } else {
-            String simpleIrregularVerb1 = getWordFromList(listOfVerbsSimpleIrregular);
-            sentence = String.format("%s %s %s", name, simpleIrregularVerb, simpleIrregularVerb1);
-            wrongSentence = String.format("%s_%s", simpleIrregularVerb, simpleIrregularVerb1);
-
-            if (listOfVerbsIrregular.contains(simpleIrregularVerb) && randomNumberOfTense == 2) {
-                int index = listOfVerbsIrregular.indexOf(simpleIrregularVerb);
-                textViewIrregularVerbPast.setText(listOfVerbsIrregularPast.get(index));
             }
         }
         if (!viewModel.isSentenceInDB(wrongSentence)) {

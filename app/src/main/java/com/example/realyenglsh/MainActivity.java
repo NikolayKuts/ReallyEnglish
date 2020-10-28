@@ -48,4 +48,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AlgorithmActivity.class);
         startActivity(intent);
     }
+
 }
