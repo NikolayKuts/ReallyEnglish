@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,6 +47,9 @@ public class AlgorithmActivity extends AppCompatActivity {
     private boolean isSwitchShowPromptOn;
 
 
+    android.content.res.Resources res;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,26 +76,24 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfBackgroundImages.add(R.drawable.tense_way_present);
         listOfBackgroundImages.add(R.drawable.tense_way_past);
 
-        String[] stringArgsNames = getString(R.string.names).split("@");
-        String[] stringArgsPersonalPronouns = getResources().getStringArray(R.array.personal_pronouns);
-        listOfNames = new ArrayList<>(Arrays.asList(stringArgsNames));
-        listOfNames.addAll(Arrays.asList(stringArgsPersonalPronouns));
 
-        String[] stringArgsVerbsSimple = getResources().getString(R.string.simple_verbs).split("@");
-        String[] stringArgsVerbsIrregular = getResources().getString(R.string.irregular_verbs).split("@");
-        listOfVerbsSimpleIrregular = new ArrayList<>(Arrays.asList(stringArgsVerbsSimple));
-        listOfVerbsSimpleIrregular.addAll(Arrays.asList(stringArgsVerbsIrregular));
+        String[] stringArgsNames = getArrayFromResources(R.string.names);
+        String[] stringArgsPersonalPronouns = getArrayFromArrayResources(R.array.personal_pronouns);
+        listOfNames = getArrayListForSentence(stringArgsNames, stringArgsPersonalPronouns);
 
-        listOfVerbsIrregular = new ArrayList<>(Arrays.asList(stringArgsVerbsIrregular));
+        String[] stringArgsVerbsSimple = getArrayFromResources(R.string.simple_verbs);
+        String[] stringArgsVerbsIrregular = getArrayFromResources(R.string.irregular_verbs);
+        listOfVerbsSimpleIrregular = getArrayListForSentence(stringArgsVerbsSimple, stringArgsVerbsIrregular);
+        listOfVerbsIrregular = getArrayListForSentence(stringArgsVerbsIrregular);
 
-        String[] stringArgsVerbsIrregularPast = getResources().getString(R.string.irregular_verbs_past).split("@");
-        listOfVerbsIrregularPast = new ArrayList<>(Arrays.asList(stringArgsVerbsIrregularPast));
+        String[] stringArgsVerbsIrregularPast = getArrayFromResources(R.string.irregular_verbs_past);
+        listOfVerbsIrregularPast = getArrayListForSentence(stringArgsVerbsIrregularPast);
 
-        String[] stringArgsVerbsStrong = getResources().getStringArray(R.array.strong_verbs);
-        listOfVerbsStrong = new ArrayList<>(Arrays.asList(stringArgsVerbsStrong));
+        String[] stringArgsVerbsStrong = getArrayFromArrayResources(R.array.strong_verbs);
+        listOfVerbsStrong = getArrayListForSentence(stringArgsVerbsStrong);
 
-        String[] stringArgsAdjective = getResources().getString(R.string.adjective).split("@");
-        listOfAdjective = new ArrayList<>(Arrays.asList(stringArgsAdjective));
+        String[] stringArgsAdjective = getArrayFromResources(R.string.adjective);
+        listOfAdjective = getArrayListForSentence(stringArgsAdjective);
 
         buttonPutIntoDBWrongSentence.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -167,6 +169,8 @@ public class AlgorithmActivity extends AppCompatActivity {
                 sentence = String.format("%s %s", name, adjective);
             }
         }
+
+
         if (!viewModel.isSentenceInDB(wrongSentence)) {
             textViewSentence.setText(sentence);
         } else {
@@ -183,7 +187,20 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
+    public String[] getArrayFromResources(int id) {
+        return getString(id).split(",");
+    }
 
+    public String[] getArrayFromArrayResources(int id) {
+        return getResources().getStringArray(id);
+    }
 
+    public ArrayList<String> getArrayListForSentence(String[]... array) {
+        ArrayList<String> list = new ArrayList<>();
+        for (String[] s : array) {
+            list.addAll(Arrays.asList(s));
+        }
+        return list;
+    }
 
 }

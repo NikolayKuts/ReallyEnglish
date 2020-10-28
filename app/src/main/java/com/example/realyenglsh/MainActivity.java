@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> getArrayListFromResources(String stringResources) {
         ArrayList<String> arrayList = new ArrayList<>();
-        String[] stringArgs = stringResources.split("@");
+        String[] stringArgs = stringResources.split(",");
         Collections.addAll(arrayList, stringArgs);
         return arrayList;
     }
