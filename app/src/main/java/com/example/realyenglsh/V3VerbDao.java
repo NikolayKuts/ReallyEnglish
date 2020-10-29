@@ -16,6 +16,9 @@ public interface V3VerbDao {
 
     @Query("SELECT COUNT(*) FROM wrong_v3_verbs")
     int getCount();
+
+    @Query("SELECT * FROM wrong_v3_verbs WHERE verb = :textV3Verb")
+    boolean isV3VerbInDB(String textV3Verb);
 }
 
 //    @Query("SELECT MAX(id) FROM wrong_sentences")

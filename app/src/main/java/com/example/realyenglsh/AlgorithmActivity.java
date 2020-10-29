@@ -195,6 +195,8 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {
             textViewSentence.setText(sentence);
+        } else if (!viewModel.isV3VerbInDB(wrongV3Verb)){
+            textViewSentence.setText(sentence);
         } else {
             onClickNext(view);
         }

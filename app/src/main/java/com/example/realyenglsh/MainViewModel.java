@@ -117,6 +117,18 @@ public class MainViewModel extends AndroidViewModel {
         return result;
     }
 
+    public boolean isV3VerbInDB(String verb) {
+        boolean result = false;
+        try {
+            result = new IsV3VerbInDBTask().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     private static class GetMaxIdOfV3VerbTask extends AsyncTask<Void, Void, Integer> {
         @Override
         protected Integer doInBackground(Void... voids) {
@@ -138,6 +150,13 @@ public class MainViewModel extends AndroidViewModel {
         @Override
         protected Integer doInBackground(Void... voids) {
             return database.v3VerbDao().getCount();
+        }
+    }
+
+    private static class IsV3VerbInDBTask extends AsyncTask<String, Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            return database.v3VerbDao().isV3VerbInDB(strings[0]);
         }
     }
 }
