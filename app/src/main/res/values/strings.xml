@@ -26,15 +26,15 @@
 
 
     <string name="irregular_verbs_1">
-        get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go,have
+        get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go
     </string>
 
     <string name="irregular_verbs_past_1">
-        got,came,understood,told,put,taught,bought,saw,heard,let,red,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went,had
+        got,came,understood,told,put,taught,bought,saw,heard,let,red,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
     </string>
 
     <string name="irregular_verbs_v3_1">
-        got,come,understood,told,put,taught,bought,seen,heard,let,red,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone,had
+        got,come,understood,told,put,taught,bought,seen,heard,let,red,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone
     </string>
 
     <string name="subjects">
@@ -42,7 +42,7 @@
     </string>
 
     <string name="names">
-        Sam,Frank,Britney,Selena,Bruno,Rebecca,Justin,Avril Lavigne,Alexandra,Taylor
+        Sam,Frank,Britney,Selena,Bruno,Rebeca,Justin,Avril Lavigne,Alexandra,Taylor
     </string>
 
     <string name="adjective">

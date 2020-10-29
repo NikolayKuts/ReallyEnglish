@@ -6,6 +6,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -45,13 +47,10 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<Integer> listOfBackgroundImages;
     private List<Integer> listOfImageTypeOfSentence;
 
-    private String wrongSentence;
+    private String wrongSentence = "";
+    private String wrongV3Verb = "";
     private int randomNumberOfTense = -1;
     private boolean isSwitchShowPromptOn;
-
-
-    android.content.res.Resources res;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +83,6 @@ public class AlgorithmActivity extends AppCompatActivity {
         addDrawableResources(listOfImageTypeOfSentence, R.drawable.minus, R.drawable.plus, R.drawable.qa_mark);
 
 
-
         String[] stringArgsNames = getArrayFromResources(R.string.names);
         String[] stringArgsPersonalPronouns = getArrayFromArrayResources(R.array.personal_pronouns);
         listOfNames = getArrayListForSentence(stringArgsNames, stringArgsPersonalPronouns);
@@ -109,8 +107,14 @@ public class AlgorithmActivity extends AppCompatActivity {
         buttonPutIntoDBWrongSentence.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if (Table1Activity.addWrongSentenceIntoDB(viewModel, AlgorithmActivity.this, wrongSentence)) {
+                if (!wrongSentence.equals("")) {
+                    addWrongSentenceToDB(wrongSentence);
                     onClickNext(v);
+                } else if (!wrongV3Verb.equals("")) {
+                    addWrongV3VerbToDB(wrongV3Verb);
+                    onClickNext(v);
+                } else {
+                    Toast.makeText(getApplicationContext(), "it's impossible to add the sentence to the database", Toast.LENGTH_LONG).show();
                 }
                 return true;
             }
@@ -144,11 +148,12 @@ public class AlgorithmActivity extends AppCompatActivity {
         setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
         imageViewTenseObject.setImageResource(idTenseObject.get(randomNumberOfTense));
         imageViewTenseObject.setVisibility(View.VISIBLE);
-        int randomNumberImageTypeOfSentence = random.nextInt(listOfImageTypeOfSentence.size());
-        imageViewTypeOfSentence.setImageResource(listOfImageTypeOfSentence.get(randomNumberImageTypeOfSentence));
+//        int randomNumberImageTypeOfSentence = random.nextInt(listOfImageTypeOfSentence.size());
+//        imageViewTypeOfSentence.setImageResource(listOfImageTypeOfSentence.get(randomNumberImageTypeOfSentence));
         textViewIrregularVerbPast.setText("--//--");
         int randomNumberOfSentence = random.nextInt(3);  // 0 - simple verbs, 1 - strong verbs, 2 - ing & adjective
         wrongSentence = "";
+        wrongV3Verb = "";
         String sentence = "";
         String name = getWordFromList(listOfNames);
         String simpleIrregularVerb = getWordFromList(listOfVerbsSimpleIrregular);
@@ -184,9 +189,9 @@ public class AlgorithmActivity extends AppCompatActivity {
             } else {
                 String irregularVerbV3 = getWordFromList(listOfVerbsIrregularV3);
                 sentence = String.format("%s %s", name, irregularVerbV3);
+                wrongV3Verb = irregularVerbV3;
             }
         }
-
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {
             textViewSentence.setText(sentence);
@@ -224,9 +229,21 @@ public class AlgorithmActivity extends AppCompatActivity {
         return list;
     }
 
-    private void addDrawableResources(List<Integer> list, int...id) {
+    private void addDrawableResources(List<Integer> list, int... id) {
         for (int i : id) {
             list.add(i);
         }
+    }
+
+    private void addWrongV3VerbToDB(String wrongV3Verb) {
+        int maxIdV3Verb = viewModel.getMaxIdOfV3Verb();
+        viewModel.insertV3Verb(new V3Verb(maxIdV3Verb + 1, wrongV3Verb));
+        Toast.makeText(getApplicationContext(), "the sentence is added to the database", Toast.LENGTH_SHORT).show();
+    }
+
+    public void addWrongSentenceToDB(String wrongSentence) {
+        int maxId = viewModel.getMaxId();
+        viewModel.insertSentence(new Sentence(maxId + 1, wrongSentence));
+        Toast.makeText(getApplicationContext(), "the sentence is added to the database", Toast.LENGTH_SHORT).show();
     }
 }

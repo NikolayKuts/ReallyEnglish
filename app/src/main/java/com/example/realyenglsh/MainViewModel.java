@@ -87,4 +87,57 @@ public class MainViewModel extends AndroidViewModel {
             return database.sentencesDao().isSentenceInDB(strings[0]);
         }
     }
+
+
+    public void insertV3Verb(V3Verb verb) {
+        new InsertV3VerbTask().execute(verb);
+    }
+
+    public int getMaxIdOfV3Verb() {
+        int result = -1;
+        try {
+            result = new GetMaxIdOfV3VerbTask().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public int getCountV3Verbs() {
+        int result = -1;
+        try {
+            result = new GetCountV3VerbsTask().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    private static class GetMaxIdOfV3VerbTask extends AsyncTask<Void, Void, Integer> {
+        @Override
+        protected Integer doInBackground(Void... voids) {
+            return database.v3VerbDao().getMaxId();
+        }
+    }
+
+    private static class InsertV3VerbTask extends AsyncTask<V3Verb, Void, Void> {
+        @Override
+        protected Void doInBackground(V3Verb... v3Verbs) {
+            if (v3Verbs != null && v3Verbs.length > 0) {
+                database.v3VerbDao().insertVerb(v3Verbs[0]);
+            }
+            return null;
+        }
+    }
+
+    private static class GetCountV3VerbsTask extends AsyncTask<Void, Void, Integer> {
+        @Override
+        protected Integer doInBackground(Void... voids) {
+            return database.v3VerbDao().getCount();
+        }
+    }
 }
