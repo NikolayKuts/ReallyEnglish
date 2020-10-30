@@ -48,7 +48,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<Integer> listOfImageTypeOfSentence;
 
     private String wrongSentence = "";
-    private String wrongV3Verb = "";
+    private String wrongV3PassiveVerb = "";
     private int randomNumberOfTense = -1;
     private boolean isSwitchShowPromptOn;
 
@@ -85,24 +85,24 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         String[] stringArgsNames = getArrayFromResources(R.string.names);
         String[] stringArgsPersonalPronouns = getArrayFromArrayResources(R.array.personal_pronouns);
-        listOfNames = getArrayListForSentence(stringArgsNames, stringArgsPersonalPronouns);
+        listOfNames = getArrayListFromArgs(stringArgsNames, stringArgsPersonalPronouns);
 
         String[] stringArgsVerbsSimple = getArrayFromResources(R.string.simple_verbs_1);
         String[] stringArgsVerbsIrregular = getArrayFromResources(R.string.irregular_verbs_1);
-        listOfVerbsSimpleIrregular = getArrayListForSentence(stringArgsVerbsSimple, stringArgsVerbsIrregular);
-        listOfVerbsIrregular = getArrayListForSentence(stringArgsVerbsIrregular);
+        listOfVerbsSimpleIrregular = getArrayListFromArgs(stringArgsVerbsSimple, stringArgsVerbsIrregular);
+        listOfVerbsIrregular = getArrayListFromArgs(stringArgsVerbsIrregular);
 
         String[] stringArgsVerbsIrregularPast = getArrayFromResources(R.string.irregular_verbs_past_1);
-        listOfVerbsIrregularPast = getArrayListForSentence(stringArgsVerbsIrregularPast);
+        listOfVerbsIrregularPast = getArrayListFromArgs(stringArgsVerbsIrregularPast);
 
         String[] stringArgsVerbsStrong = getArrayFromArrayResources(R.array.strong_verbs);
-        listOfVerbsStrong = getArrayListForSentence(stringArgsVerbsStrong);
+        listOfVerbsStrong = getArrayListFromArgs(stringArgsVerbsStrong);
 
         String[] stringArgsAdjective = getArrayFromResources(R.string.adjective);
-        listOfAdjective = getArrayListForSentence(stringArgsAdjective);
+        listOfAdjective = getArrayListFromArgs(stringArgsAdjective);
 
         String[] stringArgsVerbsIrregularV3 = getArrayFromResources(R.string.irregular_verbs_v3_1);
-        listOfVerbsIrregularV3 = getArrayListForSentence(stringArgsVerbsIrregularV3);
+        listOfVerbsIrregularV3 = getArrayListFromArgs(stringArgsVerbsIrregularV3);
 
         buttonPutIntoDBWrongSentence.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -110,8 +110,8 @@ public class AlgorithmActivity extends AppCompatActivity {
                 if (!wrongSentence.equals("")) {
                     addWrongSentenceToDB(wrongSentence);
                     onClickNext(v);
-                } else if (!wrongV3Verb.equals("")) {
-                    addWrongV3VerbToDB(wrongV3Verb);
+                } else if (!wrongV3PassiveVerb.equals("")) {
+                    addWrongV3VerbToDB(wrongV3PassiveVerb);
                     onClickNext(v);
                 } else {
                     Toast.makeText(getApplicationContext(), "it's impossible to add the sentence to the database", Toast.LENGTH_LONG).show();
@@ -153,7 +153,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewIrregularVerbPast.setText("--//--");
         int randomNumberOfSentence = random.nextInt(3);  // 0 - simple verbs, 1 - strong verbs, 2 - ing & adjective
         wrongSentence = "";
-        wrongV3Verb = "";
+        wrongV3PassiveVerb = "";
         String sentence = "";
         String name = getWordFromList(listOfNames);
         String simpleIrregularVerb = getWordFromList(listOfVerbsSimpleIrregular);
@@ -187,15 +187,32 @@ public class AlgorithmActivity extends AppCompatActivity {
                 String adjective = getWordFromList(listOfAdjective);
                 sentence = String.format("%s %s", name, adjective);
             } else {
-                String irregularVerbV3 = getWordFromList(listOfVerbsIrregularV3);
-                sentence = String.format("%s %s", name, irregularVerbV3);
-                wrongV3Verb = irregularVerbV3;
+                if (listOfVerbsIrregular.contains(simpleIrregularVerb)) {
+                    int index = listOfVerbsIrregular.indexOf(simpleIrregularVerb);
+                    String irregularPastVerbV3 = listOfVerbsIrregularV3.get(index);
+                    sentence = String.format("%s %s", name, irregularPastVerbV3);
+                    textViewIrregularVerbPast.setText(listOfVerbsIrregularPast.get(index));
+                    wrongV3PassiveVerb = irregularPastVerbV3;
+                } else {
+                    if (simpleIrregularVerb.endsWith("e")) {
+                        simpleIrregularVerb = simpleIrregularVerb + "d";
+                        sentence = String.format("%s %s", name, simpleIrregularVerb);
+                    } else if (simpleIrregularVerb.matches("\\w+[aeiouy]y")) {
+                        sentence = String.format("%s %s", name, simpleIrregularVerb + "ed");
+                    } else if (simpleIrregularVerb.matches("\\w+[^aeiouy]y")) {
+                        simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1) + "ied";
+                        sentence = String.format("%s %s", name, simpleIrregularVerb);
+                    } else {
+                        sentence = String.format("%s %s", name, simpleIrregularVerb + "ed");
+                    }
+                    wrongV3PassiveVerb = simpleIrregularVerb;
+                }
             }
         }
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {
             textViewSentence.setText(sentence);
-        } else if (!viewModel.isV3VerbInDB(wrongV3Verb)){
+        } else if (!viewModel.isV3VerbInDB(wrongV3PassiveVerb)){
             textViewSentence.setText(sentence);
         } else {
             onClickNext(view);
@@ -223,7 +240,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         return getResources().getStringArray(id);
     }
 
-    public ArrayList<String> getArrayListForSentence(String[]... array) {
+    public ArrayList<String> getArrayListFromArgs(String[]... array) {
         ArrayList<String> list = new ArrayList<>();
         for (String[] s : array) {
             list.addAll(Arrays.asList(s));
