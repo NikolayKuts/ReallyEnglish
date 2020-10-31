@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -36,6 +37,10 @@ public class AlgorithmActivity extends AppCompatActivity {
     private Switch switchShowPrompt;
     private Switch switchIrregularPastVerb;
     private ConstraintLayout constraintLayout;
+    private CheckBox checkBoxTenseFuture;
+    private CheckBox checkBoxTensePresent;
+    private CheckBox checkBoxTensePast;
+
 
     private List<String> listOfNames;
     private List<String> listOfVerbsSimpleIrregular;
@@ -66,6 +71,9 @@ public class AlgorithmActivity extends AppCompatActivity {
         switchIrregularPastVerb = findViewById(R.id.switchIrregularVerb);
         switchShowPrompt = findViewById(R.id.switchShowPrompt);
         constraintLayout = findViewById(R.id.windowAlgorithmActivity);
+        checkBoxTenseFuture = findViewById(R.id.checkBoxTenseFuture);
+        checkBoxTensePresent = findViewById(R.id.checkBoxTensePresent);
+        checkBoxTensePast = findViewById(R.id.checkBoxTensePast);
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
@@ -144,14 +152,18 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     public void onClickNext(View view) {
         Random random = new Random();
-        randomNumberOfTense = random.nextInt(3);  // 0 - future, 1 - present, 2 - past
+        randomNumberOfTense = getRandomNumberOfTense();  // 0 - future, 1 - present, 2 - past
         setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
-        imageViewTenseObject.setImageResource(idTenseObject.get(randomNumberOfTense));
-        imageViewTenseObject.setVisibility(View.VISIBLE);
+        imageViewTenseObject.setVisibility(View.INVISIBLE);
+        if (randomNumberOfTense != -1) {
+            imageViewTenseObject.setVisibility(View.VISIBLE);
+            imageViewTenseObject.setImageResource(idTenseObject.get(randomNumberOfTense));
+            imageViewTenseObject.setVisibility(View.VISIBLE);
+        }
 //        int randomNumberImageTypeOfSentence = random.nextInt(listOfImageTypeOfSentence.size());
 //        imageViewTypeOfSentence.setImageResource(listOfImageTypeOfSentence.get(randomNumberImageTypeOfSentence));
         textViewIrregularVerbPast.setText("--//--");
-        int randomNumberOfSentence = random.nextInt(3);  // 0 - simple verbs, 1 - strong verbs, 2 - ing & adjective
+        int randomNumberOfSentence = random.nextInt(3);   // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
         wrongSentence = "";
         wrongV3PassiveVerb = "";
         String sentence = "";
@@ -212,7 +224,7 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {
             textViewSentence.setText(sentence);
-        } else if (!viewModel.isV3VerbInDB(wrongV3PassiveVerb)){
+        } else if (!viewModel.isV3VerbInDB(wrongV3PassiveVerb)) {
             textViewSentence.setText(sentence);
         } else {
             onClickNext(view);
@@ -264,5 +276,23 @@ public class AlgorithmActivity extends AppCompatActivity {
         int maxId = viewModel.getMaxId();
         viewModel.insertSentence(new Sentence(maxId + 1, wrongSentence));
         Toast.makeText(getApplicationContext(), "the sentence is added to the database", Toast.LENGTH_SHORT).show();
+    }
+
+    private int getRandomNumberOfTense() {
+        Random random = new Random();
+        List<Integer> listIdOfTense = new ArrayList<>();
+        if (checkBoxTenseFuture.isChecked()) {
+            listIdOfTense.add(0);
+        }
+        if (checkBoxTensePresent.isChecked()) {
+            listIdOfTense.add(1);
+        }
+        if (checkBoxTensePast.isChecked()) {
+            listIdOfTense.add(2);
+        }
+        if (listIdOfTense.size() != 0) {
+            return listIdOfTense.get(random.nextInt(listIdOfTense.size()));
+        }
+        return -1;
     }
 }
