@@ -2,6 +2,7 @@ package com.example.realyenglsh;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
@@ -40,6 +41,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     private CheckBox checkBoxTenseFuture;
     private CheckBox checkBoxTensePresent;
     private CheckBox checkBoxTensePast;
+    private CheckBox checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe;
 
 
     private List<String> listOfNames;
@@ -74,6 +76,13 @@ public class AlgorithmActivity extends AppCompatActivity {
         checkBoxTenseFuture = findViewById(R.id.checkBoxTenseFuture);
         checkBoxTensePresent = findViewById(R.id.checkBoxTensePresent);
         checkBoxTensePast = findViewById(R.id.checkBoxTensePast);
+        checkBoxTypeOfVerbSimple = findViewById(R.id.checkBoxSimple);
+        checkBoxTypeOfVerbStrong = findViewById(R.id.checkBoxStrong);
+        checkBoxTypeOfVerbToBe = findViewById(R.id.checkBoxToBe);
+
+        checkBoxTypeOfVerbSimple.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbSimple));
+        checkBoxTypeOfVerbStrong.setOnClickListener( new TextColorOnCheckedSetter(checkBoxTypeOfVerbStrong));
+        checkBoxTypeOfVerbToBe.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbToBe));
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
@@ -294,5 +303,28 @@ public class AlgorithmActivity extends AppCompatActivity {
             return listIdOfTense.get(random.nextInt(listIdOfTense.size()));
         }
         return -1;
+    }
+
+    private void setTextColorOnChecked(CheckBox checkBox) {
+        if (checkBox.isChecked()) {
+            checkBox.setTextColor(getResources().getColor(R.color.check_box_checked_color));
+        } else {
+            checkBox.setTextColor(getResources().getColor(R.color.check_box_unchecked_color));
+        }
+    }
+
+    class TextColorOnCheckedSetter implements View.OnClickListener {
+        private CheckBox checkBox;
+        TextColorOnCheckedSetter(CheckBox checkBox) {
+            this.checkBox = checkBox;
+        }
+        @Override
+        public void onClick(View v) {
+            if (checkBox.isChecked()) {
+                checkBox.setTextColor(getResources().getColor(R.color.check_box_checked_color));
+            } else {
+                checkBox.setTextColor(getResources().getColor(R.color.check_box_unchecked_color));
+            }
+        }
     }
 }
