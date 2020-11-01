@@ -10,7 +10,10 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -28,22 +31,16 @@ import java.util.Random;
 import static com.example.realyenglsh.Table1Activity.getWordFromList;
 
 public class AlgorithmActivity extends AppCompatActivity {
-    private ImageView imageViewTenseObject;
-    private ImageView imageViewTypeOfSentence;
-    private List<Integer> idTenseObject;
-    private TextView textViewSentence;
-    private TextView textViewIrregularVerbPast;
-    private MainViewModel viewModel;
-    private Button buttonPutIntoDBWrongSentence;
-    private Switch switchShowPrompt;
-    private Switch switchIrregularPastVerb;
-    private ConstraintLayout constraintLayout;
-    private CheckBox checkBoxTenseFuture;
-    private CheckBox checkBoxTensePresent;
-    private CheckBox checkBoxTensePast;
+    private ImageView imageViewTenseObject, imageViewTypeOfSentence;
+    private TextView textViewSentence, textViewIrregularVerbPast;
+    private CheckBox checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast;
     private CheckBox checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe;
+    private Switch switchShowPrompt, switchIrregularPastVerb;
+    private MainViewModel viewModel;
+    private ConstraintLayout constraintLayout;
+    private Button buttonPutIntoDBWrongSentence;
 
-
+    private List<Integer> idTenseObject, listOfBackgroundImages, listOfImageTypeOfSentence;
     private List<String> listOfNames;
     private List<String> listOfVerbsSimpleIrregular;
     private List<String> listOfVerbsIrregular;
@@ -51,8 +48,6 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfVerbsStrong;
     private List<String> listOfAdjective;
     private List<String> listOfVerbsIrregularV3;
-    private List<Integer> listOfBackgroundImages;
-    private List<Integer> listOfImageTypeOfSentence;
 
     private String wrongSentence = "";
     private String wrongV3PassiveVerb = "";
@@ -80,9 +75,15 @@ public class AlgorithmActivity extends AppCompatActivity {
         checkBoxTypeOfVerbStrong = findViewById(R.id.checkBoxStrong);
         checkBoxTypeOfVerbToBe = findViewById(R.id.checkBoxToBe);
 
-        checkBoxTypeOfVerbSimple.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbSimple));
-        checkBoxTypeOfVerbStrong.setOnClickListener( new TextColorOnCheckedSetter(checkBoxTypeOfVerbStrong));
-        checkBoxTypeOfVerbToBe.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbToBe));
+        int i = R.color.check_box_checked_color;
+
+        checkBoxTenseFuture.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTenseFuture, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
+        checkBoxTensePresent.setOnClickListener( new TextColorOnCheckedSetter(checkBoxTensePresent, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
+        checkBoxTensePast.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTensePast, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
+
+        checkBoxTypeOfVerbSimple.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbSimple, R.color.check_box_checked_color, R.color.check_box_unchecked_color));
+        checkBoxTypeOfVerbStrong.setOnClickListener( new TextColorOnCheckedSetter(checkBoxTypeOfVerbStrong, R.color.check_box_checked_color, R.color.check_box_unchecked_color));
+        checkBoxTypeOfVerbToBe.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbToBe, R.color.check_box_checked_color, R.color.check_box_unchecked_color));
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
@@ -161,72 +162,76 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     public void onClickNext(View view) {
         Random random = new Random();
-        randomNumberOfTense = getRandomNumberOfTense();  // 0 - future, 1 - present, 2 - past
         setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
-        imageViewTenseObject.setVisibility(View.INVISIBLE);
+        randomNumberOfTense = getRandomNumberOfTenseOrTypeOfVerb(checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast);  // 0 - future, 1 - present, 2 - past
         if (randomNumberOfTense != -1) {
             imageViewTenseObject.setVisibility(View.VISIBLE);
             imageViewTenseObject.setImageResource(idTenseObject.get(randomNumberOfTense));
             imageViewTenseObject.setVisibility(View.VISIBLE);
+        } else {
+            imageViewTenseObject.setVisibility(View.INVISIBLE);
         }
-//        int randomNumberImageTypeOfSentence = random.nextInt(listOfImageTypeOfSentence.size());
 //        imageViewTypeOfSentence.setImageResource(listOfImageTypeOfSentence.get(randomNumberImageTypeOfSentence));
         textViewIrregularVerbPast.setText("--//--");
-        int randomNumberOfSentence = random.nextInt(3);   // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
         wrongSentence = "";
         wrongV3PassiveVerb = "";
         String sentence = "";
         String name = getWordFromList(listOfNames);
         String simpleIrregularVerb = getWordFromList(listOfVerbsSimpleIrregular);
 
-        if (randomNumberOfSentence == 0) {
-            String simpleIrregularVerb1 = getWordFromList(listOfVerbsSimpleIrregular);
-            sentence = String.format("%s %s %s", name, simpleIrregularVerb, simpleIrregularVerb1);
-            wrongSentence = String.format("%s_%s", simpleIrregularVerb, simpleIrregularVerb1);
-
-            if (listOfVerbsIrregular.contains(simpleIrregularVerb) && randomNumberOfTense == 2) {
-                int index = listOfVerbsIrregular.indexOf(simpleIrregularVerb);
-                textViewIrregularVerbPast.setText(listOfVerbsIrregularPast.get(index));
-            }
-        } else if (randomNumberOfSentence == 1) {
-            String strongVerb = getWordFromList(listOfVerbsStrong);
-            if (randomNumberOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
-                strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
-            }
-            sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
-            wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
+        int randomNumberOfSentence = getRandomNumberOfTenseOrTypeOfVerb(checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe);   // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
+        if (randomNumberOfSentence == -1) {
+            showToast();
         } else {
-            int randomNumberOfToBe = random.nextInt(3);
-            if (randomNumberOfToBe == 0) {
-                if (simpleIrregularVerb.endsWith("e")) {
-                    simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1);
-                } else if (simpleIrregularVerb.endsWith("ie")) {
-                    simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 2);
-                }
-                sentence = String.format("%s %sing", name, simpleIrregularVerb);
-            } else if (randomNumberOfToBe == 1) {
-                String adjective = getWordFromList(listOfAdjective);
-                sentence = String.format("%s %s", name, adjective);
-            } else {
-                if (listOfVerbsIrregular.contains(simpleIrregularVerb)) {
+            if (randomNumberOfSentence == 0) {
+                String simpleIrregularVerb1 = getWordFromList(listOfVerbsSimpleIrregular);
+                sentence = String.format("%s %s %s", name, simpleIrregularVerb, simpleIrregularVerb1);
+                wrongSentence = String.format("%s_%s", simpleIrregularVerb, simpleIrregularVerb1);
+
+                if (listOfVerbsIrregular.contains(simpleIrregularVerb) && randomNumberOfTense == 2) {
                     int index = listOfVerbsIrregular.indexOf(simpleIrregularVerb);
-                    String irregularPastVerbV3 = listOfVerbsIrregularV3.get(index);
-                    sentence = String.format("%s %s", name, irregularPastVerbV3);
                     textViewIrregularVerbPast.setText(listOfVerbsIrregularPast.get(index));
-                    wrongV3PassiveVerb = irregularPastVerbV3;
-                } else {
+                }
+            } else if (randomNumberOfSentence == 1) {
+                String strongVerb = getWordFromList(listOfVerbsStrong);
+                if (randomNumberOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
+                    strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
+                }
+                sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
+                wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
+            } else {
+                int randomNumberOfToBe = random.nextInt(3);
+                if (randomNumberOfToBe == 0) {
                     if (simpleIrregularVerb.endsWith("e")) {
-                        simpleIrregularVerb = simpleIrregularVerb + "d";
-                        sentence = String.format("%s %s", name, simpleIrregularVerb);
-                    } else if (simpleIrregularVerb.matches("\\w+[aeiouy]y")) {
-                        sentence = String.format("%s %s", name, simpleIrregularVerb + "ed");
-                    } else if (simpleIrregularVerb.matches("\\w+[^aeiouy]y")) {
-                        simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1) + "ied";
-                        sentence = String.format("%s %s", name, simpleIrregularVerb);
-                    } else {
-                        sentence = String.format("%s %s", name, simpleIrregularVerb + "ed");
+                        simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1);
+                    } else if (simpleIrregularVerb.endsWith("ie")) {
+                        simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 2);
                     }
-                    wrongV3PassiveVerb = simpleIrregularVerb;
+                    sentence = String.format("%s %sing", name, simpleIrregularVerb);
+                } else if (randomNumberOfToBe == 1) {
+                    String adjective = getWordFromList(listOfAdjective);
+                    sentence = String.format("%s %s", name, adjective);
+                } else {
+                    if (listOfVerbsIrregular.contains(simpleIrregularVerb)) {
+                        int index = listOfVerbsIrregular.indexOf(simpleIrregularVerb);
+                        String irregularPastVerbV3 = listOfVerbsIrregularV3.get(index);
+                        sentence = String.format("%s %s", name, irregularPastVerbV3);
+                        textViewIrregularVerbPast.setText(listOfVerbsIrregularPast.get(index));
+                        wrongV3PassiveVerb = irregularPastVerbV3;
+                    } else {
+                        if (simpleIrregularVerb.endsWith("e")) {
+                            simpleIrregularVerb = simpleIrregularVerb + "d";
+                            sentence = String.format("%s %s", name, simpleIrregularVerb);
+                        } else if (simpleIrregularVerb.matches("\\w+[aeiouy]y")) {
+                            sentence = String.format("%s %s", name, simpleIrregularVerb + "ed");
+                        } else if (simpleIrregularVerb.matches("\\w+[^aeiouy]y")) {
+                            simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1) + "ied";
+                            sentence = String.format("%s %s", name, simpleIrregularVerb);
+                        } else {
+                            sentence = String.format("%s %s", name, simpleIrregularVerb + "ed");
+                        }
+                        wrongV3PassiveVerb = simpleIrregularVerb;
+                    }
                 }
             }
         }
@@ -240,8 +245,15 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
-    private void setImageTypeOfSentence() {
+    private void showToast() {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_root));
 
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, -550);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
     }
 
     private void setConstraintLayoutBackgroundImage(boolean b) {
@@ -287,43 +299,40 @@ public class AlgorithmActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "the sentence is added to the database", Toast.LENGTH_SHORT).show();
     }
 
-    private int getRandomNumberOfTense() {
+    private int getRandomNumberOfTenseOrTypeOfVerb(CheckBox cb1, CheckBox cb2, CheckBox cb3) {
         Random random = new Random();
-        List<Integer> listIdOfTense = new ArrayList<>();
-        if (checkBoxTenseFuture.isChecked()) {
-            listIdOfTense.add(0);
+        List<Integer> list = new ArrayList<>();
+        if (cb1.isChecked()) {
+            list.add(0);
         }
-        if (checkBoxTensePresent.isChecked()) {
-            listIdOfTense.add(1);
+        if (cb2.isChecked()) {
+            list.add(1);
         }
-        if (checkBoxTensePast.isChecked()) {
-            listIdOfTense.add(2);
+        if (cb3.isChecked()) {
+            list.add(2);
         }
-        if (listIdOfTense.size() != 0) {
-            return listIdOfTense.get(random.nextInt(listIdOfTense.size()));
+        if (list.size() != 0) {
+            return list.get(random.nextInt(list.size()));
         }
         return -1;
     }
 
-    private void setTextColorOnChecked(CheckBox checkBox) {
-        if (checkBox.isChecked()) {
-            checkBox.setTextColor(getResources().getColor(R.color.check_box_checked_color));
-        } else {
-            checkBox.setTextColor(getResources().getColor(R.color.check_box_unchecked_color));
-        }
-    }
-
     class TextColorOnCheckedSetter implements View.OnClickListener {
         private CheckBox checkBox;
-        TextColorOnCheckedSetter(CheckBox checkBox) {
+        private int idColorOnChecked;
+        private int idColorOnUnChecked;
+
+        TextColorOnCheckedSetter(CheckBox checkBox, int idColorOnChecked, int idColorOnUnChecked) {
             this.checkBox = checkBox;
+            this.idColorOnChecked = idColorOnChecked;
+            this.idColorOnUnChecked = idColorOnUnChecked;
         }
         @Override
         public void onClick(View v) {
             if (checkBox.isChecked()) {
-                checkBox.setTextColor(getResources().getColor(R.color.check_box_checked_color));
+                checkBox.setTextColor(getResources().getColor(idColorOnChecked));
             } else {
-                checkBox.setTextColor(getResources().getColor(R.color.check_box_unchecked_color));
+                checkBox.setTextColor(getResources().getColor(idColorOnUnChecked));
             }
         }
     }
