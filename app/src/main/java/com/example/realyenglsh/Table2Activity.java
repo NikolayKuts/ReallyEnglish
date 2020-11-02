@@ -72,8 +72,8 @@ public class Table2Activity extends AppCompatActivity {
 
         listOfVerbsIrregular = new ArrayList<>(Arrays.asList(stringArgsVerbsIrregular));
 
-        String[] stringArgsVerbsIrregularPast = getResources().getString(R.string.irregular_verbs_past_1).split(",");
-        listOfVerbsIrregularPast = new ArrayList<>(Arrays.asList(stringArgsVerbsIrregularPast));
+        String[] stringArgsVerbsIrregularV2 = getResources().getString(R.string.irregular_verbs_v2_1).split(",");
+        listOfVerbsIrregularPast = new ArrayList<>(Arrays.asList(stringArgsVerbsIrregularV2));
 
         String[] stringArgsVerbsStrong = getResources().getStringArray(R.array.strong_verbs);
         listOfVerbsStrong = new ArrayList<>(Arrays.asList(stringArgsVerbsStrong));

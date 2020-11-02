@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,8 @@ import static com.example.realyenglsh.Table1Activity.getWordFromList;
 
 public class AlgorithmActivity extends AppCompatActivity {
     private ImageView imageViewTenseObject, imageViewTypeOfSentence;
-    private TextView textViewSentence, textViewIrregularVerbPast;
+    private TextView textViewSentence;
+    private TextView textViewV1, textViewV2, textViewV3;
     private CheckBox checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast;
     private CheckBox checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe;
     private Switch switchShowPrompt, switchIrregularPastVerb;
@@ -40,11 +42,13 @@ public class AlgorithmActivity extends AppCompatActivity {
     private ConstraintLayout constraintLayout;
     private Button buttonPutIntoDBWrongSentence;
 
+    private LinearLayout linearLayoutVerbsForm;
+
     private List<Integer> idTenseObject, listOfBackgroundImages, listOfImageTypeOfSentence;
     private List<String> listOfNames;
     private List<String> listOfVerbsSimpleIrregular;
     private List<String> listOfVerbsIrregular;
-    private List<String> listOfVerbsIrregularPast;
+    private List<String> listOfVerbsIrregularV2;
     private List<String> listOfVerbsStrong;
     private List<String> listOfAdjective;
     private List<String> listOfVerbsIrregularV3;
@@ -62,7 +66,12 @@ public class AlgorithmActivity extends AppCompatActivity {
         imageViewTypeOfSentence = findViewById(R.id.imageViewTypeOfSentence);
         textViewSentence = findViewById(R.id.textViewSentence);
         textViewSentence = findViewById(R.id.textViewSentence);
-        textViewIrregularVerbPast = findViewById(R.id.textViewIrregularVerbPast);
+
+        textViewV1 = findViewById(R.id.textViewV1);
+        textViewV2 = findViewById(R.id.textViewV2);
+        textViewV3 = findViewById(R.id.textViewV3);
+        linearLayoutVerbsForm = findViewById(R.id.linearLayoutVerbForms);
+
         buttonPutIntoDBWrongSentence = findViewById(R.id.buttonPutIntoDBWrongSentence);
         switchIrregularPastVerb = findViewById(R.id.switchIrregularVerb);
         switchShowPrompt = findViewById(R.id.switchShowPrompt);
@@ -100,7 +109,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfNames = getArrayListFromStringResources(R.array.personal_pronouns, R.string.names);
         listOfVerbsSimpleIrregular = getArrayListFromStringResources(null, R.string.simple_verbs_1, R.string.irregular_verbs_1);
         listOfVerbsIrregular = getArrayListFromStringResources(null, R.string.irregular_verbs_1);
-        listOfVerbsIrregularPast = getArrayListFromStringResources(null, R.string.irregular_verbs_past_1);
+        listOfVerbsIrregularV2 = getArrayListFromStringResources(null, R.string.irregular_verbs_v2_1);
         listOfVerbsStrong = getArrayListFromStringResources(R.array.strong_verbs);
         listOfAdjective = getArrayListFromStringResources(null, R.string.adjective);
         listOfVerbsIrregularV3 = getArrayListFromStringResources(null, R.string.irregular_verbs_v3_1);
@@ -135,9 +144,9 @@ public class AlgorithmActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    textViewIrregularVerbPast.setVisibility(View.VISIBLE);
+                    linearLayoutVerbsForm.setVisibility(View.VISIBLE);
                 } else {
-                    textViewIrregularVerbPast.setVisibility(View.INVISIBLE);
+                    linearLayoutVerbsForm.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -155,7 +164,7 @@ public class AlgorithmActivity extends AppCompatActivity {
             imageViewTenseObject.setVisibility(View.INVISIBLE);
         }
 //        imageViewTypeOfSentence.setImageResource(listOfImageTypeOfSentence.get(randomNumberImageTypeOfSentence));
-        textViewIrregularVerbPast.setText("--//--");
+        setEmptyOnTextViewOfFormsOfIrregularVerb();
         wrongSentence = "";
         wrongV3PassiveVerb = "";
         String sentence = "";
@@ -166,23 +175,26 @@ public class AlgorithmActivity extends AppCompatActivity {
         if (randomNumberOfSentence == -1) {
             showToast();
         } else {
-            if (randomNumberOfSentence == 0) {
+
+            if (randomNumberOfSentence == 0) {   // future
                 String simpleIrregularVerb1 = getWordFromList(listOfVerbsSimpleIrregular);
                 sentence = String.format("%s %s %s", name, simpleIrregularVerb, simpleIrregularVerb1);
                 wrongSentence = String.format("%s_%s", simpleIrregularVerb, simpleIrregularVerb1);
 
-                if (listOfVerbsIrregular.contains(simpleIrregularVerb) && randomNumberOfTense == 2) {
-                    int index = listOfVerbsIrregular.indexOf(simpleIrregularVerb);
-                    textViewIrregularVerbPast.setText(listOfVerbsIrregularPast.get(index));
-                }
-            } else if (randomNumberOfSentence == 1) {
+                setFormsOfIrregularVerb(simpleIrregularVerb);
+
+            } else if (randomNumberOfSentence == 1) {    // present
                 String strongVerb = getWordFromList(listOfVerbsStrong);
                 if (randomNumberOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
                     strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
                 }
+
+                setFormsOfIrregularVerb(simpleIrregularVerb);
+
                 sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
                 wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
-            } else {
+
+            } else {    // past
                 int randomNumberOfToBe = random.nextInt(3);
                 if (randomNumberOfToBe == 0) {
                     if (simpleIrregularVerb.endsWith("e")) {
@@ -197,9 +209,10 @@ public class AlgorithmActivity extends AppCompatActivity {
                 } else {
                     if (listOfVerbsIrregular.contains(simpleIrregularVerb)) {
                         int index = listOfVerbsIrregular.indexOf(simpleIrregularVerb);
+
+                        setFormsOfIrregularVerb(simpleIrregularVerb);
                         String irregularPastVerbV3 = listOfVerbsIrregularV3.get(index);
                         sentence = String.format("%s %s", name, irregularPastVerbV3);
-                        textViewIrregularVerbPast.setText(listOfVerbsIrregularPast.get(index));
                         wrongV3PassiveVerb = irregularPastVerbV3;
                     } else {
                         if (simpleIrregularVerb.endsWith("e")) {
@@ -237,6 +250,21 @@ public class AlgorithmActivity extends AppCompatActivity {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
+    }
+
+    private void setEmptyOnTextViewOfFormsOfIrregularVerb() {
+        textViewV1.setText("-//-");
+        textViewV2.setText("-//-");
+        textViewV3.setText("-//-");
+    }
+
+    private void setFormsOfIrregularVerb(String verb) {
+        if (listOfVerbsIrregular.contains(verb)) {
+            int index = listOfVerbsIrregular.indexOf(verb);
+            textViewV1.setText(listOfVerbsIrregular.get(index));
+            textViewV2.setText(listOfVerbsIrregularV2.get(index));
+            textViewV3.setText(listOfVerbsIrregularV3.get(index));
+        }
     }
 
     private void setConstraintLayoutBackgroundImage(boolean b) {
@@ -308,7 +336,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         return -1;
     }
 
-    class TextColorOnCheckedSetter implements View.OnClickListener {
+    private class TextColorOnCheckedSetter implements View.OnClickListener {
         private CheckBox checkBox;
         private int idColorOnChecked;
         private int idColorOnUnChecked;
