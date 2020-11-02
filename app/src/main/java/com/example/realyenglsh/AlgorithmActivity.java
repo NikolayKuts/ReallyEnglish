@@ -49,8 +49,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfAdjective;
     private List<String> listOfVerbsIrregularV3;
 
-    private String wrongSentence = "";
-    private String wrongV3PassiveVerb = "";
+    private String wrongSentence = "", wrongV3PassiveVerb = "";
     private int randomNumberOfTense = -1;
     private boolean isSwitchShowPromptOn;
 
@@ -75,8 +74,6 @@ public class AlgorithmActivity extends AppCompatActivity {
         checkBoxTypeOfVerbStrong = findViewById(R.id.checkBoxStrong);
         checkBoxTypeOfVerbToBe = findViewById(R.id.checkBoxToBe);
 
-        int i = R.color.check_box_checked_color;
-
         checkBoxTenseFuture.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTenseFuture, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
         checkBoxTensePresent.setOnClickListener( new TextColorOnCheckedSetter(checkBoxTensePresent, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
         checkBoxTensePast.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTensePast, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
@@ -100,27 +97,13 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfImageTypeOfSentence = new ArrayList<>();
         addDrawableResources(listOfImageTypeOfSentence, R.drawable.minus, R.drawable.plus, R.drawable.qa_mark);
 
-
-        String[] stringArgsNames = getArrayFromResources(R.string.names);
-        String[] stringArgsPersonalPronouns = getArrayFromArrayResources(R.array.personal_pronouns);
-        listOfNames = getArrayListFromArgs(stringArgsNames, stringArgsPersonalPronouns);
-
-        String[] stringArgsVerbsSimple = getArrayFromResources(R.string.simple_verbs_1);
-        String[] stringArgsVerbsIrregular = getArrayFromResources(R.string.irregular_verbs_1);
-        listOfVerbsSimpleIrregular = getArrayListFromArgs(stringArgsVerbsSimple, stringArgsVerbsIrregular);
-        listOfVerbsIrregular = getArrayListFromArgs(stringArgsVerbsIrregular);
-
-        String[] stringArgsVerbsIrregularPast = getArrayFromResources(R.string.irregular_verbs_past_1);
-        listOfVerbsIrregularPast = getArrayListFromArgs(stringArgsVerbsIrregularPast);
-
-        String[] stringArgsVerbsStrong = getArrayFromArrayResources(R.array.strong_verbs);
-        listOfVerbsStrong = getArrayListFromArgs(stringArgsVerbsStrong);
-
-        String[] stringArgsAdjective = getArrayFromResources(R.string.adjective);
-        listOfAdjective = getArrayListFromArgs(stringArgsAdjective);
-
-        String[] stringArgsVerbsIrregularV3 = getArrayFromResources(R.string.irregular_verbs_v3_1);
-        listOfVerbsIrregularV3 = getArrayListFromArgs(stringArgsVerbsIrregularV3);
+        listOfNames = getArrayListFromStringResources(R.array.personal_pronouns, R.string.names);
+        listOfVerbsSimpleIrregular = getArrayListFromStringResources(null, R.string.simple_verbs_1, R.string.irregular_verbs_1);
+        listOfVerbsIrregular = getArrayListFromStringResources(null, R.string.irregular_verbs_1);
+        listOfVerbsIrregularPast = getArrayListFromStringResources(null, R.string.irregular_verbs_past_1);
+        listOfVerbsStrong = getArrayListFromStringResources(R.array.strong_verbs);
+        listOfAdjective = getArrayListFromStringResources(null, R.string.adjective);
+        listOfVerbsIrregularV3 = getArrayListFromStringResources(null, R.string.irregular_verbs_v3_1);
 
         buttonPutIntoDBWrongSentence.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -265,20 +248,28 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
-    public String[] getArrayFromResources(int id) {
-        return getString(id).split(",");
-    }
-
     public String[] getArrayFromArrayResources(int id) {
         return getResources().getStringArray(id);
     }
 
-    public ArrayList<String> getArrayListFromArgs(String[]... array) {
-        ArrayList<String> list = new ArrayList<>();
-        for (String[] s : array) {
-            list.addAll(Arrays.asList(s));
+    public String[] getArrayFromResources(int id) {
+        return getString(id).split(",");
+    }
+
+    public ArrayList<String> getArrayListFromStringResources(Integer idArrayResource, int... idResource) {
+        List<String[]> listOfArgsId = new ArrayList<>();
+        ArrayList<String> stringList = new ArrayList<>();
+
+        if (idArrayResource != null) {
+            listOfArgsId.add(getArrayFromArrayResources(idArrayResource));
         }
-        return list;
+        for (int id: idResource) {
+            listOfArgsId.add(getArrayFromResources(id));
+        }
+        for (String[] s : listOfArgsId) {
+            stringList.addAll(Arrays.asList(s));
+        }
+        return stringList;
     }
 
     private void addDrawableResources(List<Integer> list, int... id) {
