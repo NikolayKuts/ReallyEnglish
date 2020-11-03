@@ -45,7 +45,7 @@ public class Table1Activity extends AppCompatActivity {
         listOfVerbsStrong = new ArrayList<>(Arrays.asList(stringArgsVerbsStrong));
 
         String[] stringArgsVerbsSimple = getResources().getString(R.string.simple_verbs_1).split(",");
-        String[] stringArgsVerbsIrregular = getResources().getString(R.string.irregular_verbs_1).split(",");
+        String[] stringArgsVerbsIrregular = getResources().getString(R.string.irregular_verbs_v1_1).split(",");
         listOfVerbsSimpleIrregular = new ArrayList<>(Arrays.asList(stringArgsVerbsSimple));
         listOfVerbsSimpleIrregular.addAll(Arrays.asList(stringArgsVerbsIrregular));
 

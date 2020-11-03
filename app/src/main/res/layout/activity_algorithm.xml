@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="357dp" />
+        app:layout_constraintGuide_percent="0.5116279" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -79,15 +79,14 @@
 
     <Switch
         android:id="@+id/switchIrregularVerb"
-        android:layout_width="78dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="75dp"
+        android:layout_height="36dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSentence"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
@@ -253,5 +252,18 @@
             android:textColor="#ACD878"
             android:textSize="20sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonShowDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickShowDialog"
+        android:text="choose a list"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.296" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

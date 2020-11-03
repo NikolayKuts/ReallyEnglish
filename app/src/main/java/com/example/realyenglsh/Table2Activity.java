@@ -66,7 +66,7 @@ public class Table2Activity extends AppCompatActivity {
         listOfNames.addAll(Arrays.asList(stringArgsPersonalPronouns));
 
         String[] stringArgsVerbsSimple = getResources().getString(R.string.simple_verbs_1).split(",");
-        String[] stringArgsVerbsIrregular = getResources().getString(R.string.irregular_verbs_1).split(",");
+        String[] stringArgsVerbsIrregular = getResources().getString(R.string.irregular_verbs_v1_1).split(",");
         listOfVerbsSimpleIrregular = new ArrayList<>(Arrays.asList(stringArgsVerbsSimple));
         listOfVerbsSimpleIrregular.addAll(Arrays.asList(stringArgsVerbsIrregular));
 
