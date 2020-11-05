@@ -136,8 +136,8 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfLessonVerbsIrregularV2 = new ArrayList<>();
         listOfLessonVerbsIrregularV3 = new ArrayList<>();
 
-        listOfMyList.add(new MyListOfVerbs("Verbs # 1",true, listOfVerbsSimple_1, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3));
-        listOfMyList.add(new MyListOfVerbs("Verbs # 2", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
+        listOfMyList.add(new MyListOfVerbs("Verbs # 1 (1 - 50)",true, listOfVerbsSimple_1, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3));
+        listOfMyList.add(new MyListOfVerbs("Verbs # 2 (52 - 100)", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
         listOfMyList.add(new MyListOfVerbs("Verbs # 3", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
         listOfMyList.add(new MyListOfVerbs("Verbs # 4", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
         listOfMyList.add(new MyListOfVerbs("Verbs # 5", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
@@ -379,6 +379,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         ListView listView = dialog.findViewById(R.id.listView);
         MyAdapter adapter = new MyAdapter(this, listOfMyList);
         listView.setAdapter(adapter);
+
         Button button = dialog.findViewById(R.id.buttonDialogApply);
         dialog.show();
 
@@ -425,11 +426,9 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfLessonVerbsIrregularV1.clear();
         listOfLessonVerbsIrregularV2.clear();
         listOfLessonVerbsIrregularV3.clear();
-        for (MyListOfVerbs my : listOfMyList) {
-            Log.i("log set my out", "-------" + my.isChecked());
-            if (my.isChecked()) {
 
-                Log.i("log set my into", "-------" + my.isChecked());
+        for (MyListOfVerbs my : listOfMyList) {
+            if (my.isChecked()) {
                 setContentForLesson(my);
             }
         }
@@ -438,9 +437,6 @@ public class AlgorithmActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        Log.i("log my onResume", "------######-");
-//        adapter.notifyDataSetChanged();
         setCheckedMyListOfVerbs();
     }
 

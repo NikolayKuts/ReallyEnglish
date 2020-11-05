@@ -51,11 +51,14 @@ public class MyAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-
         holder.checkBox.setText(myListOfVerbs.getNameOfList());
+
         if (myListOfVerbs.isChecked()) {
             holder.checkBox.setChecked(true);
             holder.checkBox.setTextColor(convertView.getResources().getColor(R.color.dialog_check_box_checked_color));
+        } else {
+            holder.checkBox.setChecked(false);
+            holder.checkBox.setTextColor(convertView.getResources().getColor(R.color.check_box_unchecked_color));
         }
         holder.checkBox.setOnClickListener(new View.OnClickListener() {
             @Override

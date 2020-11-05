@@ -24,14 +24,14 @@
         like,want,need,ask,listen,start,love,finish,live,hate,work,play,learn,look,help,wait,explain,rest,hope,pay,stay,answer
     </string>
     <string name="simple_verbs_2">
- #       believe,happen,allow,try,say,look for,compare,smile,use,call,laugh,demand,pour,clean,count on,dress,walk,commend,manage,agree,recommend,wash,talk,promise,remember,seem,visit,prefer,thank,study,refuse
+        believe,happen,allow,try,say,look for,compare,smile,use,call,laugh,demand,pour,clean,count on,dress,walk,command,manage,agree,recommend,wash,talk,promise,remember,seem,visit,prefer,thank,study,refuse
     </string>
 
     <string name="irregular_verbs_v1_1">
         get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go
     </string>
     <string name="irregular_verbs_v1_2">
-  #      brought,forbid,say,fly,break,stand,catch,build,show,sell,keep,wear,spend,win,forget,lose,mean,meet,send
+        bring,forbid,say,fly,break,stand,catch,build,show,sell,keep,wear,spend,win,forget,lose,mean,meet,send
     </string>
 
 
@@ -39,14 +39,14 @@
         got,came,understood,told,put,taught,bought,saw,heard,let,red,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
     </string>
     <string name="irregular_verbs_v2_2">
- #       brought,forbade,said,flew,broke,stood,caught,built,showed,sold,kept,wore,spent,won,forgot,lost,meant,met,sent
+        brought,forbade,said,flew,broke,stood,caught,built,showed,sold,kept,wore,spent,won,forgot,lost,meant,met,sent
     </string>
 
     <string name="irregular_verbs_v3_1">
         got,come,understood,told,put,taught,bought,seen,heard,let,red,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone
     </string>
     <string name="irregular_verbs_v3_2">
-#        brought,forbidden,said,flown,broken,stood,caught,built,shown,sold,kept,worn,spent,won,forgotten,lost,meant,met,sent
+        brought,forbidden,said,flown,broken,stood,caught,built,shown,sold,kept,worn,spent,won,forgotten,lost,meant,met,sent
     </string>
 
     <string name="subjects">
