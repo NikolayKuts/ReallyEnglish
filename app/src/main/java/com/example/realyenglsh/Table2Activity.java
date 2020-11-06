@@ -5,7 +5,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -58,7 +57,7 @@ public class Table2Activity extends AppCompatActivity {
         switchShowTable = findViewById(R.id.switch1);
         switchIrregularVerb = findViewById(R.id.switchIrregularVerb);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        buttonPutIntoDBWrongSentence = findViewById(R.id.buttonPutIntoDBWrongSentence);
+        buttonPutIntoDBWrongSentence = findViewById(R.id.buttonToTableActivity);
 
         String[] stringArgsNames = getString(R.string.names).split(",");
         String[] stringArgsPersonalPronouns = getResources().getStringArray(R.array.personal_pronouns);

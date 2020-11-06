@@ -1,13 +1,10 @@
 package com.example.realyenglsh;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,7 +30,7 @@ public class Table1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table1);
         textViewSentence = findViewById(R.id.textViewSentence);
-        buttonPutWrongSentenceIntoDB = findViewById(R.id.buttonPutIntoDBWrongSentence);
+        buttonPutWrongSentenceIntoDB = findViewById(R.id.buttonToTableActivity);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
         String[] stringArgsNames = getString(R.string.names).split(",");

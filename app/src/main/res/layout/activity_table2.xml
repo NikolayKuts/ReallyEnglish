@@ -216,7 +216,7 @@
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
-        android:id="@+id/buttonPutIntoDBWrongSentence"
+        android:id="@+id/buttonToTableActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="wrong sentence"

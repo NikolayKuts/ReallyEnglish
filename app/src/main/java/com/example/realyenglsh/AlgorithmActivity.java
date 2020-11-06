@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,7 +80,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         linearLayoutVerbsForm = findViewById(R.id.linearLayoutVerbForms);
         buttonTestDialog = findViewById(R.id.buttonShowDialog);
 
-        buttonPutIntoDBWrongSentence = findViewById(R.id.buttonPutIntoDBWrongSentence);
+        buttonPutIntoDBWrongSentence = findViewById(R.id.buttonToTableActivity);
         switchIrregularPastVerb = findViewById(R.id.switchIrregularVerb);
         switchShowPrompt = findViewById(R.id.switchShowPrompt);
         constraintLayout = findViewById(R.id.windowAlgorithmActivity);

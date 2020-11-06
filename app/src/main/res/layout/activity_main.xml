@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonPutIntoDBWrongSentence"
+        android:id="@+id/buttonToTableActivity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#474646"
@@ -39,18 +39,36 @@
         app:layout_constraintVertical_bias="0.035" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonToAlgorithmActivity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#474646"
         android:onClick="onClickToAlgorithmLesson"
         android:text="algorithm lesson"
+        android:layout_marginTop="8dp"
+        android:background="#474646"
+        android:textColor="#777777"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonToTableActivity" />
+
+    <Button
+        android:id="@+id/buttonToQuestionsActivityEnToEn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#474646"
+        android:onClick="onClickToQuestionsActivityEnToEn"
+        android:text="Questions En to En"
         android:textColor="#777777"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPutIntoDBWrongSentence"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonToAlgorithmActivity"
+        app:layout_constraintVertical_bias="0.012" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,168 @@
         <item>they</item>
     </string-array>
 
+    <string-array name="question_words">
+        <item>Why</item>
+        <item>Where</item>
+        <item>When</item>
+        <item>What</item>
+        <item>How</item>
+        <item>How much</item>
+        <item>How many</item>
+        <item>Who</item>
+        <item>Which of</item>
+        <item>Whose</item>
+    </string-array>
+
+    <string-array name="question_english">
+        <item>It can take much time. (Сколько?)</item>
+        <item>She so often forgets her keys. (Почему?)</item>
+        <item>You will see him there. (Где?)</item>
+        <item>I may start the work. (Когда?)</item>
+        <item>The boss pays you good money. (Сколько?)</item>
+        <item>You will be at home at 5 pm. (Когда?)</item>
+        <item>They heard this story. (Какую историю?)</item>
+        <item>You will be able to come tomorrow. (Когда?)</item>
+        <item>She has so many problems with her son. (Почему?)</item>
+        <item>I need to go there. (Почему?)</item>
+        <item>I had to do it yesterday. (Когда?)</item>
+        <item>He likes expensive cars. (Какие?)</item>
+        <item>I may do it. (Что?)</item>
+        <item>You had to do this. (Когда?)</item>
+        <item>The children were so afraid of the guest. (Почему?)</item>
+        <item>He wanted so much to work with us. (Почему?)</item>
+        <item>She eats so much chocolate. (Почему?)</item>
+        <item>We must eat only healthy food. (Почему?)</item>
+        <item>They lived in Israel. (Где?)</item>
+        <item>You are so smart. (Почему?)</item>
+        <item>You want so much to know it. (Почему?)</item>
+        <item>You have paid for this 10 $. (Сколько?)</item>
+        <item>She must come to you. (Когда?)</item>
+        <item>They need our help. (Зачем?)</item>
+        <item>We had to explain them how to work. (Почему?)</item>
+        <item>She is so happy to see us. (Почему?)</item>
+        <item>They will be allowed to rest. (Сколько времени?)</item>
+        <item>You are so tired. (Почему?)</item>
+        <item>People came there to rest. (Кто?)</item>
+        <item>She wants to tell me a story. (Что?)</item>
+        <item>We may rest now. (Где?)</item>
+        <item>She brought food home. (Что?)</item>
+        <item>You saw the boss this morning. (Когда?)</item>
+    </string-array>
+
+    <string-array name="question_english_answers">
+        <item>How much time can it take?</item>
+        <item>Why does she forget her keys so often?</item>
+        <item>Where will you see her?</item>
+        <item>When may I start the work?</item>
+        <item>How much money does the boss pay?</item>
+        <item>When will you be at home?</item>
+        <item>What story did they hear?</item>
+        <item>When will you able to come?</item>
+        <item>Why does she have so many problems with her son?</item>
+        <item>Why do I need to go there?</item>
+        <item>When did you have to do it?</item>
+        <item>What cars does he like?</item>
+        <item>What may I do?</item>
+        <item>When did you have to do this?</item>
+        <item>Why were the children so afraid of guests?</item>
+        <item>Why did he want so much to work with us?</item>
+        <item>Why does she eat so much chocolate?</item>
+        <item>Why must we eat only healthy food?</item>
+        <item>Where did they live?</item>
+        <item>Why are you so smart?</item>
+        <item>Why do you want so much to know it?</item>
+        <item>How much have you paid for this?</item>
+        <item>When must she come to you?</item>
+        <item>Why do they need our help?</item>
+        <item>Why did we have to explain them how to work?</item>
+        <item>Why is she so happy to see us?</item>
+        <item>How much time will they be able to rest?</item>
+        <item>Why are you so tired?</item>
+        <item>Who came there to rest?</item>
+        <item>What does she want to tell?</item>
+        <item>When may they rest now?</item>
+        <item>What did she bring home?</item>
+        <item>When did you see the boss?</item>
+    </string-array>
+
+    <string-array name="question_english_wh">
+        <item>You have bought some fruits. Что? Что случилось в том магазине?</item>
+        <item>She said him to come tomorrow. Когда?</item>
+        <item>They like chocolate ice cream. Какое?</item>
+        <item>Old Sam Johnson had three sons. Сколько?</item>
+        <item>Something bad has happened at his work. Что?</item>
+        <item>She lives somewhere in New York. Где?</item>
+        <item>The family Robertson lived in this house. Кто?</item>
+        <item>You didn’t come to their meetings. Почему?</item>
+        <item>She went to the theater almost every week. Куда?</item>
+        <item>The elephant drank 100 liters of water every day. Сколько?</item>
+        <item>Sam hasn’t come yet. Почему?</item>
+        <item>People buy food at the local supermarkets. Где?</item>
+        <item>You do it how you were taught by your Granny. Как?</item>
+        <item>You have brought something home. Что?</item>
+        <item>You have brought something home. Кто принес это?</item>
+        <item>We are going to go home. Куда?</item>
+        <item>It always happened suddenly. Как?</item>
+        <item>You were working on this problem for 3 hours. Сколько?</item>
+        <item>Someone took my pencil. Кто?</item>
+        <item>You haven’t come yet. Почему?</item>
+        <item>This is Jeffrey Simpson’s house. Чей?</item>
+        <item>You haven’t eaten the hamburger. Почему?</item>
+    </string-array>
+
+    <string-array name="question_english_wh_answer">
+        <item>What has happened in that store?</item>
+        <item>When did she say to come?</item>
+        <item>What ice cream do they like?</item>
+        <item>How many sons did old Sam Johnson have?</item>
+        <item>What has happened at his work?</item>
+        <item>When does she live in New York?</item>
+        <item>Who lived in this house?</item>
+        <item>Why didn’t you come to their meeting?</item>
+        <item>When did she go almost every week?</item>
+        <item>How many liters of water did the elephant drink every day?</item>
+        <item>Why hasn’t Sam come yet?</item>
+        <item>Where do people buy food?</item>
+        <item>How do you do it?</item>
+        <item>What have you brought home?</item>
+        <item>Who has brought this?</item>
+        <item>When are you going to go?</item>
+        <item>How did it always happen?</item>
+        <item>How much time were you working on this problem?</item>
+        <item>Who took my pencil?</item>
+        <item>Why haven’t you come yet?</item>
+        <item>Whose is this house?</item>
+        <item>Why haven’t you eaten the hamburger?</item>
+    </string-array>
+
+    <string-array name="question_english_advanced">
+        <item>There are three cars there. Который из них твой?</item>
+        <item>Mommy has brought us some chocolates. Что принесла?</item>
+        <item>There were my keys on the table. Кто видел?</item>
+        <item>I’ve sold my car to some New Yorker. Кому?</item>
+        <item>Some of us will be sent to Texas. Кого из?</item>
+        <item>It will take 2 hours. Сколько времени?</item>
+        <item>I worked in Japan about a year. Как долго?</item>
+        <item>About a hundred of the guests will come to your birthday. Сколько?</item>
+        <item>You have spent for the entertainment a thousand bucks. Сколько?</item>
+        <item>Something strange has happened there. Что именно?</item>
+        <item>You have lost the money. Как могло случиться, что…?</item>
+    </string-array>
+
+    <string-array name="question_english_advanced_answer">
+        <item>Which of these cars is yours?</item>
+        <item>What has Mommy brought us?</item>
+        <item>Who saw my keys on the tables?</item>
+        <item>Whom have you sold your car?</item>
+        <item>Which of us will be sent to Texas?</item>
+        <item>How much time will it take?</item>
+        <item>How long did you work in Japan?</item>
+        <item>How many guests will come to your birthday?</item>
+        <item>How much money have you spent for the entertainment?</item>
+        <item>What exactly has happened there?</item>
+        <item>How could be this possible that you have lost the money?</item>
+    </string-array>
 
     <string name="simple_verbs_1">
         like,want,need,ask,listen,start,love,finish,live,hate,work,play,learn,look,help,wait,explain,rest,hope,pay,stay,answer
