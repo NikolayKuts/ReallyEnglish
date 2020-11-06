@@ -120,7 +120,6 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfAdjective = getArrayListFromStringResources(null, R.string.adjective);
 
 
-
         List<String> listOfVerbsSimple_1 = getArrayListFromStringResources(null, R.string.simple_verbs_1);
         List<String> listOfVerbsIrregularV1 = getArrayListFromStringResources(null, R.string.irregular_verbs_v1_1);
         List<String> listOfVerbsIrregularV2 = getArrayListFromStringResources(null, R.string.irregular_verbs_v2_1);
@@ -136,16 +135,14 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfLessonVerbsIrregularV2 = new ArrayList<>();
         listOfLessonVerbsIrregularV3 = new ArrayList<>();
 
-        listOfMyList.add(new MyListOfVerbs("Verbs # 1 (1 - 50)",true, listOfVerbsSimple_1, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3));
-        listOfMyList.add(new MyListOfVerbs("Verbs # 2 (52 - 100)", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
+        listOfMyList.add(new MyListOfVerbs("Verbs # 1 (1 - 50)", true, listOfVerbsSimple_1, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3));
+        listOfMyList.add(new MyListOfVerbs("Verbs # 2 (51 - 100)", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
         listOfMyList.add(new MyListOfVerbs("Verbs # 3", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
         listOfMyList.add(new MyListOfVerbs("Verbs # 4", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
         listOfMyList.add(new MyListOfVerbs("Verbs # 5", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
         listOfMyList.add(new MyListOfVerbs("Verbs # 6", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
 
         setCheckedMyListOfVerbs();
-
-
 
 
         buttonPutIntoDBWrongSentence.setOnLongClickListener(new View.OnLongClickListener() {
@@ -203,67 +200,34 @@ public class AlgorithmActivity extends AppCompatActivity {
         wrongV3PassiveVerb = "";
         String sentence = "";
         String name = getWordFromList(listOfNames);
-        List<String> listOfLessonVerbsSimpleIrregular = new ArrayList<>(listOfLessonVerbsSimple);
+        ArrayList<String> listOfLessonVerbsSimpleIrregular = new ArrayList<>(listOfLessonVerbsSimple);
         listOfLessonVerbsSimpleIrregular.addAll(listOfLessonVerbsIrregularV1);
-        Log.i("log", "--------" + listOfLessonVerbsSimpleIrregular.toString());
         String simpleIrregularVerb = getWordFromList(listOfLessonVerbsSimpleIrregular);
 
         int randomNumberOfSentence = getRandomNumberOfTenseOrTypeOfVerb(checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe);   // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
         if (randomNumberOfSentence == -1) {
             showToast();
         } else {
-
-            if (randomNumberOfSentence == 0) {   // future
-                String simpleIrregularVerb1 = getWordFromList(listOfLessonVerbsSimpleIrregular);
-                sentence = String.format("%s %s %s", name, simpleIrregularVerb, simpleIrregularVerb1);
-                wrongSentence = String.format("%s_%s", simpleIrregularVerb, simpleIrregularVerb1);
-
+            if (randomNumberOfSentence == 0) {   // simple
+                sentence = getSentenceWithSimpleVerb(name, simpleIrregularVerb, listOfLessonVerbsSimpleIrregular);
                 setFormsOfIrregularVerb(simpleIrregularVerb);
-
-            } else if (randomNumberOfSentence == 1) {    // present
-                String strongVerb = getWordFromList(listOfVerbsStrong);
-                if (randomNumberOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
-                    strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
-                }
-
+            } else if (randomNumberOfSentence == 1) {    // strong
+                sentence = getSentenceWithStrongVerb(name, simpleIrregularVerb);
                 setFormsOfIrregularVerb(simpleIrregularVerb);
-
-                sentence = String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
-                wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
-
-            } else {    // past
+            } else {    // ToBe
                 int randomNumberOfToBe = random.nextInt(3);
-                if (randomNumberOfToBe == 0) {
-                    if (simpleIrregularVerb.endsWith("e")) {
-                        simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1);
-                    } else if (simpleIrregularVerb.endsWith("ie")) {
-                        simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 2);
-                    }
-                    sentence = String.format("%s %sing", name, simpleIrregularVerb);
-                } else if (randomNumberOfToBe == 1) {
+
+                if (randomNumberOfToBe == 0) {  // - ing
+                    sentence = getSentenceWithToBeIngForm(name, simpleIrregularVerb);
+                } else if (randomNumberOfToBe == 1) {  // adjective
                     String adjective = getWordFromList(listOfAdjective);
                     sentence = String.format("%s %s", name, adjective);
-                } else {
+                } else {  // passive verb
                     if (listOfLessonVerbsIrregularV1.contains(simpleIrregularVerb)) {
-                        int index = listOfLessonVerbsIrregularV1.indexOf(simpleIrregularVerb);
-
+                        sentence = getSentenceWithToBeV3Verb(name, simpleIrregularVerb);
                         setFormsOfIrregularVerb(simpleIrregularVerb);
-                        String irregularPastVerbV3 = listOfLessonVerbsIrregularV3.get(index);
-                        sentence = String.format("%s %s", name, irregularPastVerbV3);
-                        wrongV3PassiveVerb = irregularPastVerbV3;
-                    } else {
-                        if (simpleIrregularVerb.endsWith("e")) {
-                            simpleIrregularVerb = simpleIrregularVerb + "d";
-                            sentence = String.format("%s %s", name, simpleIrregularVerb);
-                        } else if (simpleIrregularVerb.matches("\\w+[aeiouy]y")) {
-                            sentence = String.format("%s %s", name, simpleIrregularVerb + "ed");
-                        } else if (simpleIrregularVerb.matches("\\w+[^aeiouy]y")) {
-                            simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1) + "ied";
-                            sentence = String.format("%s %s", name, simpleIrregularVerb);
-                        } else {
-                            sentence = String.format("%s %s", name, simpleIrregularVerb + "ed");
-                        }
-                        wrongV3PassiveVerb = simpleIrregularVerb;
+                    } else {  // simple -ed
+                        sentence = getSentenceWithToBeSimplePassiveVerb(name, simpleIrregularVerb);
                     }
                 }
             }
@@ -440,17 +404,50 @@ public class AlgorithmActivity extends AppCompatActivity {
         setCheckedMyListOfVerbs();
     }
 
-}
+    private String getSentenceWithSimpleVerb(String name, String simpleIrregularVerb, ArrayList<String> listOfLessonVerbsSimpleIrregular) {
+        String simpleIrregularVerb1 = getWordFromList(listOfLessonVerbsSimpleIrregular);
+        wrongSentence = String.format("%s_%s", simpleIrregularVerb, simpleIrregularVerb1);
+        return String.format("%s %s %s", name, simpleIrregularVerb, simpleIrregularVerb1);
+    }
 
-//listOfMyList.add(new MyListOfVerbs("Verbs # 1",listOfVerbsSimple, listOfVerbsIrregularV1, listOfVerbsIrregularV1, listOfVerbsIrregularV3));
-//        listOfMyList.add(new MyListOfVerbs("Verbs # 2",listOfVerbsSimple, listOfVerbsIrregularV1, listOfVerbsIrregularV1, listOfVerbsIrregularV3));
-//
-//        listOfLessonVerbsSimpleIrregular = new ArrayList<>();
-//        listOfLessonVerbsIrregularV1 = new ArrayList<>();
-//        listOfLessonVerbsIrregularV2 = new ArrayList<>();
-//        listOfLessonVerbsIrregularV3 = new ArrayList<>();
-//
-//        listOfLessonVerbsSimpleIrregular.addAll(listOfVerbsSimpleIrregular);
-//        listOfLessonVerbsIrregularV1.addAll(listOfVerbsIrregularV1);
-//        listOfLessonVerbsIrregularV2.addAll(listOfVerbsIrregularV2);
-//        listOfLessonVerbsIrregularV3.addAll(listOfVerbsIrregularV3);
+    private String getSentenceWithStrongVerb(String name, String simpleIrregularVerb) {
+        String strongVerb = getWordFromList(listOfVerbsStrong);
+        if (randomNumberOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
+            strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
+        }
+        wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
+        return String.format("%s %s %s", name, strongVerb, simpleIrregularVerb);
+    }
+
+    private String getSentenceWithToBeIngForm(String name, String simpleIrregularVerb) {
+        if (simpleIrregularVerb.endsWith("e")) {
+            simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1);
+        } else if (simpleIrregularVerb.endsWith("ie")) {
+            simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 2);
+        }
+        return String.format("%s %sing", name, simpleIrregularVerb);
+    }
+
+    private String getSentenceWithToBeV3Verb(String name, String simpleIrregularVerb) {
+        int index = listOfLessonVerbsIrregularV1.indexOf(simpleIrregularVerb);
+        String irregularPastVerbV3 = listOfLessonVerbsIrregularV3.get(index);
+        wrongV3PassiveVerb = irregularPastVerbV3;
+        return String.format("%s %s", name, irregularPastVerbV3);
+    }
+
+    private String getSentenceWithToBeSimplePassiveVerb(String name, String simpleIrregularVerb) {
+        String sentence = "";
+        if (simpleIrregularVerb.endsWith("e")) {
+            simpleIrregularVerb = simpleIrregularVerb + "d";
+            sentence = String.format("%s %s", name, simpleIrregularVerb);
+        } else if (simpleIrregularVerb.matches("\\w+[^aeiouy]y")) {
+            simpleIrregularVerb = simpleIrregularVerb.substring(0, simpleIrregularVerb.length() - 1) + "ied";
+            sentence = String.format("%s %s", name, simpleIrregularVerb);
+        } else {          //else if (simpleIrregularVerb.matches("\\w+[aeiouy]y"))
+            simpleIrregularVerb = simpleIrregularVerb + "ed";
+            sentence = String.format("%s %s", name, simpleIrregularVerb);
+        }
+        wrongV3PassiveVerb = simpleIrregularVerb;
+        return sentence;
+    }
+}
