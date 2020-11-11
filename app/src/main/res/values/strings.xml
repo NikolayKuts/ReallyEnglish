@@ -71,7 +71,7 @@
     <string-array name="question_english_answers">
         <item>How much time can it take?</item>
         <item>Why does she forget her keys so often?</item>
-        <item>Where will you see her?</item>
+        <item>Where will you see him?</item>
         <item>When may I start the work?</item>
         <item>How much money does the boss pay?</item>
         <item>When will you be at home?</item>
@@ -95,11 +95,11 @@
         <item>Why do they need our help?</item>
         <item>Why did we have to explain them how to work?</item>
         <item>Why is she so happy to see us?</item>
-        <item>How much time will they be able to rest?</item>
+        <item>How much time will they be allowed to rest?</item>
         <item>Why are you so tired?</item>
         <item>Who came there to rest?</item>
         <item>What does she want to tell?</item>
-        <item>When may they rest now?</item>
+        <item>Where may we rest now?</item>
         <item>What did she bring home?</item>
         <item>When did you see the boss?</item>
     </string-array>
@@ -129,23 +129,23 @@
         <item>You haven’t eaten the hamburger. Почему?</item>
     </string-array>
 
-    <string-array name="question_english_wh_answer">
+    <string-array name="question_english_wh_answers">
         <item>What has happened in that store?</item>
         <item>When did she say to come?</item>
         <item>What ice cream do they like?</item>
         <item>How many sons did old Sam Johnson have?</item>
         <item>What has happened at his work?</item>
-        <item>When does she live in New York?</item>
+        <item>Where does she live in New York?</item>
         <item>Who lived in this house?</item>
         <item>Why didn’t you come to their meeting?</item>
-        <item>When did she go almost every week?</item>
+        <item>Where did she go almost every week?</item>
         <item>How many liters of water did the elephant drink every day?</item>
         <item>Why hasn’t Sam come yet?</item>
         <item>Where do people buy food?</item>
         <item>How do you do it?</item>
         <item>What have you brought home?</item>
         <item>Who has brought this?</item>
-        <item>When are you going to go?</item>
+        <item>Where are you going to go?</item>
         <item>How did it always happen?</item>
         <item>How much time were you working on this problem?</item>
         <item>Who took my pencil?</item>
@@ -168,7 +168,7 @@
         <item>You have lost the money. Как могло случиться, что…?</item>
     </string-array>
 
-    <string-array name="question_english_advanced_answer">
+    <string-array name="question_english_advanced_answers">
         <item>Which of these cars is yours?</item>
         <item>What has Mommy brought us?</item>
         <item>Who saw my keys on the tables?</item>
@@ -180,6 +180,236 @@
         <item>How much money have you spent for the entertainment?</item>
         <item>What exactly has happened there?</item>
         <item>How could be this possible that you have lost the money?</item>
+    </string-array>
+
+    <string-array name="question_english_ru_to_en">
+        <item>Что вы будете пить?</item>
+        <item>Где она работает?</item>
+        <item>Почему тебе не нравится этот ресторан?</item>
+        <item>Где вы хотели покупать квартиру?</item>
+        <item>Почему я обязан туда идти?</item>
+        <item>Когда он собирается туда идти?</item>
+        <item>Какую пиццу мы выберем?</item>
+        <item>Что ты нам принес?</item>
+        <item>Как он мог нас подвести?</item>
+        <item>Что ей там понравилось?</item>
+        <item>Почему ты так боишься поговорить об этом с боссом?</item>
+        <item>Когда мне надо начинать работу?</item>
+        <item>Как часто она к вам приходила?</item>
+        <item>Почему нам нельзя слушать эту музыку?</item>
+        <item>Что он мог для нее сделать?</item>
+        <item>Почему они так плохо учатся?</item>
+        <item>Почему ты такой грустный?</item>
+        <item>Как ты мог ей это сказать?</item>
+        <item>Что там случилось?</item>
+        <item>Что вы хотите делать в нашем городе?</item>
+        <item>Какого типа работу она умеет делать?</item>
+        <item>Почему они нас не понимают?</item>
+        <item>Как ты мог умудриться потерять ключи?</item>
+        <item>Как мы сможем помочь этим людям?</item>
+        <item>Когда вы уехали из этой страны?</item>
+        <item>Что они обычно здесь покупают?</item>
+        <item>Кого ты боишься?</item>
+        <item>Почему тебе так нравится эта работа?</item>
+        <item>Почему ты не мог прийти вчера?</item>
+        <item>Почему вас не было в офисе два часа?</item>
+        <item>Как ты не боялся идти туда один?</item>
+        <item>Что он там будет делать?</item>
+        <item>Почему эти люди так ненавидят Америку?</item>
+        <item>Почему я не подумал об этом раньше?</item>
+        <item>Как ты мог забыть об этом?</item>
+        <item>Когда вы его там видели?</item>
+        <item>Что вас к этому привело?</item>
+        <item>Как ты назвал его? Он не обижается?</item>
+        <item>Почему я не купил эту машину? Она мне нравилась больше всех.</item>
+        <item>Почему вы не готовы к работе?</item>
+        <item>Как он смог так быстро разбогатеть?</item>
+        <item>От чего это зависит?</item>
+        <item>Как ты собираешься помогать своему несчастному брату?</item>
+        <item>Где вы купили эту вещь? Я хочу такую же!</item>
+        <item>Почему вы не жалуетесь об этом начальству?</item>
+        <item>Чего ты так стесняешься? Приходи! Все наши там будут!</item>
+        <item>Что вы хотели узнать об этом человеке?</item>
+        <item>Когда ты перестанешь думать об этом?</item>
+        <item>Почему этот полицейский всегда к нам придирается?</item>
+        <item>Кто из ваших родственников живет в этом городе?</item>
+        <item>Что ты должен был делать в командировке?</item>
+        <item>Почему ты так возмущаешься? По-моему, все в порядке.</item>
+        <item>Почему я до сих пор не спросил ее об этом?</item>
+        <item>Зачем ты позвал ее на эту вечеринку?</item>
+        <item>Почему я сегодня не остался дома?</item>
+        <item>Почему они так гордятся этим?</item>
+        <item>Почему это не подготовили заранее?</item>
+        <item>Что им разрешалось делать во время перерыва?</item>
+        <item>Что вы думаете о современной музыке? – Думаю, она ужасна.</item>
+        <item>Почему вы все время молчите? Высказывайтесь, я должен знать мнение каждого работника!</item>
+        <item>Кому ты собирался показывать свой новый проект?</item>
+        <item>Почему ты так уверен? Этого никто не знает точно!</item>
+        <item>Что они поняли из моей речи? – Боюсь, что ничего.</item>
+        <item>С какой стати я должен вам верить? Мне нужны доказательства, а не просто пустые слова!</item>
+        <item>Что нам нужно взять с собой?</item>
+        <item>Почему ничего до сих пор не сделано?</item>
+        <item>Чья помощь нужна для решения этой проблемы?</item>
+        <item>Как случилось, что наши проиграли?</item>
+        <item>Как долго вы собирались там оставаться?</item>
+        <item>Как я смогу вас благодарить за это?</item>
+        <item>Что помогло вам победить такого сильного врага?</item>
+        <item>Откуда это приходит и как с этим бороться?</item>
+    </string-array>
+
+    <string-array name="question_english_ru_to_en_answers">
+        <item>What will you drink?</item>
+        <item>Where does she work?</item>
+        <item>Why don’t you like this restaurant?</item>
+        <item>Where did you want to buy an apartment?</item>
+        <item>Why must I go there?</item>
+        <item>When is he going to go there?</item>
+        <item>What pizza will we choose?</item>
+        <item>What have you brought us?</item>
+        <item>How could he cheat us?</item>
+        <item>What did she like there?</item>
+        <item>Why are you so afraid to speak with the boss?</item>
+        <item>When do I need to start the work?</item>
+        <item>How often did she come to you?</item>
+        <item>Why can’t we listen this music?</item>
+        <item>What could he do for her?</item>
+        <item>Why do they study so badly?</item>
+        <item>Why are you so sad?</item>
+        <item>How could you say this to her?</item>
+        <item>What has happen there?</item>
+        <item>What do you want to do in our city?</item>
+        <item>What kind of work can she do?</item>
+        <item>Why don’t they understand us?</item>
+        <item>How could you lose the keys?</item>
+        <item>How will we be able to help these people?</item>
+        <item>When did you leave this country?</item>
+        <item>What do they usually buy here?</item>
+        <item>Who are you afraid?</item>
+        <item>Why do you so like this work?</item>
+        <item>Why couldn’t you come yesterday?</item>
+        <item>Why didn’t you be in office for two hours?</item>
+        <item>How aren’t you afraid to go there alone?</item>
+        <item>What will he do there?</item>
+        <item>Why do these people so hate America?</item>
+        <item>Why didn’t I think about this before?</item>
+        <item>How could you forget about this?</item>
+        <item>When did you see him there?</item>
+        <item>What was you brought to this?</item>
+        <item>How did you call him? Doesn’t he get offended?</item>
+        <item>Why didn’t I buy this car? I liked it the most.</item>
+        <item>Why aren’t you ready to work?</item>
+        <item>How could he get rich so quick?</item>
+        <item>What is this depend on?</item>
+        <item>How are you going to help your poor brother?</item>
+        <item>Where did you buy this thing? I want the same too!</item>
+        <item>Why don’t you complain about this to your boss?</item>
+        <item>Why are you so shy? Come ! Everybody will be there!</item>
+        <item>What did you want to know about this person?</item>
+        <item>When will you stop to think about this?</item>
+        <item>Why does this police officer always get picked to us?</item>
+        <item>Which of our relatives lives in this city?</item>
+        <item>What did you have do in the business trip?</item>
+        <item>Why do you so get shocked? To my mind, everything is okay.</item>
+        <item>Why haven’t I asked her yet?</item>
+        <item>Why have you called her to the party?</item>
+        <item>Why didn’t I stay at home today?</item>
+        <item>Why are they so proud of this?</item>
+        <item>Why wasn’t this prepared in advance?</item>
+        <item>What might they do in a break?</item>
+        <item>What do you think about modern music? I think it’s terrible.</item>
+        <item>Why are you quit all time? Speak up, I must know the every worker’s opinion.</item>
+        <item>Whom were you going to show your new project?</item>
+        <item>Why are you so sure? Nobody knows this exactly!</item>
+        <item>What have they understood from my speech? I’m afraid that nothing.</item>
+        <item>Why do I believe you? I need proof, not simple worlds!</item>
+        <item>What do we need to bring with us?</item>
+        <item>Why is nothing done yet?</item>
+        <item>Whose help do we need to resolve this problem?</item>
+        <item>How did this happen that our team lost?</item>
+        <item>How long were you going to stay there?</item>
+        <item>How can I please you for this?</item>
+        <item>What helped you to win so strong enemy?</item>
+        <item>Where does it come and how fights with this?</item>
+    </string-array>
+
+    <string-array name="question_past_en_to_en">
+        <item>He could help us.</item>
+        <item>She was very rich.</item>
+        <item>Granddaddy fought in three wars.</item>
+        <item>She learned many things from her Granny.</item>
+        <item>You drove me back home.</item>
+        <item>You were her friends.</item>
+        <item>This man was my boss.</item>
+        <item>You knew it before.</item>
+        <item>He had to come yesterday.</item>
+        <item>You thought about this very often.</item>
+        <item>Mary saw us there.</item>
+        <item>They spoke English in Italy.</item>
+        <item>We ran home.</item>
+        <item>He looked like a very rich man.</item>
+        <item>This guy sent her flowers and gifts.</item>
+        <item>She bought us a chocolate cake.</item>
+        <item>They gave him money.</item>
+        <item>We taught him to do it right.</item>
+        <item>The people ate this cake.</item>
+        <item>You heard about this.</item>
+        <item>She tried not to think about this.</item>
+        <item>John brought food home.</item>
+        <item>She went there almost every morning.</item>
+        <item>You might do it.</item>
+        <item>She wanted to try to do this.</item>
+        <item>You needed to know it before.</item>
+        <item>She read this book.</item>
+        <item>He did it right.</item>
+        <item>You helped him a lot.</item>
+        <item>They came here too often.</item>
+        <item>We caught a baby dinosaur.</item>
+        <item>He sat at his place.</item>
+        <item>We hoped for this.</item>
+        <item>She spent for this a lot of time.</item>
+        <item>They tried, but nothing came of it.</item>
+        <item>They taught us a lot of good things.</item>
+        <item>You understood me.</item>
+    </string-array>
+
+    <string-array name="question_past_en_to_en_answer">
+        <item>Could he help us?</item>
+        <item>Was she very rich?</item>
+        <item>Did granddaddy fight in three wars?</item>
+        <item>Did she learn many things form her Granny?</item>
+        <item>Did you drive me back home?</item>
+        <item>Were you her friends?</item>
+        <item>Was this man my boss?</item>
+        <item>Did you know it before?</item>
+        <item>Did he have to come yesterday?</item>
+        <item>Did you think about this very often?</item>
+        <item>Did Mary see us there?</item>
+        <item>What language did they speak in Italy?</item>
+        <item>Who ran home? Did we run home?</item>
+        <item>Did he look like a very rich man?</item>
+        <item>Did this guy send her the flowers and gifts?</item>
+        <item>Did she buy us a chocolate cake?</item>
+        <item>Did they give him money?</item>
+        <item>Did we teach him to do it right?</item>
+        <item>Did the people eat this cake?</item>
+        <item>Did you hear about this?</item>
+        <item>Did she try not to think about this?</item>
+        <item>Did John bring food home?</item>
+        <item>Did she go there almost every morning?</item>
+        <item>Might you do it?</item>
+        <item>Did she want to try to do this?</item>
+        <item>Did you need to know it before?</item>
+        <item>Did she read this book?</item>
+        <item>Did he do it right?</item>
+        <item>Did you help him a lot?</item>
+        <item>Did they come here too often?</item>
+        <item>Did we catch a baby dinosaur?</item>
+        <item>Did he sit in his place?</item>
+        <item>Did we hope for this?</item>
+        <item>Did she spend for this a lot of time?</item>
+        <item>Did they try?</item>
+        <item>Did they teach us a lot of things?</item>
+        <item>Did you understand me?</item>
     </string-array>
 
     <string name="simple_verbs_1">
@@ -198,14 +428,14 @@
 
 
     <string name="irregular_verbs_v2_1">
-        got,came,understood,told,put,taught,bought,saw,heard,let,red,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
+        got,came,understood,told,put,taught,bought,saw,heard,let,read,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
     </string>
     <string name="irregular_verbs_v2_2">
         brought,forbade,said,flew,broke,stood,caught,built,showed,sold,kept,wore,spent,won,forgot,lost,meant,met,sent
     </string>
 
     <string name="irregular_verbs_v3_1">
-        got,come,understood,told,put,taught,bought,seen,heard,let,red,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone
+        got,come,understood,told,put,taught,bought,seen,heard,let,read,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone
     </string>
     <string name="irregular_verbs_v3_2">
         brought,forbidden,said,flown,broken,stood,caught,built,shown,sold,kept,worn,spent,won,forgotten,lost,meant,met,sent

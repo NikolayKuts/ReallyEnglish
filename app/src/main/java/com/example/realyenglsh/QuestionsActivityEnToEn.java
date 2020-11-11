@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -20,12 +21,16 @@ public class QuestionsActivityEnToEn extends AppCompatActivity {
     private TextView textViewAnswer;
     private Switch switchShowAnswer;
 
-    private List<String> arrayListQuestion;
-    private List<String> arrayListAnswer;
-    private List<String> arrayListQuestionWH;
-    private List<String> arrayListAnswerWH;
-    private List<String> arrayListQuestionAdvanced;
-    private List<String> arrayListAnswerAdvanced;
+    private List<Integer> arrayListCheckBoxes = new ArrayList<>();
+
+    private List<String> arrayListOfLessonQuestions = new ArrayList<>();
+    private List<String> arrayListOfLessonAnswer = new ArrayList<>();
+
+    private CheckBox checkBoxEnToRu;
+    private CheckBox checkBoxEnToRuWH;
+    private CheckBox checkBoxEnToRuAdvance;
+    private CheckBox checkBoxRuToEn;
+    private CheckBox checkBoxPastEnToEn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +40,19 @@ public class QuestionsActivityEnToEn extends AppCompatActivity {
         textViewQuestion = findViewById(R.id.textViewQuestion);
         textViewAnswer = findViewById(R.id.textViewAnswer);
         switchShowAnswer = findViewById(R.id.switchShowAnswer);
+        checkBoxEnToRu = findViewById(R.id.checkBoxEnToEn);
+        checkBoxEnToRuWH = findViewById(R.id.checkBoxEnToEnWH);
+        checkBoxEnToRuAdvance = findViewById(R.id.checkBoxEnToEnAdvance);
+        checkBoxRuToEn = findViewById(R.id.checkBoxRuToEn);
+        checkBoxPastEnToEn = findViewById(R.id.checkBoxPastEnToEn);
 
-        arrayListQuestion = Arrays.asList(getResources().getStringArray(R.array.question_english));
-        arrayListAnswer = Arrays.asList(getResources().getStringArray(R.array.question_english_answers));
+        checkBoxEnToRu.setOnClickListener(new OnCheckBoxChangeListener(0, checkBoxEnToRu, arrayListCheckBoxes));
+        checkBoxEnToRuWH.setOnClickListener(new OnCheckBoxChangeListener(1, checkBoxEnToRuWH, arrayListCheckBoxes));
+        checkBoxEnToRuAdvance.setOnClickListener(new OnCheckBoxChangeListener(2, checkBoxEnToRuAdvance, arrayListCheckBoxes));
+        checkBoxRuToEn.setOnClickListener(new OnCheckBoxChangeListener(3, checkBoxRuToEn, arrayListCheckBoxes));
 
-        arrayListQuestionWH = Arrays.asList(getResources().getStringArray(R.array.question_english_wh));
-        arrayListAnswerWH = Arrays.asList(getResources().getStringArray(R.array.question_english_wh_answer));
+        checkBoxPastEnToEn.setOnClickListener(new OnCheckBoxChangeListener_0(4, checkBoxPastEnToEn));
 
-        arrayListQuestionAdvanced = Arrays.asList(getResources().getStringArray(R.array.question_english_advanced));
-        arrayListAnswerAdvanced = Arrays.asList(getResources().getStringArray(R.array.question_english_advanced_answer));
-
-
-        
 
         switchShowAnswer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -59,33 +65,85 @@ public class QuestionsActivityEnToEn extends AppCompatActivity {
             }
         });
 
+        arrayListCheckBoxes.add(0);
+        setContentLesson();
 
-        String string = "";
 
-        String[] array = string.split("(\\s+)?\\n(\\n)?");
-        Log.i("log", Arrays.asList(array).toString());
-        Log.i("log", "--------length--------" +array.length);
-        int i = 0;
-        for (String s : array) {
-            if (s.matches(".+[А-Яа-я].\\?")) {
-                Log.i("log", "<item>" + s + "</item>");
-            }
+    }
+
+    private void setContentLesson() {
+        arrayListOfLessonQuestions.clear();
+        arrayListOfLessonAnswer.clear();
+
+        if (arrayListCheckBoxes.contains(0)) {
+            addFromResources(R.array.question_english, R.array.question_english_answers);
         }
-
-        Log.i("log", "--------length--------" +array.length);
-        i = 0;
-        for (String s : array) {
-            if (s.matches(".+[^А-Яа-я].\\?")) {
-                Log.i("log", "<item>" + s + "</item>");
-            }
+        if (arrayListCheckBoxes.contains(1)) {
+            addFromResources(R.array.question_english_wh, R.array.question_english_wh_answers);
         }
+        if (arrayListCheckBoxes.contains(2)) {
+            addFromResources(R.array.question_english_advanced, R.array.question_english_advanced_answers);
+        }
+        if (arrayListCheckBoxes.contains(3)) {
+            addFromResources(R.array.question_english_ru_to_en, R.array.question_english_ru_to_en_answers);
+        }
+        if (arrayListCheckBoxes.contains(4)) {
+            addFromResources(R.array.question_past_en_to_en, R.array.question_past_en_to_en_answer);
+        }
+    }
+
+    private void addFromResources(int idQuestion, int idAnswer) {
+        arrayListOfLessonQuestions.addAll(Arrays.asList(getResources().getStringArray(idQuestion)));
+        arrayListOfLessonAnswer.addAll(Arrays.asList(getResources().getStringArray(idAnswer)));
     }
 
 
     public void onClickNextQuestion(View view) {
         Random random = new Random();
-        int randomNumber = random.nextInt(arrayListQuestion.size());
-        textViewQuestion.setText(arrayListQuestion.get(randomNumber));
-        textViewAnswer.setText(arrayListAnswer.get(randomNumber));
+        int randomNumber = random.nextInt(arrayListOfLessonQuestions.size());
+        textViewQuestion.setText(arrayListOfLessonQuestions.get(randomNumber));
+        textViewAnswer.setText(arrayListOfLessonAnswer.get(randomNumber));
+    }
+
+    private class OnCheckBoxChangeListener implements View.OnClickListener{
+        private int id;
+        private CheckBox checkBox;
+        private List<Integer> listOfCheckBoxes;
+
+        public OnCheckBoxChangeListener(int id, CheckBox checkBox, List<Integer> listOfCheckBoxes) {
+            this.id = id;
+            this.checkBox = checkBox;
+            this.listOfCheckBoxes = listOfCheckBoxes;
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (checkBox.isChecked()) {
+                listOfCheckBoxes.add(id);
+            } else {
+                listOfCheckBoxes.remove(listOfCheckBoxes.indexOf(id));
+            }
+            setContentLesson();
+        }
+    }
+
+    private class OnCheckBoxChangeListener_0 implements View.OnClickListener {
+        private int id;
+        private CheckBox checkBox;
+
+        OnCheckBoxChangeListener_0(int id, CheckBox checkBox) {
+            this.id = id;
+            this.checkBox = checkBox;
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (checkBox.isChecked()) {
+                arrayListCheckBoxes.add(id);
+            } else {
+                arrayListCheckBoxes.remove(arrayListCheckBoxes.indexOf(id));
+            }
+            setContentLesson();
+        }
     }
 }
