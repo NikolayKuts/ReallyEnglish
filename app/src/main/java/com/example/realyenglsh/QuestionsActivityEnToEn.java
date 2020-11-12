@@ -46,12 +46,11 @@ public class QuestionsActivityEnToEn extends AppCompatActivity {
         checkBoxRuToEn = findViewById(R.id.checkBoxRuToEn);
         checkBoxPastEnToEn = findViewById(R.id.checkBoxPastEnToEn);
 
-        checkBoxEnToRu.setOnClickListener(new OnCheckBoxChangeListener(0, checkBoxEnToRu, arrayListCheckBoxes));
-        checkBoxEnToRuWH.setOnClickListener(new OnCheckBoxChangeListener(1, checkBoxEnToRuWH, arrayListCheckBoxes));
-        checkBoxEnToRuAdvance.setOnClickListener(new OnCheckBoxChangeListener(2, checkBoxEnToRuAdvance, arrayListCheckBoxes));
-        checkBoxRuToEn.setOnClickListener(new OnCheckBoxChangeListener(3, checkBoxRuToEn, arrayListCheckBoxes));
-
-        checkBoxPastEnToEn.setOnClickListener(new OnCheckBoxChangeListener_0(4, checkBoxPastEnToEn));
+        checkBoxEnToRu.setOnClickListener(new OnCheckBoxChangeListener(0, checkBoxEnToRu));
+        checkBoxEnToRuWH.setOnClickListener(new OnCheckBoxChangeListener(1, checkBoxEnToRuWH));
+        checkBoxEnToRuAdvance.setOnClickListener(new OnCheckBoxChangeListener(2, checkBoxEnToRuAdvance));
+        checkBoxRuToEn.setOnClickListener(new OnCheckBoxChangeListener(3, checkBoxRuToEn));
+        checkBoxPastEnToEn.setOnClickListener(new OnCheckBoxChangeListener(4, checkBoxPastEnToEn));
 
 
         switchShowAnswer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -105,33 +104,33 @@ public class QuestionsActivityEnToEn extends AppCompatActivity {
         textViewAnswer.setText(arrayListOfLessonAnswer.get(randomNumber));
     }
 
-    private class OnCheckBoxChangeListener implements View.OnClickListener{
+//    private class OnCheckBoxChangeListener implements View.OnClickListener{
+//        private int id;
+//        private CheckBox checkBox;
+//        private List<Integer> listOfCheckBoxes;
+//
+//        public OnCheckBoxChangeListener(int id, CheckBox checkBox, List<Integer> listOfCheckBoxes) {
+//            this.id = id;
+//            this.checkBox = checkBox;
+//            this.listOfCheckBoxes = listOfCheckBoxes;
+//        }
+//
+//        @Override
+//        public void onClick(View v) {
+//            if (checkBox.isChecked()) {
+//                listOfCheckBoxes.add(id);
+//            } else {
+//                listOfCheckBoxes.remove(listOfCheckBoxes.indexOf(id));
+//            }
+//            setContentLesson();
+//        }
+//    }
+
+    private class OnCheckBoxChangeListener implements View.OnClickListener {
         private int id;
         private CheckBox checkBox;
-        private List<Integer> listOfCheckBoxes;
 
-        public OnCheckBoxChangeListener(int id, CheckBox checkBox, List<Integer> listOfCheckBoxes) {
-            this.id = id;
-            this.checkBox = checkBox;
-            this.listOfCheckBoxes = listOfCheckBoxes;
-        }
-
-        @Override
-        public void onClick(View v) {
-            if (checkBox.isChecked()) {
-                listOfCheckBoxes.add(id);
-            } else {
-                listOfCheckBoxes.remove(listOfCheckBoxes.indexOf(id));
-            }
-            setContentLesson();
-        }
-    }
-
-    private class OnCheckBoxChangeListener_0 implements View.OnClickListener {
-        private int id;
-        private CheckBox checkBox;
-
-        OnCheckBoxChangeListener_0(int id, CheckBox checkBox) {
+        OnCheckBoxChangeListener(int id, CheckBox checkBox) {
             this.id = id;
             this.checkBox = checkBox;
         }

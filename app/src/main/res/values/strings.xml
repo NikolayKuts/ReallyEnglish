@@ -418,6 +418,9 @@
     <string name="simple_verbs_2">
         believe,happen,allow,try,say,look for,compare,smile,use,call,laugh,demand,pour,clean,count on,dress,walk,command,manage,agree,recommend,wash,talk,promise,remember,seem,visit,prefer,thank,study,refuse
     </string>
+    <string name="simple_verbs_3">
+        apply,punish,excuse,arrange,deceive,suit,lift,cook,wonder,kill,check,die,advise,worry,present,change,argue,shout,depend,lie(лгать),cancel,convince,decide,repeat,scare,doubt,watch,harm,carry,fail,close,hurry,save
+    </string>
 
     <string name="irregular_verbs_v1_1">
         get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go
@@ -425,13 +428,18 @@
     <string name="irregular_verbs_v1_2">
         bring,forbid,say,fly,break,stand,catch,build,show,sell,keep,wear,spend,win,forget,lose,mean,meet,send
     </string>
-
+    <string name="irregular_verbs_v1_3">
+        feed,steal,cut,shoot,hold,held,make clear,feel,feel for,leave,upset,fall,sing,dream,choose,lie,deal,prove,spoil
+    </string>
 
     <string name="irregular_verbs_v2_1">
         got,came,understood,told,put,taught,bought,saw,heard,let,read,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
     </string>
     <string name="irregular_verbs_v2_2">
         brought,forbade,said,flew,broke,stood,caught,built,showed,sold,kept,wore,spent,won,forgot,lost,meant,met,sent
+    </string>
+    <string name="irregular_verbs_v2_3">
+        fed,stole,cut,shot,held,made clear,felt,felt for,left,upset,fell,sang,dreamed,chose,lay,dealt,proved,spoiled
     </string>
 
     <string name="irregular_verbs_v3_1">
@@ -440,13 +448,17 @@
     <string name="irregular_verbs_v3_2">
         brought,forbidden,said,flown,broken,stood,caught,built,shown,sold,kept,worn,spent,won,forgotten,lost,meant,met,sent
     </string>
+    <string name="irregular_verbs_v3_3">
+        fed,stolen,cut,shot,held,made clear,felt,felt for,left,upset,fallen,sung,dreamed,chosen,lain,dealt,proven,spoiled
+    </string>
+
 
     <string name="subjects">
         Sam,Frank,defense,girl,government,people,hamburger,dog,grandfather,party,bird,shark,manager,friend,
     </string>
 
     <string name="names">
-        Sam,Frank,Britney,Selena,Bruno,Rebeca,Justin,Avril Lavigne,Alexandra,Taylor
+        Sam,Frank,Britney,Selena,Bruno,Rebeca,Justin,Avril Lavigne,Alexandra,Taylor,my brother,her sister,his friend
     </string>
 
     <string name="adjective">

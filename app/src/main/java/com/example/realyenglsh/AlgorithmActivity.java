@@ -47,11 +47,6 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfLessonVerbsIrregularV1;
     private List<String> listOfLessonVerbsIrregularV2;
     private List<String> listOfLessonVerbsIrregularV3;
-    //    private List<List<String>> listOfLessonVerbsIrregularV1;
-//    private List<List<String>> listOfLessonVerbsIrregularV2;
-//    private List<List<String>> listOfLessonVerbsIrregularV3;
-//
-    ;
 
 
     private List<Integer> idTenseObject, listOfBackgroundImages, listOfImageTypeOfSentence;
@@ -118,28 +113,14 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfVerbsStrong = getArrayListFromStringResources(R.array.strong_verbs);
         listOfAdjective = getArrayListFromStringResources(null, R.string.adjective);
 
-
-        List<String> listOfVerbsSimple_1 = getArrayListFromStringResources(null, R.string.simple_verbs_1);
-        List<String> listOfVerbsIrregularV1 = getArrayListFromStringResources(null, R.string.irregular_verbs_v1_1);
-        List<String> listOfVerbsIrregularV2 = getArrayListFromStringResources(null, R.string.irregular_verbs_v2_1);
-        List<String> listOfVerbsIrregularV3 = getArrayListFromStringResources(null, R.string.irregular_verbs_v3_1);
-
-        List<String> listOfVerbsSimple_2 = getArrayListFromStringResources(null, R.string.simple_verbs_2);
-        List<String> listOfVerbsIrregularV1_2 = getArrayListFromStringResources(null, R.string.irregular_verbs_v1_2);
-        List<String> listOfVerbsIrregularV2_2 = getArrayListFromStringResources(null, R.string.irregular_verbs_v2_2);
-        List<String> listOfVerbsIrregularV3_2 = getArrayListFromStringResources(null, R.string.irregular_verbs_v3_2);
-
         listOfLessonVerbsSimple = new ArrayList<>();
         listOfLessonVerbsIrregularV1 = new ArrayList<>();
         listOfLessonVerbsIrregularV2 = new ArrayList<>();
         listOfLessonVerbsIrregularV3 = new ArrayList<>();
 
-        listOfMyList.add(new MyListOfVerbs("Verbs # 1 (1 - 50)", true, listOfVerbsSimple_1, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3));
-        listOfMyList.add(new MyListOfVerbs("Verbs # 2 (51 - 100)", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
-        listOfMyList.add(new MyListOfVerbs("Verbs # 3", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
-        listOfMyList.add(new MyListOfVerbs("Verbs # 4", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
-        listOfMyList.add(new MyListOfVerbs("Verbs # 5", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
-        listOfMyList.add(new MyListOfVerbs("Verbs # 6", listOfVerbsSimple_2, listOfVerbsIrregularV1_2, listOfVerbsIrregularV2_2, listOfVerbsIrregularV3_2));
+        listOfMyList.add(getMyListOfVerbs("Verbs # 1 (1 - 50)", true, R.string.simple_verbs_1, R.string.irregular_verbs_v1_1, R.string.irregular_verbs_v2_1, R.string.irregular_verbs_v3_1));
+        listOfMyList.add(getMyListOfVerbs("Verbs # 2 (51 - 100)", false, R.string.simple_verbs_2, R.string.irregular_verbs_v1_2, R.string.irregular_verbs_v2_2, R.string.irregular_verbs_v3_2));
+        listOfMyList.add(getMyListOfVerbs("Verbs # 3 (101 - 150)", false, R.string.simple_verbs_3, R.string.irregular_verbs_v1_3, R.string.irregular_verbs_v2_3, R.string.irregular_verbs_v3_3));
 
         setCheckedMyListOfVerbs();
 
@@ -216,7 +197,7 @@ public class AlgorithmActivity extends AppCompatActivity {
             } else {    // ToBe
                 int randomNumberOfToBe = random.nextInt(3);
 
-                if (randomNumberOfToBe == 0) {  // - ing
+                if (randomNumberOfToBe == 0) {   // - ing
                     sentence = getSentenceWithToBeIngForm(name, simpleIrregularVerb);
                 } else if (randomNumberOfToBe == 1) {  // adjective
                     String adjective = getWordFromList(listOfAdjective);
@@ -449,4 +430,14 @@ public class AlgorithmActivity extends AppCompatActivity {
         wrongV3PassiveVerb = simpleIrregularVerb;
         return sentence;
     }
+
+    private MyListOfVerbs getMyListOfVerbs(String name, boolean b, int idResSimpleVerb, int idResIrregularV1, int idResIrregularV2, int idResIrregularV3) {
+        List<String> listOfVerbsSimple = getArrayListFromStringResources(null, idResSimpleVerb);
+        List<String> listOfVerbsIrregularV1 = getArrayListFromStringResources(null, idResIrregularV1);
+        List<String> listOfVerbsIrregularV2 = getArrayListFromStringResources(null, idResIrregularV2);
+        List<String> listOfVerbsIrregularV3 = getArrayListFromStringResources(null, idResIrregularV3);
+
+        return new MyListOfVerbs(name, b, listOfVerbsSimple, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3);
+    }
+
 }
