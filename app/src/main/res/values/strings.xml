@@ -429,7 +429,7 @@
         bring,forbid,say,fly,break,stand,catch,build,show,sell,keep,wear,spend,win,forget,lose,mean,meet,send
     </string>
     <string name="irregular_verbs_v1_3">
-        feed,steal,cut,shoot,hold,held,make clear,feel,feel for,leave,upset,fall,sing,dream,choose,lie,deal,prove,spoil
+        feed,steal,cut,shoot,hold,make clear,feel,feel for,leave,upset,fall,sing,dream,choose,lie,deal,prove,spoil
     </string>
 
     <string name="irregular_verbs_v2_1">
@@ -464,4 +464,40 @@
     <string name="adjective">
         hungry,crazy,funny,big,unique,red,dark,green,rich,young,strong,smart,lazy
     </string>
+
+    <string-array name="negative_sentence_ru">
+        <item>Никто ранее не пытался сдулать такую вещь</item>
+        <item>У меня нет никакого(кокого-либо) телевизора</item>
+        <item>Я не видел никаких(каких-либо) ключей на столе</item>
+        <item>Никто из моих друзей не может позволить (иметь возможность, быть в состоянии) себе такую машину</item>
+        <item>Ничто не могло принести им победу.</item>
+        <item>Я не думал ничего(чего-либо) плохого</item>
+        <item>Он не принес никакой(какой-либо) еды</item>
+        <item>Никто не собираеться соглашаться с тобой</item>
+        <item>Я не слышал никаких(каких-либо) новостей о этом парне</item>
+        <item>Никто не хотел даже слышать об этом</item>
+        <item>Мы не нуждаемся в никакой(какой-либо)помощи зесь</item>
+        <item>Я никого не боюсь</item>
+        <item>Я не встретил никого здесь из нашего города</item>
+        <item>Она не стисняется никого(кого-льбо) и ничего(чего-либо)</item>
+        <item>Он не сможет ничего(чего-либо) сделать с этим</item>
+    </string-array>
+
+    <string-array name="negative_sentence_en">
+        <item>Nobody tried to do such things before.</item>
+        <item>I don’t have any TV.\nI have no TV!</item>
+        <item>I didn’t see any keys on the table.\nI saw no keys on the table.</item>
+        <item>None of my friends can afford such a car.</item>
+        <item>Nothing could bring them a victory.</item>
+        <item>I didn’t think anything bad.\nI thought nothing bad.</item>
+        <item>He didn’t bring any food to home.\nHe brought no food to home.</item>
+        <item>Nobody is going to argue with you.</item>
+        <item>I didn’t hear any news about this guy.\nI heard no news about this guy.</item>
+        <item>Nobody wanted even to hear about this.</item>
+        <item>We don’t need any help here.\nWe need no help here.</item>
+        <item>I am not afraid of anybody.\nI am afraid of nobody.</item>
+        <item>I didn’t meet anybody there from our city.\nI met nobody there from out city.</item>
+        <item>She isn’t shy of anybody and anything.\nShe is shy of nobody and nothing.</item>
+        <item>He won’t be able to do anything with that.\nHe will be able to do nothing with that.</item>
+    </string-array>
 </resources>

@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,14 +51,15 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfLessonVerbsIrregularV3;
 
 
-    private List<Integer> idTenseObject, listOfBackgroundImages, listOfImageTypeOfSentence;
+    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence
+            , listIdBackgroundImageNegativeSentence, listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
     private List<String> listOfNames;
 
     private List<String> listOfVerbsStrong;
     private List<String> listOfAdjective;
 
     private String wrongSentence = "", wrongV3PassiveVerb = "";
-    private int randomNumberOfTense = -1;
+    private int randomNumberOfTense = -1, randomNumberTypeOfSentence = -1;
     private boolean isSwitchShowPromptOn;
 
     @Override
@@ -66,19 +69,22 @@ public class AlgorithmActivity extends AppCompatActivity {
         imageViewTenseObject = findViewById(R.id.imageTenseObject);
         imageViewTenseObject.setImageResource(R.drawable.coach);
         imageViewTypeOfSentence = findViewById(R.id.imageViewTypeOfSentence);
-        textViewSentence = findViewById(R.id.textViewSentence);
-        textViewSentence = findViewById(R.id.textViewSentence);
 
+        textViewSentence = findViewById(R.id.textViewSentence);
+        textViewSentence = findViewById(R.id.textViewSentence);
         textViewV1 = findViewById(R.id.textViewV1);
         textViewV2 = findViewById(R.id.textViewV2);
         textViewV3 = findViewById(R.id.textViewV3);
-        linearLayoutVerbsForm = findViewById(R.id.linearLayoutVerbForms);
-        buttonTestDialog = findViewById(R.id.buttonShowDialog);
 
+        buttonTestDialog = findViewById(R.id.buttonShowDialog);
         buttonPutIntoDBWrongSentence = findViewById(R.id.buttonToTableActivity);
+
+        linearLayoutVerbsForm = findViewById(R.id.linearLayoutVerbForms);
+        constraintLayout = findViewById(R.id.windowAlgorithmActivity);
+
         switchIrregularPastVerb = findViewById(R.id.switchIrregularVerb);
         switchShowPrompt = findViewById(R.id.switchShowPrompt);
-        constraintLayout = findViewById(R.id.windowAlgorithmActivity);
+
         checkBoxTenseFuture = findViewById(R.id.checkBoxTenseFuture);
         checkBoxTensePresent = findViewById(R.id.checkBoxTensePresent);
         checkBoxTensePast = findViewById(R.id.checkBoxTensePast);
@@ -96,18 +102,12 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
-        idTenseObject = new ArrayList<>();
-        idTenseObject.add(R.drawable.spaceship);
-        idTenseObject.add(R.drawable.car);
-        idTenseObject.add(R.drawable.coach);
-
-        listOfBackgroundImages = new ArrayList<>();
-        listOfBackgroundImages.add(R.drawable.tense_way_future);
-        listOfBackgroundImages.add(R.drawable.tense_way_present);
-        listOfBackgroundImages.add(R.drawable.tense_way_past);
-
-        listOfImageTypeOfSentence = new ArrayList<>();
-        addDrawableResources(listOfImageTypeOfSentence, R.drawable.minus, R.drawable.plus, R.drawable.qa_mark);
+        listIdTenseObject = getListIdDrawableResources(R.drawable.spaceship, R.drawable.car, R.drawable.coach);
+        listIdImageTypeOfSentence = getListIdDrawableResources(R.drawable.minus, R.drawable.plus, R.drawable.qa_mark, R.drawable.qa_mark_minus);
+        listIdBackgroundImages = getListIdDrawableResources(R.drawable.tense_way_future, R.drawable.tense_way_present, R.drawable.tense_way_past);
+        listIdBackgroundImageNegativeSentence = getListIdDrawableResources(R.drawable.tense_way_future_negative, R.drawable.tense_way_present_negative, R.drawable.tense_way_past_negative);
+        listIdBackgroundImageQuestionSentence = getListIdDrawableResources(R.drawable.tense_way_future_qu, R.drawable.tense_way_present_qu, R.drawable.tense_way_past_qu);
+        listIdBackgroundImageNegativeQuestionSentence = getListIdDrawableResources(R.drawable.tense_way_future_negative_qu, R.drawable.tense_way_present_negative_qu, R.drawable.tense_way_past_negative_qu);
 
         listOfNames = getArrayListFromStringResources(R.array.personal_pronouns, R.string.names);
         listOfVerbsStrong = getArrayListFromStringResources(R.array.strong_verbs);
@@ -165,12 +165,15 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     public void onClickNext(View view) {
         Random random = new Random();
-        setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
+        randomNumberTypeOfSentence = random.nextInt(listIdImageTypeOfSentence.size());
+        Log.i("log", "" + randomNumberTypeOfSentence);
         randomNumberOfTense = getRandomNumberOfTenseOrTypeOfVerb(checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast);  // 0 - future, 1 - present, 2 - past
+        setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
         if (randomNumberOfTense != -1) {
+            imageViewTenseObject.setImageResource(listIdTenseObject.get(randomNumberOfTense));
+            imageViewTypeOfSentence.setImageResource(listIdImageTypeOfSentence.get(randomNumberTypeOfSentence));
             imageViewTenseObject.setVisibility(View.VISIBLE);
-            imageViewTenseObject.setImageResource(idTenseObject.get(randomNumberOfTense));
-            imageViewTenseObject.setVisibility(View.VISIBLE);
+            imageViewTypeOfSentence.setVisibility(View.VISIBLE);
         } else {
             imageViewTenseObject.setVisibility(View.INVISIBLE);
         }
@@ -248,9 +251,18 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void setConstraintLayoutBackgroundImage(boolean b) {
         if (b) {
-            constraintLayout.setBackground(getResources().getDrawable(listOfBackgroundImages.get(randomNumberOfTense)));
+            if (randomNumberTypeOfSentence == 0) {  // [-]
+                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageNegativeSentence.get(randomNumberOfTense)));
+            } else if (randomNumberTypeOfSentence == 1) {   // [+]
+                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImages.get(randomNumberOfTense)));
+            } else if (randomNumberTypeOfSentence == 2) {   // [?]
+                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageQuestionSentence.get(randomNumberOfTense)));
+            } else {    // [-?]
+                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageNegativeQuestionSentence.get(randomNumberOfTense)));
+            }
 //                    getWindow().setBackgroundDrawableResource(R.drawable.table_filled);
         } else {
             constraintLayout.setBackground(getResources().getDrawable(R.drawable.tense_way_base));
@@ -281,10 +293,12 @@ public class AlgorithmActivity extends AppCompatActivity {
         return stringList;
     }
 
-    private void addDrawableResources(List<Integer> list, int... id) {
+    private ArrayList<Integer> getListIdDrawableResources(int... id) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i : id) {
-            list.add(i);
+            arrayList.add(i);
         }
+        return arrayList;
     }
 
     private void addWrongV3VerbToDB(String wrongV3Verb) {

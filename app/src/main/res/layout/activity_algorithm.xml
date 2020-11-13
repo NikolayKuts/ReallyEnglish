@@ -11,7 +11,7 @@
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:onClick="onClickNext"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,12 +24,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="675dp" />
+        app:layout_constraintGuide_percent="0.9233926" />
 
     <ImageView
         android:id="@+id/imageTenseObject"
-        android:layout_width="181dp"
-        android:layout_height="148dp"
+        android:layout_width="172dp"
+        android:layout_height="142dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,14 +44,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5116279" />
+        app:layout_constraintGuide_percent="0.5512996" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="508dp" />
+        app:layout_constraintGuide_percent="0.36" />
 
     <TextView
         android:id="@+id/textViewSentence"
@@ -70,12 +70,13 @@
         android:id="@+id/buttonToTableActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
         android:text="Wrong Sentence"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.905" />
+        app:layout_constraintVertical_bias="0.936" />
 
     <Switch
         android:id="@+id/switchIrregularVerb"
@@ -95,24 +96,24 @@
         android:layout_height="46dp"
         android:layout_marginBottom="43dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonNext"
-        app:layout_constraintEnd_toStartOf="@+id/buttonToTableActivity"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.958"
+        app:layout_constraintVertical_bias="0.662"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <ImageView
         android:id="@+id/imageViewTypeOfSentence"
-        android:layout_width="79dp"
-        android:layout_height="69dp"
+        android:layout_width="63dp"
+        android:layout_height="62dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageTenseObject"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="@+id/imageTenseObject"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0.024"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/plus" />
 
     <CheckBox

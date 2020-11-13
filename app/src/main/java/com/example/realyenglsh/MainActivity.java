@@ -52,4 +52,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QuestionsActivityEnToEn.class);
         startActivity(intent);
     }
+
+    public void onClickToDoubleNegativeActivity(View view) {
+        Intent intent = new Intent(this, DoubleNegativeActivity.class);
+        startActivity(intent);
+    }
 }
