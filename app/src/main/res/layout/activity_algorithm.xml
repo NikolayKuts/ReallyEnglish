@@ -97,10 +97,10 @@
         android:layout_marginBottom="43dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonNext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.662"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <ImageView
@@ -266,5 +266,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:layout_constraintVertical_bias="0.296" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutCheckBoxes"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.356">
+
+        <CheckBox
+            android:id="@+id/checkBoxMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:layout_margin="3dp"
+            android:textColor="@color/dialog_check_box_checked_color"
+            android:text="-" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:layout_margin="3dp"
+            android:textColor="@color/dialog_check_box_checked_color"
+            android:text="+" />
+
+        <CheckBox
+            android:id="@+id/checkBoxQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:layout_margin="3dp"
+            android:textColor="@color/dialog_check_box_checked_color"
+            android:text="?" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMinusQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:layout_margin="3dp"
+            android:textColor="@color/dialog_check_box_checked_color"
+            android:text="-?" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

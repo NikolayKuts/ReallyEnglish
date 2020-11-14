@@ -35,6 +35,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     private TextView textViewV1, textViewV2, textViewV3;
     private CheckBox checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast;
     private CheckBox checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe;
+    private CheckBox checkBoxTypeOfSentenceMinus, checkBoxTypeOfSentencePlus, checkBoxTypeOfSentenceQu, checkBoxTypeOfSentenceMinusQu;
     private Switch switchShowPrompt, switchIrregularPastVerb;
     private MainViewModel viewModel;
     private ConstraintLayout constraintLayout;
@@ -51,8 +52,8 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfLessonVerbsIrregularV3;
 
 
-    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence
-            , listIdBackgroundImageNegativeSentence, listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
+    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence, listIdBackgroundImageNegativeSentence
+            , listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
     private List<String> listOfNames;
 
     private List<String> listOfVerbsStrong;
@@ -91,6 +92,11 @@ public class AlgorithmActivity extends AppCompatActivity {
         checkBoxTypeOfVerbSimple = findViewById(R.id.checkBoxSimple);
         checkBoxTypeOfVerbStrong = findViewById(R.id.checkBoxStrong);
         checkBoxTypeOfVerbToBe = findViewById(R.id.checkBoxToBe);
+        checkBoxTypeOfSentenceMinus = findViewById(R.id.checkBoxMinus);
+        checkBoxTypeOfSentencePlus = findViewById(R.id.checkBoxPlus);
+        checkBoxTypeOfSentenceQu = findViewById(R.id.checkBoxQuestion);
+        checkBoxTypeOfSentenceMinusQu = findViewById(R.id.checkBoxMinusQuestion);
+
 
         checkBoxTenseFuture.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTenseFuture, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
         checkBoxTensePresent.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTensePresent, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
@@ -103,7 +109,8 @@ public class AlgorithmActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
         listIdTenseObject = getListIdDrawableResources(R.drawable.spaceship, R.drawable.car, R.drawable.coach);
-        listIdImageTypeOfSentence = getListIdDrawableResources(R.drawable.minus, R.drawable.plus, R.drawable.qa_mark, R.drawable.qa_mark_minus);
+        listIdImageTypeOfSentence = getListIdDrawableResources(R.drawable.minus, R.drawable.plus, R.drawable.qu_mark, R.drawable.qu_mark_minus);
+
         listIdBackgroundImages = getListIdDrawableResources(R.drawable.tense_way_future, R.drawable.tense_way_present, R.drawable.tense_way_past);
         listIdBackgroundImageNegativeSentence = getListIdDrawableResources(R.drawable.tense_way_future_negative, R.drawable.tense_way_present_negative, R.drawable.tense_way_past_negative);
         listIdBackgroundImageQuestionSentence = getListIdDrawableResources(R.drawable.tense_way_future_qu, R.drawable.tense_way_present_qu, R.drawable.tense_way_past_qu);
@@ -165,19 +172,15 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     public void onClickNext(View view) {
         Random random = new Random();
-        randomNumberTypeOfSentence = random.nextInt(listIdImageTypeOfSentence.size());
-        Log.i("log", "" + randomNumberTypeOfSentence);
-        randomNumberOfTense = getRandomNumberOfTenseOrTypeOfVerb(checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast);  // 0 - future, 1 - present, 2 - past
+        randomNumberTypeOfSentence = getRandomNumberOnChecked(checkBoxTypeOfSentenceMinus, checkBoxTypeOfSentencePlus, checkBoxTypeOfSentenceQu, checkBoxTypeOfSentenceMinusQu);
+        Log.i("log", "randomNumberType" + randomNumberTypeOfSentence);
+        randomNumberOfTense = getRandomNumberOnChecked(checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast);   // 0 - future, 1 - present, 2 - past
+        Log.i("log", "randomNumberTense" + randomNumberTypeOfSentence);
         setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
-        if (randomNumberOfTense != -1) {
-            imageViewTenseObject.setImageResource(listIdTenseObject.get(randomNumberOfTense));
-            imageViewTypeOfSentence.setImageResource(listIdImageTypeOfSentence.get(randomNumberTypeOfSentence));
-            imageViewTenseObject.setVisibility(View.VISIBLE);
-            imageViewTypeOfSentence.setVisibility(View.VISIBLE);
-        } else {
-            imageViewTenseObject.setVisibility(View.INVISIBLE);
-        }
-//        imageViewTypeOfSentence.setImageResource(listOfImageTypeOfSentence.get(randomNumberImageTypeOfSentence));
+
+        setImage(imageViewTenseObject, listIdTenseObject, randomNumberOfTense);
+        setImage(imageViewTypeOfSentence, listIdImageTypeOfSentence, randomNumberTypeOfSentence);
+
         setEmptyOnTextViewOfFormsOfIrregularVerb();
         wrongSentence = "";
         wrongV3PassiveVerb = "";
@@ -187,7 +190,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfLessonVerbsSimpleIrregular.addAll(listOfLessonVerbsIrregularV1);
         String simpleIrregularVerb = getWordFromList(listOfLessonVerbsSimpleIrregular);
 
-        int randomNumberOfSentence = getRandomNumberOfTenseOrTypeOfVerb(checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe);   // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
+        int randomNumberOfSentence = getRandomNumberOnChecked(checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe);    // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
         if (randomNumberOfSentence == -1) {
             showToast();
         } else {
@@ -253,15 +256,17 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void setConstraintLayoutBackgroundImage(boolean b) {
-        if (b) {
+        if (b && randomNumberOfTense != -1) {
             if (randomNumberTypeOfSentence == 0) {  // [-]
                 constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageNegativeSentence.get(randomNumberOfTense)));
             } else if (randomNumberTypeOfSentence == 1) {   // [+]
                 constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImages.get(randomNumberOfTense)));
             } else if (randomNumberTypeOfSentence == 2) {   // [?]
                 constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageQuestionSentence.get(randomNumberOfTense)));
-            } else {    // [-?]
+            } else if (randomNumberTypeOfSentence == 3) {    // [-?]
                 constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageNegativeQuestionSentence.get(randomNumberOfTense)));
+            } else {
+                constraintLayout.setBackground(getResources().getDrawable(R.drawable.tense_way_base));
             }
 //                    getWindow().setBackgroundDrawableResource(R.drawable.table_filled);
         } else {
@@ -313,20 +318,17 @@ public class AlgorithmActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "the sentence is added to the database", Toast.LENGTH_SHORT).show();
     }
 
-    private int getRandomNumberOfTenseOrTypeOfVerb(CheckBox cb1, CheckBox cb2, CheckBox cb3) {
+    private int getRandomNumberOnChecked(CheckBox... checkBoxes) {
         Random random = new Random();
-        List<Integer> list = new ArrayList<>();
-        if (cb1.isChecked()) {
-            list.add(0);
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                arrayList.add(i);
+            }
         }
-        if (cb2.isChecked()) {
-            list.add(1);
-        }
-        if (cb3.isChecked()) {
-            list.add(2);
-        }
-        if (list.size() != 0) {
-            return list.get(random.nextInt(list.size()));
+        if (!arrayList.isEmpty()) {
+            return arrayList.get(random.nextInt(arrayList.size()));
         }
         return -1;
     }
@@ -454,4 +456,13 @@ public class AlgorithmActivity extends AppCompatActivity {
         return new MyListOfVerbs(name, b, listOfVerbsSimple, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3);
     }
 
+    private void setImage(ImageView imageView, List<Integer> list, int randomNumber) {
+        if (randomNumber != -1) {
+            imageView.setImageResource(list.get(randomNumber));
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.INVISIBLE);
+        }
+
+    }
 }
