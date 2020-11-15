@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -22,6 +23,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -168,6 +170,16 @@ public class AlgorithmActivity extends AppCompatActivity {
                 }
             }
         });
+
+        TextView textViewV1 = findViewById(R.id.textViewV1);
+        TextView textViewV2 = findViewById(R.id.textViewV2);
+        TextView textViewV3 = findViewById(R.id.textViewV3);
+
+        textViewV1.setOnClickListener(new OnClickAudioContentPlayer());
+        textViewV2.setOnClickListener(new OnClickAudioContentPlayer());
+        textViewV3.setOnClickListener(new OnClickAudioContentPlayer());
+
+
     }
 
     public void onClickNext(View view) {
@@ -251,6 +263,18 @@ public class AlgorithmActivity extends AppCompatActivity {
             textViewV1.setText(listOfLessonVerbsIrregularV1.get(index));
             textViewV2.setText(listOfLessonVerbsIrregularV2.get(index));
             textViewV3.setText(listOfLessonVerbsIrregularV3.get(index));
+        } else {
+            textViewV1.setText(verb);
+
+            if (verb.endsWith("e")) {
+                verb = verb + "d";
+            } else if (verb.matches("\\w+[^aeiouy]y")) {
+                verb = verb.substring(0, verb.length() - 1) + "ied";
+            } else {          //else if (simpleIrregularVerb.matches("\\w+[aeiouy]y"))
+                verb = verb + "ed";
+            }
+            textViewV2.setText(verb);
+            textViewV3.setText(verb);
         }
     }
 
@@ -465,4 +489,34 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
 
     }
+
+    private class OnClickAudioContentPlayer implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            String word = ((TextView) v).getText().toString();
+            Log.i("log_word", word);
+            MediaPlayer player = new MediaPlayer();
+            try {
+                player.setDataSource(String.format("https://wooordhunt.ru/data/sound/sow/us/%s.mp3", word));
+
+                player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(MediaPlayer mp) {
+                        mp.start();
+                    }
+                });
+
+                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        mp.release();
+                    }
+                });
+                player.prepareAsync();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

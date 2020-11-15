@@ -466,19 +466,19 @@
     </string>
 
     <string-array name="negative_sentence_ru">
-        <item>Никто ранее не пытался сдулать такую вещь</item>
+        <item>Никто ранее не пытался сделать такую вещь</item>
         <item>У меня нет никакого(кокого-либо) телевизора</item>
         <item>Я не видел никаких(каких-либо) ключей на столе</item>
         <item>Никто из моих друзей не может позволить (иметь возможность, быть в состоянии) себе такую машину</item>
         <item>Ничто не могло принести им победу.</item>
         <item>Я не думал ничего(чего-либо) плохого</item>
         <item>Он не принес никакой(какой-либо) еды домой</item>
-        <item>Никто не собираеться соглашаться с тобой</item>
+        <item>Никто не собираеться спорить с тобой</item>
         <item>Я не слышал никаких(каких-либо) новостей о этом парне</item>
         <item>Никто не хотел даже слышать об этом</item>
-        <item>Мы не нуждаемся в никакой(какой-либо)помощи зесь</item>
+        <item>Мы не нуждаемся в никакой(какой-либо) помощи зесь</item>
         <item>Я никого не боюсь</item>
-        <item>Я не встретил никого здесь из нашего города</item>
+        <item>Я не встретил там никого из нашего города</item>
         <item>Она не стисняется никого(кого-льбо) и ничего(чего-либо)</item>
         <item>Он не сможет ничего(чего-либо) сделать с этим</item>
     </string-array>
@@ -496,7 +496,7 @@
         <item>Nobody wanted even to hear about this.</item>
         <item>We don’t need any help here.\nWe need no help here.</item>
         <item>I am not afraid of anybody.\nI am afraid of nobody.</item>
-        <item>I didn’t meet anybody there from our city.\nI met nobody there from out city.</item>
+        <item>I didn’t meet anybody there from our city.\nI met nobody there from our city.</item>
         <item>She isn’t shy of anybody and anything.\nShe is shy of nobody and nothing.</item>
         <item>He won’t be able to do anything with that.\nHe will be able to do nothing with that.</item>
     </string-array>
