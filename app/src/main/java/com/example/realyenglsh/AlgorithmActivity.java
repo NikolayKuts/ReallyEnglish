@@ -13,6 +13,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -170,10 +172,6 @@ public class AlgorithmActivity extends AppCompatActivity {
                 }
             }
         });
-
-        TextView textViewV1 = findViewById(R.id.textViewV1);
-        TextView textViewV2 = findViewById(R.id.textViewV2);
-        TextView textViewV3 = findViewById(R.id.textViewV3);
 
         textViewV1.setOnClickListener(new OnClickAudioContentPlayer());
         textViewV2.setOnClickListener(new OnClickAudioContentPlayer());
@@ -395,6 +393,8 @@ public class AlgorithmActivity extends AppCompatActivity {
             } else {
                 checkBox.setTextColor(getResources().getColor(idColorOnUnChecked));
             }
+            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+            checkBox.startAnimation(animation);
         }
     }
 
@@ -493,6 +493,10 @@ public class AlgorithmActivity extends AppCompatActivity {
     private class OnClickAudioContentPlayer implements View.OnClickListener{
         @Override
         public void onClick(View v) {
+
+            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein);
+            v.startAnimation(animation);
+
             String word = ((TextView) v).getText().toString();
             Log.i("log_word", word);
             MediaPlayer player = new MediaPlayer();
@@ -510,7 +514,9 @@ public class AlgorithmActivity extends AppCompatActivity {
                     @Override
                     public void onCompletion(MediaPlayer mp) {
                         mp.release();
+                        v.clearAnimation();
                     }
+//            v.clearAnimation();
                 });
                 player.prepareAsync();
             } catch (IOException e) {

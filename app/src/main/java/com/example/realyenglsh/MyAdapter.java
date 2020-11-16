@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -42,6 +44,7 @@ public class MyAdapter extends BaseAdapter {
 
         MyListOfVerbs myListOfVerbs = (MyListOfVerbs) getItem(position);
         ViewHolder holder;
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.sample_anim);
 
         if(convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.layout_item_list_view, parent, false);
@@ -65,8 +68,10 @@ public class MyAdapter extends BaseAdapter {
             public void onClick(View v) {
                 if (holder.checkBox.isChecked()) {
                     holder.checkBox.setTextColor(v.getResources().getColor(R.color.dialog_check_box_checked_color));
+                    holder.setAnimation(context, R.anim.fadein_short);
                 } else {
                     holder.checkBox.setTextColor(v.getResources().getColor(R.color.check_box_unchecked_color));
+                    holder.setAnimation(context, R.anim.sample_anim);
                 }
                 if (myListOfVerbs.isChecked()) {
                     myListOfVerbs.setChecked(false);
@@ -82,8 +87,14 @@ public class MyAdapter extends BaseAdapter {
     private static class ViewHolder {
         private final CheckBox checkBox;
 
+
         public ViewHolder(View view) {
             checkBox = view.findViewById(R.id.checkBoxVerbsList);
+        }
+
+        private void setAnimation(Context context, int idAnimationResource) {
+            Animation animation = AnimationUtils.loadAnimation(context, idAnimationResource);
+            checkBox.startAnimation(animation);
         }
 
     }
