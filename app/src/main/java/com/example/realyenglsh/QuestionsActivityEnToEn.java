@@ -31,6 +31,7 @@ public class QuestionsActivityEnToEn extends AppCompatActivity {
     private CheckBox checkBoxEnToRuAdvance;
     private CheckBox checkBoxRuToEn;
     private CheckBox checkBoxPastEnToEn;
+    private CheckBox checkBoxAdjectiveIntensifiers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +46,14 @@ public class QuestionsActivityEnToEn extends AppCompatActivity {
         checkBoxEnToRuAdvance = findViewById(R.id.checkBoxEnToEnAdvance);
         checkBoxRuToEn = findViewById(R.id.checkBoxRuToEn);
         checkBoxPastEnToEn = findViewById(R.id.checkBoxPastEnToEn);
+        checkBoxAdjectiveIntensifiers = findViewById(R.id.checkBoxAdjectiveIntensifiers);
 
         checkBoxEnToRu.setOnClickListener(new OnCheckBoxChangeListener(0, checkBoxEnToRu));
         checkBoxEnToRuWH.setOnClickListener(new OnCheckBoxChangeListener(1, checkBoxEnToRuWH));
         checkBoxEnToRuAdvance.setOnClickListener(new OnCheckBoxChangeListener(2, checkBoxEnToRuAdvance));
         checkBoxRuToEn.setOnClickListener(new OnCheckBoxChangeListener(3, checkBoxRuToEn));
         checkBoxPastEnToEn.setOnClickListener(new OnCheckBoxChangeListener(4, checkBoxPastEnToEn));
+        checkBoxAdjectiveIntensifiers.setOnClickListener(new OnCheckBoxChangeListener(5, checkBoxAdjectiveIntensifiers));
 
 
         switchShowAnswer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -88,6 +91,9 @@ public class QuestionsActivityEnToEn extends AppCompatActivity {
         }
         if (arrayListCheckBoxes.contains(4)) {
             addFromResources(R.array.question_past_en_to_en, R.array.question_past_en_to_en_answer);
+        }
+        if (arrayListCheckBoxes.contains((5))) {
+            addFromResources(R.array.adjective_intensifiers_so_very_too_ru, R.array.adjective_intensifiers_so_very_too_en);
         }
     }
 

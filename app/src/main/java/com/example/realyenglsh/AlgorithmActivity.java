@@ -46,8 +46,6 @@ public class AlgorithmActivity extends AppCompatActivity {
     private Button buttonPutIntoDBWrongSentence;
 
     private LinearLayout linearLayoutVerbsForm;
-    private Button buttonTestDialog;
-
 
     private List<MyListOfVerbs> listOfMyList = new ArrayList<>();
     private List<String> listOfLessonVerbsSimple;
@@ -55,11 +53,9 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfLessonVerbsIrregularV2;
     private List<String> listOfLessonVerbsIrregularV3;
 
+    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence, listIdBackgroundImageNegativeSentence, listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
 
-    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence, listIdBackgroundImageNegativeSentence
-            , listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
     private List<String> listOfNames;
-
     private List<String> listOfVerbsStrong;
     private List<String> listOfAdjective;
 
@@ -81,7 +77,6 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV2 = findViewById(R.id.textViewV2);
         textViewV3 = findViewById(R.id.textViewV3);
 
-        buttonTestDialog = findViewById(R.id.buttonShowDialog);
         buttonPutIntoDBWrongSentence = findViewById(R.id.buttonToTableActivity);
 
         linearLayoutVerbsForm = findViewById(R.id.linearLayoutVerbForms);
@@ -177,16 +172,15 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV2.setOnClickListener(new OnClickAudioContentPlayer());
         textViewV3.setOnClickListener(new OnClickAudioContentPlayer());
 
-
+       
     }
 
     public void onClickNext(View view) {
         Random random = new Random();
         randomNumberTypeOfSentence = getRandomNumberOnChecked(checkBoxTypeOfSentenceMinus, checkBoxTypeOfSentencePlus, checkBoxTypeOfSentenceQu, checkBoxTypeOfSentenceMinusQu);
-        Log.i("log", "randomNumberType" + randomNumberTypeOfSentence);
         randomNumberOfTense = getRandomNumberOnChecked(checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast);   // 0 - future, 1 - present, 2 - past
-        Log.i("log", "randomNumberTense" + randomNumberTypeOfSentence);
         setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
+        int randomNumberOfToBe = random.nextInt(3);
 
         setImage(imageViewTenseObject, listIdTenseObject, randomNumberOfTense);
         setImage(imageViewTypeOfSentence, listIdImageTypeOfSentence, randomNumberTypeOfSentence);
@@ -200,33 +194,34 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfLessonVerbsSimpleIrregular.addAll(listOfLessonVerbsIrregularV1);
         String simpleIrregularVerb = getWordFromList(listOfLessonVerbsSimpleIrregular);
 
-        int randomNumberOfSentence = getRandomNumberOnChecked(checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe);    // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
-        if (randomNumberOfSentence == -1) {
+        int randomNumberOfWay = getRandomNumberOnChecked(checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe);    // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
+        if (randomNumberOfWay == -1) {
             showToast();
         } else {
-            if (randomNumberOfSentence == 0) {   // simple
+            if (randomNumberOfWay == 0) {   // simple
                 sentence = getSentenceWithSimpleVerb(name, simpleIrregularVerb, listOfLessonVerbsSimpleIrregular);
-                setFormsOfIrregularVerb(simpleIrregularVerb);
-            } else if (randomNumberOfSentence == 1) {    // strong
+            } else if (randomNumberOfWay == 1) {    // strong
                 sentence = getSentenceWithStrongVerb(name, simpleIrregularVerb);
-                setFormsOfIrregularVerb(simpleIrregularVerb);
             } else {    // ToBe
-                int randomNumberOfToBe = random.nextInt(3);
 
                 if (randomNumberOfToBe == 0) {   // - ing
                     sentence = getSentenceWithToBeIngForm(name, simpleIrregularVerb);
                 } else if (randomNumberOfToBe == 1) {  // adjective
                     String adjective = getWordFromList(listOfAdjective);
                     sentence = String.format("%s %s", name, adjective);
+                    setWordOfToBeForm(adjective);
                 } else {  // passive verb
                     if (listOfLessonVerbsIrregularV1.contains(simpleIrregularVerb)) {
                         sentence = getSentenceWithToBeV3Verb(name, simpleIrregularVerb);
-                        setFormsOfIrregularVerb(simpleIrregularVerb);
                     } else {  // simple -ed
                         sentence = getSentenceWithToBeSimplePassiveVerb(name, simpleIrregularVerb);
                     }
                 }
             }
+        }
+
+        if (randomNumberOfWay != 2 || randomNumberOfToBe != 1) {
+            setFormsOfIrregularVerb(simpleIrregularVerb);
         }
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {
@@ -253,6 +248,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV1.setText("-//-");
         textViewV2.setText("-//-");
         textViewV3.setText("-//-");
+        setTextViewVColor(R.color.textView_color_v1, R.color.textView_color_v1);
     }
 
     private void setFormsOfIrregularVerb(String verb) {
@@ -261,6 +257,7 @@ public class AlgorithmActivity extends AppCompatActivity {
             textViewV1.setText(listOfLessonVerbsIrregularV1.get(index));
             textViewV2.setText(listOfLessonVerbsIrregularV2.get(index));
             textViewV3.setText(listOfLessonVerbsIrregularV3.get(index));
+            setTextViewVColor(R.color.textView_color_v2, R.color.textView_color_v3);
         } else {
             textViewV1.setText(verb);
 
@@ -273,7 +270,19 @@ public class AlgorithmActivity extends AppCompatActivity {
             }
             textViewV2.setText(verb);
             textViewV3.setText(verb);
+            setTextViewVColor(R.color.textView_color_v2, R.color.textView_color_v2);
         }
+    }
+
+    private void setWordOfToBeForm(String word) {
+        textViewV2.setText(word);
+        setTextViewVColor(R.color.textView_color_toBe_word, R.color.textView_color_v1);
+    }
+
+
+    private void setTextViewVColor(int idResColorV2, int idResColorV3) {
+        textViewV2.setTextColor(getResources().getColor(idResColorV2));
+        textViewV3.setTextColor(getResources().getColor(idResColorV3));
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -490,7 +499,7 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     }
 
-    private class OnClickAudioContentPlayer implements View.OnClickListener{
+    private class OnClickAudioContentPlayer implements View.OnClickListener {
         @Override
         public void onClick(View v) {
 

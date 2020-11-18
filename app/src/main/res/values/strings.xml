@@ -462,7 +462,8 @@
     </string>
 
     <string name="adjective">
-        hungry,crazy,funny,big,unique,red,dark,green,rich,young,strong,smart,lazy
+        hungry,crazy,funny,big,unique,red,dark,green,rich,young,strong,smart,lazy,
+        afraid,shy,sorry,silent,late,sick,proud,squeamish,present,absent,indignant,patient,jealous,picky
     </string>
 
     <string-array name="negative_sentence_ru">
@@ -484,7 +485,7 @@
     </string-array>
 
     <string-array name="negative_sentence_en">
-        <item>Nobody tried to do such things before.</item>
+        <item>Nobody tried to do such thing before.</item>
         <item>I don’t have any TV.\nI have no TV!</item>
         <item>I didn’t see any keys on the table.\nI saw no keys on the table.</item>
         <item>None of my friends can afford such a car.</item>
@@ -499,5 +500,63 @@
         <item>I didn’t meet anybody there from our city.\nI met nobody there from our city.</item>
         <item>She isn’t shy of anybody and anything.\nShe is shy of nobody and nothing.</item>
         <item>He won’t be able to do anything with that.\nHe will be able to do nothing with that.</item>
+    </string-array>
+
+    <string-array name="adjective_intensifiers_so_very_too_ru">
+        <item>Эта сумка слишком тяжелая. Ты не сможешь ее поднять.</item>
+        <item>Вы очень похожи на моего брата.</item>
+        <item>Она очень красивая.</item>
+        <item>Я очень хочу туда поехать.</item>
+        <item>Мне очень нужна твоя помощь.</item>
+        <item>Эта зарплата считается очень хорошей для молодого человека без опыта, как вы.</item>
+        <item>Ты хочешь с нами поехать? – Да, очень!</item>
+        <item>Это слишком дорого. Я не могу платить такие деньги.</item>
+        <item>Они все очень любят своего вождя. – В самом деле?</item>
+        <item>Этот человек очень знаменит в своей стране.</item>
+        <item>Мне очень нравится ваш шоколадный торт. Можно мне взять еще кусочек?</item>
+        <item>Их дочь такая талантливая. Она очень хочет стать знаменитой певицей.</item>
+        <item>Этот парень слишком полный. Он не сможет работать полицейским.</item>
+        <item>Вы слишком любите сладости. Вы бы лучше подумали о вашем здоровье.</item>
+        <item>Большое спасибо. Я очень доволен вашей работой.</item>
+        <item>Я очень люблю хорошее шампанское.</item>
+        <item>В своей стране он был очень важным человеком.</item>
+        <item>Все люди, которых ты здесь видишь, очень богаты.</item>
+        <item>Это будет очень сложно объяснить боссу.</item>
+        <item>Это так просто! Ты наверняка сможешь это сделать!</item>
+        <item>Ей очень нужно с тобой поговорить.</item>
+        <item>Ты разговариваешь с ними слишком серьезно! Попробуй пошутить, им понравится!</item>
+        <item>Ты такой сильный. Они там все тебя испугаются.</item>
+        <item>Наш командир говорит, что терпеть не может лишь два вида солдат: слишком тупых и слишком умных.</item>
+        <item>Я очень занят. Пожалуйста, позвоните попозже.</item>
+        <item>Встань, поздравь молодоженов. – Я бы хотел, чтобы ты это сделала вместо меня. – Ты так стесняешься своего русского акцента?</item>
+    </string-array>
+
+    <string-array name="adjective_intensifiers_so_very_too_en">
+        <item>This bag is too heavy. You won’t be able to lift it.</item>
+        <item>You are very similar to my brother.</item>
+        <item>She is very beautiful.</item>
+        <item>I want to go there very much.</item>
+        <item>I need your help very much.</item>
+        <item>This salary consider very good for a young man without experience, as you.</item>
+        <item>Do you want to go with us? – Yes, very much!</item>
+        <item>It is too expensive. I can’t pay such money.</item>
+        <item>They all love their leader very much. – Really?</item>
+        <item>This man is very famous in his country.</item>
+        <item>I like your chocolate cake very much. May I take one more piece?</item>
+        <item>Their daughter is so talented. She wants to become famous singer.</item>
+        <item>This guy is too fat. He won’t be able to work as a policeman.</item>
+        <item>You love sweets too much. You would better think about yours health.</item>
+        <item>Thank you very much. I am very pleased of your work.</item>
+        <item>I like good champagne very much.</item>
+        <item>He was very important person in his country.</item>
+        <item>All people, whom you see here, are very rich.</item>
+        <item>It will be very difficult to explain to the boss.</item>
+        <item>It is so simple! You will be able to do this for sure.</item>
+        <item>She needs to talk with you very much.</item>
+        <item>You speak with them too serious! Try to joke, they will like it!</item>
+        <item>You are so strong. All of them will be afraid of you there.</item>
+        <item>Our commander says, that he can’t be patient only two types of soldiers: too stupid and too smart.</item>
+        <item>I am very busy. Please, call later.</item>
+        <item>Stand up, congratulate the newlyweds. I would like, that you do it instead of me. – Are you so shy yours Russian accent.</item>
     </string-array>
 </resources>

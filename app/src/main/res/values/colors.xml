@@ -12,5 +12,9 @@
     <color name="check_box_unchecked_color">#858585</color>
     <color name="toast_background_color">#658A8F83</color>
     <color name="background_activity_color">#3A3A3A</color>
+    <color name="textView_color_v1">#F8C982</color>
+    <color name="textView_color_v2">#84BDC5</color>
+    <color name="textView_color_v3">#ACD878</color>
+    <color name="textView_color_toBe_word">#D6C0FD</color>
 
 </resources>

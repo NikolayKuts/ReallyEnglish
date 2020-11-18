@@ -90,8 +90,8 @@
         android:text="En to  En advance"
         android:textColor="#CCB697"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@id/checkBoxPastEnToEn"
         app:layout_constraintBottom_toTopOf="@+id/textViewQuestion"
+        app:layout_constraintEnd_toStartOf="@id/checkBoxPastEnToEn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxEnToEn"
         app:layout_constraintVertical_bias="0.0" />
@@ -137,4 +137,19 @@
         app:layout_constraintStart_toEndOf="@+id/checkBoxEnToEnAdvance"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxRuToEn"
         app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAdjectiveIntensifiers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:textColor="#CCB697"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewQuestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEnToEnAdvance"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
