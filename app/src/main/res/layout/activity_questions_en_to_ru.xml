@@ -66,90 +66,17 @@
         app:layout_constraintVertical_bias="0.771"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-    <CheckBox
-        android:id="@+id/checkBoxEnToEn"
+    <Button
+        android:id="@+id/buttonShowLists"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:text="En to En"
-        android:checked="true"
-        android:textColor="#CCB697"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@id/checkBoxEnToEnWH"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBoxEnToEnAdvance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="72dp"
-        android:text="En to  En advance"
-        android:textColor="#CCB697"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewQuestion"
-        app:layout_constraintEnd_toStartOf="@id/checkBoxPastEnToEn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxEnToEn"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <CheckBox
-        android:id="@+id/checkBoxRuToEn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:text="Ru to En"
-        android:textColor="#CCB697"
-        android:textSize="18sp"
+        android:onClick="onClickShowDialogLists"
+        android:text="lists"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.833"
-        app:layout_constraintStart_toEndOf="@+id/checkBoxEnToEnWH"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBoxEnToEnWH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="En to En WH"
-        android:textColor="#CCB697"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@id/checkBoxRuToEn"
-        app:layout_constraintStart_toEndOf="@+id/checkBoxEnToEn"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBoxPastEnToEn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:text="Past En to En [5]"
-        android:textColor="#CCB697"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewQuestion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
-        app:layout_constraintStart_toEndOf="@+id/checkBoxEnToEnAdvance"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxRuToEn"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <CheckBox
-        android:id="@+id/checkBoxAdjectiveIntensifiers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        android:textColor="#CCB697"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewQuestion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxEnToEnAdvance"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.057" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,7 +46,7 @@ public class Table1Activity extends AppCompatActivity {
         listOfVerbsSimpleIrregular = new ArrayList<>(Arrays.asList(stringArgsVerbsSimple));
         listOfVerbsSimpleIrregular.addAll(Arrays.asList(stringArgsVerbsIrregular));
 
-        String[] stringArgsAdjective = getResources().getString(R.string.adjective).split(",");
+        String[] stringArgsAdjective = getResources().getString(R.string.adjective_1_1).split(",");
         listOfAdjective = new ArrayList<>(Arrays.asList(stringArgsAdjective));
         
         buttonPutWrongSentenceIntoDB.setOnLongClickListener(new View.OnLongClickListener() {

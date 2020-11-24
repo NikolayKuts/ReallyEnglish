@@ -40,8 +40,8 @@ public class DoubleNegativeActivity extends AppCompatActivity {
 
     public void onClickNextNegativeSentence(View view) {
         Random random = new Random();
-        String[] arrayNegativeSentenceRu = getResources().getStringArray(R.array.negative_sentence_ru);
-        String[] arrayNegativeSentenceEn = getResources().getStringArray(R.array.negative_sentence_en);
+        String[] arrayNegativeSentenceRu = getResources().getStringArray(R.array.negative_sentence_ru_q);
+        String[] arrayNegativeSentenceEn = getResources().getStringArray(R.array.negative_sentence_en_a);
         int randomNumber = random.nextInt(arrayNegativeSentenceRu.length);
         textViewNegativeSentenceRu.setText(arrayNegativeSentenceRu[randomNumber]);
         textViewNegativeSentenceEn.setText(arrayNegativeSentenceEn[randomNumber]);

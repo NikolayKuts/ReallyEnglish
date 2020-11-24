@@ -44,7 +44,6 @@ public class MyAdapter extends BaseAdapter {
 
         MyListOfVerbs myListOfVerbs = (MyListOfVerbs) getItem(position);
         ViewHolder holder;
-        Animation animation = AnimationUtils.loadAnimation(context, R.anim.sample_anim);
 
         if(convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.layout_item_list_view, parent, false);

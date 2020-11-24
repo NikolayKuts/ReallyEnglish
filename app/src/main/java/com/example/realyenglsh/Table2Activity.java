@@ -77,7 +77,7 @@ public class Table2Activity extends AppCompatActivity {
         String[] stringArgsVerbsStrong = getResources().getStringArray(R.array.strong_verbs);
         listOfVerbsStrong = new ArrayList<>(Arrays.asList(stringArgsVerbsStrong));
 
-        String[] stringArgsAdjective = getResources().getString(R.string.adjective).split(",");
+        String[] stringArgsAdjective = getResources().getString(R.string.adjective_1_1).split(",");
         listOfAdjective = new ArrayList<>(Arrays.asList(stringArgsAdjective));
 
 

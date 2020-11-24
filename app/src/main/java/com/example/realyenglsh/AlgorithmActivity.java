@@ -3,9 +3,12 @@ package com.example.realyenglsh;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +21,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -30,6 +34,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.example.realyenglsh.Table1Activity.getWordFromList;
 
@@ -44,10 +50,12 @@ public class AlgorithmActivity extends AppCompatActivity {
     private MainViewModel viewModel;
     private ConstraintLayout constraintLayout;
     private Button buttonPutIntoDBWrongSentence;
+    private ImageButton imageButtonShowDialogVerbs, imageButtonShowDialogAdjective;
 
     private LinearLayout linearLayoutVerbsForm;
 
     private List<MyListOfVerbs> listOfMyList = new ArrayList<>();
+    private List<MyListAdjective> listOfMyAdjectiveList = new ArrayList<>();
     private List<String> listOfLessonVerbsSimple;
     private List<String> listOfLessonVerbsIrregularV1;
     private List<String> listOfLessonVerbsIrregularV2;
@@ -57,7 +65,7 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     private List<String> listOfNames;
     private List<String> listOfVerbsStrong;
-    private List<String> listOfAdjective;
+    private List<String> listOfLessonAdjective = new ArrayList<>();
 
     private String wrongSentence = "", wrongV3PassiveVerb = "";
     private int randomNumberOfTense = -1, randomNumberTypeOfSentence = -1;
@@ -78,6 +86,9 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV3 = findViewById(R.id.textViewV3);
 
         buttonPutIntoDBWrongSentence = findViewById(R.id.buttonToTableActivity);
+
+        imageButtonShowDialogVerbs = findViewById(R.id.imageButtonShowDialogVerbs);
+        imageButtonShowDialogAdjective = findViewById(R.id.imageButtonShowDialogAdjectives);
 
         linearLayoutVerbsForm = findViewById(R.id.linearLayoutVerbForms);
         constraintLayout = findViewById(R.id.windowAlgorithmActivity);
@@ -115,9 +126,9 @@ public class AlgorithmActivity extends AppCompatActivity {
         listIdBackgroundImageQuestionSentence = getListIdDrawableResources(R.drawable.tense_way_future_qu, R.drawable.tense_way_present_qu, R.drawable.tense_way_past_qu);
         listIdBackgroundImageNegativeQuestionSentence = getListIdDrawableResources(R.drawable.tense_way_future_negative_qu, R.drawable.tense_way_present_negative_qu, R.drawable.tense_way_past_negative_qu);
 
-        listOfNames = getArrayListFromStringResources(R.array.personal_pronouns, R.string.names);
-        listOfVerbsStrong = getArrayListFromStringResources(R.array.strong_verbs);
-        listOfAdjective = getArrayListFromStringResources(null, R.string.adjective);
+        listOfNames = getArrayListFromStringResources(this, R.array.personal_pronouns, R.string.names);
+        listOfVerbsStrong = getArrayListFromStringResources(this, R.array.strong_verbs);
+//        listOfAdjective = getArrayListFromStringResources(this, null, R.string.adjective);
 
         listOfLessonVerbsSimple = new ArrayList<>();
         listOfLessonVerbsIrregularV1 = new ArrayList<>();
@@ -128,7 +139,54 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfMyList.add(getMyListOfVerbs("Verbs # 2 (51 - 100)", false, R.string.simple_verbs_2, R.string.irregular_verbs_v1_2, R.string.irregular_verbs_v2_2, R.string.irregular_verbs_v3_2));
         listOfMyList.add(getMyListOfVerbs("Verbs # 3 (101 - 150)", false, R.string.simple_verbs_3, R.string.irregular_verbs_v1_3, R.string.irregular_verbs_v2_3, R.string.irregular_verbs_v3_3));
 
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #1", true, R.string.adjective_1_1));
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #2", false, R.string.adjective_1_2));
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #3", false, R.string.adjective_1_3));
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #4", false, R.string.adjective_1_4));
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #5", true, R.string.adjective_2_1));
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #6", false, R.string.adjective_2_2));
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #7", false, R.string.adjective_2_3));
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #8", false, R.string.adjective_2_4));
+        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #9", false, R.string.adjective_2_5));
+
         setCheckedMyListOfVerbs();
+        setCheckedMyListAdjective();
+
+
+        imageButtonShowDialogVerbs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickShowDialogVerbs();
+//                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_to_left);
+//                imageButtonShowDialogVerbs.startAnimation(animation);
+            }
+        });
+
+        imageButtonShowDialogAdjective.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(v.getContext());
+                dialog.setContentView(R.layout.dialog_adjective);
+
+                Button button = dialog.findViewById(R.id.buttonApplyDialogAdjective);
+
+                RecyclerView recyclerView = dialog.findViewById(R.id.recyclerViewDialogAdjective);
+                recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
+                recyclerView.setAdapter(new MyAdapterAdjectiveList(listOfMyAdjectiveList));
+                dialog.show();
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        setCheckedMyListAdjective();
+                        dialog.dismiss();
+                    }
+                });
+            }
+        });
+
+
+
 
 
         buttonPutIntoDBWrongSentence.setOnLongClickListener(new View.OnLongClickListener() {
@@ -172,7 +230,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV2.setOnClickListener(new OnClickAudioContentPlayer());
         textViewV3.setOnClickListener(new OnClickAudioContentPlayer());
 
-       
+
     }
 
     public void onClickNext(View view) {
@@ -185,7 +243,6 @@ public class AlgorithmActivity extends AppCompatActivity {
         setImage(imageViewTenseObject, listIdTenseObject, randomNumberOfTense);
         setImage(imageViewTypeOfSentence, listIdImageTypeOfSentence, randomNumberTypeOfSentence);
 
-        setEmptyOnTextViewOfFormsOfIrregularVerb();
         wrongSentence = "";
         wrongV3PassiveVerb = "";
         String sentence = "";
@@ -207,9 +264,9 @@ public class AlgorithmActivity extends AppCompatActivity {
                 if (randomNumberOfToBe == 0) {   // - ing
                     sentence = getSentenceWithToBeIngForm(name, simpleIrregularVerb);
                 } else if (randomNumberOfToBe == 1) {  // adjective
-                    String adjective = getWordFromList(listOfAdjective);
+                    String adjective = getWordFromList(listOfLessonAdjective);
                     sentence = String.format("%s %s", name, adjective);
-                    setWordOfToBeForm(adjective);
+                    setWordOfToBeAdjective(adjective);
                 } else {  // passive verb
                     if (listOfLessonVerbsIrregularV1.contains(simpleIrregularVerb)) {
                         sentence = getSentenceWithToBeV3Verb(name, simpleIrregularVerb);
@@ -244,12 +301,12 @@ public class AlgorithmActivity extends AppCompatActivity {
         toast.show();
     }
 
-    private void setEmptyOnTextViewOfFormsOfIrregularVerb() {
-        textViewV1.setText("-//-");
-        textViewV2.setText("-//-");
-        textViewV3.setText("-//-");
-        setTextViewVColor(R.color.textView_color_v1, R.color.textView_color_v1);
-    }
+//    private void setEmptyOnTextViewOfFormsOfIrregularVerb() {
+//        textViewV1.setText("-//-");
+//        textViewV2.setText("-//-");
+//        textViewV3.setText("-//-");
+//        setTextViewVColor(R.color.textView_color_v1, R.color.textView_color_v1);
+//    }
 
     private void setFormsOfIrregularVerb(String verb) {
         if (listOfLessonVerbsIrregularV1.contains(verb)) {
@@ -269,14 +326,16 @@ public class AlgorithmActivity extends AppCompatActivity {
                 verb = verb + "ed";
             }
             textViewV2.setText(verb);
-            textViewV3.setText(verb);
-            setTextViewVColor(R.color.textView_color_v2, R.color.textView_color_v2);
+            textViewV3.setText("[reg]");
+            setTextViewVColor(R.color.textView_color_v2, R.color.textView_color_v3_note);
         }
     }
 
-    private void setWordOfToBeForm(String word) {
+    private void setWordOfToBeAdjective(String word) {
+        textViewV1.setText("");
         textViewV2.setText(word);
-        setTextViewVColor(R.color.textView_color_toBe_word, R.color.textView_color_v1);
+        textViewV3.setText("[adj]");
+        setTextViewVColor(R.color.textView_color_toBe_word, R.color.textView_color_v3_note);
     }
 
 
@@ -305,20 +364,21 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
-    public String[] getArrayFromArrayResources(int id) {
-        return getResources().getStringArray(id);
+    public String[] getArrayFromArrayResources(Context context, int id) {
+
+        return context.getResources().getStringArray(id);
     }
 
     public String[] getArrayFromResources(int id) {
         return getString(id).split(",");
     }
 
-    public ArrayList<String> getArrayListFromStringResources(Integer idArrayResource, int... idResource) {
+    public ArrayList<String> getArrayListFromStringResources(Context context, Integer idArrayResource, int... idResource) {
         List<String[]> listOfArgsId = new ArrayList<>();
         ArrayList<String> stringList = new ArrayList<>();
 
         if (idArrayResource != null) {
-            listOfArgsId.add(getArrayFromArrayResources(idArrayResource));
+            listOfArgsId.add(getArrayFromArrayResources(context, idArrayResource));
         }
         for (int id : idResource) {
             listOfArgsId.add(getArrayFromResources(id));
@@ -364,14 +424,14 @@ public class AlgorithmActivity extends AppCompatActivity {
         return -1;
     }
 
-    public void onClickShowDialog(View view) {
+    private void onClickShowDialogVerbs() {
         Dialog dialog = new Dialog(AlgorithmActivity.this);
-        dialog.setContentView(R.layout.layout_dialog);
+        dialog.setContentView(R.layout.dialog_verbs);
         ListView listView = dialog.findViewById(R.id.listView);
         MyAdapter adapter = new MyAdapter(this, listOfMyList);
         listView.setAdapter(adapter);
 
-        Button button = dialog.findViewById(R.id.buttonDialogApply);
+        Button button = dialog.findViewById(R.id.buttonApplyDialogVerbs);
         dialog.show();
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -481,12 +541,18 @@ public class AlgorithmActivity extends AppCompatActivity {
     }
 
     private MyListOfVerbs getMyListOfVerbs(String name, boolean b, int idResSimpleVerb, int idResIrregularV1, int idResIrregularV2, int idResIrregularV3) {
-        List<String> listOfVerbsSimple = getArrayListFromStringResources(null, idResSimpleVerb);
-        List<String> listOfVerbsIrregularV1 = getArrayListFromStringResources(null, idResIrregularV1);
-        List<String> listOfVerbsIrregularV2 = getArrayListFromStringResources(null, idResIrregularV2);
-        List<String> listOfVerbsIrregularV3 = getArrayListFromStringResources(null, idResIrregularV3);
+        List<String> listOfVerbsSimple = getArrayListFromStringResources(this, null, idResSimpleVerb);
+        List<String> listOfVerbsIrregularV1 = getArrayListFromStringResources(this, null, idResIrregularV1);
+        List<String> listOfVerbsIrregularV2 = getArrayListFromStringResources(this, null, idResIrregularV2);
+        List<String> listOfVerbsIrregularV3 = getArrayListFromStringResources(this, null, idResIrregularV3);
 
         return new MyListOfVerbs(name, b, listOfVerbsSimple, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3);
+    }
+
+    private MyListAdjective getMyAdjectiveList(String nameList, boolean isChecked, int idResAdjective) {
+        List<String> listAdjective = getArrayListFromStringResources(this, null, idResAdjective);
+
+        return new MyListAdjective(nameList, isChecked, listAdjective);
     }
 
     private void setImage(ImageView imageView, List<Integer> list, int randomNumber) {
@@ -534,4 +600,14 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
+    private void setCheckedMyListAdjective() {
+        listOfLessonAdjective.clear();
+
+        for (MyListAdjective my : listOfMyAdjectiveList) {
+            if (my.isChecked()) {
+                listOfLessonAdjective.addAll(my.getListAdjective());
+            }
+        }
+    }
 }
+// recyclerView.setAdapter(new MyAdapterAdjectiveList(listOfMyAdjectiveList));

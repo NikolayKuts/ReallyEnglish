@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="320dp"
     android:layout_height="wrap_content"
-    android:background="#3A3A3A">
+    android:background="@color/background_dialog_color">
 
     <TextView
-        android:id="@+id/textViewDialog"
+        android:id="@+id/textViewDialogVerbs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Choose what you want to learn"
@@ -29,10 +29,10 @@
         android:paddingEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDialog" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDialogVerbs" />
 
     <Button
-        android:id="@+id/buttonDialogApply"
+        android:id="@+id/buttonApplyDialogVerbs"
         android:layout_width="130dp"
         android:layout_height="33dp"
         android:layout_margin="20dp"

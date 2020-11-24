@@ -9,17 +9,8 @@ public class MyListOfVerbs {
     private List<String> listOfVerbsIrregularV1;
     private List<String> listOfVerbsIrregularV2;
     private List<String> listOfVerbsIrregularV3;
-    private boolean isChecked = false;
+    private boolean isChecked;
 
-    public MyListOfVerbs(String nameOfList, List<String> listOfVerbsSimple, List<String> listOfVerbsIrregularV1
-            , List<String> listOfVerbsIrregularV2, List<String> listOfVerbsIrregularV3) {
-
-        this.nameOfList = nameOfList;
-        this.listOfVerbsSimple = listOfVerbsSimple;
-        this.listOfVerbsIrregularV1 = listOfVerbsIrregularV1;
-        this.listOfVerbsIrregularV2 = listOfVerbsIrregularV2;
-        this.listOfVerbsIrregularV3 = listOfVerbsIrregularV3;
-    }
     public MyListOfVerbs(String nameOfList, boolean b, List<String> listOfVerbsSimple, List<String> listOfVerbsIrregularV1
             , List<String> listOfVerbsIrregularV2, List<String> listOfVerbsIrregularV3) {
 

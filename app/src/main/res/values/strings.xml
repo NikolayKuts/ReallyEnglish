@@ -461,12 +461,43 @@
         Sam,Frank,Britney,Selena,Bruno,Rebeca,Justin,Avril Lavigne,Alexandra,Taylor,my brother,her sister,his friend
     </string>
 
-    <string name="adjective">
-        hungry,crazy,funny,big,unique,red,dark,green,rich,young,strong,smart,lazy,
-        afraid,shy,sorry,silent,late,sick,proud,squeamish,present,absent,indignant,patient,jealous,picky
+    <string name="adjective_1.1">
+        first,good,bad,big,hard,small,strong,noisy,next,lazy,similar,heavy,different,easy,angry,sad,smart,long,stupid,short,old,pretty,high,tall,young,low,new,cute,simple,happy,clear
     </string>
 
-    <string-array name="negative_sentence_ru">
+    <string name="adjective_1.2">
+        ready,cool,stubborn,poor,dark,loud,true,constant,experienced,inexperienced,nervous,false,temporary,calm,patient,impatient,normal,cruel,pleased,displeased,ashamed,usual
+    </string>
+
+    <string name="adjective_1.3">
+        attentive,inattentive,greedy,typical,whole,convenient,inconvenient,ancient,careful,thirsty,single,serious,great,double,smooth,brave,tiny,triple,main,basic,early,clean
+    </string>
+
+    <string name="adjective_1.4">
+        proud,rich,hungry,sweet,disgusting,fast/quick,sour,late,shy,nasty,perfect,curious,familiar,responsible,irresponsible,full,dirty,crazy,safe,warm,difficult,last,beautiful
+    </string>
+
+    <string name="adjective_2.1">
+        present,weak,cheap,left,wrong,sure,messy,pleasant,unpleasant,slow,afraid,sorry,far,able,unable,tired,fresh,healthy,colorful
+    </string>
+
+    <string name="adjective_2.2">
+        exact,strange,weird,polite,impolite,possible,impossible,tasty,crude,rude,guilty,legal,illegal,square,suitable,talented,gifted,firm
+    </string>
+
+    <string name="adjective_2.3">
+        expensive,inexpensive,wonderful,sick,right,sloppy,boring,neat,insolent,fragrant,close,modest,honest,dishonest,modern,wild,lucky,unlucky,huge,giant
+    </string>
+
+    <string name="adjective_2.4">
+        excellent,round,salty,favorite,dangerous,funny,empty,same,terrible,deep,silent,free,wide,active,light,narrow,slim,thin,thick,soft,foreign
+    </string>
+
+    <string name="adjective_2.5">
+        useful,important,famous,harmful,alive,interesting,dead,wet,cold,alone,busy,complicated,hot,dry,real,quiet,stinky,transparent,special
+    </string>
+
+    <string-array name="negative_sentence_ru_q">
         <item>Никто ранее не пытался сделать такую вещь</item>
         <item>У меня нет никакого(кокого-либо) телевизора</item>
         <item>Я не видел никаких(каких-либо) ключей на столе</item>
@@ -484,7 +515,7 @@
         <item>Он не сможет ничего(чего-либо) сделать с этим</item>
     </string-array>
 
-    <string-array name="negative_sentence_en">
+    <string-array name="negative_sentence_en_a">
         <item>Nobody tried to do such thing before.</item>
         <item>I don’t have any TV.\nI have no TV!</item>
         <item>I didn’t see any keys on the table.\nI saw no keys on the table.</item>
@@ -502,7 +533,7 @@
         <item>He won’t be able to do anything with that.\nHe will be able to do nothing with that.</item>
     </string-array>
 
-    <string-array name="adjective_intensifiers_so_very_too_ru">
+    <string-array name="adjective_intensifiers_so_very_too_ru_q">
         <item>Эта сумка слишком тяжелая. Ты не сможешь ее поднять.</item>
         <item>Вы очень похожи на моего брата.</item>
         <item>Она очень красивая.</item>
@@ -531,13 +562,13 @@
         <item>Встань, поздравь молодоженов. – Я бы хотел, чтобы ты это сделала вместо меня. – Ты так стесняешься своего русского акцента?</item>
     </string-array>
 
-    <string-array name="adjective_intensifiers_so_very_too_en">
+    <string-array name="adjective_intensifiers_so_very_too_en_a">
         <item>This bag is too heavy. You won’t be able to lift it.</item>
         <item>You are very similar to my brother.</item>
         <item>She is very beautiful.</item>
         <item>I want to go there very much.</item>
         <item>I need your help very much.</item>
-        <item>This salary consider very good for a young man without experience, as you.</item>
+        <item>This salary considers very good for a young man without experience, as you.</item>
         <item>Do you want to go with us? – Yes, very much!</item>
         <item>It is too expensive. I can’t pay such money.</item>
         <item>They all love their leader very much. – Really?</item>
@@ -559,4 +590,263 @@
         <item>I am very busy. Please, call later.</item>
         <item>Stand up, congratulate the newlyweds. I would like, that you do it instead of me. – Are you so shy yours Russian accent.</item>
     </string-array>
+
+    <string-array name="adjective_likes_verb_ru_q">
+        <item>Ты не пожалеешь об этом.</item>
+        <item>Я не хотел присутствовать на этой вечеринке.</item>
+        <item>Она боялась даже думать об этом.</item>
+        <item>Она так стесняется об этом говорить!</item>
+        <item>Соседские дети будут бояться этой собаки.</item>
+        <item>Вчера он опоздал на работу.</item>
+        <item>Ах, вы не согласны? Вы еще пожалеете об этом!</item>
+        <item>Он уже жалеет о своем вопросе.</item>
+        <item>Я немного стеснялся начинать с ней этот разговор.</item>
+        <item>Босс всегда к нему придирается.</item>
+        <item>Все об этом молчали. Никто не возмущался.</item>
+        <item>Я очень боялся опоздать.</item>
+        <item>Почему ты так возмущаешься? Они просто делают свою работу.</item>
+        <item>Родители очень гордились своим сыном.</item>
+        <item>Вы согласны с его словами?</item>
+        <item>Он хотел что-то им рассказать, но стеснялся.</item>
+        <item>Не соглашайся! Они тебя обманут.</item>
+        <item>Не стесняйся! Мои друзья – хорошие люди.</item>
+        <item>Ты будешь мной гордиться, я обещаю!</item>
+        <item>Не рассказывайте об этом никому! – Я буду молчать.</item>
+        <item>Босс сегодня такой злой. Все боятся к нему обращаться.</item>
+        <item>Сегодня мы пойдем в театр! – Я согласна!</item>
+    </string-array>
+
+    <string-array name="adjective_likes_verb_en_a">
+        <item>You won’t be sorry about this.</item>
+        <item>I didn’t want to be present at this party.</item>
+        <item>She was afraid even to think about that.</item>
+        <item>She is so shy to talk about this!</item>
+        <item>The neighbor’s kids will be afraid of this dog.</item>
+        <item>Yesterday he was late to the work.</item>
+        <item>Oh, don’t you agree? You will be sorry about that yet!</item>
+        <item>He is already sorry about his question.</item>
+        <item>I was a bit shy to start that talk with her.</item>
+        <item>Boss is always picky to him.</item>
+        <item>Everyone was silent about that. Nobody was indignant.</item>
+        <item>I was very afraid to be late.</item>
+        <item>Why are you being so indignant? They just do their job.</item>
+        <item>The parents were very proud of their son.</item>
+        <item>Do you agree with his words?</item>
+        <item>He wanted to tell them something, but was shy.</item>
+        <item>Don’t agree! They will deceive you!</item>
+        <item>Don’t be shy! My friends are good people!</item>
+        <item>You’ll be proud of me, I promise!</item>
+        <item>Don’t tell about this to anyone! – I’ll be silent.</item>
+        <item>The boss is so angry today. Everybody is afraid to apply to him.</item>
+        <item>Today we’ll go to the theater! – I agree!</item>
+    </string-array>
+
+    <string-array name="much_many_q">
+        <item>black cats</item>
+        <item>chocolate ice-cream</item>
+        <item>modern computers</item>
+        <item>love</item>
+        <item>chairs and tables</item>
+        <item>small businesses</item>
+        <item>apple juice</item>
+        <item>interest</item>
+        <item>money</item>
+        <item>old friends</item>
+        <item>brave fighters</item>
+        <item>time</item>
+        <item>different ways</item>
+        <item>poor countries</item>
+        <item>houses</item>
+        <item>pictures</item>
+        <item>apples</item>
+        <item>milk</item>
+        <item>neighbors</item>
+        <item>apple jam</item>
+        <item>happy parents</item>
+        <item>smart children</item>
+        <item>good feelings</item>
+        <item>deep thoughts</item>
+        <item>beautiful girls</item>
+        <item>clients</item>
+        <item>cars</item>
+        <item>space</item>
+        <item>computers</item>
+        <item>armchairs</item>
+        <item>books</item>
+        <item>money</item>
+        <item>good friends</item>
+        <item>strong fighters</item>
+        <item>good books</item>
+        <item>tasty food</item>
+        <item>poor countries</item>
+        <item>different ways</item>
+        <item>empty words</item>
+        <item>comfortable houses</item>
+        <item>pictures</item>
+        <item>time</item>
+        <item>unique experience</item>
+        <item>educated people</item>
+    </string-array>
+
+    <string-array name="much_many_a">
+        <item>many</item>
+        <item>much</item>
+        <item>many</item>
+        <item>much</item>
+        <item>many</item>
+        <item>many</item>
+        <item>much</item>
+        <item>much</item>
+        <item>much</item>
+        <item>many</item>
+        <item>many</item>
+        <item>much</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>much</item>
+        <item>many</item>
+        <item>much</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>much</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>much</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>much</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>many</item>
+        <item>much</item>
+        <item>much</item>
+        <item>many</item>
+    </string-array>
+
+    <string-array name="comparison_of_adjectives_q">
+        <item>My Dad is (старше) than yours.</item>
+        <item>My apartment is (больше) than yours.</item>
+        <item>Our boss is (богаче) than yours.</item>
+        <item>My book is (гораздо интереснее) than yours.</item>
+        <item>My brother is (сильнее) than yours.</item>
+        <item>This way is (короче) than that one.</item>
+        <item>You have a very expensive car, but mine is (дороже).</item>
+        <item>You have a bad job, but ours is (наихудшая).</item>
+        <item>Your party was noisy, but ours will be (самая шумная).</item>
+        <item>You have much money, but I have (больше).</item>
+        <item>She has very few friends, but ten years ago she had (даже меньше).</item>
+        <item>In Africa the level of life is (ниже) than in America.</item>
+        <item>There is (меньше) coffee in my cup than in yours.</item>
+        <item>The (больше) your car is, the (больше) fuel it spends.</item>
+        <item>The (меньше) money – the (меньше) problems.</item>
+        <item>The (старше) a chicken – the (вкуснее) a soup.</item>
+        <item>The (сложнее) your problem is, the (проще) it`s solution must be.</item>
+        <item>The (тяжелее) you work the (большую) salary you will get.</item>
+    </string-array>
+
+    <string-array name="comparison_of_adjectives_a">
+        <item>older</item>
+        <item>bigger</item>
+        <item>richer</item>
+        <item>more interesting</item>
+        <item>stronger</item>
+        <item>shorter</item>
+        <item>more expensive</item>
+        <item>the worst</item>
+        <item>the noisiest</item>
+        <item>more</item>
+        <item>even fewer</item>
+        <item>lower</item>
+        <item>less</item>
+        <item>bigger - more</item>
+        <item>less - fewer</item>
+        <item>older - tastier</item>
+        <item>more difficult :: simpler</item>
+        <item>harder - bigger</item>
+    </string-array>
+
+    <string-array name="enough_q">
+        <item>Smart</item>
+        <item>Beautiful girls</item>
+        <item>Clients</item>
+        <item>Cars</item>
+        <item>Big</item>
+        <item>Space</item>
+        <item>Brave</item>
+        <item>Computers</item>
+        <item>Old</item>
+        <item>Chairs</item>
+        <item>Books</item>
+        <item>Strong</item>
+        <item>Big businesses</item>
+        <item>Beautiful</item>
+        <item>Complicated</item>
+        <item>Money</item>
+        <item>Good friends</item>
+        <item>Strong fighters</item>
+        <item>Hot</item>
+        <item>Good books</item>
+        <item>Experienced</item>
+        <item>Tasty food</item>
+        <item>Poor countries</item>
+        <item>Known</item>
+        <item>Different ways</item>
+        <item>Empty words</item>
+        <item>Pretty</item>
+        <item>Comfortable houses</item>
+        <item>Pictures</item>
+        <item>Time</item>
+        <item>Unique experience</item>
+        <item>Tasty</item>
+        <item>Educated</item>
+    </string-array>
+
+    <string-array name="enough_a">
+        <item>Smart enough</item>
+        <item>Enough beautiful girls</item>
+        <item>Enough clients</item>
+        <item>Enough cars</item>
+        <item>Big enough</item>
+        <item>Enough space</item>
+        <item>Brave enough</item>
+        <item>Enough computers</item>
+        <item>Old enough</item>
+        <item>Enough chairs</item>
+        <item>Enough books</item>
+        <item>Strong enough</item>
+        <item>Enough big businesses</item>
+        <item>Beautiful enough</item>
+        <item>Complicated enough</item>
+        <item>Enough money</item>
+        <item>Enough good friends</item>
+        <item>Enough strong fighters</item>
+        <item>Hot enough</item>
+        <item>Enough good books</item>
+        <item>Experienced enough</item>
+        <item>Enough tasty food</item>
+        <item>Enough poor countries</item>
+        <item>Known enough</item>
+        <item>Enough different ways</item>
+        <item>Enough empty words</item>
+        <item>Pretty enough</item>
+        <item>Enough comfortable houses</item>
+        <item>Enough pictures</item>
+        <item>Enough time</item>
+        <item>Enough unique experience</item>
+        <item>Tasty enough</item>
+        <item>Educated enough</item>
+    </string-array>
+
 </resources>

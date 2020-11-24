@@ -4,20 +4,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_margin="2dp"
+    android:background="@drawable/item_adjective"
     android:layout_height="wrap_content">
 
     <CheckBox
-        android:id="@+id/checkBoxVerbsList"
+        android:id="@+id/checkBoxAdjective"
         android:layout_width="0dp"
-        android:layout_height="29dp"
-        android:layout_margin="4dp"
-        android:button="@null"
-        android:drawableRight="@drawable/dialog_check_box"
-        android:drawablePadding="18dp"
-        android:textColor="@color/check_box_tense_unchecked_color"
+        android:layout_height="wrap_content"
         android:textSize="18sp"
+        android:button="@null"
+        android:drawableRight="@drawable/check_box_adjective"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textColor="#CBE4E4E4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
 </androidx.constraintlayout.widget.ConstraintLayout>
