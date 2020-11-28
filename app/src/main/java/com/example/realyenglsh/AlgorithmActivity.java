@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -29,11 +31,18 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,13 +55,15 @@ public class AlgorithmActivity extends AppCompatActivity {
     private CheckBox checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast;
     private CheckBox checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe;
     private CheckBox checkBoxTypeOfSentenceMinus, checkBoxTypeOfSentencePlus, checkBoxTypeOfSentenceQu, checkBoxTypeOfSentenceMinusQu;
-    private Switch switchShowPrompt, switchIrregularPastVerb;
+    private Switch switchShowPrompt, switchShowHelpContent;
     private MainViewModel viewModel;
     private ConstraintLayout constraintLayout;
     private Button buttonPutIntoDBWrongSentence;
     private ImageButton imageButtonShowDialogVerbs, imageButtonShowDialogAdjective;
 
     private LinearLayout linearLayoutVerbsForm;
+
+    private TextView textViewTranslation;
 
     private List<MyListOfVerbs> listOfMyList = new ArrayList<>();
     private List<MyListAdjective> listOfMyAdjectiveList = new ArrayList<>();
@@ -85,6 +96,9 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV2 = findViewById(R.id.textViewV2);
         textViewV3 = findViewById(R.id.textViewV3);
 
+
+        textViewTranslation = findViewById(R.id.textViewTranslation);
+
         buttonPutIntoDBWrongSentence = findViewById(R.id.buttonToTableActivity);
 
         imageButtonShowDialogVerbs = findViewById(R.id.imageButtonShowDialogVerbs);
@@ -93,7 +107,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         linearLayoutVerbsForm = findViewById(R.id.linearLayoutVerbForms);
         constraintLayout = findViewById(R.id.windowAlgorithmActivity);
 
-        switchIrregularPastVerb = findViewById(R.id.switchIrregularVerb);
+        switchShowHelpContent = findViewById(R.id.switchIrregularVerb);
         switchShowPrompt = findViewById(R.id.switchShowPrompt);
 
         checkBoxTenseFuture = findViewById(R.id.checkBoxTenseFuture);
@@ -118,16 +132,16 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
-        listIdTenseObject = getListIdDrawableResources(R.drawable.spaceship, R.drawable.car, R.drawable.coach);
-        listIdImageTypeOfSentence = getListIdDrawableResources(R.drawable.minus, R.drawable.plus, R.drawable.qu_mark, R.drawable.qu_mark_minus);
+        listIdTenseObject = getListIdDrawableRes(R.drawable.spaceship, R.drawable.car, R.drawable.coach);
+        listIdImageTypeOfSentence = getListIdDrawableRes(R.drawable.minus, R.drawable.plus, R.drawable.qu_mark, R.drawable.qu_mark_minus);
 
-        listIdBackgroundImages = getListIdDrawableResources(R.drawable.tense_way_future, R.drawable.tense_way_present, R.drawable.tense_way_past);
-        listIdBackgroundImageNegativeSentence = getListIdDrawableResources(R.drawable.tense_way_future_negative, R.drawable.tense_way_present_negative, R.drawable.tense_way_past_negative);
-        listIdBackgroundImageQuestionSentence = getListIdDrawableResources(R.drawable.tense_way_future_qu, R.drawable.tense_way_present_qu, R.drawable.tense_way_past_qu);
-        listIdBackgroundImageNegativeQuestionSentence = getListIdDrawableResources(R.drawable.tense_way_future_negative_qu, R.drawable.tense_way_present_negative_qu, R.drawable.tense_way_past_negative_qu);
+        listIdBackgroundImages = getListIdDrawableRes(R.drawable.tense_way_future, R.drawable.tense_way_present, R.drawable.tense_way_past);
+        listIdBackgroundImageNegativeSentence = getListIdDrawableRes(R.drawable.tense_way_future_negative, R.drawable.tense_way_present_negative, R.drawable.tense_way_past_negative);
+        listIdBackgroundImageQuestionSentence = getListIdDrawableRes(R.drawable.tense_way_future_qu, R.drawable.tense_way_present_qu, R.drawable.tense_way_past_qu);
+        listIdBackgroundImageNegativeQuestionSentence = getListIdDrawableRes(R.drawable.tense_way_future_negative_qu, R.drawable.tense_way_present_negative_qu, R.drawable.tense_way_past_negative_qu);
 
-        listOfNames = getArrayListFromStringResources(this, R.array.personal_pronouns, R.string.names);
-        listOfVerbsStrong = getArrayListFromStringResources(this, R.array.strong_verbs);
+        listOfNames = getArrayListFromStringRes(this, R.array.personal_pronouns, R.string.names);
+        listOfVerbsStrong = getArrayListFromStringRes(this, R.array.strong_verbs);
 //        listOfAdjective = getArrayListFromStringResources(this, null, R.string.adjective);
 
         listOfLessonVerbsSimple = new ArrayList<>();
@@ -138,6 +152,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfMyList.add(getMyListOfVerbs("Verbs # 1 (1 - 50)", true, R.string.simple_verbs_1, R.string.irregular_verbs_v1_1, R.string.irregular_verbs_v2_1, R.string.irregular_verbs_v3_1));
         listOfMyList.add(getMyListOfVerbs("Verbs # 2 (51 - 100)", false, R.string.simple_verbs_2, R.string.irregular_verbs_v1_2, R.string.irregular_verbs_v2_2, R.string.irregular_verbs_v3_2));
         listOfMyList.add(getMyListOfVerbs("Verbs # 3 (101 - 150)", false, R.string.simple_verbs_3, R.string.irregular_verbs_v1_3, R.string.irregular_verbs_v2_3, R.string.irregular_verbs_v3_3));
+        listOfMyList.add(getMyListOfVerbs("Verbs # 4 (151 - 200)", false, R.string.simple_verbs_4, R.string.irregular_verbs_v1_4, R.string.irregular_verbs_v2_4, R.string.irregular_verbs_v3_4));
 
         listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #1", true, R.string.adjective_1_1));
         listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #2", false, R.string.adjective_1_2));
@@ -166,6 +181,7 @@ public class AlgorithmActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Dialog dialog = new Dialog(v.getContext());
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.setContentView(R.layout.dialog_adjective);
 
                 Button button = dialog.findViewById(R.id.buttonApplyDialogAdjective);
@@ -173,6 +189,8 @@ public class AlgorithmActivity extends AppCompatActivity {
                 RecyclerView recyclerView = dialog.findViewById(R.id.recyclerViewDialogAdjective);
                 recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
                 recyclerView.setAdapter(new MyAdapterAdjectiveList(listOfMyAdjectiveList));
+
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.show();
 
                 button.setOnClickListener(new View.OnClickListener() {
@@ -184,10 +202,6 @@ public class AlgorithmActivity extends AppCompatActivity {
                 });
             }
         });
-
-
-
-
 
         buttonPutIntoDBWrongSentence.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -215,13 +229,15 @@ public class AlgorithmActivity extends AppCompatActivity {
             }
         });
 
-        switchIrregularPastVerb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        switchShowHelpContent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     linearLayoutVerbsForm.setVisibility(View.VISIBLE);
+                    textViewTranslation.setVisibility(View.VISIBLE);
                 } else {
                     linearLayoutVerbsForm.setVisibility(View.INVISIBLE);
+                    textViewTranslation.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -229,6 +245,8 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV1.setOnClickListener(new OnClickAudioContentPlayer());
         textViewV2.setOnClickListener(new OnClickAudioContentPlayer());
         textViewV3.setOnClickListener(new OnClickAudioContentPlayer());
+
+
 
 
     }
@@ -267,6 +285,7 @@ public class AlgorithmActivity extends AppCompatActivity {
                     String adjective = getWordFromList(listOfLessonAdjective);
                     sentence = String.format("%s %s", name, adjective);
                     setWordOfToBeAdjective(adjective);
+                    textViewTranslation.setText(getTranslateContent(adjective));
                 } else {  // passive verb
                     if (listOfLessonVerbsIrregularV1.contains(simpleIrregularVerb)) {
                         sentence = getSentenceWithToBeV3Verb(name, simpleIrregularVerb);
@@ -279,6 +298,7 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         if (randomNumberOfWay != 2 || randomNumberOfToBe != 1) {
             setFormsOfIrregularVerb(simpleIrregularVerb);
+            textViewTranslation.setText(getTranslateContent(simpleIrregularVerb));
         }
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {
@@ -365,7 +385,6 @@ public class AlgorithmActivity extends AppCompatActivity {
     }
 
     public String[] getArrayFromArrayResources(Context context, int id) {
-
         return context.getResources().getStringArray(id);
     }
 
@@ -373,7 +392,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         return getString(id).split(",");
     }
 
-    public ArrayList<String> getArrayListFromStringResources(Context context, Integer idArrayResource, int... idResource) {
+    public ArrayList<String> getArrayListFromStringRes(Context context, Integer idArrayResource, int... idResource) {
         List<String[]> listOfArgsId = new ArrayList<>();
         ArrayList<String> stringList = new ArrayList<>();
 
@@ -389,7 +408,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         return stringList;
     }
 
-    private ArrayList<Integer> getListIdDrawableResources(int... id) {
+    private ArrayList<Integer> getListIdDrawableRes(int... id) {
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i : id) {
             arrayList.add(i);
@@ -541,16 +560,16 @@ public class AlgorithmActivity extends AppCompatActivity {
     }
 
     private MyListOfVerbs getMyListOfVerbs(String name, boolean b, int idResSimpleVerb, int idResIrregularV1, int idResIrregularV2, int idResIrregularV3) {
-        List<String> listOfVerbsSimple = getArrayListFromStringResources(this, null, idResSimpleVerb);
-        List<String> listOfVerbsIrregularV1 = getArrayListFromStringResources(this, null, idResIrregularV1);
-        List<String> listOfVerbsIrregularV2 = getArrayListFromStringResources(this, null, idResIrregularV2);
-        List<String> listOfVerbsIrregularV3 = getArrayListFromStringResources(this, null, idResIrregularV3);
+        List<String> listOfVerbsSimple = getArrayListFromStringRes(this, null, idResSimpleVerb);
+        List<String> listOfVerbsIrregularV1 = getArrayListFromStringRes(this, null, idResIrregularV1);
+        List<String> listOfVerbsIrregularV2 = getArrayListFromStringRes(this, null, idResIrregularV2);
+        List<String> listOfVerbsIrregularV3 = getArrayListFromStringRes(this, null, idResIrregularV3);
 
         return new MyListOfVerbs(name, b, listOfVerbsSimple, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3);
     }
 
     private MyListAdjective getMyAdjectiveList(String nameList, boolean isChecked, int idResAdjective) {
-        List<String> listAdjective = getArrayListFromStringResources(this, null, idResAdjective);
+        List<String> listAdjective = getArrayListFromStringRes(this, null, idResAdjective);
 
         return new MyListAdjective(nameList, isChecked, listAdjective);
     }
@@ -609,5 +628,60 @@ public class AlgorithmActivity extends AppCompatActivity {
             }
         }
     }
+
+
+    private static class DownLoadTask extends AsyncTask<String, Void, String> {
+        URL url;
+        StringBuilder sb = new StringBuilder();
+        HttpURLConnection urlConnection;
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                url = new URL(strings[0]);
+                urlConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = urlConnection.getInputStream();
+                InputStreamReader reader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String line = bufferedReader.readLine();
+
+                while (line != null) {
+                    sb.append(line);
+                    line = bufferedReader.readLine();
+                }
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
+                }
+            }
+            return sb.toString();
+        }
+    }
+    private String getTranslateContent(String word) {
+        DownLoadTask loadTask = new DownLoadTask();
+        String url = String.format("https://wooordhunt.ru/word/%s", word);
+        String content = "";
+        StringBuilder result = new StringBuilder();
+        try {
+            content = loadTask.execute(url).get();
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Pattern pattern = Pattern.compile("<span class=\"t_inline_en\">([а-я,\\s]*)</span>");
+        Matcher matcher = pattern.matcher(content);
+
+        while (matcher.find()) {
+            result.append(matcher.group(1));
+        }
+        return result.toString();
+    }
 }
-// recyclerView.setAdapter(new MyAdapterAdjectiveList(listOfMyAdjectiveList));

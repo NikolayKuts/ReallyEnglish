@@ -17,7 +17,7 @@ public class MyAdapterAdjectiveList extends RecyclerView.Adapter<MyAdapterAdject
 
     private List<MyListAdjective> listAdjective;
 
-    MyAdapterAdjectiveList(List<MyListAdjective> listAdjective) {
+    public MyAdapterAdjectiveList(List<MyListAdjective> listAdjective) {
         this.listAdjective = listAdjective;
     }
 
@@ -67,7 +67,7 @@ public class MyAdapterAdjectiveList extends RecyclerView.Adapter<MyAdapterAdject
                 checkBox.setTextColor(itemView.getResources().getColor(R.color.item_adjective_text_color_checked));
                 checkBox.setBackground(itemView.getResources().getDrawable(R.drawable.item_adjective_orange));
             } else {
-                checkBox.setTextColor(itemView.getResources().getColor(R.color.check_box_text_color_unchecked));
+                checkBox.setTextColor(itemView.getResources().getColor(R.color.item_adjective_text_color_unchecked));
                 checkBox.setBackground(itemView.getResources().getDrawable(R.drawable.item_adjective));
             }
         }

@@ -416,10 +416,16 @@
         like,want,need,ask,listen,start,love,finish,live,hate,work,play,learn,look,help,wait,explain,rest,hope,pay,stay,answer
     </string>
     <string name="simple_verbs_2">
-        believe,happen,allow,try,say,look for,compare,smile,use,call,laugh,demand,pour,clean,count on,dress,walk,command,manage,agree,recommend,wash,talk,promise,remember,seem,visit,prefer,thank,study,refuse
+        believe,happen,allow,try,say,look for,compare,smile,use,call,laugh,demand,pour,clean,count on,dress,walk
+        ,command,manage,agree,recommend,wash,talk,promise,remember,seem,visit,prefer,thank,study,refuse
     </string>
     <string name="simple_verbs_3">
-        apply,punish,excuse,arrange,deceive,suit,lift,cook,wonder,kill,check,die,advise,worry,present,change,argue,shout,depend,lie(лгать),cancel,convince,decide,repeat,scare,doubt,watch,harm,carry,fail,close,hurry,save
+        apply,punish,excuse,arrange,deceive,suit,lift,cook,wonder,kill,check,die,advise,worry,present,change,argue,shout,depend,lie(лгать)
+        ,cancel,convince,decide,repeat,scare,doubt,watch,harm,carry,fail,close,hurry,save
+    </string>
+    <string name="simple_verbs_4">
+        move,breath,cry,improve,disturb,translate,respect,matter,increase,decrease,miss,destroy,defend,touch,compete,wish,succeed,prepare,order,appear,disappear
+        ,owe,exist,invite,knock,repair,pass,conceal,remind,turn,return,annoy,complain,pretend,tie,connect,practice,switch,describe,solve,follow,sound,travel
     </string>
 
     <string name="irregular_verbs_v1_1">
@@ -431,6 +437,9 @@
     <string name="irregular_verbs_v1_3">
         feed,steal,cut,shoot,hold,make clear,feel,feel for,leave,upset,fall,sing,dream,choose,lie,deal,prove,spoil
     </string>
+    <string name="irregular_verbs_v1_4">
+        hurt,begin,throw,strive,cost,hide,grow,burn,put,smell,lead,mislead
+    </string>
 
     <string name="irregular_verbs_v2_1">
         got,came,understood,told,put,taught,bought,saw,heard,let,read,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
@@ -441,6 +450,9 @@
     <string name="irregular_verbs_v2_3">
         fed,stole,cut,shot,held,made clear,felt,felt for,left,upset,fell,sang,dreamed,chose,lay,dealt,proved,spoiled
     </string>
+    <string name="irregular_verbs_v2_4">
+        hurt,began,threw,strove,cost,hid,grew,burned,put,smelled,led,misled
+    </string>
 
     <string name="irregular_verbs_v3_1">
         got,come,understood,told,put,taught,bought,seen,heard,let,read,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone
@@ -450,6 +462,9 @@
     </string>
     <string name="irregular_verbs_v3_3">
         fed,stolen,cut,shot,held,made clear,felt,felt for,left,upset,fallen,sung,dreamed,chosen,lain,dealt,proven,spoiled
+    </string>
+    <string name="irregular_verbs_v3_4">
+        hurt,begun,thrown,striven,cost,hidden,grown,burned,put,smelled,led,misled
     </string>
 
 
@@ -588,7 +603,7 @@
         <item>You are so strong. All of them will be afraid of you there.</item>
         <item>Our commander says, that he can’t be patient only two types of soldiers: too stupid and too smart.</item>
         <item>I am very busy. Please, call later.</item>
-        <item>Stand up, congratulate the newlyweds. I would like, that you do it instead of me. – Are you so shy yours Russian accent.</item>
+        <item>Stand up, congratulate the newlyweds. I would like, that you do it instead of me. – Are you so shy your Russian accent.</item>
     </string-array>
 
     <string-array name="adjective_likes_verb_ru_q">
@@ -753,7 +768,7 @@
         <item>The (меньше) money – the (меньше) problems.</item>
         <item>The (старше) a chicken – the (вкуснее) a soup.</item>
         <item>The (сложнее) your problem is, the (проще) it`s solution must be.</item>
-        <item>The (тяжелее) you work the (большую) salary you will get.</item>
+        <item>The (тяжелее) you work - the (большую) salary you will get.</item>
     </string-array>
 
     <string-array name="comparison_of_adjectives_a">
@@ -773,7 +788,7 @@
         <item>bigger - more</item>
         <item>less - fewer</item>
         <item>older - tastier</item>
-        <item>more difficult :: simpler</item>
+        <item>more difficult - simpler</item>
         <item>harder - bigger</item>
     </string-array>
 
@@ -847,6 +862,110 @@
         <item>Enough unique experience</item>
         <item>Tasty enough</item>
         <item>Educated enough</item>
+    </string-array>
+
+    <string-array name="fake_subject_q">
+        <item>Очень опасно водить автомобиль в такую погоду.</item>
+        <item>Странно видеть вас в таком месте.</item>
+        <item>Было очень трудно пройти этот тест.</item>
+        <item>Я боюсь, что будет скучно смотреть три боевика подряд (боевик – “action movie”, подряд – “in a row”).</item>
+        <item>Здесь принято называть всех по имени.</item>
+        <item>Мне кажется, что он не придет.</item>
+        <item>Может случиться, что я не смогу прийти.</item>
+        <item>Было очень интересно наблюдать за их дискуссией (watch their discussion).</item>
+        <item>Больно, Гаврила Петрович? – Больно, Федя!</item>
+        <item>Вы начнете работу завтра. – Подходит.</item>
+        <item>Завтра будет холодно.</item>
+        <item>Непонятно, что они будут делать.</item>
+        <item>Хорошо, что ты пришел!</item>
+        <item>Было приятно получить от вас письмо.</item>
+        <item>Случается, что хорошо продуманный план не работает.</item>
+    </string-array>
+
+    <string-array name="fake_subject_a">
+        <item>It`s dangerous to drive in this weather</item>
+        <item>It`s odd to see you in place like this</item>
+        <item>It was very hard to pass this test.</item>
+        <item>I`m afraid it will be boring to watch three action movies in a row.</item>
+        <item>There is a tradition (It is accepted) to call everyone by first name</item>
+        <item>It seems to me he is not coming.</item>
+        <item>It may happen that I won`t be able to come.</item>
+        <item>It was very interesting to watch their discussion.</item>
+        <item>Does it hurt, Gavrila Petrovich? - Yes it does, Fedya!</item>
+        <item>You are starting tomorrow. - Deal (or It suits me).</item>
+        <item>It will be cold tomorrow</item>
+        <item>It`s unclear what they are going to do.</item>
+        <item>It`s a good thing you`ve come</item>
+        <item>It was nice to get a letter from you.</item>
+        <item>It happens that well-thought-out plan fails.</item>
+    </string-array>
+
+    <string-array name="seem_turn_out_q">
+        <item>It can take much time. (turn out)</item>
+        <item>She thought about her children. (seem)</item>
+        <item>The boss pays you good money. (turn out)</item>
+        <item>You were at home. (turn out)</item>
+        <item>You will see him there. (seem)</item>
+        <item>He may start the work. (seem)</item>
+        <item>They heard this story. (seem)</item>
+        <item>You will be able to come tomorrow. (turn out)</item>
+        <item>She has so many problems with her son. (seem)</item>
+        <item>I need to go there. (seem)</item>
+        <item>I had to do it yesterday. (seem)</item>
+        <item>He likes expensive cars. (seem)</item>
+        <item>You may do it. (seem)</item>
+        <item>You had to help these poor people. (turn out)</item>
+        <item>She should come to you. (seem)</item>
+        <item>He learns to be a boss. (seem)</item>
+        <item>He wanted so much to work with us. (turn out)</item>
+        <item>She eats so much chocolate. She will be fat. (seem)</item>
+        <item>We must eat only healthy food. (seem)</item>
+        <item>They lived in Israel. (turn out)</item>
+        <item>You are so smart. (turn out)</item>
+        <item>You want to learn this language. (turn out)</item>
+        <item>You paid for this pizza 10 $. (seem)</item>
+        <item>They need our help. (seem)</item>
+        <item>We will have to explain them how to work. (seem)</item>
+        <item>She is so happy to see us. (seem)</item>
+        <item>They will be allowed to rest an hour or two. (seem)</item>
+        <item>You were so tired. (turn out)</item>
+        <item>People came there to rest. (seem)</item>
+        <item>She wants to tell me a story. (seem)</item>
+        <item>We may rest now.</item>
+    </string-array>
+
+    <string-array name="seem_turn_out_a">
+        <item>It turns out to be able to take much time.</item>
+        <item>She seemed to think about her children.</item>
+        <item>The boss turns out to pay you good money.</item>
+        <item>You turned out to be at home.</item>
+        <item>You seem to be going to see him there.</item>
+        <item>He seems to be allowed to start the work.</item>
+        <item>They seemed to hear this story.</item>
+        <item>You turn out to be going to be able to come tomorrow.</item>
+        <item>She seems to have so many problems with her son.</item>
+        <item>I seem to need to go there.</item>
+        <item>I seemed to have to do it yesterday.</item>
+        <item>He seems to like expensive cars.</item>
+        <item>You seem to be allowed do it.</item>
+        <item>You turned out to have to help these poor people.</item>
+        <item>She seems to be supposed to come to you.</item>
+        <item>He seems to learn to be a boss.</item>
+        <item>He turned out to want so much to work with us.</item>
+        <item>She seems to eat so much chocolate. She will be fat.</item>
+        <item>We seem to have to eat only healthy food.</item>
+        <item>They turned out to live in Israel.</item>
+        <item>You turn out to be so smart.</item>
+        <item>You turn out to want to learn this language.</item>
+        <item>You seemed to pay for this pizza 10 $.</item>
+        <item>They seem to need our help.</item>
+        <item>We seem to be going to have to explain them how to work.</item>
+        <item>She seems to be happy to see us.</item>
+        <item>They seem to going to be allowed to rest an hour or two.</item>
+        <item>You turned out to be so tired.</item>
+        <item>People seemed to come there to rest.</item>
+        <item>She seems to want to tell me a story.</item>
+        <item>We seem to be allowed to rest now.</item>
     </string-array>
 
 </resources>

@@ -22,7 +22,7 @@
     <color name="background_dialog_color">#3A3A3A</color>
     <color name="transparent_color">#00C16464</color>
     <color name="item_adjective_text_color_checked">#A6C87D</color>
-    <color name="item_adjective_text_color_unchecked">#B6B6B6</color>
+    <color name="item_adjective_text_color_unchecked">#FFFFFF</color>
 
 
 </resources>
