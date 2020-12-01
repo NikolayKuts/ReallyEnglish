@@ -968,4 +968,95 @@
         <item>We seem to be allowed to rest now.</item>
     </string-array>
 
+    <string-array name="mirroring_1_qu">
+        <item>They are your friends.  А мы – нет.</item>
+        <item>He will be rich. И я тоже.</item>
+        <item>He can help them. А я - нет.</item>
+        <item>We want to know it. И ты тоже.</item>
+        <item>This man is my boss. А ты  - нет.</item>
+        <item>Many people can’t understand this. Но я могу.</item>
+        <item>You don’t understand this language. Я тоже.</item>
+        <item>We have a dog. А у них - нет.</item>
+        <item>We buy in the most expensive shops. Они тоже.</item>
+        <item>It costs a lot of money. А то – нет.</item>
+        <item>She learned many things from her Granny. Ее сестра тоже.</item>
+        <item>I thought about this ahead of time. А ты нет.</item>
+        <item>You like chocolate cakes. А я нет.</item>
+        <item>She must come on time. Все остальные тоже.</item>
+        <item>Jimmy was sleeping. А ты нет.</item>
+        <item>We rest there almost every year. И семья Буш тоже.</item>
+        <item>He is a good fighter. Ты тоже.</item>
+        <item>He might do it. А тебе нет.</item>
+        <item>I am well-known in the city. Ты тоже.</item>
+        <item>He may come there. А вам нельзя.</item>
+        <item>Simpsons liked loud music. А их соседи нет.</item>
+    </string-array>
+
+    <string-array name="mirroring_1_an">
+        <item>But we are not</item>
+        <item>So will he</item>
+        <item>But I can`t</item>
+        <item>So do you</item>
+        <item>But you aren`t</item>
+        <item>But I can</item>
+        <item>Neither do I</item>
+        <item>But they don`t</item>
+        <item>So do they</item>
+        <item>But that does`t</item>
+        <item>So did her sister</item>
+        <item>But you did`t</item>
+        <item>But I don`t</item>
+        <item>So must the other</item>
+        <item>But you was`t</item>
+        <item>So do Bush`s family</item>
+        <item>Ты тоже.So are you</item>
+        <item>But you might not</item>
+        <item>So are you</item>
+        <item>But you mayn`t</item>
+        <item>But their neighbor didn`t</item>
+    </string-array>
+
+    <string-array name="mirroring_2_qu">
+        <item>The workers need to rest. Нам тоже.</item>
+        <item>You get a good salary. Я тоже.</item>
+        <item>She thinks about this. А ты нет.</item>
+        <item>She likes to rest there. Ее сестра тоже.</item>
+        <item>You may do it. А нам нельзя.</item>
+        <item>This man is rich. А его соседи нет.</item>
+        <item>You will often see him here. Я тоже.</item>
+        <item>Jennifer knew it. А я нет.</item>
+        <item>They could see us there. А ты нет.</item>
+        <item>Jack Taylor is happy to work here. Но многие люди нет.</item>
+        <item>This book will help you in your development. А та – нет.</item>
+        <item>You could help us. Он тоже.</item>
+        <item>She had a very serious business. У ее сестры тоже.</item>
+        <item>You knew it before. А я нет.</item>
+        <item>Mr. Jackson doesn’t speak French. Его жена тоже.</item>
+        <item>He had to come yesterday. Ты тоже.</item>
+        <item>This guy sent her flowers and gifts. А ты нет.</item>
+        <item>They gave us money. А ты нет.</item>
+        <item>You heard about this. Я тоже.</item>
+    </string-array>
+
+    <string-array name="mirroring_2_an">
+        <item>So do we</item>
+        <item>So do I</item>
+        <item>But you don`t</item>
+        <item>So does her sister</item>
+        <item>But we mayn`t</item>
+        <item>But his neighbors aren`t</item>
+        <item>So will I</item>
+        <item>But i did`t</item>
+        <item>But you couldn`t</item>
+        <item>But many people aren`t</item>
+        <item>But you won`t</item>
+        <item>So could you</item>
+        <item>So did her sister</item>
+        <item>Neither did I</item>
+        <item>Neither does his wife </item>
+        <item>So did you</item>
+        <item>But you didn`t</item>
+        <item>But you didn`t</item>
+        <item>You didn`t hear about this. Я тоже.Neither did I</item>
+    </string-array>
 </resources>

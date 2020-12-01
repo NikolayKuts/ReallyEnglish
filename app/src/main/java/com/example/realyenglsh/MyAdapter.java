@@ -1,18 +1,14 @@
 package com.example.realyenglsh;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends BaseAdapter {
@@ -46,7 +42,7 @@ public class MyAdapter extends BaseAdapter {
         ViewHolder holder;
 
         if(convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.layout_item_list_view, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_list_view, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {

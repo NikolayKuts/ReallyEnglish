@@ -23,7 +23,7 @@ public class MyAdapterForCouples extends RecyclerView.Adapter<MyAdapterForCouple
     @NonNull
     @Override
     public CouplesListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_couples_dialog, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_couples_dialog, parent, false);
         return new CouplesListHolder(view);
     }
 

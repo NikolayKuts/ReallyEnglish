@@ -87,7 +87,7 @@
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:text="TextView"
-        android:textColor="#94C5CC"
+        android:textColor="@color/chosen_lists"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewCouples"
         app:layout_constraintEnd_toStartOf="@+id/buttonShowLists"

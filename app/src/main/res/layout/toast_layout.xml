@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/toast_background_color"
+    android:background="@color/background_toast_color"
     android:padding="8dp"
     android:id="@+id/toast_root">
 

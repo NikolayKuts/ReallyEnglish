@@ -64,13 +64,15 @@ public class CouplesActivityEnToEn extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Enough [9]", false, R.array.enough_qu, R.array.enough_an));
         listOfMyCouplesList.add(getMyListCouples("Fake subject [10]", false, R.array.fake_subject_qu, R.array.fake_subject_an));
         listOfMyCouplesList.add(getMyListCouples("Seem / Turn out [11]", false, R.array.seem_turn_out_qu, R.array.seem_turn_out_an));
+        listOfMyCouplesList.add(getMyListCouples("Mirroring #1 [12]", false, R.array.mirroring_1_qu, R.array.mirroring_1_an));
+        listOfMyCouplesList.add(getMyListCouples("Mirroring #2 [12]", false, R.array.mirroring_2_qu, R.array.mirroring_2_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
 
         String s = "";
 
-        s = s.replaceAll("⦁\\t", "");
+        s = s.replaceAll("\\d+\\.\\t", "");
         Log.i("log", s);
 
         String[] array = s.split("\\s*\\n\\s*");
