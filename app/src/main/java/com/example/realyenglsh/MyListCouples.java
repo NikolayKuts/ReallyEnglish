@@ -2,16 +2,16 @@ package com.example.realyenglsh;
 
 import java.util.List;
 
-public class MyListTranslating {
+public class MyListCouples {
     private String nameOfList;
-    private List<String> listQuestions;
+    private List<String> listCouples;
     private List<String> listAnswers;
     private boolean isChecked;
 
-    public MyListTranslating(String nameOfList, boolean isChecked, List<String> listQuestions, List<String> listAnswers) {
+    public MyListCouples(String nameOfList, boolean isChecked, List<String> listCouples, List<String> listAnswers) {
         this.nameOfList = nameOfList;
         this.isChecked = isChecked;
-        this.listQuestions = listQuestions;
+        this.listCouples = listCouples;
         this.listAnswers = listAnswers;
     }
 
@@ -23,12 +23,12 @@ public class MyListTranslating {
         this.nameOfList = nameOfList;
     }
 
-    public List<String> getListQuestions() {
-        return listQuestions;
+    public List<String> getListCouples() {
+        return listCouples;
     }
 
-    public void setListQuestions(List<String> listQuestions) {
-        this.listQuestions = listQuestions;
+    public void setListCouples(List<String> listCouples) {
+        this.listCouples = listCouples;
     }
 
     public List<String> getListAnswers() {

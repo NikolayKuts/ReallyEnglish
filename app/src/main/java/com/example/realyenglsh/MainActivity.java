@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickToQuestionsActivityEnToEn(View view) {
-        Intent intent = new Intent(this, QuestionsActivityEnToEn.class);
+    public void onClickToCouplesActivityEnToEn(View view) {
+        Intent intent = new Intent(this, CouplesActivityEnToEn.class);
         startActivity(intent);
     }
 

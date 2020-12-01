@@ -16,7 +16,7 @@
         android:gravity="center"
         android:textColor="#887C6A"
         android:textSize="18sp"
-        android:background="@drawable/item_question"
+        android:background="@drawable/item_couples"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

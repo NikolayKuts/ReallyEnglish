@@ -32,7 +32,7 @@
         <item>Whose</item>
     </string-array>
 
-    <string-array name="question_english">
+    <string-array name="couples_english_qu">
         <item>It can take much time. (Сколько?)</item>
         <item>She so often forgets her keys. (Почему?)</item>
         <item>You will see him there. (Где?)</item>
@@ -68,7 +68,7 @@
         <item>You saw the boss this morning. (Когда?)</item>
     </string-array>
 
-    <string-array name="question_english_answers">
+    <string-array name="couples_english_an">
         <item>How much time can it take?</item>
         <item>Why does she forget her keys so often?</item>
         <item>Where will you see him?</item>
@@ -104,7 +104,7 @@
         <item>When did you see the boss?</item>
     </string-array>
 
-    <string-array name="question_english_wh">
+    <string-array name="couples_english_wh_qu">
         <item>You have bought some fruits. Что? Что случилось в том магазине?</item>
         <item>She said him to come tomorrow. Когда?</item>
         <item>They like chocolate ice cream. Какое?</item>
@@ -129,7 +129,7 @@
         <item>You haven’t eaten the hamburger. Почему?</item>
     </string-array>
 
-    <string-array name="question_english_wh_answers">
+    <string-array name="couples_english_wh_an">
         <item>What has happened in that store?</item>
         <item>When did she say to come?</item>
         <item>What ice cream do they like?</item>
@@ -154,7 +154,7 @@
         <item>Why haven’t you eaten the hamburger?</item>
     </string-array>
 
-    <string-array name="question_english_advanced">
+    <string-array name="couples_english_advanced_qu">
         <item>There are three cars there. Который из них твой?</item>
         <item>Mommy has brought us some chocolates. Что принесла?</item>
         <item>There were my keys on the table. Кто видел?</item>
@@ -168,7 +168,7 @@
         <item>You have lost the money. Как могло случиться, что…?</item>
     </string-array>
 
-    <string-array name="question_english_advanced_answers">
+    <string-array name="couples_english_advanced_an">
         <item>Which of these cars is yours?</item>
         <item>What has Mommy brought us?</item>
         <item>Who saw my keys on the tables?</item>
@@ -182,7 +182,7 @@
         <item>How could be this possible that you have lost the money?</item>
     </string-array>
 
-    <string-array name="question_english_ru_to_en">
+    <string-array name="couples_english_ru_to_en_qu">
         <item>Что вы будете пить?</item>
         <item>Где она работает?</item>
         <item>Почему тебе не нравится этот ресторан?</item>
@@ -257,7 +257,7 @@
         <item>Откуда это приходит и как с этим бороться?</item>
     </string-array>
 
-    <string-array name="question_english_ru_to_en_answers">
+    <string-array name="couples_english_ru_to_en_an">
         <item>What will you drink?</item>
         <item>Where does she work?</item>
         <item>Why don’t you like this restaurant?</item>
@@ -284,7 +284,7 @@
         <item>How will we be able to help these people?</item>
         <item>When did you leave this country?</item>
         <item>What do they usually buy here?</item>
-        <item>Who are you afraid?</item>
+        <item>Who are you afraid of</item>
         <item>Why do you so like this work?</item>
         <item>Why couldn’t you come yesterday?</item>
         <item>Why didn’t you be in office for two hours?</item>
@@ -332,7 +332,7 @@
         <item>Where does it come and how fights with this?</item>
     </string-array>
 
-    <string-array name="question_past_en_to_en">
+    <string-array name="couples_past_en_to_en_qu">
         <item>He could help us.</item>
         <item>She was very rich.</item>
         <item>Granddaddy fought in three wars.</item>
@@ -372,7 +372,7 @@
         <item>You understood me.</item>
     </string-array>
 
-    <string-array name="question_past_en_to_en_answer">
+    <string-array name="couples_past_en_to_en_an">
         <item>Could he help us?</item>
         <item>Was she very rich?</item>
         <item>Did granddaddy fight in three wars?</item>
@@ -512,7 +512,7 @@
         useful,important,famous,harmful,alive,interesting,dead,wet,cold,alone,busy,complicated,hot,dry,real,quiet,stinky,transparent,special
     </string>
 
-    <string-array name="negative_sentence_ru_q">
+    <string-array name="negative_sentence_ru_qu">
         <item>Никто ранее не пытался сделать такую вещь</item>
         <item>У меня нет никакого(кокого-либо) телевизора</item>
         <item>Я не видел никаких(каких-либо) ключей на столе</item>
@@ -530,7 +530,7 @@
         <item>Он не сможет ничего(чего-либо) сделать с этим</item>
     </string-array>
 
-    <string-array name="negative_sentence_en_a">
+    <string-array name="negative_sentence_en_an">
         <item>Nobody tried to do such thing before.</item>
         <item>I don’t have any TV.\nI have no TV!</item>
         <item>I didn’t see any keys on the table.\nI saw no keys on the table.</item>
@@ -548,7 +548,7 @@
         <item>He won’t be able to do anything with that.\nHe will be able to do nothing with that.</item>
     </string-array>
 
-    <string-array name="adjective_intensifiers_so_very_too_ru_q">
+    <string-array name="adjective_intensifiers_so_very_too_ru_qu">
         <item>Эта сумка слишком тяжелая. Ты не сможешь ее поднять.</item>
         <item>Вы очень похожи на моего брата.</item>
         <item>Она очень красивая.</item>
@@ -577,7 +577,7 @@
         <item>Встань, поздравь молодоженов. – Я бы хотел, чтобы ты это сделала вместо меня. – Ты так стесняешься своего русского акцента?</item>
     </string-array>
 
-    <string-array name="adjective_intensifiers_so_very_too_en_a">
+    <string-array name="adjective_intensifiers_so_very_too_en_an">
         <item>This bag is too heavy. You won’t be able to lift it.</item>
         <item>You are very similar to my brother.</item>
         <item>She is very beautiful.</item>
@@ -606,7 +606,7 @@
         <item>Stand up, congratulate the newlyweds. I would like, that you do it instead of me. – Are you so shy your Russian accent.</item>
     </string-array>
 
-    <string-array name="adjective_likes_verb_ru_q">
+    <string-array name="adjective_likes_verb_ru_qu">
         <item>Ты не пожалеешь об этом.</item>
         <item>Я не хотел присутствовать на этой вечеринке.</item>
         <item>Она боялась даже думать об этом.</item>
@@ -631,10 +631,10 @@
         <item>Сегодня мы пойдем в театр! – Я согласна!</item>
     </string-array>
 
-    <string-array name="adjective_likes_verb_en_a">
+    <string-array name="adjective_likes_verb_en_an">
         <item>You won’t be sorry about this.</item>
         <item>I didn’t want to be present at this party.</item>
-        <item>She was afraid even to think about that.</item>
+        <item>She was afraid even to think about this.</item>
         <item>She is so shy to talk about this!</item>
         <item>The neighbor’s kids will be afraid of this dog.</item>
         <item>Yesterday he was late to the work.</item>
@@ -656,7 +656,7 @@
         <item>Today we’ll go to the theater! – I agree!</item>
     </string-array>
 
-    <string-array name="much_many_q">
+    <string-array name="much_many_qu">
         <item>black cats</item>
         <item>chocolate ice-cream</item>
         <item>modern computers</item>
@@ -703,7 +703,7 @@
         <item>educated people</item>
     </string-array>
 
-    <string-array name="much_many_a">
+    <string-array name="much_many_an">
         <item>many</item>
         <item>much</item>
         <item>many</item>
@@ -750,11 +750,11 @@
         <item>many</item>
     </string-array>
 
-    <string-array name="comparison_of_adjectives_q">
+    <string-array name="comparison_of_adjectives_qu">
         <item>My Dad is (старше) than yours.</item>
         <item>My apartment is (больше) than yours.</item>
         <item>Our boss is (богаче) than yours.</item>
-        <item>My book is (гораздо интереснее) than yours.</item>
+        <item>My book is (интереснее) than yours.</item>
         <item>My brother is (сильнее) than yours.</item>
         <item>This way is (короче) than that one.</item>
         <item>You have a very expensive car, but mine is (дороже).</item>
@@ -771,7 +771,7 @@
         <item>The (тяжелее) you work - the (большую) salary you will get.</item>
     </string-array>
 
-    <string-array name="comparison_of_adjectives_a">
+    <string-array name="comparison_of_adjectives_an">
         <item>older</item>
         <item>bigger</item>
         <item>richer</item>
@@ -792,7 +792,7 @@
         <item>harder - bigger</item>
     </string-array>
 
-    <string-array name="enough_q">
+    <string-array name="enough_qu">
         <item>Smart</item>
         <item>Beautiful girls</item>
         <item>Clients</item>
@@ -828,7 +828,7 @@
         <item>Educated</item>
     </string-array>
 
-    <string-array name="enough_a">
+    <string-array name="enough_an">
         <item>Smart enough</item>
         <item>Enough beautiful girls</item>
         <item>Enough clients</item>
@@ -864,7 +864,7 @@
         <item>Educated enough</item>
     </string-array>
 
-    <string-array name="fake_subject_q">
+    <string-array name="fake_subject_qu">
         <item>Очень опасно водить автомобиль в такую погоду.</item>
         <item>Странно видеть вас в таком месте.</item>
         <item>Было очень трудно пройти этот тест.</item>
@@ -882,7 +882,7 @@
         <item>Случается, что хорошо продуманный план не работает.</item>
     </string-array>
 
-    <string-array name="fake_subject_a">
+    <string-array name="fake_subject_an">
         <item>It`s dangerous to drive in this weather</item>
         <item>It`s odd to see you in place like this</item>
         <item>It was very hard to pass this test.</item>
@@ -900,7 +900,7 @@
         <item>It happens that well-thought-out plan fails.</item>
     </string-array>
 
-    <string-array name="seem_turn_out_q">
+    <string-array name="seem_turn_out_qu">
         <item>It can take much time. (turn out)</item>
         <item>She thought about her children. (seem)</item>
         <item>The boss pays you good money. (turn out)</item>
@@ -931,10 +931,10 @@
         <item>You were so tired. (turn out)</item>
         <item>People came there to rest. (seem)</item>
         <item>She wants to tell me a story. (seem)</item>
-        <item>We may rest now.</item>
+        <item>We may rest now. (seem)</item>
     </string-array>
 
-    <string-array name="seem_turn_out_a">
+    <string-array name="seem_turn_out_an">
         <item>It turns out to be able to take much time.</item>
         <item>She seemed to think about her children.</item>
         <item>The boss turns out to pay you good money.</item>
@@ -961,7 +961,7 @@
         <item>They seem to need our help.</item>
         <item>We seem to be going to have to explain them how to work.</item>
         <item>She seems to be happy to see us.</item>
-        <item>They seem to going to be allowed to rest an hour or two.</item>
+        <item>They seem to be going to be allowed to rest an hour or two.</item>
         <item>You turned out to be so tired.</item>
         <item>People seemed to come there to rest.</item>
         <item>She seems to want to tell me a story.</item>

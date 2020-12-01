@@ -1,7 +1,5 @@
 package com.example.realyenglsh;
 
-import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,32 +12,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class MyAdapterForTranslateList extends RecyclerView.Adapter<MyAdapterForTranslateList.TranslateListHolder> {
+public class MyAdapterForCouples extends RecyclerView.Adapter<MyAdapterForCouples.CouplesListHolder> {
 
-    private List<MyListTranslating> listMyListTranslating;
+    private List<MyListCouples> listMyListCouples;
 
-    public MyAdapterForTranslateList(List<MyListTranslating> listMyListTranslating) {
-        this.listMyListTranslating = listMyListTranslating;
+    public MyAdapterForCouples(List<MyListCouples> listMyListCouples) {
+        this.listMyListCouples = listMyListCouples;
     }
 
     @NonNull
     @Override
-    public TranslateListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_questions_dialog, parent, false);
-        return new TranslateListHolder(view);
+    public CouplesListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_couples_dialog, parent, false);
+        return new CouplesListHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TranslateListHolder holder, int position) {
-        MyListTranslating myListTranslating = listMyListTranslating.get(position);
-        holder.checkBoxList.setText(myListTranslating.getNameOfList());
-        holder.checkBoxList.setChecked(myListTranslating.isChecked());
-        holder.setTextColorOnCheckBox(myListTranslating.isChecked());
+    public void onBindViewHolder(@NonNull CouplesListHolder holder, int position) {
+        MyListCouples myListCouples = listMyListCouples.get(position);
+        holder.checkBoxList.setText(myListCouples.getNameOfList());
+        holder.checkBoxList.setChecked(myListCouples.isChecked());
+        holder.setTextColorOnCheckBox(myListCouples.isChecked());
 
         holder.checkBoxList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myListTranslating.setChecked(holder.checkBoxList.isChecked());
+                myListCouples.setChecked(holder.checkBoxList.isChecked());
                 holder.setTextColorOnCheckBox(holder.checkBoxList.isChecked());
                 holder.setAnimation(R.anim.fadein_shortest);
             }
@@ -48,14 +46,14 @@ public class MyAdapterForTranslateList extends RecyclerView.Adapter<MyAdapterFor
 
     @Override
     public int getItemCount() {
-        return listMyListTranslating.size();
+        return listMyListCouples.size();
     }
 
-    public class TranslateListHolder extends RecyclerView.ViewHolder {
+    public class CouplesListHolder extends RecyclerView.ViewHolder {
 
         CheckBox checkBoxList;
 
-        public TranslateListHolder(@NonNull View itemView) {
+        public CouplesListHolder(@NonNull View itemView) {
             super(itemView);
             checkBoxList = itemView.findViewById(R.id.checkBoxList);
         }
