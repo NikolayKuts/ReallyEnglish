@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class CouplesActivityEnToEn extends AppCompatActivity {
+public class CouplesActivity extends AppCompatActivity {
 
     private TextView textViewCouples;
     private TextView textViewAnswer;
@@ -58,7 +58,7 @@ public class CouplesActivityEnToEn extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Past En to En [5]", false, R.array.couples_past_en_to_en_qu, R.array.couples_past_en_to_en_an));
         listOfMyCouplesList.add(getMyListCouples("Negative sentences [6]", false, R.array.negative_sentence_ru_qu, R.array.negative_sentence_en_an));
         listOfMyCouplesList.add(getMyListCouples("Adjective intensifiers [7]", false, R.array.adjective_intensifiers_so_very_too_ru_qu, R.array.adjective_intensifiers_so_very_too_en_an));
-        listOfMyCouplesList.add(getMyListCouples("Adjective likes verb [7]", false, R.array.adjective_likes_verb_ru_qu, R.array.adjective_likes_verb_en_an));
+        listOfMyCouplesList.add(getMyListCouples("Adjective is like verb [7]", false, R.array.adjective_is_like_verb_ru_qu, R.array.adjective_is_like_verb_en_an));
         listOfMyCouplesList.add(getMyListCouples("Much & Many [8]", false, R.array.much_many_qu, R.array.much_many_an));
         listOfMyCouplesList.add(getMyListCouples("Comparison of adjectives [9]", false, R.array.comparison_of_adjectives_qu, R.array.comparison_of_adjectives_an));
         listOfMyCouplesList.add(getMyListCouples("Enough [9]", false, R.array.enough_qu, R.array.enough_an));
@@ -66,6 +66,7 @@ public class CouplesActivityEnToEn extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Seem / Turn out [11]", false, R.array.seem_turn_out_qu, R.array.seem_turn_out_an));
         listOfMyCouplesList.add(getMyListCouples("Mirroring #1 [12]", false, R.array.mirroring_1_qu, R.array.mirroring_1_an));
         listOfMyCouplesList.add(getMyListCouples("Mirroring #2 [12]", false, R.array.mirroring_2_qu, R.array.mirroring_2_an));
+        listOfMyCouplesList.add(getMyListCouples("Have V3", false, R.array.have_v3_qu, R.array.have_v3_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();

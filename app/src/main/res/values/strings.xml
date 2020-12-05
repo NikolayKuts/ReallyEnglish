@@ -171,7 +171,7 @@
     <string-array name="couples_english_advanced_an">
         <item>Which of these cars is yours?</item>
         <item>What has Mommy brought us?</item>
-        <item>Who saw my keys on the tables?</item>
+        <item>Who saw my keys on the table?</item>
         <item>Whom have you sold your car?</item>
         <item>Which of us will be sent to Texas?</item>
         <item>How much time will it take?</item>
@@ -285,7 +285,7 @@
         <item>When did you leave this country?</item>
         <item>What do they usually buy here?</item>
         <item>Who are you afraid of</item>
-        <item>Why do you so like this work?</item>
+        <item>Why do you like this work so much?</item>
         <item>Why couldn’t you come yesterday?</item>
         <item>Why didn’t you be in office for two hours?</item>
         <item>How aren’t you afraid to go there alone?</item>
@@ -589,9 +589,9 @@
         <item>They all love their leader very much. – Really?</item>
         <item>This man is very famous in his country.</item>
         <item>I like your chocolate cake very much. May I take one more piece?</item>
-        <item>Their daughter is so talented. She wants to become famous singer.</item>
+        <item>Their daughter is so talented. She wants to become famous singer so much.</item>
         <item>This guy is too fat. He won’t be able to work as a policeman.</item>
-        <item>You love sweets too much. You would better think about yours health.</item>
+        <item>You love sweets too much. You would better think about your health.</item>
         <item>Thank you very much. I am very pleased of your work.</item>
         <item>I like good champagne very much.</item>
         <item>He was very important person in his country.</item>
@@ -606,7 +606,7 @@
         <item>Stand up, congratulate the newlyweds. I would like, that you do it instead of me. – Are you so shy your Russian accent.</item>
     </string-array>
 
-    <string-array name="adjective_likes_verb_ru_qu">
+    <string-array name="adjective_is_like_verb_ru_qu">
         <item>Ты не пожалеешь об этом.</item>
         <item>Я не хотел присутствовать на этой вечеринке.</item>
         <item>Она боялась даже думать об этом.</item>
@@ -631,7 +631,7 @@
         <item>Сегодня мы пойдем в театр! – Я согласна!</item>
     </string-array>
 
-    <string-array name="adjective_likes_verb_en_an">
+    <string-array name="adjective_is_like_verb_en_an">
         <item>You won’t be sorry about this.</item>
         <item>I didn’t want to be present at this party.</item>
         <item>She was afraid even to think about this.</item>
@@ -960,7 +960,7 @@
         <item>You seemed to pay for this pizza 10 $.</item>
         <item>They seem to need our help.</item>
         <item>We seem to be going to have to explain them how to work.</item>
-        <item>She seems to be happy to see us.</item>
+        <item>She seems to be so  happy to see us.</item>
         <item>They seem to be going to be allowed to rest an hour or two.</item>
         <item>You turned out to be so tired.</item>
         <item>People seemed to come there to rest.</item>
@@ -972,7 +972,7 @@
         <item>They are your friends.  А мы – нет.</item>
         <item>He will be rich. И я тоже.</item>
         <item>He can help them. А я - нет.</item>
-        <item>We want to know it. И ты тоже.</item>
+        <item>We don`t want to know it. И ты тоже.</item>
         <item>This man is my boss. А ты  - нет.</item>
         <item>Many people can’t understand this. Но я могу.</item>
         <item>You don’t understand this language. Я тоже.</item>
@@ -994,9 +994,9 @@
 
     <string-array name="mirroring_1_an">
         <item>But we are not</item>
-        <item>So will he</item>
+        <item>So will I</item>
         <item>But I can`t</item>
-        <item>So do you</item>
+        <item>Neither do you</item>
         <item>But you aren`t</item>
         <item>But I can</item>
         <item>Neither do I</item>
@@ -1007,9 +1007,9 @@
         <item>But you did`t</item>
         <item>But I don`t</item>
         <item>So must the other</item>
-        <item>But you was`t</item>
+        <item>But you weren`t</item>
         <item>So do Bush`s family</item>
-        <item>Ты тоже.So are you</item>
+        <item>So are you</item>
         <item>But you might not</item>
         <item>So are you</item>
         <item>But you mayn`t</item>
@@ -1021,7 +1021,7 @@
         <item>You get a good salary. Я тоже.</item>
         <item>She thinks about this. А ты нет.</item>
         <item>She likes to rest there. Ее сестра тоже.</item>
-        <item>You may do it. А нам нельзя.</item>
+        <item>You may do it. Нам тоже.</item>
         <item>This man is rich. А его соседи нет.</item>
         <item>You will often see him here. Я тоже.</item>
         <item>Jennifer knew it. А я нет.</item>
@@ -1035,7 +1035,7 @@
         <item>He had to come yesterday. Ты тоже.</item>
         <item>This guy sent her flowers and gifts. А ты нет.</item>
         <item>They gave us money. А ты нет.</item>
-        <item>You heard about this. Я тоже.</item>
+        <item>You didn`t hear about this. Я тоже.</item>
     </string-array>
 
     <string-array name="mirroring_2_an">
@@ -1043,20 +1043,104 @@
         <item>So do I</item>
         <item>But you don`t</item>
         <item>So does her sister</item>
-        <item>But we mayn`t</item>
+        <item>So may we</item>
         <item>But his neighbors aren`t</item>
         <item>So will I</item>
-        <item>But i did`t</item>
+        <item>But I did`t</item>
         <item>But you couldn`t</item>
         <item>But many people aren`t</item>
         <item>But you won`t</item>
-        <item>So could you</item>
+        <item>So could he</item>
         <item>So did her sister</item>
         <item>Neither did I</item>
         <item>Neither does his wife </item>
         <item>So did you</item>
         <item>But you didn`t</item>
         <item>But you didn`t</item>
-        <item>You didn`t hear about this. Я тоже.Neither did I</item>
+        <item>Neither did I</item>
+    </string-array>
+
+    <string-array name="have_v3_qu">
+        <item>я уже побывал в Лондоне</item>
+        <item>ты уже пробыл в Лондоне втечении целой недели</item>
+        <item>я уже увидел этот фильм</item>
+        <item>она уже сделал свою работу</item>
+        <item>он уже ушел</item>
+
+        <item>я еще не позвонил им</item>
+        <item>он еще не продал ее машину</item>
+        <item>я еще не проверил</item>
+        <item>я еще не купил новый гриль</item>
+
+        <item>они никогда не бывали там</item>
+        <item>она никогда не видела его</item>
+        <item>я никогда не делал этого</item>
+        <item>мой брат никогда не уходил так рано домой</item>
+
+        <item>ты когда-нибудь бывал в Израиле?</item>
+        <item>он когда-нибудь видел это животное?</item>
+        <item>вы когда-нибудь делали роботу как эта?</item>
+        <item>она когда-нибудь уходила?</item>
+
+        <item>мне еще не позвонили</item>
+        <item>ему еще не принисли</item>
+        <item>ей еще не сказали об этом</item>
+        <item>им еще не показали</item>
+
+        <item>никто никогда не бывал там</item>
+        <item>никто никогда не видел его</item>
+        <item>никто никогда не делал это</item>
+        <item>никто никогда не слышал об этом</item>
+
+        <item>я всегда видел его в это время</item>
+        <item>он всегда был ответственным</item>responsible
+        <item>они всегда работали по правилам</item>
+        <item>мой сосед всегда жил здесь</item>
+
+        <item>тебе следовало подумать об это заранее</item>
+        <item>ему не следовало жениться</item>
+        <item>тебе следовало купить что-нибудь на ужин</item>
+    </string-array>
+
+    <string-array name="have_v3_an">
+        <item>I have already been to London</item>
+        <item>you have already been in London for whole week</item>
+        <item>I have already seen this movie</item>
+        <item>she has already done hes job</item>
+        <item>he has already gone</item>
+
+        <item>I haven`t called them yet</item>
+        <item>he hasn`t sold her car yet</item>
+        <item>I haven`t checked yet</item>
+        <item>I haven`t bought a new grill yet</item>
+
+        <item>they have never been there</item>
+        <item>she has never seen him</item>
+        <item>I have never done this</item>
+        <item>my brother has never gone home so early</item>
+
+        <item>have you ever been to Israel?</item>
+        <item>has he ever seen this animal?</item>
+        <item>have you ever done work like this?</item>
+        <item>has she ever gone?</item>
+
+        <item>I havan`t been called yet</item>
+        <item>he hasn`t been brought yet</item>
+        <item>she hasn`t been told about this yet</item>
+        <item>they haven`t showed yet</item>
+
+        <item>nobody has ever been there</item>
+        <item>nobody has ever seen him</item>
+        <item>nobody has ever done this</item>
+        <item>nobody has ever heard about this</item>
+
+        <item>I have always seen him at this time</item>
+        <item>he has always been responsible</item>
+        <item>they have always worked by rules</item>
+        <item>my neighbor has always lived here</item>
+
+        <item>you should have thought about this ahead of time</item>
+        <item>he shouldn`t have got married</item>
+        <item>you should have bought something for dinner</item>
     </string-array>
 </resources>

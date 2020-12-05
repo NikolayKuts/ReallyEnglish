@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DoubleNegativeActivity"></activity>
-        <activity android:name=".CouplesActivityEnToEn" />
+        <activity android:name=".CouplesActivity" />
         <activity android:name=".AlgorithmActivity" />
         <activity android:name=".Table2Activity" />
         <activity android:name=".Table1Activity" />

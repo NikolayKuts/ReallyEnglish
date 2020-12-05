@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +28,7 @@ public class Table1Activity extends AppCompatActivity {
     private MainViewModel viewModel;
     private Button buttonPutWrongSentenceIntoDB;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,8 @@ public class Table1Activity extends AppCompatActivity {
         textViewSentence = findViewById(R.id.textViewSentence);
         buttonPutWrongSentenceIntoDB = findViewById(R.id.buttonToTableActivity);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+
+
 
         String[] stringArgsNames = getString(R.string.names).split(",");
         String[] stringArgsPersonalPronouns = getResources().getStringArray(R.array.personal_pronouns);
@@ -48,7 +54,7 @@ public class Table1Activity extends AppCompatActivity {
 
         String[] stringArgsAdjective = getResources().getString(R.string.adjective_1_1).split(",");
         listOfAdjective = new ArrayList<>(Arrays.asList(stringArgsAdjective));
-        
+
         buttonPutWrongSentenceIntoDB.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -123,5 +129,5 @@ public class Table1Activity extends AppCompatActivity {
         }
         return false;
     }
-    
+
 }

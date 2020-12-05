@@ -24,4 +24,5 @@
     <color name="item_adjective_text_color_checked">#A6C87D</color>
     <color name="item_adjective_text_color_unchecked">#FFFFFF</color>
     <color name="chosen_lists">#C6C6C6</color>
+    <color name="c">#00FFFFFF</color>
 </resources>
