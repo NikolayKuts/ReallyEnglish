@@ -420,13 +420,18 @@
         ,command,manage,agree,recommend,wash,talk,promise,remember,seem,visit,prefer,thank,study,refuse
     </string>
     <string name="simple_verbs_3">
-        apply,punish,excuse,arrange,deceive,suit,lift,cook,wonder,kill,check,die,advise,worry,present,change,argue,shout,depend,lie(лгать)
-        ,cancel,convince,decide,repeat,scare,doubt,watch,harm,carry,fail,close,hurry,save
+        apply,punish,excuse,arrange,deceive,suit,lift,cook,wonder,kill,check,die,advise,worry,present,change,argue
+        ,shout,depend,lie,cancel,convince,decide,repeat,scare,doubt,watch,harm,carry,fail,close,hurry,save
     </string>
     <string name="simple_verbs_4">
         move,breath,cry,improve,disturb,translate,respect,matter,increase,decrease,miss,destroy,defend,touch,compete,wish,succeed,prepare,order,appear,disappear
         ,owe,exist,invite,knock,repair,pass,conceal,remind,turn,return,annoy,complain,pretend,tie,connect,practice,switch,describe,solve,follow,sound,travel
     </string>
+    <string name="simple_verbs_5">
+        enjoy,discuss,congratulate,guess,cough,pull,insist,push,sneeze,achieve,envy,hint,own,multiply,blame,concern,suffer,behave,add,fix
+        ,divide,accept,differ,mix,paint,notice,subtract,belong,care,offend,imagine,attack,avoid,please,invent,rid,fill,chew,force,pray,amaze
+    </string>
+
 
     <string name="irregular_verbs_v1_1">
         get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go
@@ -440,6 +445,10 @@
     <string name="irregular_verbs_v1_4">
         hurt,begin,throw,strive,cost,hide,grow,burn,put,smell,lead,mislead
     </string>
+    <string name="irregular_verbs_v1_5">
+        forgive,tear,become,bite,swear,hit,draw,beat,set
+    </string>
+
 
     <string name="irregular_verbs_v2_1">
         got,came,understood,told,put,taught,bought,saw,heard,let,read,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
@@ -453,6 +462,10 @@
     <string name="irregular_verbs_v2_4">
         hurt,began,threw,strove,cost,hid,grew,burned,put,smelled,led,misled
     </string>
+    <string name="irregular_verbs_v2_5">
+        forgave,tore,became,bit,swore,hit,drew,beat,set
+    </string>
+
 
     <string name="irregular_verbs_v3_1">
         got,come,understood,told,put,taught,bought,seen,heard,let,read,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone
@@ -465,6 +478,9 @@
     </string>
     <string name="irregular_verbs_v3_4">
         hurt,begun,thrown,striven,cost,hidden,grown,burned,put,smelled,led,misled
+    </string>
+    <string name="irregular_verbs_v3_5">
+        forgiven,torn,become,bitten,sworn,hit,drawn,beaten,set
     </string>
 
 
@@ -589,7 +605,7 @@
         <item>They all love their leader very much. – Really?</item>
         <item>This man is very famous in his country.</item>
         <item>I like your chocolate cake very much. May I take one more piece?</item>
-        <item>Their daughter is so talented. She wants to become famous singer so much.</item>
+        <item>Their daughter is so talented. She wants to become a famous singer so much.</item>
         <item>This guy is too fat. He won’t be able to work as a policeman.</item>
         <item>You love sweets too much. You would better think about your health.</item>
         <item>Thank you very much. I am very pleased of your work.</item>
@@ -1052,7 +1068,7 @@
         <item>But you won`t</item>
         <item>So could he</item>
         <item>So did her sister</item>
-        <item>Neither did I</item>
+        <item>So did I</item>
         <item>Neither does his wife </item>
         <item>So did you</item>
         <item>But you didn`t</item>
@@ -1106,7 +1122,7 @@
         <item>I have already been to London</item>
         <item>you have already been in London for whole week</item>
         <item>I have already seen this movie</item>
-        <item>she has already done hes job</item>
+        <item>she has already done her job</item>
         <item>he has already gone</item>
 
         <item>I haven`t called them yet</item>
@@ -1127,7 +1143,7 @@
         <item>I havan`t been called yet</item>
         <item>he hasn`t been brought yet</item>
         <item>she hasn`t been told about this yet</item>
-        <item>they haven`t showed yet</item>
+        <item>they haven`t been showed yet</item>
 
         <item>nobody has ever been there</item>
         <item>nobody has ever seen him</item>
@@ -1143,4 +1159,336 @@
         <item>he shouldn`t have got married</item>
         <item>you should have bought something for dinner</item>
     </string-array>
+
+    <string-array name="express_1_qu">
+        <item>Она живет в большом красивом доме.</item>
+        <item>Иногда она покупала нам шоколадные конфеты.</item>
+        <item>Они отдыхали каждые десять минут.</item>
+        <item>Однажды ты сможешь это сделать.</item>
+        <item>Она часто навещала родителей.</item>
+        <item>Там он был богатым человеком.</item>
+        <item>Какой торт мы купим?</item>
+        <item>Он пил много кофе.</item>
+        <item>Этот парень будет большим начальником.</item>
+        <item>Тебе можно оставаться там.</item>
+        <item>Кто научил вас так делать?</item>
+        <item>Я не мог их понять.</item>
+        <item>Я приходил домой очень поздно.</item>
+        <item>Что вы будете пить?</item>
+        <item>Моя подруга видела тебя там. Что ты там делал?</item>
+        <item>Ты должен был знать об этом раньше.</item>
+        <item>Почему мы все обязаны слушать этого человека?</item>
+        <item>Никто раньше не слышал о таких вещах.</item>
+        <item>Где ты собираешься покупать дом?</item>
+        <item>Я очень хочу увидеть Париж.</item>
+        <item>Сто лет назад никто еще не думал об этом.</item>
+        <item>Это происходило очень часто.</item>
+        <item>Все готово. Вы можете приходить.</item>
+        <item>Куда мы пойдем после этого?</item>
+        <item>Кто давал тебе деньги?</item>
+    </string-array>
+
+    <string-array name="express_1_an">
+        <item>Она живет в большом красивом доме.She lives in a big beautiful house</item>
+        <item>Иногда она покупала нам шоколадные конфеты.Sometimes she bought us chocolate candy</item>
+        <item>Они отдыхали каждые десять минут.They rested every ten minutes</item>
+        <item>Однажды ты сможешь это сделать.You`ll do it one day</item>
+
+        <item>Она часто навещала родителей.</item>
+
+        <item>Там он был богатым человеком.He was a rich man there</item>
+        <item>Какой торт мы купим?What cake will we buy?</item>
+        <item>Он пил много кофе.He drank much coffee</item>
+        <item>Этот парень будет большим начальником.This guy will be a big boss</item>
+        <item>Тебе можно оставаться там.You may stay there</item>
+        <item>Кто научил вас так делать?Who taught you to do this?</item>
+        <item>Я не мог их понять.I couldn`t understand them</item>
+        <item>Я приходил домой очень поздно.I came home very late</item>
+        <item>Что вы будете пить?What will you drink?</item>
+        <item>Моя подруга видела тебя там. Что ты там делал?My friend has seen you there. What did you do there</item>
+
+        <item>Ты должен был знать об этом раньше.</item>
+
+        <item>Почему мы все обязаны слушать этого человека?Why must we listen to this person?</item>
+        <item>Никто раньше не слышал о таких вещах.Nobody heard about such things before</item>
+        <item>Где ты собираешься покупать дом?Where are you going to buy a house?</item>
+        <item>Я очень хочу увидеть Париж.I want to see Paris very much</item>
+        <item>Сто лет назад никто еще не думал об этом.Nobody thought about this hundred years ago yet</item>
+        <item>Это происходило очень часто.It happened very often</item>
+
+        <item>Все готово. Вы можете приходить.</item>
+
+        <item>Куда мы пойдем после этого?Where will we go after this?</item>
+        <item>Кто давал тебе деньги?Who gave you money?</item>
+    </string-array>
+
+    <string-array name="object_case_qu">
+        <item>Doing this was difficult for (меня)</item>
+        <item>Doing this was difficult for (тебя)</item>
+        <item>Doing this was difficult for (нас)</item>
+        <item>Doing this was difficult for (него)</item>
+        <item>Doing this was difficult for (них)</item>
+        <item>Doing this was difficult for (этого)</item>
+        <item>Doing this was difficult for (ее)</item>
+
+        <item>Someone saw (меня) there</item>
+        <item>Someone saw (тебя) there</item>
+        <item>Someone saw (нас) there</item>
+        <item>Someone saw (его) there</item>
+        <item>Someone saw (их) there</item>
+        <item>Someone saw (это) there</item>
+        <item>Someone saw (ее) there</item>
+
+        <item>They will give (нам) a car</item>
+        <item>He didn`t give (мне) a candy</item>
+        <item>Someone gave (ей) a candy</item>
+        <item>Something has happened with (этим) then</item>
+        <item>Something happens with (ними) then</item>
+        <item>Something happened with (ней) then</item>
+        <item>Boss won`t want to raise (ему) a salary</item>
+        <item>Boss doesn`t want to raise (мне) the salary</item>
+        <item>I bought (это)</item>
+        <item>The friends congratulated (нас) with our silver wedding</item>
+        <item>The producers gave (ему) the best roles</item>
+        <item>He has made (ей) a proposition</item>
+        <item>I have fulfilled (это)</item>
+        <item>I`ve written (ей) an email</item>
+        <item>Arnie shows (им) his achievements</item>
+    </string-array>
+
+    <string-array name="possessive_case_qu">
+        <item>(моя) car was there</item>
+        <item>(твоя) car was there</item>
+        <item>(его) car was there</item>
+        <item>(ее) car was there</item>
+        <item>(наша) car was there</item>
+        <item>(их) car was there</item>
+        <item>(этого) car was there</item>
+
+        <item>They saw (меня) and (мою) dog</item>
+        <item>They saw (тебя) and (твою) car</item>
+        <item>They saw (его) and (его) cat</item>
+        <item>They saw (ее) and (ее) house</item>
+        <item>They saw (нас) and (ношу) daughter</item>
+        <item>They saw (их) and (их) friend</item>
+        <item>They saw (это) and (этого) dog</item>
+
+        <item>He has come with (своей) wife</item>
+        <item>She has come with (своем) husband</item>
+        <item>They have come with (своими) children</item>
+        <item>The children have come with (своими) hamsters</item>
+        <item>Every hamster had (своей) own food</item>
+    </string-array>
+
+    <string-array name="strengthened_forms_of_pos_case_qu">
+        <item>(ее) is told about that he`s able but lazy</item>
+        <item>Madame, i`m (ваш) forever!</item>
+        <item>All (наши) are on the spot!</item>
+        <item>Don`t touch, this is (мое)</item>
+        <item>Our children read books, but (их) watch TV</item>
+    </string-array>
+
+
+    <string-array name="self_qu">
+        <item>they see (себя)-selves in the mirror</item>
+        <item>people see (себя)-selves in the mirror</item>
+        <item>we see (себя)-selves in the mirror</item>
+
+        <item>I see (себя)-self in the mirror</item>
+        <item>you see (себя)-self/-selves in the mirror</item>
+        <item>she sees (себя)-self in the mirror</item>
+        <item>he sees (себя)-self in the mirror</item>
+        <item>the cat sees (себя)-self in the mirror</item>
+
+        <item>in this way they only deceive (себя)-selves</item>
+        <item>if you can`t decide for (себя)-self/selves, others will decide for you</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_is_about_qu">
+        <item>в жизни главное вовремя поесть</item>
+        <item>в этом спорте главное мозги, дети</item>
+        <item>вот что главное в шоу-бизнесе</item>
+        <item>в любви главное чувства</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_in_a_way_qu">
+        <item>по хорошему</item>
+        <item>по плохому</item>
+        <item>по старому</item>
+        <item>по современному</item>
+        <item>по умному</item>
+        <item>запомни! с сегоднешнего дня все будет по моему!</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_on_own_qu">
+        <item>тебя по-прежнему поддерживают папа и мама, а я кормлюсь сама</item>
+        <item>попробуй перевести самостоятельно</item>
+        <item>думай самостоятельно</item>
+        <item>он уже может ходить в школу самостоятельно</item>
+        <item>ее уже можно водить самостоятельно</item>
+        <item>им следует yже питаться самостоятельно</item>
+        <item>у нее получильсть пройти самостоятельно</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_no_matter_qu">
+        <item>не важно что случилось там</item>
+        <item>не важно как она сделала это</item>
+        <item>не важно кто купил ту машину</item>
+        <item>не важно когда он придет</item>
+        <item>не важно чей это кот</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_out_of_qu">
+        <item>не из любопытства</item>
+        <item>из неновести</item>
+        <item>от боли</item>
+        <item>из любви к искуству</item>
+        <item>из уважения</item>
+        <item>не от злости</item>
+        <item>от голода</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_ever_qu">
+        <item>что бы ты не сделал я люблю тебя</item>
+        <item>когда бы она не пришла он рад ее видеть</item>
+        <item>его ждут кудабы он не пришол</item>
+        <item>сколько бы они не приглосили друзей мы накормим всех</item>
+        <item>чей бы не был этот кот я накормлю его</item>
+        <item>кокую бы девушку ты не выбрал всеравно будешь сожелеть</item>
+    </string-array>
+
+    <string-array name="object_case_an">
+        <item>me</item>
+        <item>you</item>
+        <item>us</item>
+        <item>him</item>
+        <item>them</item>
+        <item>it</item>
+        <item>her</item>
+
+        <item>me</item>
+        <item>you</item>
+        <item>us</item>
+        <item>him</item>
+        <item>them</item>
+        <item>it</item>
+        <item>her</item>
+
+        <item>us</item>
+        <item>me</item>
+        <item>her</item>
+        <item>it</item>
+        <item>them</item>
+        <item>her</item>
+        <item>him</item>
+        <item>me</item>
+        <item>it</item>
+        <item>us</item>
+        <item>him</item>
+        <item>her</item>
+        <item>it</item>
+        <item>her</item>
+        <item>them</item>
+    </string-array>
+
+    <string-array name="possessive_case_an">
+        <item>my</item>
+        <item>your</item>
+        <item>his</item>
+        <item>her</item>
+        <item>our</item>
+        <item>their</item>
+        <item>its</item>
+
+        <item>me | my</item>
+        <item>you | your</item>
+        <item>him | his</item>
+        <item>her | her</item>
+        <item>us | our</item>
+        <item>them | their</item>
+        <item>it | its</item>
+
+        <item>his</item>
+        <item>her</item>
+        <item>their</item>
+        <item>their</item>
+        <item>its</item>
+    </string-array>
+
+    <string-array name="strengthened_forms_of_pos_case_an">
+        <item>hers</item>
+        <item>yours</item>
+        <item>ours</item>
+        <item>mine</item>
+        <item>theirs</item>
+    </string-array>
+
+    <string-array name="self_an">
+        <item>themselves</item>
+        <item>themselves</item>
+        <item>ourselves</item>
+
+        <item>myself</item>
+        <item>yourself/-selves</item>
+        <item>herself</item>
+        <item>himself</item>
+        <item>itself</item>
+
+        <item>themselves</item>
+        <item>yourself/selves</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_is_about_an">
+        <item>life is about having your dinner on time</item>
+        <item>this sport is all about brains, kids</item>
+        <item>this is what the show business is all about</item>
+        <item>love is about feelings</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_i_a_way_an">
+        <item>in a good way</item>
+        <item>in a bad way</item>
+        <item>in an old way</item>
+        <item>in a modern way</item>
+        <item>in a smart way</item>
+        <item>remember! since today everything will be in my way!</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_on_own_an">
+        <item>you`re still supported by Dad and Mom, but I get fed on my own</item>
+        <item>try to translate on your own</item>
+        <item>think on your own</item>
+        <item>he can already go to the school on his own</item>
+        <item>she may already drive on her own</item>
+        <item>they should already get fed on their own</item>
+        <item>she succeeded to walk on her own</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_no_matter_an">
+        <item>no matter what happened there</item>
+        <item>no matter how she did this</item>
+        <item>no matter who bought that car</item>
+        <item>no matter when he will come</item>
+        <item>no matter whose this cat is</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_out_of_an">
+        <item>not out of curiosity</item>
+        <item>out of hatred</item>
+        <item>out of pain</item>
+        <item>out of love to art</item>
+        <item>out of respect</item>
+        <item>not out of anger</item>
+        <item>out of hunger</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_ever_an">
+        <item>whatever you do I love you</item>
+        <item>whenever she comes he is happy to see her</item>
+        <item>he is waited wherever he comes</item>
+        <item>however many friends they invite we`ll feed everyone</item>
+        <item>whosever this cat is I`ll feed it</item>
+        <item>whichever girl you choose you will be sorry anyway</item>
+    </string-array>
+
 </resources>

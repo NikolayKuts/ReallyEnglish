@@ -72,7 +72,8 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfLessonVerbsIrregularV2;
     private List<String> listOfLessonVerbsIrregularV3;
 
-    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence, listIdBackgroundImageNegativeSentence, listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
+    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence, listIdBackgroundImageNegativeSentence
+            , listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
 
     private List<String> listOfNames;
     private List<String> listOfVerbsStrong;
@@ -153,6 +154,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfMyList.add(getMyListOfVerbs("Verbs # 2 (51 - 100)", false, R.string.simple_verbs_2, R.string.irregular_verbs_v1_2, R.string.irregular_verbs_v2_2, R.string.irregular_verbs_v3_2));
         listOfMyList.add(getMyListOfVerbs("Verbs # 3 (101 - 150)", false, R.string.simple_verbs_3, R.string.irregular_verbs_v1_3, R.string.irregular_verbs_v2_3, R.string.irregular_verbs_v3_3));
         listOfMyList.add(getMyListOfVerbs("Verbs # 4 (151 - 200)", false, R.string.simple_verbs_4, R.string.irregular_verbs_v1_4, R.string.irregular_verbs_v2_4, R.string.irregular_verbs_v3_4));
+        listOfMyList.add(getMyListOfVerbs("Verbs # 5 (201 - 250)", false, R.string.simple_verbs_5, R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v2_5, R.string.irregular_verbs_v3_5));
 
         listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #1", true, R.string.adjective_1_1));
         listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #2", false, R.string.adjective_1_2));

@@ -67,6 +67,17 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Mirroring #1 [12]", false, R.array.mirroring_1_qu, R.array.mirroring_1_an));
         listOfMyCouplesList.add(getMyListCouples("Mirroring #2 [12]", false, R.array.mirroring_2_qu, R.array.mirroring_2_an));
         listOfMyCouplesList.add(getMyListCouples("Have V3", false, R.array.have_v3_qu, R.array.have_v3_an));
+        listOfMyCouplesList.add(getMyListCouples("Express # 1", false, R.array.express_1_qu, R.array.express_1_an));
+        listOfMyCouplesList.add(getMyListCouples("Object case", false, R.array.object_case_qu, R.array.object_case_an));
+        listOfMyCouplesList.add(getMyListCouples("Possessive case", false, R.array.possessive_case_qu, R.array.possessive_case_an));
+        listOfMyCouplesList.add(getMyListCouples("Strengthened forms of pos. case", false, R.array.strengthened_forms_of_pos_case_qu, R.array.strengthened_forms_of_pos_case_an));
+        listOfMyCouplesList.add(getMyListCouples("Self", false, R.array.self_qu, R.array.self_an));
+        listOfMyCouplesList.add(getMyListCouples("Is about", false, R.array.formulas_for_self_assembly_is_about_qu, R.array.formulas_for_self_assembly_is_about_an));
+        listOfMyCouplesList.add(getMyListCouples("In a__ way", false, R.array.formulas_for_self_assembly_in_a_way_qu, R.array.formulas_for_self_assembly_i_a_way_an));
+        listOfMyCouplesList.add(getMyListCouples("On __ own", false, R.array.formulas_for_self_assembly_on_own_qu, R.array.formulas_for_self_assembly_on_own_an));
+        listOfMyCouplesList.add(getMyListCouples("No matter", false, R.array.formulas_for_self_assembly_no_matter_qu, R.array.formulas_for_self_assembly_no_matter_an));
+        listOfMyCouplesList.add(getMyListCouples("Out of", false, R.array.formulas_for_self_assembly_out_of_qu, R.array.formulas_for_self_assembly_out_of_an));
+        listOfMyCouplesList.add(getMyListCouples("-Ever", false, R.array.formulas_for_self_assembly_ever_qu, R.array.formulas_for_self_assembly_ever_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
@@ -75,6 +86,7 @@ public class CouplesActivity extends AppCompatActivity {
 
         s = s.replaceAll("\\d+\\.\\t", "");
         Log.i("log", s);
+
 
         String[] array = s.split("\\s*\\n\\s*");
         for (String q : array) {
@@ -109,6 +121,7 @@ public class CouplesActivity extends AppCompatActivity {
 
         Button button = dialog.findViewById(R.id.buttonApplyLists);
         dialog.show();
+        setSmoothScrollToLastItem(recyclerView);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,4 +163,15 @@ public class CouplesActivity extends AppCompatActivity {
         }
         textViewChosenLists.setText(namesChosenLists.toString());
     }
+
+    private void setSmoothScrollToLastItem(RecyclerView recyclerView) {
+        for (int i = listOfMyCouplesList.size() - 1; i > 0; i--) {
+            if (listOfMyCouplesList.get(i).isChecked()) {
+                recyclerView.smoothScrollBy(0, i * 56, null, i * 300);
+                break;
+            }
+        }
+    }
+
+
 }
