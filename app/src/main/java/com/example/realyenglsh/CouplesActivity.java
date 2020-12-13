@@ -28,6 +28,7 @@ public class CouplesActivity extends AppCompatActivity {
     private List<MyListCouples> listOfMyCouplesList = new ArrayList<>();
     private List<String> listLessonQuestion = new ArrayList<>();
     private List<String> listLessonAnswer = new ArrayList<>();
+    private List<Integer> listSavedIndexesOfLearnedCouple = new ArrayList<>();
 
 
     @Override
@@ -66,18 +67,19 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Seem / Turn out [11]", false, R.array.seem_turn_out_qu, R.array.seem_turn_out_an));
         listOfMyCouplesList.add(getMyListCouples("Mirroring #1 [12]", false, R.array.mirroring_1_qu, R.array.mirroring_1_an));
         listOfMyCouplesList.add(getMyListCouples("Mirroring #2 [12]", false, R.array.mirroring_2_qu, R.array.mirroring_2_an));
-        listOfMyCouplesList.add(getMyListCouples("Have V3", false, R.array.have_v3_qu, R.array.have_v3_an));
-        listOfMyCouplesList.add(getMyListCouples("Express # 1", false, R.array.express_1_qu, R.array.express_1_an));
-        listOfMyCouplesList.add(getMyListCouples("Object case", false, R.array.object_case_qu, R.array.object_case_an));
-        listOfMyCouplesList.add(getMyListCouples("Possessive case", false, R.array.possessive_case_qu, R.array.possessive_case_an));
-        listOfMyCouplesList.add(getMyListCouples("Strengthened forms of pos. case", false, R.array.strengthened_forms_of_pos_case_qu, R.array.strengthened_forms_of_pos_case_an));
-        listOfMyCouplesList.add(getMyListCouples("Self", false, R.array.self_qu, R.array.self_an));
-        listOfMyCouplesList.add(getMyListCouples("Is about", false, R.array.formulas_for_self_assembly_is_about_qu, R.array.formulas_for_self_assembly_is_about_an));
-        listOfMyCouplesList.add(getMyListCouples("In a__ way", false, R.array.formulas_for_self_assembly_in_a_way_qu, R.array.formulas_for_self_assembly_i_a_way_an));
-        listOfMyCouplesList.add(getMyListCouples("On __ own", false, R.array.formulas_for_self_assembly_on_own_qu, R.array.formulas_for_self_assembly_on_own_an));
-        listOfMyCouplesList.add(getMyListCouples("No matter", false, R.array.formulas_for_self_assembly_no_matter_qu, R.array.formulas_for_self_assembly_no_matter_an));
-        listOfMyCouplesList.add(getMyListCouples("Out of", false, R.array.formulas_for_self_assembly_out_of_qu, R.array.formulas_for_self_assembly_out_of_an));
-        listOfMyCouplesList.add(getMyListCouples("-Ever", false, R.array.formulas_for_self_assembly_ever_qu, R.array.formulas_for_self_assembly_ever_an));
+        listOfMyCouplesList.add(getMyListCouples("Have V3 [13]", false, R.array.have_v3_qu, R.array.have_v3_an));
+        listOfMyCouplesList.add(getMyListCouples("Express #1 [14]", false, R.array.express_1_qu, R.array.express_1_an));
+        listOfMyCouplesList.add(getMyListCouples("Object case [15]", false, R.array.object_case_qu, R.array.object_case_an));
+        listOfMyCouplesList.add(getMyListCouples("Possessive case [15]", false, R.array.possessive_case_qu, R.array.possessive_case_an));
+        listOfMyCouplesList.add(getMyListCouples("Strengthened forms of pos. case [15]", false, R.array.strengthened_forms_of_pos_case_qu, R.array.strengthened_forms_of_pos_case_an));
+        listOfMyCouplesList.add(getMyListCouples("Self [15]", false, R.array.self_qu, R.array.self_an));
+        listOfMyCouplesList.add(getMyListCouples("Is about [15]", false, R.array.formulas_for_self_assembly_is_about_qu, R.array.formulas_for_self_assembly_is_about_an));
+        listOfMyCouplesList.add(getMyListCouples("In a __ way [15]", false, R.array.formulas_for_self_assembly_in_a_way_qu, R.array.formulas_for_self_assembly_i_a_way_an));
+        listOfMyCouplesList.add(getMyListCouples("On __ own [15]", false, R.array.formulas_for_self_assembly_on_own_qu, R.array.formulas_for_self_assembly_on_own_an));
+        listOfMyCouplesList.add(getMyListCouples("No matter [15]", false, R.array.formulas_for_self_assembly_no_matter_qu, R.array.formulas_for_self_assembly_no_matter_an));
+        listOfMyCouplesList.add(getMyListCouples("Out of [15]", false, R.array.formulas_for_self_assembly_out_of_qu, R.array.formulas_for_self_assembly_out_of_an));
+        listOfMyCouplesList.add(getMyListCouples("- Ever [15]", false, R.array.formulas_for_self_assembly_ever_qu, R.array.formulas_for_self_assembly_ever_an));
+        listOfMyCouplesList.add(getMyListCouples("Bridges [16]", false, R.array.bridges_qu, R.array.bridges_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
@@ -128,6 +130,7 @@ public class CouplesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dialog.dismiss();
                 setContentForLesson();
+                fillListBySizeOfLessonList(listSavedIndexesOfLearnedCouple);
                 onClickNextCouples(v);
                 setContentForTextViewChosenLists();
             }
@@ -144,10 +147,29 @@ public class CouplesActivity extends AppCompatActivity {
     }
 
     public void onClickNextCouples(View view) {
-        Random random = new Random();
-        int randomNumber = random.nextInt(listLessonQuestion.size());
+        int randomNumber = getRandomNumberOnWasNot();
         textViewCouples.setText(listLessonQuestion.get(randomNumber));
         textViewAnswer.setText(listLessonAnswer.get(randomNumber));
+    }
+
+    private int getRandomNumberOnWasNot() {
+        Random random = new Random();
+        int randomNumber;
+
+        if (!listSavedIndexesOfLearnedCouple.isEmpty()) {
+            randomNumber = listSavedIndexesOfLearnedCouple.get(random.nextInt(listSavedIndexesOfLearnedCouple.size()));
+        } else {
+            fillListBySizeOfLessonList(listSavedIndexesOfLearnedCouple);
+            randomNumber = random.nextInt(listSavedIndexesOfLearnedCouple.size());
+        }
+        listSavedIndexesOfLearnedCouple.remove(listSavedIndexesOfLearnedCouple.indexOf(randomNumber));
+        return randomNumber;
+    }
+
+    private void fillListBySizeOfLessonList(List<Integer> list) {
+        for (int i = 0; i < listLessonQuestion.size(); i++) {
+            list.add(i);
+        }
     }
 
     private void setContentForTextViewChosenLists() {
@@ -157,7 +179,7 @@ public class CouplesActivity extends AppCompatActivity {
                 if (namesChosenLists.length() == 0) {
                     namesChosenLists.append(my.getNameOfList());
                 } else {
-                    namesChosenLists.append(", ").append(my.getNameOfList());
+                    namesChosenLists.append(",  ").append(my.getNameOfList());
                 }
             }
         }

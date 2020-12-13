@@ -1046,7 +1046,7 @@
         <item>This book will help you in your development. А та – нет.</item>
         <item>You could help us. Он тоже.</item>
         <item>She had a very serious business. У ее сестры тоже.</item>
-        <item>You knew it before. А я нет.</item>
+        <item>You knew it before. Я тоже.</item>
         <item>Mr. Jackson doesn’t speak French. Его жена тоже.</item>
         <item>He had to come yesterday. Ты тоже.</item>
         <item>This guy sent her flowers and gifts. А ты нет.</item>
@@ -1065,7 +1065,7 @@
         <item>But I did`t</item>
         <item>But you couldn`t</item>
         <item>But many people aren`t</item>
-        <item>But you won`t</item>
+        <item>But that one won`t</item>
         <item>So could he</item>
         <item>So did her sister</item>
         <item>So did I</item>
@@ -1325,7 +1325,7 @@
         <item>попробуй перевести самостоятельно</item>
         <item>думай самостоятельно</item>
         <item>он уже может ходить в школу самостоятельно</item>
-        <item>ее уже можно водить самостоятельно</item>
+        <item>ей уже можно водить самостоятельно</item>
         <item>им следует yже питаться самостоятельно</item>
         <item>у нее получильсть пройти самостоятельно</item>
     </string-array>
@@ -1489,6 +1489,80 @@
         <item>however many friends they invite we`ll feed everyone</item>
         <item>whosever this cat is I`ll feed it</item>
         <item>whichever girl you choose you will be sorry anyway</item>
+    </string-array>
+
+    <string-array name="bridges_qu">
+        <item>герцог сообщил королю что все шло плохо</item>
+        <item>она думала, что он купит ей подарок</item>
+        <item>мне нехватало ровно той сумму, которую я потратил в баре</item>
+
+        <item>ты не обязан быть великим, чтобы начать, но ты должун начать, чтобы быть великим</item>
+
+        <item>чтобы иметь это ты должен очень тяжело работать</item>
+        <item>чтобы выграть битву Наполеон бросил в бой его последний резерв</item>
+        <item>что бы разделить радость с друзьями, мы собираемся разослать кождому письма</item>
+        <item>чтобы встретить бабушку вовремя, мы взяли такси</item>
+        <item>чтобы открыть дверь тебе следует сказать пароль</item>
+        <item>чтобы работать с нами ты должен знать правила безопасности</item>
+        <item>чтобы решить проблему..</item>
+        <item>чтобы найти работу..</item>
+        <item>чтобы не бояться..</item>
+
+        <item>Мери хочет, чтобы ее муж Сэм зарабатывал большую зарплату</item>
+        <item>бабушка хотела, чтобы мы поели</item>
+        <item>мне не нужно, чтобы ты меня учила, как воспитывать моих детей</item>
+
+        <item>мы хотели, чтобы они поняли..</item>
+        <item>она не хотела, чтобы я знал..</item>
+        <item>я предпочитал, чтобы они объясняли медленнее..</item>
+        <item>родители хотели, чтобы мы убрали наши комнаты</item>
+
+        <item>Марлин хотела, чтобу ее любили</item>
+        <item>молодому человеку нужно, чтобы ему помогли</item>
+        <item>я хочу, чтобы мне объяснили</item>
+        <item>она хотела,чтобы на нее посмотрели</item>
+        <item>ты боишься, чтобы на тебя пожаловались</item>
+        <item>Снупи обажает, чтобы с ним гуляли</item>
+        <item>он мечтал, чтобы про него написали во всех газетах</item>
+        <item>он только хотел, чтобы с ним поговорили</item>
+        <item>она ненавидела, чтобы говорили о ней за ее спиной</item>
+    </string-array>
+
+    <string-array name="bridges_an">
+        <item>the Duke reported the King (that) everything was going wrong</item>
+        <item>she thought (that) he would buy her some present</item>
+        <item>I missed exactly the sum (that) I had spent at the bar</item>
+
+        <item>you don`t have to be great to start, but you have to start to be great</item>
+
+        <item>to have this you have to work very hard</item>
+        <item>to win the battle Napoleon threw to the fight his last reserve</item>
+        <item>to share the joy with friends we are going to send everyone letters</item>
+        <item>to meet Granny on time we took a taxi</item>
+        <item>to open the door you should say the password</item>
+        <item>to work with us you have to know the safety rules</item>
+        <item>to solve a problem..</item>
+        <item>to find a work..</item>
+        <item>not to be afraid..</item>
+
+        <item>Mary wants her husband Sam to earn bigger salary</item>
+        <item>Granny wanted us to eat</item>
+        <item>I don`t need you to teach me how to handle my children</item>
+
+        <item>we wanted them to understand..</item>
+        <item>she didn`t want me to know..</item>
+        <item>I preferred them to explain slowly..</item>
+        <item>the parents wanted us to clean our rooms..</item>
+
+        <item>Marilyn wanted to be laved</item>
+        <item>the young man needs to be helped</item>
+        <item>I want to be explained</item>
+        <item>she wanted to be looked at</item>
+        <item>you are afraid to be complained at</item>
+        <item>Snoopy adores to be walked with</item>
+        <item>he dreamed to be written in all newspapers about</item>
+        <item>he only wanted to be talked with</item>
+        <item>she hated to be talked about behind her back</item>
     </string-array>
 
 </resources>
