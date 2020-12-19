@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#434343"
-    tools:context=".Table1Activity">
+    tools:context="com.example.reallyenglsh.screens.Table1Activity">
 
     <Button
         android:id="@+id/buttonNextExample"

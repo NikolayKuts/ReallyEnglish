@@ -1,4 +1,4 @@
-package com.example.realyenglsh;
+package com.example.reallyenglsh.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -11,12 +11,15 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.reallyenglsh.MainViewModel;
+import com.example.realyenglsh.R;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import static com.example.realyenglsh.Table1Activity.getWordFromList;
+import static com.example.reallyenglsh.screens.Table1Activity.getWordFromList;
 
 public class Table2Activity extends AppCompatActivity {
     public TextView textView0, textView1, textView2, textView3

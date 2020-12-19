@@ -1,17 +1,18 @@
-package com.example.realyenglsh;
+package com.example.reallyenglsh.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.reallyenglsh.MainViewModel;
+import com.example.realyenglsh.R;
+import com.example.reallyenglsh.Sentence;
 
 import java.util.ArrayList;
 import java.util.Arrays;

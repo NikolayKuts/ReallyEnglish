@@ -1,4 +1,4 @@
-package com.example.realyenglsh;
+package com.example.reallyenglsh;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+
+import com.example.realyenglsh.R;
 
 import java.util.List;
 

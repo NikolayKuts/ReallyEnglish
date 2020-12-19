@@ -1,4 +1,4 @@
-package com.example.realyenglsh;
+package com.example.reallyenglsh.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,12 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.example.reallyenglsh.MyAdapterForCouples;
+import com.example.reallyenglsh.MyListCouples;
+import com.example.realyenglsh.R;
 
 import java.util.ArrayList;
 import java.util.List;

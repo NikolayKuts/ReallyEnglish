@@ -1,4 +1,4 @@
-package com.example.realyenglsh;
+package com.example.reallyenglsh.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import com.example.realyenglsh.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/empty_table"
-    tools:context=".Table2Activity">
+    tools:context="com.example.reallyenglsh.screens.Table2Activity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

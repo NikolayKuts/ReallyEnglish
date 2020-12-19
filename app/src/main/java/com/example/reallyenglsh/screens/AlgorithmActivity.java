@@ -1,8 +1,9 @@
-package com.example.realyenglsh;
+package com.example.reallyenglsh.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.loader.app.LoaderManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,10 +11,8 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +30,18 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.reallyenglsh.IOnCallbackHelper;
+import com.example.reallyenglsh.MainViewModel;
+import com.example.reallyenglsh.MyAdapterAdjectiveList;
+import com.example.reallyenglsh.MyLoaderCallbacks;
+import com.example.reallyenglsh.V3Verb;
+import com.example.reallyenglsh.MyAdapter;
+import com.example.reallyenglsh.MyListAdjective;
+import com.example.reallyenglsh.MyListOfVerbs;
+import com.example.reallyenglsh.OnClickAudioContentPlayer;
+import com.example.realyenglsh.R;
+import com.example.reallyenglsh.Sentence;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,7 +57,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.example.realyenglsh.Table1Activity.getWordFromList;
+import static com.example.reallyenglsh.screens.Table1Activity.getWordFromList;
 
 public class AlgorithmActivity extends AppCompatActivity {
     private ImageView imageViewTenseObject, imageViewTypeOfSentence;
@@ -64,6 +75,9 @@ public class AlgorithmActivity extends AppCompatActivity {
     private LinearLayout linearLayoutVerbsForm;
 
     private TextView textViewTranslation;
+
+    private LoaderManager loaderManager;
+    private MyLoaderCallbacks myLoaderCallbacks;
 
     private List<MyListOfVerbs> listOfMyList = new ArrayList<>();
     private List<MyListAdjective> listOfMyAdjectiveList = new ArrayList<>();
@@ -87,6 +101,9 @@ public class AlgorithmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_algorithm);
+        loaderManager = LoaderManager.getInstance(this);
+        myLoaderCallbacks = new MyLoaderCallbacks(getApplicationContext(), 1);
+
         imageViewTenseObject = findViewById(R.id.imageTenseObject);
         imageViewTenseObject.setImageResource(R.drawable.coach);
         imageViewTypeOfSentence = findViewById(R.id.imageViewTypeOfSentence);
@@ -169,6 +186,15 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         setCheckedMyListOfVerbs();
         setCheckedMyListAdjective();
+
+        myLoaderCallbacks.setHelper(new IOnCallbackHelper() {
+            @Override
+            public void onLoadFinished(String data) {
+                textViewTranslation.setText(data);
+            }
+        });
+
+//        loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(), myLoaderCallbacks);
 
 
         imageButtonShowDialogVerbs.setOnClickListener(new View.OnClickListener() {
@@ -288,7 +314,8 @@ public class AlgorithmActivity extends AppCompatActivity {
                     String adjective = getWordFromList(listOfLessonAdjective);
                     sentence = String.format("%s %s", name, adjective);
                     setWordOfToBeAdjective(adjective);
-                    textViewTranslation.setText(getTranslateContent(adjective));
+//                    textViewTranslation.setText(getTranslateContent(adjective));
+                    loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(adjective), myLoaderCallbacks);
                 } else {  // passive verb
                     if (listOfLessonVerbsIrregularV1.contains(simpleIrregularVerb)) {
                         sentence = getSentenceWithToBeV3Verb(name, simpleIrregularVerb);
@@ -301,7 +328,8 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         if (randomNumberOfWay != 2 || randomNumberOfToBe != 1) {
             setFormsOfIrregularVerb(simpleIrregularVerb);
-            textViewTranslation.setText(getTranslateContent(simpleIrregularVerb));
+//            textViewTranslation.setText(getTranslateContent(simpleIrregularVerb));
+            loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(simpleIrregularVerb), myLoaderCallbacks);
         }
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {
@@ -586,40 +614,40 @@ public class AlgorithmActivity extends AppCompatActivity {
 
     }
 
-    private class OnClickAudioContentPlayer implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-
-            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein);
-            v.startAnimation(animation);
-
-            String word = ((TextView) v).getText().toString();
-            Log.i("log_word", word);
-            MediaPlayer player = new MediaPlayer();
-            try {
-                player.setDataSource(String.format("https://wooordhunt.ru/data/sound/sow/us/%s.mp3", word));
-
-                player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                    @Override
-                    public void onPrepared(MediaPlayer mp) {
-                        mp.start();
-                    }
-                });
-
-                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        mp.release();
-                        v.clearAnimation();
-                    }
-//            v.clearAnimation();
-                });
-                player.prepareAsync();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+//    private class OnClickAudioContentPlayer implements View.OnClickListener {
+//        @Override
+//        public void onClick(View v) {
+//
+//            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein);
+//            v.startAnimation(animation);
+//
+//            String word = ((TextView) v).getText().toString();
+//            Log.i("log_word", word);
+//            MediaPlayer player = new MediaPlayer();
+//            try {
+//                player.setDataSource(String.format("https://wooordhunt.ru/data/sound/sow/us/%s.mp3", word));
+//
+//                player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//                    @Override
+//                    public void onPrepared(MediaPlayer mp) {
+//                        mp.start();
+//                    }
+//                });
+//
+//                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//                    @Override
+//                    public void onCompletion(MediaPlayer mp) {
+//                        mp.release();
+//                        v.clearAnimation();
+//                    }
+////            v.clearAnimation();
+//                });
+//                player.prepareAsync();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
     private void setCheckedMyListAdjective() {
         listOfLessonAdjective.clear();
@@ -631,59 +659,65 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
-
-    private static class DownLoadTask extends AsyncTask<String, Void, String> {
-        URL url;
-        StringBuilder sb = new StringBuilder();
-        HttpURLConnection urlConnection;
-
-        @Override
-        protected String doInBackground(String... strings) {
-            try {
-                url = new URL(strings[0]);
-                urlConnection = (HttpURLConnection) url.openConnection();
-                InputStream inputStream = urlConnection.getInputStream();
-                InputStreamReader reader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(reader);
-                String line = bufferedReader.readLine();
-
-                while (line != null) {
-                    sb.append(line);
-                    line = bufferedReader.readLine();
-                }
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (urlConnection != null) {
-                    urlConnection.disconnect();
-                }
-            }
-            return sb.toString();
-        }
+    private Bundle getBundleWord (String word) {
+        Bundle bundle = new Bundle();
+        bundle.putString("word", word);
+        return bundle;
     }
-    private String getTranslateContent(String word) {
-        DownLoadTask loadTask = new DownLoadTask();
-        String url = String.format("https://wooordhunt.ru/word/%s", word);
-        String content = "";
-        StringBuilder result = new StringBuilder();
-        try {
-            content = loadTask.execute(url).get();
 
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        Pattern pattern = Pattern.compile("<span class=\"t_inline_en\">([а-я,\\s]*)</span>");
-        Matcher matcher = pattern.matcher(content);
-
-        while (matcher.find()) {
-            result.append(matcher.group(1));
-        }
-        return result.toString();
-    }
+//    private static class DownLoadTask extends AsyncTask<String, Void, String> {
+//        URL url;
+//        StringBuilder sb = new StringBuilder();
+//        HttpURLConnection urlConnection;
+//
+//        @Override
+//        protected String doInBackground(String... strings) {
+//            try {
+//                url = new URL(strings[0]);
+//                urlConnection = (HttpURLConnection) url.openConnection();
+//                InputStream inputStream = urlConnection.getInputStream();
+//                InputStreamReader reader = new InputStreamReader(inputStream);
+//                BufferedReader bufferedReader = new BufferedReader(reader);
+//                String line = bufferedReader.readLine();
+//
+//                while (line != null) {
+//                    sb.append(line);
+//                    line = bufferedReader.readLine();
+//                }
+//
+//            } catch (MalformedURLException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } finally {
+//                if (urlConnection != null) {
+//                    urlConnection.disconnect();
+//                }
+//            }
+//            return sb.toString();
+//        }
+//    }
+//    private String getTranslateContent(String word) {
+//        DownLoadTask loadTask = new DownLoadTask();
+//        String url = String.format("https://wooordhunt.ru/word/%s", word);
+//        String content = "";
+//        StringBuilder result = new StringBuilder();
+//        try {
+//            content = loadTask.execute(url).get();
+//
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        Pattern pattern = Pattern.compile("<span class=\"t_inline_en\">([а-я,\\s]*)</span>");
+//        Matcher matcher = pattern.matcher(content);
+//
+//        while (matcher.find()) {
+//            result.append(matcher.group(1));
+//        }
+//        return result.toString();
+//    }
 }

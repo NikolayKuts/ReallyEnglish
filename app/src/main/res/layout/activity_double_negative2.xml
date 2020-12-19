@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_activity_color"
-    tools:context=".DoubleNegativeActivity">
+    tools:context="com.example.reallyenglsh.screens.DoubleNegativeActivity">
 
     <TextView
         android:id="@+id/textViewNegativeSentenceRu"

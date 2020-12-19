@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:id="@+id/windowAlgorithmActivity"
     android:layout_height="match_parent"
-    tools:context=".AlgorithmActivity"
+    tools:context="com.example.reallyenglsh.screens.AlgorithmActivity"
     android:background="@drawable/tense_way_base">
 
     <TextView

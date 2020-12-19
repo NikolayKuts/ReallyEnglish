@@ -1,8 +1,7 @@
-package com.example.realyenglsh;
+package com.example.reallyenglsh;
 
 import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,8 @@ import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.realyenglsh.R;
 
 import java.util.List;
 

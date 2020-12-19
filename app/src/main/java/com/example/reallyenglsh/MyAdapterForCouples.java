@@ -1,4 +1,4 @@
-package com.example.realyenglsh;
+package com.example.reallyenglsh;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.realyenglsh.R;
 
 import java.util.List;
 
