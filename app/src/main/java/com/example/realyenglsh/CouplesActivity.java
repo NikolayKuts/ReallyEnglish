@@ -23,12 +23,13 @@ public class CouplesActivity extends AppCompatActivity {
     private TextView textViewCouples;
     private TextView textViewAnswer;
     private TextView textViewChosenLists;
+    private TextView textViewCounter;
 
 
     private List<MyListCouples> listOfMyCouplesList = new ArrayList<>();
     private List<String> listLessonQuestion = new ArrayList<>();
     private List<String> listLessonAnswer = new ArrayList<>();
-    private List<Integer> listSavedIndexesOfLearnedCouple = new ArrayList<>();
+    private List<Integer> listSavedIndexesOfLearnedCouples = new ArrayList<>();
 
 
     @Override
@@ -39,6 +40,8 @@ public class CouplesActivity extends AppCompatActivity {
         textViewCouples = findViewById(R.id.textViewCouples);
         textViewAnswer = findViewById(R.id.textViewAnswer);
         textViewChosenLists = findViewById(R.id.textViewChosenLists);
+        textViewCounter = findViewById(R.id.textViewCounter);
+
         Switch switchShowAnswer = findViewById(R.id.switchShowAnswer);
 
         switchShowAnswer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -80,20 +83,24 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Out of [15]", false, R.array.formulas_for_self_assembly_out_of_qu, R.array.formulas_for_self_assembly_out_of_an));
         listOfMyCouplesList.add(getMyListCouples("- Ever [15]", false, R.array.formulas_for_self_assembly_ever_qu, R.array.formulas_for_self_assembly_ever_an));
         listOfMyCouplesList.add(getMyListCouples("Bridges [16]", false, R.array.bridges_qu, R.array.bridges_an));
+        listOfMyCouplesList.add(getMyListCouples("Condition", false, R.array.condition_qu, R.array.condition_an));
+        listOfMyCouplesList.add(getMyListCouples("Preps", false, R.array.preps_qu, R.array.preps_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
+//        listSavedIndexesOfLearnedCouples = getFullListBySizeOfLessonList();
+        onClickNextCouples(textViewAnswer);
 
-        String s = "";
-
-        s = s.replaceAll("\\d+\\.\\t", "");
-        Log.i("log", s);
-
-
-        String[] array = s.split("\\s*\\n\\s*");
-        for (String q : array) {
-            Log.i("log", "<item>" + q + "</item>");
-        }
+//        String s = "";
+//
+//        s = s.replaceAll("\\d+\\.\\t", "");
+//        s = s.replaceAll("\\s*\\n\\s*", ",");
+//        Log.i("log", s);
+//
+//        String[] array = s.split("\\s*\\n\\s*");
+//        for (String q : array) {
+//            Log.i("log", "<item>" + q + "</item>");
+//        }
 
     }
 
@@ -130,7 +137,7 @@ public class CouplesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dialog.dismiss();
                 setContentForLesson();
-                fillListBySizeOfLessonList(listSavedIndexesOfLearnedCouple);
+                listSavedIndexesOfLearnedCouples = getFullListBySizeOfLessonList();
                 onClickNextCouples(v);
                 setContentForTextViewChosenLists();
             }
@@ -146,30 +153,40 @@ public class CouplesActivity extends AppCompatActivity {
         return new MyListCouples(nameOfList, isChecked, listCouples, listAnswers);
     }
 
+    private String getQuantityOfLeftUnlearnedCouples() {
+        int sizeListLesson = listLessonQuestion.size();
+        int leftSize = listSavedIndexesOfLearnedCouples.size();
+        return String.format("%s | %s", sizeListLesson, leftSize);
+    }
+
     public void onClickNextCouples(View view) {
         int randomNumber = getRandomNumberOnWasNot();
         textViewCouples.setText(listLessonQuestion.get(randomNumber));
         textViewAnswer.setText(listLessonAnswer.get(randomNumber));
+
+        textViewCounter.setText(getQuantityOfLeftUnlearnedCouples());
     }
 
     private int getRandomNumberOnWasNot() {
         Random random = new Random();
         int randomNumber;
 
-        if (!listSavedIndexesOfLearnedCouple.isEmpty()) {
-            randomNumber = listSavedIndexesOfLearnedCouple.get(random.nextInt(listSavedIndexesOfLearnedCouple.size()));
+        if (!listSavedIndexesOfLearnedCouples.isEmpty()) {
+            randomNumber = listSavedIndexesOfLearnedCouples.get(random.nextInt(listSavedIndexesOfLearnedCouples.size()));
         } else {
-            fillListBySizeOfLessonList(listSavedIndexesOfLearnedCouple);
-            randomNumber = random.nextInt(listSavedIndexesOfLearnedCouple.size());
+            listSavedIndexesOfLearnedCouples = getFullListBySizeOfLessonList();
+            randomNumber = random.nextInt(listSavedIndexesOfLearnedCouples.size());
         }
-        listSavedIndexesOfLearnedCouple.remove(listSavedIndexesOfLearnedCouple.indexOf(randomNumber));
+        listSavedIndexesOfLearnedCouples.remove(listSavedIndexesOfLearnedCouples.indexOf(randomNumber));
         return randomNumber;
     }
 
-    private void fillListBySizeOfLessonList(List<Integer> list) {
+    private ArrayList<Integer> getFullListBySizeOfLessonList() {
+        ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < listLessonQuestion.size(); i++) {
             list.add(i);
         }
+        return list;
     }
 
     private void setContentForTextViewChosenLists() {
@@ -189,7 +206,7 @@ public class CouplesActivity extends AppCompatActivity {
     private void setSmoothScrollToLastItem(RecyclerView recyclerView) {
         for (int i = listOfMyCouplesList.size() - 1; i > 0; i--) {
             if (listOfMyCouplesList.get(i).isChecked()) {
-                recyclerView.smoothScrollBy(0, i * 56, null, i * 300);
+                recyclerView.smoothScrollBy(0, i * 59, null, i * 200);
                 break;
             }
         }

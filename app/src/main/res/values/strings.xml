@@ -431,6 +431,10 @@
         enjoy,discuss,congratulate,guess,cough,pull,insist,push,sneeze,achieve,envy,hint,own,multiply,blame,concern,suffer,behave,add,fix
         ,divide,accept,differ,mix,paint,notice,subtract,belong,care,offend,imagine,attack,avoid,please,invent,rid,fill,chew,force,pray,amaze
     </string>
+    <string name="simple_verbs_6">
+        celebrate,hire,fire,cause,praise,consist,earn,consider,suspect,survive,interrupt,drag,rob,create,act,continue,warn,threaten,award,reward,rent,offer,interfere,influence
+        ,propose,develop,afford,marry,cover,express,yawn,treat,wound,fulfill,delay,beware,deny,object,bake,support,mention,realize,dare,invest,assemble,disassemble,bless,join,advertize
+    </string>
 
 
     <string name="irregular_verbs_v1_1">
@@ -447,6 +451,9 @@
     </string>
     <string name="irregular_verbs_v1_5">
         forgive,tear,become,bite,swear,hit,draw,beat,set
+    </string>
+    <string name="irregular_verbs_v1_6">
+        seek,spell,quit,wake,hang
     </string>
 
 
@@ -465,6 +472,9 @@
     <string name="irregular_verbs_v2_5">
         forgave,tore,became,bit,swore,hit,drew,beat,set
     </string>
+    <string name="irregular_verbs_v2_6">
+        sought,spelt,quit,woke,hung
+    </string>
 
 
     <string name="irregular_verbs_v3_1">
@@ -481,6 +491,9 @@
     </string>
     <string name="irregular_verbs_v3_5">
         forgiven,torn,become,bitten,sworn,hit,drawn,beaten,set
+    </string>
+    <string name="irregular_verbs_v_6">
+        sought,spelt,quit,woken,hung
     </string>
 
 
@@ -1082,37 +1095,30 @@
         <item>я уже увидел этот фильм</item>
         <item>она уже сделал свою работу</item>
         <item>он уже ушел</item>
-
         <item>я еще не позвонил им</item>
         <item>он еще не продал ее машину</item>
         <item>я еще не проверил</item>
         <item>я еще не купил новый гриль</item>
-
         <item>они никогда не бывали там</item>
         <item>она никогда не видела его</item>
         <item>я никогда не делал этого</item>
         <item>мой брат никогда не уходил так рано домой</item>
-
         <item>ты когда-нибудь бывал в Израиле?</item>
         <item>он когда-нибудь видел это животное?</item>
         <item>вы когда-нибудь делали роботу как эта?</item>
         <item>она когда-нибудь уходила?</item>
-
         <item>мне еще не позвонили</item>
         <item>ему еще не принисли</item>
         <item>ей еще не сказали об этом</item>
         <item>им еще не показали</item>
-
         <item>никто никогда не бывал там</item>
         <item>никто никогда не видел его</item>
         <item>никто никогда не делал это</item>
         <item>никто никогда не слышал об этом</item>
-
         <item>я всегда видел его в это время</item>
         <item>он всегда был ответственным</item>responsible
         <item>они всегда работали по правилам</item>
         <item>мой сосед всегда жил здесь</item>
-
         <item>тебе следовало подумать об это заранее</item>
         <item>ему не следовало жениться</item>
         <item>тебе следовало купить что-нибудь на ужин</item>
@@ -1124,37 +1130,30 @@
         <item>I have already seen this movie</item>
         <item>she has already done her job</item>
         <item>he has already gone</item>
-
         <item>I haven`t called them yet</item>
         <item>he hasn`t sold her car yet</item>
         <item>I haven`t checked yet</item>
         <item>I haven`t bought a new grill yet</item>
-
         <item>they have never been there</item>
         <item>she has never seen him</item>
         <item>I have never done this</item>
         <item>my brother has never gone home so early</item>
-
         <item>have you ever been to Israel?</item>
         <item>has he ever seen this animal?</item>
         <item>have you ever done work like this?</item>
         <item>has she ever gone?</item>
-
         <item>I havan`t been called yet</item>
         <item>he hasn`t been brought yet</item>
         <item>she hasn`t been told about this yet</item>
         <item>they haven`t been showed yet</item>
-
         <item>nobody has ever been there</item>
         <item>nobody has ever seen him</item>
         <item>nobody has ever done this</item>
         <item>nobody has ever heard about this</item>
-
         <item>I have always seen him at this time</item>
         <item>he has always been responsible</item>
         <item>they have always worked by rules</item>
         <item>my neighbor has always lived here</item>
-
         <item>you should have thought about this ahead of time</item>
         <item>he shouldn`t have got married</item>
         <item>you should have bought something for dinner</item>
@@ -1193,9 +1192,7 @@
         <item>Иногда она покупала нам шоколадные конфеты.Sometimes she bought us chocolate candy</item>
         <item>Они отдыхали каждые десять минут.They rested every ten minutes</item>
         <item>Однажды ты сможешь это сделать.You`ll do it one day</item>
-
         <item>Она часто навещала родителей.</item>
-
         <item>Там он был богатым человеком.He was a rich man there</item>
         <item>Какой торт мы купим?What cake will we buy?</item>
         <item>Он пил много кофе.He drank much coffee</item>
@@ -1206,18 +1203,14 @@
         <item>Я приходил домой очень поздно.I came home very late</item>
         <item>Что вы будете пить?What will you drink?</item>
         <item>Моя подруга видела тебя там. Что ты там делал?My friend has seen you there. What did you do there</item>
-
         <item>Ты должен был знать об этом раньше.</item>
-
         <item>Почему мы все обязаны слушать этого человека?Why must we listen to this person?</item>
         <item>Никто раньше не слышал о таких вещах.Nobody heard about such things before</item>
         <item>Где ты собираешься покупать дом?Where are you going to buy a house?</item>
         <item>Я очень хочу увидеть Париж.I want to see Paris very much</item>
         <item>Сто лет назад никто еще не думал об этом.Nobody thought about this hundred years ago yet</item>
         <item>Это происходило очень часто.It happened very often</item>
-
         <item>Все готово. Вы можете приходить.</item>
-
         <item>Куда мы пойдем после этого?Where will we go after this?</item>
         <item>Кто давал тебе деньги?Who gave you money?</item>
     </string-array>
@@ -1230,7 +1223,6 @@
         <item>Doing this was difficult for (них)</item>
         <item>Doing this was difficult for (этого)</item>
         <item>Doing this was difficult for (ее)</item>
-
         <item>Someone saw (меня) there</item>
         <item>Someone saw (тебя) there</item>
         <item>Someone saw (нас) there</item>
@@ -1238,7 +1230,6 @@
         <item>Someone saw (их) there</item>
         <item>Someone saw (это) there</item>
         <item>Someone saw (ее) there</item>
-
         <item>They will give (нам) a car</item>
         <item>He didn`t give (мне) a candy</item>
         <item>Someone gave (ей) a candy</item>
@@ -1264,7 +1255,6 @@
         <item>(наша) car was there</item>
         <item>(их) car was there</item>
         <item>(этого) car was there</item>
-
         <item>They saw (меня) and (мою) dog</item>
         <item>They saw (тебя) and (твою) car</item>
         <item>They saw (его) and (его) cat</item>
@@ -1272,7 +1262,6 @@
         <item>They saw (нас) and (ношу) daughter</item>
         <item>They saw (их) and (их) friend</item>
         <item>They saw (это) and (этого) dog</item>
-
         <item>He has come with (своей) wife</item>
         <item>She has come with (своем) husband</item>
         <item>They have come with (своими) children</item>
@@ -1293,13 +1282,11 @@
         <item>they see (себя)-selves in the mirror</item>
         <item>people see (себя)-selves in the mirror</item>
         <item>we see (себя)-selves in the mirror</item>
-
         <item>I see (себя)-self in the mirror</item>
         <item>you see (себя)-self/-selves in the mirror</item>
         <item>she sees (себя)-self in the mirror</item>
         <item>he sees (себя)-self in the mirror</item>
         <item>the cat sees (себя)-self in the mirror</item>
-
         <item>in this way they only deceive (себя)-selves</item>
         <item>if you can`t decide for (себя)-self/selves, others will decide for you</item>
     </string-array>
@@ -1365,7 +1352,6 @@
         <item>them</item>
         <item>it</item>
         <item>her</item>
-
         <item>me</item>
         <item>you</item>
         <item>us</item>
@@ -1373,7 +1359,6 @@
         <item>them</item>
         <item>it</item>
         <item>her</item>
-
         <item>us</item>
         <item>me</item>
         <item>her</item>
@@ -1399,7 +1384,6 @@
         <item>our</item>
         <item>their</item>
         <item>its</item>
-
         <item>me | my</item>
         <item>you | your</item>
         <item>him | his</item>
@@ -1407,7 +1391,6 @@
         <item>us | our</item>
         <item>them | their</item>
         <item>it | its</item>
-
         <item>his</item>
         <item>her</item>
         <item>their</item>
@@ -1427,13 +1410,11 @@
         <item>themselves</item>
         <item>themselves</item>
         <item>ourselves</item>
-
         <item>myself</item>
         <item>yourself/-selves</item>
         <item>herself</item>
         <item>himself</item>
         <item>itself</item>
-
         <item>themselves</item>
         <item>yourself/selves</item>
     </string-array>
@@ -1495,9 +1476,7 @@
         <item>герцог сообщил королю что все шло плохо</item>
         <item>она думала, что он купит ей подарок</item>
         <item>мне нехватало ровно той сумму, которую я потратил в баре</item>
-
-        <item>ты не обязан быть великим, чтобы начать, но ты должун начать, чтобы быть великим</item>
-
+        <item>ты не обязан быть великим, чтобы начать, но ты должен начать, чтобы быть великим</item>
         <item>чтобы иметь это ты должен очень тяжело работать</item>
         <item>чтобы выграть битву Наполеон бросил в бой его последний резерв</item>
         <item>что бы разделить радость с друзьями, мы собираемся разослать кождому письма</item>
@@ -1507,16 +1486,13 @@
         <item>чтобы решить проблему..</item>
         <item>чтобы найти работу..</item>
         <item>чтобы не бояться..</item>
-
         <item>Мери хочет, чтобы ее муж Сэм зарабатывал большую зарплату</item>
         <item>бабушка хотела, чтобы мы поели</item>
         <item>мне не нужно, чтобы ты меня учила, как воспитывать моих детей</item>
-
         <item>мы хотели, чтобы они поняли..</item>
         <item>она не хотела, чтобы я знал..</item>
         <item>я предпочитал, чтобы они объясняли медленнее..</item>
         <item>родители хотели, чтобы мы убрали наши комнаты</item>
-
         <item>Марлин хотела, чтобу ее любили</item>
         <item>молодому человеку нужно, чтобы ему помогли</item>
         <item>я хочу, чтобы мне объяснили</item>
@@ -1532,9 +1508,7 @@
         <item>the Duke reported the King (that) everything was going wrong</item>
         <item>she thought (that) he would buy her some present</item>
         <item>I missed exactly the sum (that) I had spent at the bar</item>
-
         <item>you don`t have to be great to start, but you have to start to be great</item>
-
         <item>to have this you have to work very hard</item>
         <item>to win the battle Napoleon threw to the fight his last reserve</item>
         <item>to share the joy with friends we are going to send everyone letters</item>
@@ -1544,16 +1518,13 @@
         <item>to solve a problem..</item>
         <item>to find a work..</item>
         <item>not to be afraid..</item>
-
-        <item>Mary wants her husband Sam to earn bigger salary</item>
+        <item>Mary wants her husband Sam to earn a bigger salary</item>
         <item>Granny wanted us to eat</item>
         <item>I don`t need you to teach me how to handle my children</item>
-
         <item>we wanted them to understand..</item>
         <item>she didn`t want me to know..</item>
         <item>I preferred them to explain slowly..</item>
         <item>the parents wanted us to clean our rooms..</item>
-
         <item>Marilyn wanted to be laved</item>
         <item>the young man needs to be helped</item>
         <item>I want to be explained</item>
@@ -1563,6 +1534,90 @@
         <item>he dreamed to be written in all newspapers about</item>
         <item>he only wanted to be talked with</item>
         <item>she hated to be talked about behind her back</item>
+    </string-array>
+
+    <string-array name="condition_qu">
+        <item>если наступит завтра..</item>
+        <item>если придешь, мы будем пить чай</item>
+        <item>если постараешься - победишь</item>
+        <item>если ты всегда стараешься быть нормальным, ты не когда не узнаешь каким потресающим ты можешь быть</item>
+        <item>если ты построешь, они придут </item>
+        <item>если ты не будешь строить своей мечты, кто-то наймет тебя строить его</item>
+        <item>если ты толстый, тебя труднее похитить</item>
+        <item>если хочешь идти быстро, иди один, если хочешь идти далеко, иди вместе</item>
+        <item>если взялся за фигуру, ходи</item>
+        <item>если ты встретишь хорошего мужчину, выходи за него замуж</item>
+        <item>если ты не можешь перестать думать об этом, не переставай работу для этого</item>
+        <item>если бы ты видел меня сейчас</item>
+        <item>если бы мы знали, что ты собираешься стать писателем, мы бы были лутшеми родителями</item>
+        <item>если бы я хотел, я бы купил это</item>
+        <item>если бы я мог, я бы сделал это</item>
+        <item>если бы я был там, я бы поиграл стобой</item>
+        <item>если бы я был тобой, я бы не трогал то</item>
+        <item>мечтай как будто ты живешь вечно. Живи как будто ты умрешь сегодня</item>
+        <item>он претворяеться как будто знает что-то о ней</item>
+    </string-array>
+
+    <string-array name="condition_an">
+        <item>if tomorrow comes..</item>
+        <item>if you come, we will drink tea</item>
+        <item>if you strive, you`ll win</item>
+        <item>if you`re always trying to be normal, you will never know how amazing you can be</item>
+        <item>if you build it, they will come</item>
+        <item>if you don`t build your dream, someone will hire you to build theirs</item>
+        <item>if you are fat, you`ll be harder to kidnap</item>
+        <item>if you want to go fast, go alone, if you want to go far, go together</item>
+        <item>if you have taken the figure, go</item>
+        <item>if you meet a good man, marry him</item>
+        <item>if you can`t stop thinking about it, don`t stop working for it</item>
+        <item>if you could see me now</item>
+        <item>if we had known you were going to be a writer, we`d have been better parents!</item>
+        <item>if I wanted, I would buy this</item>
+        <item>if I could, I would do that</item>
+        <item>if I were there, I would play with you</item>
+        <item>if I were you, I wouldn`t touch that</item>
+        <item>dream as if you live forever. Live as if you die today</item>
+        <item>he pretends as if he knows something about her</item>
+    </string-array>
+
+    <string-array name="preps_qu">
+        <item>за что маленького Джонни поставили в угол?</item>
+        <item>а о чем это вы так долго болтали?</item>
+        <item>кем это было запланировано?</item>
+        <item>для кого ты их купил, а?</item>
+        <item>для чего я сегодня галстук надевал</item>
+        <item>для чего ты это сдела?</item>
+        <item>кого ты боялся?</item>
+        <item>чего они стеснялись?</item>
+        <item>чем он будед гордиться?</item>
+        <item>дом сделан из кирпичей</item>
+        <item>духи сделаны из цветов</item>
+        <item>из чего это сделано?</item>
+        <item>от кого вы узнали наш пороль?</item>
+        <item>он не любил зависить от кого-либо. Вместо этого, он очень любить, чтобы другии зависили от него</item>
+        <item>от чего это зависит?</item>
+        <item>от кого это зависит?</item>
+        <item>на какую полку ты положешь это</item>
+    </string-array>
+
+    <string-array name="preps_an">
+        <item>what was little Johnny put to a corner for</item>
+        <item>what were you talking so long about?!!</item>
+        <item>who was it planned by?</item>
+        <item>who have you bought it for, ha?</item>
+        <item>what did I put my tie on for?</item>
+        <item>what have you done this for?</item>
+        <item>who were you afraid of?</item>
+        <item>what were they shy of?</item>
+        <item>what will he be proud of?</item>
+        <item>the house is made of bricks</item>
+        <item>the perfume is made form flowers</item>
+        <item>what is it made of? What is it made from?</item>
+        <item>who have you found out our password from?</item>
+        <item>he didn`t like to depend on anyone. Instead, he liked very much to be depended on</item>
+        <item>what does it depend on?</item>
+        <item>who does it depend on?</item>
+        <item>which of the shelves will you put it on?</item>
     </string-array>
 
 </resources>

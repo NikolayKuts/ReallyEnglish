@@ -155,6 +155,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfMyList.add(getMyListOfVerbs("Verbs # 3 (101 - 150)", false, R.string.simple_verbs_3, R.string.irregular_verbs_v1_3, R.string.irregular_verbs_v2_3, R.string.irregular_verbs_v3_3));
         listOfMyList.add(getMyListOfVerbs("Verbs # 4 (151 - 200)", false, R.string.simple_verbs_4, R.string.irregular_verbs_v1_4, R.string.irregular_verbs_v2_4, R.string.irregular_verbs_v3_4));
         listOfMyList.add(getMyListOfVerbs("Verbs # 5 (201 - 250)", false, R.string.simple_verbs_5, R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v2_5, R.string.irregular_verbs_v3_5));
+        listOfMyList.add(getMyListOfVerbs("Verbs # 6 (251 - 300", false, R.string.simple_verbs_6, R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v2_6, R.string.irregular_verbs_v2_6));
 
         listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #1", true, R.string.adjective_1_1));
         listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #2", false, R.string.adjective_1_2));
@@ -359,7 +360,6 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV3.setText("[adj]");
         setTextViewVColor(R.color.textView_color_toBe_word, R.color.textView_color_v3_note);
     }
-
 
     private void setTextViewVColor(int idResColorV2, int idResColorV3) {
         textViewV2.setTextColor(getResources().getColor(idResColorV2));

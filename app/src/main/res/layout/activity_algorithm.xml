@@ -98,8 +98,8 @@
 
     <Switch
         android:id="@+id/switchIrregularVerb"
-        android:layout_width="75dp"
-        android:layout_height="36dp"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -138,8 +138,8 @@
         android:id="@+id/checkBoxTenseFuture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
         android:button="@null"
         android:drawableRight="@drawable/check_box"
         android:drawablePadding="5dp"
@@ -154,8 +154,8 @@
         android:id="@+id/checkBoxTensePast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
         android:button="@null"
         android:drawableRight="@drawable/check_box"
         android:drawablePadding="5dp"
@@ -246,49 +246,24 @@
 
         <TextView
             android:id="@+id/textViewV1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="-//-"
-            android:textColor="#F8C982"
-            android:textSize="20sp" />
+            style="@style/text_view_v_form"
+            android:textColor="#F8C982" />
 
         <TextView
             android:id="@+id/textViewV2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="-//-"
-            android:textColor="#FF9B0A"
-            android:textSize="20sp" />
+            style="@style/text_view_v_form"
+            android:textColor="#FF9B0A" />
 
         <TextView
             android:id="@+id/textViewV3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="-//-"
-            android:textColor="#ACD878"
-            android:textSize="20sp" />
+            style="@style/text_view_v_form"
+            android:textColor="#ACD878"/>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/buttonShowDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickShowDialog"
-        android:text="choose a list"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.674" />
 
     <LinearLayout
         android:id="@+id/LinearLayoutCheckBoxes"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -299,43 +274,23 @@
 
         <CheckBox
             android:id="@+id/checkBoxMinus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="20dp"
-            android:layout_margin="3dp"
-            android:textColor="@color/dialog_check_box_checked_color"
+            style="@style/check_box_sign"
             android:text="-" />
 
         <CheckBox
             android:id="@+id/checkBoxPlus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="20dp"
+            style="@style/check_box_sign"
             android:checked="true"
-            android:layout_margin="3dp"
-            android:textColor="@color/dialog_check_box_checked_color"
             android:text="+" />
 
         <CheckBox
             android:id="@+id/checkBoxQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="20dp"
-            android:layout_margin="3dp"
-            android:textColor="@color/dialog_check_box_checked_color"
+            style="@style/check_box_sign"
             android:text="?" />
 
         <CheckBox
             android:id="@+id/checkBoxMinusQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="20dp"
-            android:layout_margin="3dp"
-            android:textColor="@color/dialog_check_box_checked_color"
+            style="@style/check_box_sign"
             android:text="-?" />
     </LinearLayout>
 
