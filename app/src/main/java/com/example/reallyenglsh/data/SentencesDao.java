@@ -1,10 +1,12 @@
-package com.example.reallyenglsh;
+package com.example.reallyenglsh.data;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+
+import com.example.reallyenglsh.data.Sentence;
 
 import java.util.List;
 

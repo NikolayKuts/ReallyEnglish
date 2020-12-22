@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.reallyenglsh.MainViewModel;
 import com.example.realyenglsh.R;
-import com.example.reallyenglsh.Sentence;
+import com.example.reallyenglsh.data.Sentence;
 
 import java.util.ArrayList;
 import java.util.Arrays;

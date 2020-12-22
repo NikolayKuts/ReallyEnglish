@@ -1,9 +1,12 @@
-package com.example.reallyenglsh.screens;
+  package com.example.reallyenglsh.screens;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,7 +14,6 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -30,32 +32,23 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.reallyenglsh.DownLoader;
 import com.example.reallyenglsh.IOnCallbackHelper;
 import com.example.reallyenglsh.MainViewModel;
 import com.example.reallyenglsh.MyAdapterAdjectiveList;
 import com.example.reallyenglsh.MyLoaderCallbacks;
-import com.example.reallyenglsh.V3Verb;
+import com.example.reallyenglsh.data.V3Verb;
 import com.example.reallyenglsh.MyAdapter;
 import com.example.reallyenglsh.MyListAdjective;
 import com.example.reallyenglsh.MyListOfVerbs;
 import com.example.reallyenglsh.OnClickAudioContentPlayer;
 import com.example.realyenglsh.R;
-import com.example.reallyenglsh.Sentence;
+import com.example.reallyenglsh.data.Sentence;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static com.example.reallyenglsh.screens.Table1Activity.getWordFromList;
 
@@ -191,6 +184,7 @@ public class AlgorithmActivity extends AppCompatActivity {
             @Override
             public void onLoadFinished(String data) {
                 textViewTranslation.setText(data);
+                loaderManager.destroyLoader(myLoaderCallbacks.getId());
             }
         });
 
@@ -313,9 +307,9 @@ public class AlgorithmActivity extends AppCompatActivity {
                 } else if (randomNumberOfToBe == 1) {  // adjective
                     String adjective = getWordFromList(listOfLessonAdjective);
                     sentence = String.format("%s %s", name, adjective);
+                    loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(adjective), myLoaderCallbacks);
                     setWordOfToBeAdjective(adjective);
 //                    textViewTranslation.setText(getTranslateContent(adjective));
-                    loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(adjective), myLoaderCallbacks);
                 } else {  // passive verb
                     if (listOfLessonVerbsIrregularV1.contains(simpleIrregularVerb)) {
                         sentence = getSentenceWithToBeV3Verb(name, simpleIrregularVerb);
@@ -327,9 +321,9 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
 
         if (randomNumberOfWay != 2 || randomNumberOfToBe != 1) {
+            loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(simpleIrregularVerb), myLoaderCallbacks);
             setFormsOfIrregularVerb(simpleIrregularVerb);
 //            textViewTranslation.setText(getTranslateContent(simpleIrregularVerb));
-            loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(simpleIrregularVerb), myLoaderCallbacks);
         }
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {

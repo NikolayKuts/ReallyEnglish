@@ -1594,7 +1594,7 @@
         <item>духи сделаны из цветов</item>
         <item>из чего это сделано?</item>
         <item>от кого вы узнали наш пороль?</item>
-        <item>он не любил зависить от кого-либо. Вместо этого, он очень любить, чтобы другии зависили от него</item>
+        <item>он не любил зависить от кого-либо. Вместо этого, он очень любил, чтобы другии зависили от него</item>
         <item>от чего это зависит?</item>
         <item>от кого это зависит?</item>
         <item>на какую полку ты положешь это</item>
@@ -1618,6 +1618,140 @@
         <item>what does it depend on?</item>
         <item>who does it depend on?</item>
         <item>which of the shelves will you put it on?</item>
+    </string-array>
+
+    <string-array name="in_on_at_qu">
+        <item>2015</item>
+        <item>September</item>
+        <item>His office</item>
+        <item>Washington DC</item>
+        <item>Morning</item>
+        <item>California</item>
+        <item>Siberia forests</item>
+        <item>Red square</item>
+        <item>General Lee avenue</item>
+        <item>Detroit</item>
+        <item>The birthday party</item>
+        <item>Winter</item>
+        <item>Night</item>
+        <item>November, 3</item>
+        <item>My own apartment</item>
+        <item>Evening</item>
+        <item>Summer</item>
+        <item>Afternoon</item>
+        <item>Republican party</item>
+        <item>This moment</item>
+        <item>Spring</item>
+        <item>weekends</item>
+    </string-array>
+
+    <string-array name="in_on_at_an">
+        <item>in</item>
+        <item>in</item>
+        <item>at</item>
+        <item>in</item>
+        <item>in</item>
+        <item>in</item>
+        <item>in</item>
+        <item>on</item>
+        <item>on</item>
+        <item>in</item>
+        <item>at</item>
+        <item>in</item>
+        <item>at</item>
+        <item>on</item>
+        <item>at</item>
+        <item>in</item>
+        <item>in</item>
+        <item>in</item>
+        <item>in</item>
+        <item>at</item>
+        <item>in</item>
+        <item>on</item>
+    </string-array>
+
+    <string-array name="phrasal_verbs_qu">
+        <item>to fall out of the system</item>
+        <item>to fall up under the law</item>
+        <item>to fall in to the Caspian sea</item>
+        <item>I`ve fallen you, Vassya</item>
+
+        <item>I feel for you</item>
+        <item>what are you looking for?</item>
+        <item>he have to look after his brother</item>
+        <item>click here -find out more-</item>
+        <item>if you bother me I`ll sort you out!</item>
+        <item>sort out your priorities!</item>
+
+        <item>get in (the problem, the taxi, the business)</item>
+        <item>get out (of the problem, the taxi, the business)</item>
+        <item>get up</item>
+        <item>we are never ever getting back together</item>
+        <item>don`t get behind!</item>
+
+        <item>to ask for money</item>
+        <item>to ask about this</item>
+        <item>stop running. Let your happiness catch pu with you</item>
+        <item>in a case of emergency, who should we count on?</item>
+        <item>it`s easier to keep up than to catch up</item>
+        <item>it as always has stolen up imperceptibly</item>
+        <item>scare out</item>
+        <item>breathe in</item>
+        <item>breathe out</item>
+        <item>grow up</item>
+
+        <item>add 1 to 2</item>
+        <item>subtract 1 from 2</item>
+        <item>divide into..</item>
+        <item>multiply by..</item>
+
+        <item>to brag about..</item>
+        <item>interfere into..</item>
+        <item>threaten by..</item>
+        <item>tied to..</item>
+        <item>connected with..</item>
+    </string-array>
+
+    <string-array name="phrasal_verbs_an">
+        <item>выпадвть</item>
+        <item>подпадать</item>
+        <item>впадать</item>
+        <item>западать</item>
+
+        <item>сочувствовать</item>
+        <item>искать</item>
+        <item>присматривать</item>
+        <item>לגלות</item>
+        <item>разбираться</item>
+        <item>разбираться</item>
+
+        <item>зайти, вникнуть</item>
+        <item>выйти</item>
+        <item>встать</item>
+        <item>вернуться</item>
+        <item>отставать</item>
+
+        <item>просить</item>
+        <item>спрашивать</item>
+        <item>догонять</item>
+        <item>рассчитывать</item>
+        <item>равняться на..</item>
+        <item>подкрадываться</item>
+        <item>отпугивать</item>
+        <item>вдыхать</item>
+        <item>выдыхать</item>
+        <item>рости, подрости</item>
+
+        <item>прибавить 1 ко 2</item>
+        <item>вычесть 1 из 2</item>
+        <item>разделить на..</item>
+        <item>умножать на..</item>
+
+        <item>хвастаться об..</item>
+        <item>вмешиваться в..</item>
+        <item>угрожать (кем, чем)</item>
+        <item>привязаный к..</item>
+        <item>соединенный с..</item>
     </string-array>
 
 </resources>

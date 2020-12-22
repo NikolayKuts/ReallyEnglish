@@ -6,6 +6,10 @@ import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
+import com.example.reallyenglsh.data.Sentence;
+import com.example.reallyenglsh.data.SentencesDatabase;
+import com.example.reallyenglsh.data.V3Verb;
+
 import java.util.concurrent.ExecutionException;
 
 public class MainViewModel extends AndroidViewModel {

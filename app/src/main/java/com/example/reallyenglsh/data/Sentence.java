@@ -1,4 +1,4 @@
-package com.example.reallyenglsh;
+package com.example.reallyenglsh.data;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

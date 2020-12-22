@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -18,6 +19,7 @@ import com.example.reallyenglsh.MyListCouples;
 import com.example.realyenglsh.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -62,7 +64,7 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("En to En WH [4]", false, R.array.couples_english_wh_qu, R.array.couples_english_wh_an));
         listOfMyCouplesList.add(getMyListCouples("En to En advance [4]", false, R.array.couples_english_advanced_qu, R.array.couples_english_advanced_an));
         listOfMyCouplesList.add(getMyListCouples("Ru to En [4]", false, R.array.couples_english_ru_to_en_qu, R.array.couples_english_ru_to_en_an));
-        listOfMyCouplesList.add(getMyListCouples("Past En to En [5]", false, R.array.couples_past_en_to_en_qu, R.array.couples_past_en_to_en_an));
+        listOfMyCouplesList.add(getMyListCouples("Past En to En ? [5]", false, R.array.couples_past_en_to_en_qu, R.array.couples_past_en_to_en_an));
         listOfMyCouplesList.add(getMyListCouples("Negative sentences [6]", false, R.array.negative_sentence_ru_qu, R.array.negative_sentence_en_an));
         listOfMyCouplesList.add(getMyListCouples("Adjective intensifiers [7]", false, R.array.adjective_intensifiers_so_very_too_ru_qu, R.array.adjective_intensifiers_so_very_too_en_an));
         listOfMyCouplesList.add(getMyListCouples("Adjective is like verb [7]", false, R.array.adjective_is_like_verb_ru_qu, R.array.adjective_is_like_verb_en_an));
@@ -86,8 +88,10 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Out of [15]", false, R.array.formulas_for_self_assembly_out_of_qu, R.array.formulas_for_self_assembly_out_of_an));
         listOfMyCouplesList.add(getMyListCouples("- Ever [15]", false, R.array.formulas_for_self_assembly_ever_qu, R.array.formulas_for_self_assembly_ever_an));
         listOfMyCouplesList.add(getMyListCouples("Bridges [16]", false, R.array.bridges_qu, R.array.bridges_an));
-        listOfMyCouplesList.add(getMyListCouples("Condition", false, R.array.condition_qu, R.array.condition_an));
-        listOfMyCouplesList.add(getMyListCouples("Preps", false, R.array.preps_qu, R.array.preps_an));
+        listOfMyCouplesList.add(getMyListCouples("Condition [17]", false, R.array.condition_qu, R.array.condition_an));
+        listOfMyCouplesList.add(getMyListCouples("Preps [18]", false, R.array.preps_qu, R.array.preps_an));
+        listOfMyCouplesList.add(getMyListCouples("In On At [19]", false, R.array.in_on_at_qu, R.array.in_on_at_an));
+        listOfMyCouplesList.add(getMyListCouples("Phrasal verbs [19]", false, R.array.phrasal_verbs_qu, R.array.phrasal_verbs_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
@@ -95,12 +99,13 @@ public class CouplesActivity extends AppCompatActivity {
         onClickNextCouples(textViewAnswer);
 
 //        String s = "";
-//
+
 //        s = s.replaceAll("\\d+\\.\\t", "");
 //        s = s.replaceAll("\\s*\\n\\s*", ",");
 //        Log.i("log", s);
 //
 //        String[] array = s.split("\\s*\\n\\s*");
+//        Log.i("log", Arrays.asList(array).toString());
 //        for (String q : array) {
 //            Log.i("log", "<item>" + q + "</item>");
 //        }
@@ -209,7 +214,7 @@ public class CouplesActivity extends AppCompatActivity {
     private void setSmoothScrollToLastItem(RecyclerView recyclerView) {
         for (int i = listOfMyCouplesList.size() - 1; i > 0; i--) {
             if (listOfMyCouplesList.get(i).isChecked()) {
-                recyclerView.smoothScrollBy(0, i * 59, null, i * 200);
+                recyclerView.smoothScrollBy(0, i * 63, null, i * 150);
                 break;
             }
         }

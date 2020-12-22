@@ -33,7 +33,9 @@ public class MyLoaderCallbacks implements LoaderManager.LoaderCallbacks<String> 
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
-        helper.onLoadFinished(data);
+        if (helper != null) {
+            helper.onLoadFinished(data);
+        }
     }
 
     @Override
