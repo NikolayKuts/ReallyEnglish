@@ -1754,4 +1754,51 @@
         <item>соединенный с..</item>
     </string-array>
 
+    <string-array name="verb_ing_qu">
+        <item>я говорил тебе о том, чтобы помочь родителям</item>
+        <item>мечтаю о том, чтобыотдохнуть пару дней</item>
+        <item>Трамп профессионал, чтобы ставить большие цели</item>
+        <item>я создан чтобы любить тебя</item>
+        <item>я за то, что пытаться каждый день делать что-то новое!</item>
+        <item>он стесняется того, что я небрит</item>
+        <item>она многому научилась от того, что брала уроки у бабушки</item>
+        <item>я так многим обязан тому, что имею компьютер в своей жизни</item>
+        <item>я пожаловался маме на то, что ты назвал меня ботаником</item>
+        <item>Я поздравляю тебя! - С чем? - С тем, что просто лучший!</item>
+        <item>ты можешь забыть все, кроме, чтобы съесть свой завтрак</item>
+        <item>все ваши результаты зависят от того,  понимаешь ли местные законы</item>
+        <item>и не настаивай на том, чтобы купить мне новую машину</item>
+        <item>Она согласна с тем, чтобы продать наш старый дом и купить новый</item>
+        <item>все его проблемы случаются только потому, что он недостаточно работает</item>
+        <item>благодаря глубокому пониманию русской души, он ..</item>
+        <item>он начал со свиданий с Шарлоттой, но закончил тем, что женился на ее младшей сестре</item>
+        <item>Шарикова поругали за то, что привел в дом девушку</item>
+        <item>извините за то, что прерываю ваш разговор</item>
+        <item>ты гордишься тем, что являешься Нью-Йоркером</item>
+        <item>я должен сказать ему о том, что могу шевелить ушами?</item>
+    </string-array>
+
+    <string-array name="verb_ing_an">
+        <item>I told you about helping my parents</item>
+        <item>I dream about resting a couple of days</item>
+        <item>Trunp is a professional in putting big goals</item>
+        <item>I was made for loving you</item>
+        <item>I am for trying every day to do something new!</item>
+        <item>he is shy of being unshaved</item>
+        <item>she learned a lot from taking granny`s lessons</item>
+        <item>I owe so much to having the computer in my life</item>
+        <item>I complained to Mom at your calling me a nerd</item>
+        <item>I congratulate you! - On what? - On being simply the best!</item>
+        <item>you may forget everything, except of eating your breakfast</item>
+        <item>all your results depend on understanding of the local laws</item>
+        <item>and don`t insist on buying me a new car</item>
+        <item>She agrees with selling our old house and buying a new one</item>
+        <item>all his problems happen just because not working mush enough</item>
+        <item>thanks to deep understanding russian soul, he..</item>
+        <item>he started from dates with Charlotte, but ended up marrying her younger sister</item>
+        <item>Sharikov was sworn for having brought a girl to the house</item>
+        <item>excuse me for interrupting your talk</item>
+        <item>you are proud of being a New Yorker</item>
+        <item>do I have to tell him about being able to move my ears?</item>
+    </string-array>
 </resources>

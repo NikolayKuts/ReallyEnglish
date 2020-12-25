@@ -92,6 +92,7 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Preps [18]", false, R.array.preps_qu, R.array.preps_an));
         listOfMyCouplesList.add(getMyListCouples("In On At [19]", false, R.array.in_on_at_qu, R.array.in_on_at_an));
         listOfMyCouplesList.add(getMyListCouples("Phrasal verbs [19]", false, R.array.phrasal_verbs_qu, R.array.phrasal_verbs_an));
+        listOfMyCouplesList.add(getMyListCouples("Verb-ing", false, R.array.verb_ing_qu, R.array.verb_ing_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
