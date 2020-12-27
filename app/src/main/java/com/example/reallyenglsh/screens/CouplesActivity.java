@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CouplesActivity extends AppCompatActivity {
 
@@ -92,23 +94,32 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Preps [18]", false, R.array.preps_qu, R.array.preps_an));
         listOfMyCouplesList.add(getMyListCouples("In On At [19]", false, R.array.in_on_at_qu, R.array.in_on_at_an));
         listOfMyCouplesList.add(getMyListCouples("Phrasal verbs [19]", false, R.array.phrasal_verbs_qu, R.array.phrasal_verbs_an));
-        listOfMyCouplesList.add(getMyListCouples("Verb-ing", false, R.array.verb_ing_qu, R.array.verb_ing_an));
+        listOfMyCouplesList.add(getMyListCouples("Preps + verb-ing [20]", false, R.array.preps_verb_ing_qu, R.array.preps_verb_ing_an));
+        listOfMyCouplesList.add(getMyListCouples("Starting from infinitive [21]", false, R.array.starting_from_infinitive_qu, R.array.starting_from_infinitive_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
 //        listSavedIndexesOfLearnedCouples = getFullListBySizeOfLessonList();
         onClickNextCouples(textViewAnswer);
 
-//        String s = "";
+        String s = "";
 
 //        s = s.replaceAll("\\d+\\.\\t", "");
 //        s = s.replaceAll("\\s*\\n\\s*", ",");
 //        Log.i("log", s);
-//
+
 //        String[] array = s.split("\\s*\\n\\s*");
 //        Log.i("log", Arrays.asList(array).toString());
+//        Pattern pattern = Pattern.compile("([^A-Za-z]+)([a-zA-Z].+)");
+//
 //        for (String q : array) {
-//            Log.i("log", "<item>" + q + "</item>");
+//            Matcher matcher = pattern.matcher(q);
+//
+//            matcher.find();
+//            String values = matcher.group(2);
+//            if (values != null) {
+//                Log.i("log", "<item>" + values + "</item>");
+//            }
 //        }
 
     }

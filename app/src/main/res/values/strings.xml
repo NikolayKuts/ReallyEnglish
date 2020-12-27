@@ -1754,9 +1754,9 @@
         <item>соединенный с..</item>
     </string-array>
 
-    <string-array name="verb_ing_qu">
+    <string-array name="preps_verb_ing_qu">
         <item>я говорил тебе о том, чтобы помочь родителям</item>
-        <item>мечтаю о том, чтобыотдохнуть пару дней</item>
+        <item>я мечтаю о том, чтобы отдохнуть пару дней</item>
         <item>Трамп профессионал, чтобы ставить большие цели</item>
         <item>я создан чтобы любить тебя</item>
         <item>я за то, что пытаться каждый день делать что-то новое!</item>
@@ -1778,7 +1778,7 @@
         <item>я должен сказать ему о том, что могу шевелить ушами?</item>
     </string-array>
 
-    <string-array name="verb_ing_an">
+    <string-array name="preps_verb_ing_an">
         <item>I told you about helping my parents</item>
         <item>I dream about resting a couple of days</item>
         <item>Trunp is a professional in putting big goals</item>
@@ -1800,5 +1800,63 @@
         <item>excuse me for interrupting your talk</item>
         <item>you are proud of being a New Yorker</item>
         <item>do I have to tell him about being able to move my ears?</item>
+    </string-array>
+
+    <string-array name="starting_from_infinitive_qu">
+        <item>Чтобы решить вопрос, нам надо написать письмо в Конгресс</item>
+        <item>Чтобы узнать о нем больше, посмотри в Википедии</item>
+        <item>Чтобы уметь это делать, надо много учиться.</item>
+        <item>Чтобы доесть кашу, надо взять большую ложку.</item>
+        <item>Решить вопрос – ваша обязанность.</item>
+        <item>Найти работу – это первое, что ты должен сделать.</item>
+        <item>Узнать об этом больше – невероятно интересно.</item>
+        <item>Уметь стрелять – долг каждого киллера.</item>
+        <item>Не бояться волков – это достаточно важно для того, чтобы быть охотником.</item>
+        <item>Чтобы не стесняться петь перед публикой, надо как минимум иметь голос.</item>
+        <item>Чтобы знать об этом, достаточно заниматься раз в неделю.</item>
+        <item>Знать об этом важно</item>
+        <item>Доесть кашу перед тем, как пойдешь гулять это мое условие.</item>
+        <item>Чтобы выжить в современном городе, надо иметь одну вещь: деньги.</item>
+        <item>Выжить в современном городе нелегко.</item>
+        <item>Сидеть на диване недостаточно для успеха!</item>
+        <item>Чтобы сидеть на диване и давать советы, вам не нужно быть слишком умным.</item>
+        <item>Сражаться с вредными привычками очень важно.</item>
+        <item>Чтобы сражаться с ними, вам нужна сильная воля.</item>
+        <item>Чтобы понять ее раз и навсегда, надо спросить умного человека.</item>
+        <item>Выигрывать в казино как можно чаще было его целью.</item>
+        <item>Выиграть однажды в рулетку миллион было его мечтой.</item>
+        <item>Чтобы работать в нашей бригаде, тебе надо иметь квалификацию.</item>
+        <item>Работать в нашей бригаде трудно, но интересно.</item>
+        <item>Чувствовать себя защищенной возможно только с прокладками «Олвейз».</item>
+        <item>Чтобы чувствовать себя защищенной, вам надо покупать прокладки «Олвейз».</item>
+    </string-array>
+
+    <string-array name="starting_from_infinitive_an">
+        <item>To solve the issue, we should write a letter to the Congress.</item>
+        <item>To learn more about him, look in the Wikipedia.</item>
+        <item>to be able to do it, you should study hard.</item>
+        <item>To finish the porridge you need to take a big spoon.</item>
+        <item>Solving the issue is your responsibility.</item>
+        <item>Finding a job is the first thing you must do.</item>
+        <item>Discovering more about it is unbelievably interesting.</item>
+        <item>Being able to shoot is every killer`s duty.</item>
+        <item>Not being afraid of wolves is important enough to be a hunter.</item>
+        <item>Not to be shy to sing in public you need to have a good voice at least.</item>
+        <item>To know about it, it`s enough to study once a week.</item>
+        <item>Knowing about it is important.</item>
+        <item>finishing the porridge before you go is my condition</item>
+        <item>To survive in a present-day city the thing you have to have is the money</item>
+        <item>Surviving in a present-day city is not easy.</item>
+        <item>Sitting on a couch is`t enough for success.</item>
+        <item>To sit on a couch and give advice you don`t need to be too smart.</item>
+        <item>Fighting bad habits is very important</item>
+        <item>To fight them, you need a strong will.</item>
+        <item>To understand her once and for all you need to ask a intelligent person.</item>
+        <item>Winning in the casino as often as possible was his goal.</item>
+        <item>winning the million in the roulette once was his dream.</item>
+        <item>To work in our team you need to be qualified.</item>
+        <item>Working in our team is hard but interesting.</item>
+        <item>Feeling protected is possible only with "Always" gaskets.</item>
+        <item>To feel protected, you should buy "Always" gaskets.</item>
     </string-array>
 </resources>
