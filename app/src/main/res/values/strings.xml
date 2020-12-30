@@ -1473,7 +1473,7 @@
     </string-array>
 
     <string-array name="bridges_qu">
-        <item>герцог сообщил королю что все шло плохо</item>
+        <item>герцог сообщил королю что все идет плохо</item>
         <item>она думала, что он купит ей подарок</item>
         <item>мне нехватало ровно той сумму, которую я потратил в баре</item>
         <item>ты не обязан быть великим, чтобы начать, но ты должен начать, чтобы быть великим</item>
@@ -1683,9 +1683,9 @@
         <item>if you bother me I`ll sort you out!</item>
         <item>sort out your priorities!</item>
 
-        <item>get in (the problem, the taxi, the business)</item>
-        <item>get out (of the problem, the taxi, the business)</item>
-        <item>get up</item>
+        <item>to get in (the problem, the taxi, the business)</item>
+        <item>to get out (of the problem, the taxi, the business)</item>
+        <item>to get up</item>
         <item>we are never ever getting back together</item>
         <item>don`t get behind!</item>
 
@@ -1695,10 +1695,10 @@
         <item>in a case of emergency, who should we count on?</item>
         <item>it`s easier to keep up than to catch up</item>
         <item>it as always has stolen up imperceptibly</item>
-        <item>scare out</item>
-        <item>breathe in</item>
-        <item>breathe out</item>
-        <item>grow up</item>
+        <item>to scare out</item>
+        <item>to breathe in</item>
+        <item>to breathe out</item>
+        <item>to grow up</item>
 
         <item>add 1 to 2</item>
         <item>subtract 1 from 2</item>
@@ -1760,7 +1760,7 @@
         <item>Трамп профессионал, чтобы ставить большие цели</item>
         <item>я создан чтобы любить тебя</item>
         <item>я за то, что пытаться каждый день делать что-то новое!</item>
-        <item>он стесняется того, что я небрит</item>
+        <item>он стесняется того, что он небрит</item>
         <item>она многому научилась от того, что брала уроки у бабушки</item>
         <item>я так многим обязан тому, что имею компьютер в своей жизни</item>
         <item>я пожаловался маме на то, что ты назвал меня ботаником</item>
@@ -1851,12 +1851,115 @@
         <item>To sit on a couch and give advice you don`t need to be too smart.</item>
         <item>Fighting bad habits is very important</item>
         <item>To fight them, you need a strong will.</item>
-        <item>To understand her once and for all you need to ask a intelligent person.</item>
+        <item>To understand her once and for all you need to ask an intelligent person.</item>
         <item>Winning in the casino as often as possible was his goal.</item>
         <item>winning the million in the roulette once was his dream.</item>
         <item>To work in our team you need to be qualified.</item>
         <item>Working in our team is hard but interesting.</item>
         <item>Feeling protected is possible only with "Always" gaskets.</item>
         <item>To feel protected, you should buy "Always" gaskets.</item>
+    </string-array>
+
+    <string-array name="sequence_of_tenses_qu">
+        <item>Я думал, что ты об этом узнал от Джейн. – Нет, от ее сестры.</item>
+        <item>Ты их увидишь, если посмотришь в окно.</item>
+        <item>Я знаю, что он скоро придет.</item>
+        <item>Я думаю, что в такое время их дети уже спят.</item>
+        <item>Ты видел, какую он машину купил?</item>
+        <item>На твоем месте я бы не спорил с полицейским офицером.</item>
+        <item>Я думал, что закончу все к пяти. Я ошибся.</item>
+        <item>Почему вы говорите, что я должен был знать это заранее?</item>
+        <item>Я видел, что они собираются уходить.</item>
+        <item>Я был уверен, что пройду этот тест с легкостью.</item>
+
+        <item>она сказала, что ей не заплатили зарплату</item>
+        <item>мы сомневаемся, что она придет сегодня</item>
+        <item>в газетах написано, что он рожден в Санкте-Ленинграде</item>
+        <item>Я думал, дети спят</item>
+        <item>Я не знала, что ты работал поваром</item>
+        <item>босс утверждал, что с этого дня мы будем работать по-новому</item>
+    </string-array>
+
+    <string-array name="sequence_of_tenses_an">
+        <item>I thought you had found it out from Jane. - No, from her sister</item>
+        <item>You will see them if you look out the window</item>
+        <item>I know he will come soon</item>
+        <item>I think their kids are already sleeping at this time</item>
+        <item>Did you see what car he had bought</item>
+        <item>If I were you I would not argue with the police officer</item>
+        <item>I thought I would finish by 5. I was wrong</item>
+        <item>Why are you saying I should have known it beforehand?</item>
+        <item>I saw they were going to leave</item>
+        <item>I was sure I would pass the test easily</item>
+
+        <item>she said she hadn`t been paid her salary</item>
+        <item>we doubt she will come today</item>
+        <item>it`s written in newspapers he was born in Sanct-Leningrad</item>
+        <item>I thought the kids were sleeping</item>
+        <item>I didn`t know you had worked as a cook</item>
+        <item>boss claimed that since that day we would work in a new way</item>
+    </string-array>
+
+    <string-array name="miscellaneous_qu">
+        <item>you seem to like Chinese food. - (Вообще (совсем) нет). I prefer something more traditional</item>
+        <item>come (вовремя), we will count on you!</item>
+        <item>(среди) all her friends the best and the truest one was Jessica Moore</item>
+        <item>everyone, I repeat, everyone - (включая) even you, Jason Biggs - has to start his work at eight thirty sharp</item>
+        <item>the sisters were going to ho to the night club, and their Dad wasn`t (против) it</item>
+        <item>he earned his bread (главный образом | впервую очередь) by selling his pictures to rich tourists from Europe.</item>
+        <item>we all (заисключением) of you will go to the theater. I repeat, everyone (кроме) you!!!</item>
+        <item>(внезапно) I`ve heard a strange noise from outside</item>
+        <item>the meat ws cooked (точно) as I had ordered</item>
+        <item>how many people live in the USA? - (приблизительно) three hundred millions</item>
+        <item>she was (едва) 18 and (еле-еле | с трудом) understood what expected her in Hollywood</item>
+        <item>did you like Paris? - (не совсем)</item>
+        <item>of course, (частично) you`re right</item>
+        <item>(прежде всего), son, you have to get a diploma and find a good job</item>
+        <item>(посравнению с) some of African countries their level of life is pretty high</item>
+        <item>i have a question, Mr.Ford. - as always, you`re (не вовремя), Simpson! I`m too busy now!</item>
+        <item>yesterday we saw you coming into that new Irish bur. (Кстати), who was that beautiful blonde you were with?</item>
+        <item>(с (времени)) today everything will be only in my way - that`s what Sally said Mike the next day after they had got married</item>
+        <item>(множество/многие) of my friends have such problems, but some of them don`t</item>
+        <item>she hates her neighbors, and (наоборое)</item>
+        <item>(большенство) of Americans give their preference to healthy lifestyle. - I wouldn`t call it "\ the most"\, your point of view is too optimistic</item>
+        <item>I am very displeased with you and your work, Simpson. Since today you are fired! - Ah, it`s Ok! (все равно), i was going to quit. I`ve found much better place</item>
+        <item>(около) eleven million people live in a big NYC, and almost all of them are ny good friends</item>
+        <item>(втеченее/вродолжении) all the war she wrote him letters; and we will never know whether he received them or not</item>
+        <item>why are you so hurrying? I haven`t eaten (ещё)! But I have! Let`s go, or we`ll bee late!</item>
+        <item>(после) your so-called "\cleaning"\ everything in my room is upside down!</item>
+        <item>what? Do you say there`s nothing interesting in life? Just open you eyes and look (вокруг) you!</item>
+        <item>I am not going to wait (до) you finish your explanations</item>
+        <item>the students were working (под) the strict supervision of Mrs. McMillan</item>
+    </string-array>
+
+    <string-array name="miscellaneous_an">
+        <item>not at all</item>
+        <item>on time</item>
+        <item>among</item>
+        <item>including</item>
+        <item>against</item>
+        <item>mainly | primarily</item>
+        <item>except | but</item>
+        <item>suddenly</item>
+        <item>exactly</item>
+        <item>approximately</item>
+        <item>barely | scarcely | hardly </item>
+        <item>not really</item>
+        <item>partially</item>
+        <item>first of all</item>
+        <item>as compared to</item>
+        <item>out of time</item>
+        <item>by the way</item>
+        <item>since</item>
+        <item>a lot</item>
+        <item>vice versa</item>
+        <item>the most</item>
+        <item>about</item>
+        <item>during</item>
+        <item>yet</item>
+        <item>after</item>
+        <item>around</item>
+        <item>until</item>
+        <item>under</item>
     </string-array>
 </resources>

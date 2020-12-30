@@ -9,6 +9,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
@@ -96,30 +98,26 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Phrasal verbs [19]", false, R.array.phrasal_verbs_qu, R.array.phrasal_verbs_an));
         listOfMyCouplesList.add(getMyListCouples("Preps + verb-ing [20]", false, R.array.preps_verb_ing_qu, R.array.preps_verb_ing_an));
         listOfMyCouplesList.add(getMyListCouples("Starting from infinitive [21]", false, R.array.starting_from_infinitive_qu, R.array.starting_from_infinitive_an));
+        listOfMyCouplesList.add(getMyListCouples("Sequence of tenses [22]", false, R.array.sequence_of_tenses_qu, R.array.sequence_of_tenses_an));
+        listOfMyCouplesList.add(getMyListCouples("Miscellaneous [22]", false, R.array.miscellaneous_qu, R.array.miscellaneous_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
 //        listSavedIndexesOfLearnedCouples = getFullListBySizeOfLessonList();
         onClickNextCouples(textViewAnswer);
 
-        String s = "";
-
+//        String s = "";
+//
 //        s = s.replaceAll("\\d+\\.\\t", "");
-//        s = s.replaceAll("\\s*\\n\\s*", ",");
+////        s = s.replaceAll("\\s*\\n\\s*", ",");
 //        Log.i("log", s);
-
+//
 //        String[] array = s.split("\\s*\\n\\s*");
 //        Log.i("log", Arrays.asList(array).toString());
-//        Pattern pattern = Pattern.compile("([^A-Za-z]+)([a-zA-Z].+)");
+////        Pattern pattern = Pattern.compile("([^A-Za-z]+)([a-zA-Z].+)");
 //
 //        for (String q : array) {
-//            Matcher matcher = pattern.matcher(q);
-//
-//            matcher.find();
-//            String values = matcher.group(2);
-//            if (values != null) {
-//                Log.i("log", "<item>" + values + "</item>");
-//            }
+//            Log.i("log", "<item>" + q + "</item>");
 //        }
 
     }
@@ -152,15 +150,12 @@ public class CouplesActivity extends AppCompatActivity {
         dialog.show();
         setSmoothScrollToLastItem(recyclerView);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                setContentForLesson();
-                listSavedIndexesOfLearnedCouples = getFullListBySizeOfLessonList();
-                onClickNextCouples(v);
-                setContentForTextViewChosenLists();
-            }
+        button.setOnClickListener(v -> {
+            dialog.dismiss();
+            setContentForLesson();
+            listSavedIndexesOfLearnedCouples = getFullListBySizeOfLessonList();
+            onClickNextCouples(v);
+            setContentForTextViewChosenLists();
         });
     }
 
@@ -185,6 +180,14 @@ public class CouplesActivity extends AppCompatActivity {
         textViewAnswer.setText(listLessonAnswer.get(randomNumber));
 
         textViewCounter.setText(getQuantityOfLeftUnlearnedCouples());
+        actAnimationOnNewIteration();
+    }
+
+    private void actAnimationOnNewIteration() {
+        if (listLessonQuestion.size() - 1 == listSavedIndexesOfLearnedCouples.size()) {
+            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink_anim);
+            textViewCounter.startAnimation(animation);
+        }
     }
 
     private int getRandomNumberOnWasNot() {
