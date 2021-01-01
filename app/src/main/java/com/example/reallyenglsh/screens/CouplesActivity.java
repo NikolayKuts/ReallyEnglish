@@ -100,6 +100,8 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Starting from infinitive [21]", false, R.array.starting_from_infinitive_qu, R.array.starting_from_infinitive_an));
         listOfMyCouplesList.add(getMyListCouples("Sequence of tenses [22]", false, R.array.sequence_of_tenses_qu, R.array.sequence_of_tenses_an));
         listOfMyCouplesList.add(getMyListCouples("Miscellaneous [22]", false, R.array.miscellaneous_qu, R.array.miscellaneous_an));
+        listOfMyCouplesList.add(getMyListCouples("Degetization [23]", false, R.array.degetization_qu, R.array.degetization_an));
+        listOfMyCouplesList.add(getMyListCouples("Make & Have [23]", false, R.array.make_have_qu, R.array.make_have_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();

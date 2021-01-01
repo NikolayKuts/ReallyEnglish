@@ -796,7 +796,7 @@
         <item>The (больше) your car is, the (больше) fuel it spends.</item>
         <item>The (меньше) money – the (меньше) problems.</item>
         <item>The (старше) a chicken – the (вкуснее) a soup.</item>
-        <item>The (сложнее) your problem is, the (проще) it`s solution must be.</item>
+        <item>The (сложнее) your problem is, the (проще) it’s solution must be.</item>
         <item>The (тяжелее) you work - the (большую) salary you will get.</item>
     </string-array>
 
@@ -912,19 +912,19 @@
     </string-array>
 
     <string-array name="fake_subject_an">
-        <item>It`s dangerous to drive in this weather</item>
-        <item>It`s odd to see you in place like this</item>
+        <item>It’s dangerous to drive in this weather</item>
+        <item>It’s odd to see you in place like this</item>
         <item>It was very hard to pass this test.</item>
-        <item>I`m afraid it will be boring to watch three action movies in a row.</item>
+        <item>I’m afraid it will be boring to watch three action movies in a row.</item>
         <item>There is a tradition (It is accepted) to call everyone by first name</item>
         <item>It seems to me he is not coming.</item>
-        <item>It may happen that I won`t be able to come.</item>
+        <item>It may happen that I won’t be able to come.</item>
         <item>It was very interesting to watch their discussion.</item>
         <item>Does it hurt, Gavrila Petrovich? - Yes it does, Fedya!</item>
         <item>You are starting tomorrow. - Deal (or It suits me).</item>
         <item>It will be cold tomorrow</item>
-        <item>It`s unclear what they are going to do.</item>
-        <item>It`s a good thing you`ve come</item>
+        <item>It’s unclear what they are going to do.</item>
+        <item>It’s a good thing you’ve come</item>
         <item>It was nice to get a letter from you.</item>
         <item>It happens that well-thought-out plan fails.</item>
     </string-array>
@@ -1001,7 +1001,7 @@
         <item>They are your friends.  А мы – нет.</item>
         <item>He will be rich. И я тоже.</item>
         <item>He can help them. А я - нет.</item>
-        <item>We don`t want to know it. И ты тоже.</item>
+        <item>We don’t want to know it. И ты тоже.</item>
         <item>This man is my boss. А ты  - нет.</item>
         <item>Many people can’t understand this. Но я могу.</item>
         <item>You don’t understand this language. Я тоже.</item>
@@ -1024,25 +1024,25 @@
     <string-array name="mirroring_1_an">
         <item>But we are not</item>
         <item>So will I</item>
-        <item>But I can`t</item>
+        <item>But I can’t</item>
         <item>Neither do you</item>
-        <item>But you aren`t</item>
+        <item>But you aren’t</item>
         <item>But I can</item>
         <item>Neither do I</item>
-        <item>But they don`t</item>
+        <item>But they don’t</item>
         <item>So do they</item>
-        <item>But that does`t</item>
+        <item>But that does’t</item>
         <item>So did her sister</item>
-        <item>But you did`t</item>
-        <item>But I don`t</item>
+        <item>But you did’t</item>
+        <item>But I don’t</item>
         <item>So must the other</item>
-        <item>But you weren`t</item>
-        <item>So do Bush`s family</item>
+        <item>But you weren’t</item>
+        <item>So do Bush’s family</item>
         <item>So are you</item>
         <item>But you might not</item>
         <item>So are you</item>
-        <item>But you mayn`t</item>
-        <item>But their neighbor didn`t</item>
+        <item>But you mayn’t</item>
+        <item>But their neighbor didn’t</item>
     </string-array>
 
     <string-array name="mirroring_2_qu">
@@ -1064,28 +1064,28 @@
         <item>He had to come yesterday. Ты тоже.</item>
         <item>This guy sent her flowers and gifts. А ты нет.</item>
         <item>They gave us money. А ты нет.</item>
-        <item>You didn`t hear about this. Я тоже.</item>
+        <item>You didn’t hear about this. Я тоже.</item>
     </string-array>
 
     <string-array name="mirroring_2_an">
         <item>So do we</item>
         <item>So do I</item>
-        <item>But you don`t</item>
+        <item>But you don’t</item>
         <item>So does her sister</item>
         <item>So may we</item>
-        <item>But his neighbors aren`t</item>
+        <item>But his neighbors aren’t</item>
         <item>So will I</item>
-        <item>But I did`t</item>
-        <item>But you couldn`t</item>
-        <item>But many people aren`t</item>
-        <item>But that one won`t</item>
+        <item>But I did’t</item>
+        <item>But you couldn’t</item>
+        <item>But many people aren’t</item>
+        <item>But that one won’t</item>
         <item>So could he</item>
         <item>So did her sister</item>
         <item>So did I</item>
         <item>Neither does his wife </item>
         <item>So did you</item>
-        <item>But you didn`t</item>
-        <item>But you didn`t</item>
+        <item>But you didn’t</item>
+        <item>But you didn’t</item>
         <item>Neither did I</item>
     </string-array>
 
@@ -1130,10 +1130,10 @@
         <item>I have already seen this movie</item>
         <item>she has already done her job</item>
         <item>he has already gone</item>
-        <item>I haven`t called them yet</item>
-        <item>he hasn`t sold her car yet</item>
-        <item>I haven`t checked yet</item>
-        <item>I haven`t bought a new grill yet</item>
+        <item>I haven’t called them yet</item>
+        <item>he hasn’t sold her car yet</item>
+        <item>I haven’t checked yet</item>
+        <item>I haven’t bought a new grill yet</item>
         <item>they have never been there</item>
         <item>she has never seen him</item>
         <item>I have never done this</item>
@@ -1142,10 +1142,10 @@
         <item>has he ever seen this animal?</item>
         <item>have you ever done work like this?</item>
         <item>has she ever gone?</item>
-        <item>I havan`t been called yet</item>
-        <item>he hasn`t been brought yet</item>
-        <item>she hasn`t been told about this yet</item>
-        <item>they haven`t been showed yet</item>
+        <item>I havan’t been called yet</item>
+        <item>he hasn’t been brought yet</item>
+        <item>she hasn’t been told about this yet</item>
+        <item>they haven’t been showed yet</item>
         <item>nobody has ever been there</item>
         <item>nobody has ever seen him</item>
         <item>nobody has ever done this</item>
@@ -1155,7 +1155,7 @@
         <item>they have always worked by rules</item>
         <item>my neighbor has always lived here</item>
         <item>you should have thought about this ahead of time</item>
-        <item>he shouldn`t have got married</item>
+        <item>he shouldn’t have got married</item>
         <item>you should have bought something for dinner</item>
     </string-array>
 
@@ -1191,7 +1191,7 @@
         <item>Она живет в большом красивом доме.She lives in a big beautiful house</item>
         <item>Иногда она покупала нам шоколадные конфеты.Sometimes she bought us chocolate candy</item>
         <item>Они отдыхали каждые десять минут.They rested every ten minutes</item>
-        <item>Однажды ты сможешь это сделать.You`ll do it one day</item>
+        <item>Однажды ты сможешь это сделать.You’ll do it one day</item>
         <item>Она часто навещала родителей.</item>
         <item>Там он был богатым человеком.He was a rich man there</item>
         <item>Какой торт мы купим?What cake will we buy?</item>
@@ -1199,7 +1199,7 @@
         <item>Этот парень будет большим начальником.This guy will be a big boss</item>
         <item>Тебе можно оставаться там.You may stay there</item>
         <item>Кто научил вас так делать?Who taught you to do this?</item>
-        <item>Я не мог их понять.I couldn`t understand them</item>
+        <item>Я не мог их понять.I couldn’t understand them</item>
         <item>Я приходил домой очень поздно.I came home very late</item>
         <item>Что вы будете пить?What will you drink?</item>
         <item>Моя подруга видела тебя там. Что ты там делал?My friend has seen you there. What did you do there</item>
@@ -1231,19 +1231,19 @@
         <item>Someone saw (это) there</item>
         <item>Someone saw (ее) there</item>
         <item>They will give (нам) a car</item>
-        <item>He didn`t give (мне) a candy</item>
+        <item>He didn’t give (мне) a candy</item>
         <item>Someone gave (ей) a candy</item>
         <item>Something has happened with (этим) then</item>
         <item>Something happens with (ними) then</item>
         <item>Something happened with (ней) then</item>
-        <item>Boss won`t want to raise (ему) a salary</item>
-        <item>Boss doesn`t want to raise (мне) the salary</item>
+        <item>Boss won’t want to raise (ему) a salary</item>
+        <item>Boss doesn’t want to raise (мне) the salary</item>
         <item>I bought (это)</item>
         <item>The friends congratulated (нас) with our silver wedding</item>
         <item>The producers gave (ему) the best roles</item>
         <item>He has made (ей) a proposition</item>
         <item>I have fulfilled (это)</item>
-        <item>I`ve written (ей) an email</item>
+        <item>I’ve written (ей) an email</item>
         <item>Arnie shows (им) his achievements</item>
     </string-array>
 
@@ -1270,10 +1270,10 @@
     </string-array>
 
     <string-array name="strengthened_forms_of_pos_case_qu">
-        <item>(ее) is told about that he`s able but lazy</item>
-        <item>Madame, i`m (ваш) forever!</item>
+        <item>(ее) is told about that he’s able but lazy</item>
+        <item>Madame, i’m (ваш) forever!</item>
         <item>All (наши) are on the spot!</item>
-        <item>Don`t touch, this is (мое)</item>
+        <item>Don’t touch, this is (мое)</item>
         <item>Our children read books, but (их) watch TV</item>
     </string-array>
 
@@ -1288,7 +1288,7 @@
         <item>he sees (себя)-self in the mirror</item>
         <item>the cat sees (себя)-self in the mirror</item>
         <item>in this way they only deceive (себя)-selves</item>
-        <item>if you can`t decide for (себя)-self/selves, others will decide for you</item>
+        <item>if you can’t decide for (себя)-self/selves, others will decide for you</item>
     </string-array>
 
     <string-array name="formulas_for_self_assembly_is_about_qu">
@@ -1436,7 +1436,7 @@
     </string-array>
 
     <string-array name="formulas_for_self_assembly_on_own_an">
-        <item>you`re still supported by Dad and Mom, but I get fed on my own</item>
+        <item>you’re still supported by Dad and Mom, but I get fed on my own</item>
         <item>try to translate on your own</item>
         <item>think on your own</item>
         <item>he can already go to the school on his own</item>
@@ -1467,8 +1467,8 @@
         <item>whatever you do I love you</item>
         <item>whenever she comes he is happy to see her</item>
         <item>he is waited wherever he comes</item>
-        <item>however many friends they invite we`ll feed everyone</item>
-        <item>whosever this cat is I`ll feed it</item>
+        <item>however many friends they invite we’ll feed everyone</item>
+        <item>whosever this cat is I’ll feed it</item>
         <item>whichever girl you choose you will be sorry anyway</item>
     </string-array>
 
@@ -1508,7 +1508,7 @@
         <item>the Duke reported the King (that) everything was going wrong</item>
         <item>she thought (that) he would buy her some present</item>
         <item>I missed exactly the sum (that) I had spent at the bar</item>
-        <item>you don`t have to be great to start, but you have to start to be great</item>
+        <item>you don’t have to be great to start, but you have to start to be great</item>
         <item>to have this you have to work very hard</item>
         <item>to win the battle Napoleon threw to the fight his last reserve</item>
         <item>to share the joy with friends we are going to send everyone letters</item>
@@ -1520,9 +1520,9 @@
         <item>not to be afraid..</item>
         <item>Mary wants her husband Sam to earn a bigger salary</item>
         <item>Granny wanted us to eat</item>
-        <item>I don`t need you to teach me how to handle my children</item>
+        <item>I don’t need you to teach me how to handle my children</item>
         <item>we wanted them to understand..</item>
-        <item>she didn`t want me to know..</item>
+        <item>she didn’t want me to know..</item>
         <item>I preferred them to explain slowly..</item>
         <item>the parents wanted us to clean our rooms..</item>
         <item>Marilyn wanted to be laved</item>
@@ -1561,21 +1561,21 @@
     <string-array name="condition_an">
         <item>if tomorrow comes..</item>
         <item>if you come, we will drink tea</item>
-        <item>if you strive, you`ll win</item>
-        <item>if you`re always trying to be normal, you will never know how amazing you can be</item>
+        <item>if you strive, you’ll win</item>
+        <item>if you’re always trying to be normal, you will never know how amazing you can be</item>
         <item>if you build it, they will come</item>
-        <item>if you don`t build your dream, someone will hire you to build theirs</item>
-        <item>if you are fat, you`ll be harder to kidnap</item>
+        <item>if you don’t build your dream, someone will hire you to build theirs</item>
+        <item>if you are fat, you’ll be harder to kidnap</item>
         <item>if you want to go fast, go alone, if you want to go far, go together</item>
         <item>if you have taken the figure, go</item>
         <item>if you meet a good man, marry him</item>
-        <item>if you can`t stop thinking about it, don`t stop working for it</item>
+        <item>if you can’t stop thinking about it, don’t stop working for it</item>
         <item>if you could see me now</item>
-        <item>if we had known you were going to be a writer, we`d have been better parents!</item>
+        <item>if we had known you were going to be a writer, we’d have been better parents!</item>
         <item>if I wanted, I would buy this</item>
         <item>if I could, I would do that</item>
         <item>if I were there, I would play with you</item>
-        <item>if I were you, I wouldn`t touch that</item>
+        <item>if I were you, I wouldn’t touch that</item>
         <item>dream as if you live forever. Live as if you die today</item>
         <item>he pretends as if he knows something about her</item>
     </string-array>
@@ -1614,7 +1614,7 @@
         <item>the perfume is made form flowers</item>
         <item>what is it made of? What is it made from?</item>
         <item>who have you found out our password from?</item>
-        <item>he didn`t like to depend on anyone. Instead, he liked very much to be depended on</item>
+        <item>he didn’t like to depend on anyone. Instead, he liked very much to be depended on</item>
         <item>what does it depend on?</item>
         <item>who does it depend on?</item>
         <item>which of the shelves will you put it on?</item>
@@ -1674,26 +1674,26 @@
         <item>to fall out of the system</item>
         <item>to fall up under the law</item>
         <item>to fall in to the Caspian sea</item>
-        <item>I`ve fallen you, Vassya</item>
+        <item>I’ve fallen you, Vassya</item>
 
         <item>I feel for you</item>
         <item>what are you looking for?</item>
         <item>he have to look after his brother</item>
         <item>click here -find out more-</item>
-        <item>if you bother me I`ll sort you out!</item>
+        <item>if you bother me I’ll sort you out!</item>
         <item>sort out your priorities!</item>
 
         <item>to get in (the problem, the taxi, the business)</item>
         <item>to get out (of the problem, the taxi, the business)</item>
         <item>to get up</item>
         <item>we are never ever getting back together</item>
-        <item>don`t get behind!</item>
+        <item>don’t get behind!</item>
 
         <item>to ask for money</item>
         <item>to ask about this</item>
         <item>stop running. Let your happiness catch pu with you</item>
         <item>in a case of emergency, who should we count on?</item>
-        <item>it`s easier to keep up than to catch up</item>
+        <item>it’s easier to keep up than to catch up</item>
         <item>it as always has stolen up imperceptibly</item>
         <item>to scare out</item>
         <item>to breathe in</item>
@@ -1785,13 +1785,13 @@
         <item>I was made for loving you</item>
         <item>I am for trying every day to do something new!</item>
         <item>he is shy of being unshaved</item>
-        <item>she learned a lot from taking granny`s lessons</item>
+        <item>she learned a lot from taking granny’s lessons</item>
         <item>I owe so much to having the computer in my life</item>
         <item>I complained to Mom at your calling me a nerd</item>
         <item>I congratulate you! - On what? - On being simply the best!</item>
         <item>you may forget everything, except of eating your breakfast</item>
         <item>all your results depend on understanding of the local laws</item>
-        <item>and don`t insist on buying me a new car</item>
+        <item>and don’t insist on buying me a new car</item>
         <item>She agrees with selling our old house and buying a new one</item>
         <item>all his problems happen just because not working mush enough</item>
         <item>thanks to deep understanding russian soul, he..</item>
@@ -1839,16 +1839,16 @@
         <item>Solving the issue is your responsibility.</item>
         <item>Finding a job is the first thing you must do.</item>
         <item>Discovering more about it is unbelievably interesting.</item>
-        <item>Being able to shoot is every killer`s duty.</item>
+        <item>Being able to shoot is every killer’s duty.</item>
         <item>Not being afraid of wolves is important enough to be a hunter.</item>
         <item>Not to be shy to sing in public you need to have a good voice at least.</item>
-        <item>To know about it, it`s enough to study once a week.</item>
+        <item>To know about it, it’s enough to study once a week.</item>
         <item>Knowing about it is important.</item>
         <item>finishing the porridge before you go is my condition</item>
         <item>To survive in a present-day city the thing you have to have is the money</item>
         <item>Surviving in a present-day city is not easy.</item>
-        <item>Sitting on a couch is`t enough for success.</item>
-        <item>To sit on a couch and give advice you don`t need to be too smart.</item>
+        <item>Sitting on a couch is’t enough for success.</item>
+        <item>To sit on a couch and give advice you don’t need to be too smart.</item>
         <item>Fighting bad habits is very important</item>
         <item>To fight them, you need a strong will.</item>
         <item>To understand her once and for all you need to ask an intelligent person.</item>
@@ -1861,16 +1861,16 @@
     </string-array>
 
     <string-array name="sequence_of_tenses_qu">
-        <item>Я думал, что ты об этом узнал от Джейн. – Нет, от ее сестры.</item>
-        <item>Ты их увидишь, если посмотришь в окно.</item>
-        <item>Я знаю, что он скоро придет.</item>
+        <item>Я думал, что ты об этом узнал от Джейн. – Нет, от ее сестры</item>
+        <item>Ты их увидишь, если посмотришь в окно</item>
+        <item>Я знаю, что он скоро придет</item>
         <item>Я думаю, что в такое время их дети уже спят.</item>
         <item>Ты видел, какую он машину купил?</item>
-        <item>На твоем месте я бы не спорил с полицейским офицером.</item>
+        <item>На твоем месте я бы не спорил с полицейским офицером</item>
         <item>Я думал, что закончу все к пяти. Я ошибся.</item>
         <item>Почему вы говорите, что я должен был знать это заранее?</item>
-        <item>Я видел, что они собираются уходить.</item>
-        <item>Я был уверен, что пройду этот тест с легкостью.</item>
+        <item>Я видел, что они собираются уходить</item>
+        <item>Я был уверен, что пройду этот тест с легкостью</item>
 
         <item>она сказала, что ей не заплатили зарплату</item>
         <item>мы сомневаемся, что она придет сегодня</item>
@@ -1892,11 +1892,11 @@
         <item>I saw they were going to leave</item>
         <item>I was sure I would pass the test easily</item>
 
-        <item>she said she hadn`t been paid her salary</item>
+        <item>she said she hadn’t been paid her salary</item>
         <item>we doubt she will come today</item>
-        <item>it`s written in newspapers he was born in Sanct-Leningrad</item>
+        <item>it’s written in newspapers he was born in Sanct-Leningrad</item>
         <item>I thought the kids were sleeping</item>
-        <item>I didn`t know you had worked as a cook</item>
+        <item>I didn’t know you had worked as a cook</item>
         <item>boss claimed that since that day we would work in a new way</item>
     </string-array>
 
@@ -1905,29 +1905,29 @@
         <item>come (вовремя), we will count on you!</item>
         <item>(среди) all her friends the best and the truest one was Jessica Moore</item>
         <item>everyone, I repeat, everyone - (включая) even you, Jason Biggs - has to start his work at eight thirty sharp</item>
-        <item>the sisters were going to ho to the night club, and their Dad wasn`t (против) it</item>
+        <item>the sisters were going to ho to the night club, and their Dad wasn’t (против) it</item>
         <item>he earned his bread (главный образом | впервую очередь) by selling his pictures to rich tourists from Europe.</item>
         <item>we all (заисключением) of you will go to the theater. I repeat, everyone (кроме) you!!!</item>
-        <item>(внезапно) I`ve heard a strange noise from outside</item>
+        <item>(внезапно) I’ve heard a strange noise from outside</item>
         <item>the meat ws cooked (точно) as I had ordered</item>
         <item>how many people live in the USA? - (приблизительно) three hundred millions</item>
         <item>she was (едва) 18 and (еле-еле | с трудом) understood what expected her in Hollywood</item>
         <item>did you like Paris? - (не совсем)</item>
-        <item>of course, (частично) you`re right</item>
+        <item>of course, (частично) you’re right</item>
         <item>(прежде всего), son, you have to get a diploma and find a good job</item>
         <item>(посравнению с) some of African countries their level of life is pretty high</item>
-        <item>i have a question, Mr.Ford. - as always, you`re (не вовремя), Simpson! I`m too busy now!</item>
+        <item>i have a question, Mr.Ford. - as always, you’re (не вовремя), Simpson! I’m too busy now!</item>
         <item>yesterday we saw you coming into that new Irish bur. (Кстати), who was that beautiful blonde you were with?</item>
-        <item>(с (времени)) today everything will be only in my way - that`s what Sally said Mike the next day after they had got married</item>
-        <item>(множество/многие) of my friends have such problems, but some of them don`t</item>
+        <item>(с (времени)) today everything will be only in my way - that’s what Sally said Mike the next day after they had got married</item>
+        <item>(множество/многие) of my friends have such problems, but some of them don’t</item>
         <item>she hates her neighbors, and (наоборое)</item>
-        <item>(большенство) of Americans give their preference to healthy lifestyle. - I wouldn`t call it "\ the most"\, your point of view is too optimistic</item>
-        <item>I am very displeased with you and your work, Simpson. Since today you are fired! - Ah, it`s Ok! (все равно), i was going to quit. I`ve found much better place</item>
+        <item>(большенство) of Americans give their preference to healthy lifestyle. - I wouldn’t call it "\ the most"\, your point of view is too optimistic</item>
+        <item>I am very displeased with you and your work, Simpson. Since today you are fired! - Ah, it’s Ok! (все равно), i was going to quit. I’ve found much better place</item>
         <item>(около) eleven million people live in a big NYC, and almost all of them are ny good friends</item>
         <item>(втеченее/вродолжении) all the war she wrote him letters; and we will never know whether he received them or not</item>
-        <item>why are you so hurrying? I haven`t eaten (ещё)! But I have! Let`s go, or we`ll bee late!</item>
+        <item>why are you so hurrying? I haven’t eaten (ещё)! But I have! Let’s go, or we’ll bee late!</item>
         <item>(после) your so-called "\cleaning"\ everything in my room is upside down!</item>
-        <item>what? Do you say there`s nothing interesting in life? Just open you eyes and look (вокруг) you!</item>
+        <item>what? Do you say there’s nothing interesting in life? Just open you eyes and look (вокруг) you!</item>
         <item>I am not going to wait (до) you finish your explanations</item>
         <item>the students were working (под) the strict supervision of Mrs. McMillan</item>
     </string-array>
@@ -1961,5 +1961,77 @@
         <item>around</item>
         <item>until</item>
         <item>under</item>
+    </string-array>
+
+    <string-array name="degetization_qu">
+        <item>His drinking got him a bad reputation</item>
+        <item>You need to get permission from the manager</item>
+        <item>Please get a pencil from my desk.</item>
+        <item>The king got two sons from his first wife.</item>
+        <item>It took a long time to get through security at the airport</item>
+        <item>That’s what I told him: “Get your stinky dog out of my house, now!”</item>
+        <item>I don’t get the economical policy of our government. In my opinion it’s extremely stupid.</item>
+        <item>This ending of this movie always gets me. I almost cry over the destiny of heroine.</item>
+        <item>The first two rockets missed Osama, but the third one got him.</item>
+        <item>How many times do I need to tell you before you finally get it?</item>
+    </string-array>
+
+    <string-array name="degetization_an">
+        <item>earned | brought</item>
+        <item>receive</item>
+        <item>take</item>
+        <item>had</item>
+        <item>to pass.</item>
+        <item>take away</item>
+        <item>understand</item>
+        <item>hurts | touches</item>
+        <item>hit | reached</item>
+        <item>understand</item>
+    </string-array>
+
+    <string-array name="make_have_qu">
+        <item>воевать против..</item>
+        <item>дружить с..</item>
+        <item>шутить над..</item>
+        <item>вы те дети, которые (высмеивать, издуваться, прикалываться над) над моим тяжелым акцентом и .. фамилией</item>
+        <item>это даже не имеет смысла</item>
+        <item>сводить концы с концами</item>
+        <item>луди на срашивают, от куда мы берем наши идеи. Мы просто их придумываем</item>
+        <item>завтракать</item>
+        <item>обедать - 1</item>
+        <item>обедать - 2</item>
+        <item>ужинать</item>
+        <item>приятно проводить время</item>
+        <item>хорошие туфли, но ты намучеешься нося их</item>
+        <item>у тебя есть подход к детям, мужик</item>
+        <item>девочки просто хотят повеселиться</item>
+        <item>хорошего дня</item>
+        <item>приятного аппетита</item>
+        <item>доброй ночи</item>
+    </string-array>
+
+    <string-array name="make_have_an">
+        <item>to make war against..</item>
+        <item>to make friends with..</item>
+        <item>to make jokes on..</item>
+        <item>you are the kids who made fun of my heavy accent, of my moronic surname..</item>
+        <item>that doesn’t even make sense!</item>
+        <item>to make ends meet</item>
+        <item>people ask us where we get our ideas. We just make them up</item>
+        <item>to have a breakfast</item>
+        <item>to have a lunch</item>
+        <item>to have a dinner</item>
+        <item>to have a supper</item>
+        <item>to have a good time</item>
+        <item>nice shoes, but you’ll have a hard time wearing them</item>
+        <item>you have a way with children, man</item>
+        <item>girls just wanna have fun</item>
+        <item>have a nice day</item>
+        <item>have a good meal</item>
+        <item>have a good night</item>
+    </string-array>
+
+    <string-array name="word_formation">
+
     </string-array>
 </resources>
