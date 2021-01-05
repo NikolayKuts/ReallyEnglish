@@ -32,6 +32,132 @@
         <item>Whose</item>
     </string-array>
 
+    <string name="simple_verbs_1">
+        like,want,need,ask,listen,start,love,finish,live,hate,work,play,learn,look,help,wait,explain,rest,hope,pay,stay,answer
+    </string>
+    <string name="simple_verbs_2">
+        believe,happen,allow,try,say,look for,compare,smile,use,call,laugh,demand,pour,clean,count on,dress,walk
+        ,command,manage,agree,recommend,wash,talk,promise,remember,seem,visit,prefer,thank,study,refuse
+    </string>
+    <string name="simple_verbs_3">
+        apply,punish,excuse,arrange,deceive,suit,lift,cook,wonder,kill,check,die,advise,worry,present,change,argue
+        ,shout,depend,lie,cancel,convince,decide,repeat,scare,doubt,watch,harm,carry,fail,close,hurry,save
+    </string>
+    <string name="simple_verbs_4">
+        move,breath,cry,improve,disturb,translate,respect,matter,increase,decrease,miss,destroy,defend,touch,compete,wish,succeed,prepare,order,appear,disappear
+        ,owe,exist,invite,knock,repair,pass,conceal,remind,turn,return,annoy,complain,pretend,tie,connect,practice,switch,describe,solve,follow,sound,travel
+    </string>
+    <string name="simple_verbs_5">
+        enjoy,discuss,congratulate,guess,cough,pull,insist,push,sneeze,achieve,envy,hint,own,multiply,blame,concern,suffer,behave,add,fix
+        ,divide,accept,differ,mix,paint,notice,subtract,belong,care,offend,imagine,attack,avoid,please,invent,rid,fill,chew,force,pray,amaze
+    </string>
+    <string name="simple_verbs_6">
+        celebrate,hire,fire,cause,praise,consist,earn,consider,suspect,survive,interrupt,drag,rob,create,act,continue,warn,threaten,award,reward,rent,offer,interfere,influence
+        ,propose,develop,afford,marry,cover,express,yawn,treat,wound,fulfill,delay,beware,deny,object,bake,support,mention,realize,dare,invest,assemble,disassemble,bless,join,advertize
+    </string>
+
+
+    <string name="irregular_verbs_v1_1">
+        get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go
+    </string>
+    <string name="irregular_verbs_v1_2">
+        bring,forbid,say,fly,break,stand,catch,build,show,sell,keep,wear,spend,win,forget,lose,mean,meet,send
+    </string>
+    <string name="irregular_verbs_v1_3">
+        feed,steal,cut,shoot,hold,make clear,feel,feel for,leave,upset,fall,sing,dream,choose,lie,deal,prove,spoil
+    </string>
+    <string name="irregular_verbs_v1_4">
+        hurt,begin,throw,strive,cost,hide,grow,burn,put,smell,lead,mislead
+    </string>
+    <string name="irregular_verbs_v1_5">
+        forgive,tear,become,bite,swear,hit,draw,beat,set
+    </string>
+    <string name="irregular_verbs_v1_6">
+        seek,spell,quit,wake,hang
+    </string>
+
+    <string name="irregular_verbs_v2_1">
+        got,came,understood,told,put,taught,bought,saw,heard,let,read,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
+    </string>
+    <string name="irregular_verbs_v2_2">
+        brought,forbade,said,flew,broke,stood,caught,built,showed,sold,kept,wore,spent,won,forgot,lost,meant,met,sent
+    </string>
+    <string name="irregular_verbs_v2_3">
+        fed,stole,cut,shot,held,made clear,felt,felt for,left,upset,fell,sang,dreamed,chose,lay,dealt,proved,spoiled
+    </string>
+    <string name="irregular_verbs_v2_4">
+        hurt,began,threw,strove,cost,hid,grew,burned,put,smelled,led,misled
+    </string>
+    <string name="irregular_verbs_v2_5">
+        forgave,tore,became,bit,swore,hit,drew,beat,set
+    </string>
+    <string name="irregular_verbs_v2_6">
+        sought,spelt,quit,woke,hung
+    </string>
+
+    <string name="irregular_verbs_v3_1">
+        got,come,understood,told,put,taught,bought,seen,heard,let,read,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone
+    </string>
+    <string name="irregular_verbs_v3_2">
+        brought,forbidden,said,flown,broken,stood,caught,built,shown,sold,kept,worn,spent,won,forgotten,lost,meant,met,sent
+    </string>
+    <string name="irregular_verbs_v3_3">
+        fed,stolen,cut,shot,held,made clear,felt,felt for,left,upset,fallen,sung,dreamed,chosen,lain,dealt,proven,spoiled
+    </string>
+    <string name="irregular_verbs_v3_4">
+        hurt,begun,thrown,striven,cost,hidden,grown,burned,put,smelled,led,misled
+    </string>
+    <string name="irregular_verbs_v3_5">
+        forgiven,torn,become,bitten,sworn,hit,drawn,beaten,set
+    </string>
+    <string name="irregular_verbs_v_6">
+        sought,spelt,quit,woken,hung
+    </string>
+
+    <string name="subjects">
+        Sam,Frank,defense,girl,government,people,hamburger,dog,grandfather,party,bird,shark,manager,friend,
+    </string>
+
+    <string name="names">
+        Sam,Frank,Britney,Selena,Bruno,Rebeca,Justin,Avril Lavigne,Alexandra,Taylor,my brother,her sister,his friend
+    </string>
+
+    <string name="adjective_1.1">
+        first,good,bad,big,hard,small,strong,noisy,next,lazy,similar,heavy,different,easy,angry,sad,smart,long,stupid,short,old,pretty,high,tall,young,low,new,cute,simple,happy,clear
+    </string>
+
+    <string name="adjective_1.2">
+        ready,cool,stubborn,poor,dark,loud,true,constant,experienced,inexperienced,nervous,false,temporary,calm,patient,impatient,normal,cruel,pleased,displeased,ashamed,usual
+    </string>
+
+    <string name="adjective_1.3">
+        attentive,inattentive,greedy,typical,whole,convenient,inconvenient,ancient,careful,thirsty,single,serious,great,double,smooth,brave,tiny,triple,main,basic,early,clean
+    </string>
+
+    <string name="adjective_1.4">
+        proud,rich,hungry,sweet,disgusting,fast/quick,sour,late,shy,nasty,perfect,curious,familiar,responsible,irresponsible,full,dirty,crazy,safe,warm,difficult,last,beautiful
+    </string>
+
+    <string name="adjective_2.1">
+        present,weak,cheap,left,wrong,sure,messy,pleasant,unpleasant,slow,afraid,sorry,far,able,unable,tired,fresh,healthy,colorful
+    </string>
+
+    <string name="adjective_2.2">
+        exact,strange,weird,polite,impolite,possible,impossible,tasty,crude,rude,guilty,legal,illegal,square,suitable,talented,gifted,firm
+    </string>
+
+    <string name="adjective_2.3">
+        expensive,inexpensive,wonderful,sick,right,sloppy,boring,neat,insolent,fragrant,close,modest,honest,dishonest,modern,wild,lucky,unlucky,huge,giant
+    </string>
+
+    <string name="adjective_2.4">
+        excellent,round,salty,favorite,dangerous,funny,empty,same,terrible,deep,silent,free,wide,active,light,narrow,slim,thin,thick,soft,foreign
+    </string>
+
+    <string name="adjective_2.5">
+        useful,important,famous,harmful,alive,interesting,dead,wet,cold,alone,busy,complicated,hot,dry,real,quiet,stinky,transparent,special
+    </string>
+
     <string-array name="couples_english_qu">
         <item>It can take much time. (Сколько?)</item>
         <item>She so often forgets her keys. (Почему?)</item>
@@ -299,7 +425,7 @@
         <item>Why didn’t I buy this car? I liked it the most.</item>
         <item>Why aren’t you ready to work?</item>
         <item>How could he get rich so quick?</item>
-        <item>What is this depend on?</item>
+        <item>What does this depend on?</item>
         <item>How are you going to help your poor brother?</item>
         <item>Where did you buy this thing? I want the same too!</item>
         <item>Why don’t you complain about this to your boss?</item>
@@ -321,14 +447,14 @@
         <item>Whom were you going to show your new project?</item>
         <item>Why are you so sure? Nobody knows this exactly!</item>
         <item>What have they understood from my speech? I’m afraid that nothing.</item>
-        <item>Why do I believe you? I need proof, not simple worlds!</item>
+        <item>Why do I have to believe you? I need proof, not simple worlds!</item>
         <item>What do we need to bring with us?</item>
         <item>Why is nothing done yet?</item>
         <item>Whose help do we need to resolve this problem?</item>
         <item>How did this happen that our team lost?</item>
         <item>How long were you going to stay there?</item>
         <item>How can I please you for this?</item>
-        <item>What helped you to win so strong enemy?</item>
+        <item>What helped you to win so a strong enemy?</item>
         <item>Where does it come and how fights with this?</item>
     </string-array>
 
@@ -411,135 +537,6 @@
         <item>Did they teach us a lot of things?</item>
         <item>Did you understand me?</item>
     </string-array>
-
-    <string name="simple_verbs_1">
-        like,want,need,ask,listen,start,love,finish,live,hate,work,play,learn,look,help,wait,explain,rest,hope,pay,stay,answer
-    </string>
-    <string name="simple_verbs_2">
-        believe,happen,allow,try,say,look for,compare,smile,use,call,laugh,demand,pour,clean,count on,dress,walk
-        ,command,manage,agree,recommend,wash,talk,promise,remember,seem,visit,prefer,thank,study,refuse
-    </string>
-    <string name="simple_verbs_3">
-        apply,punish,excuse,arrange,deceive,suit,lift,cook,wonder,kill,check,die,advise,worry,present,change,argue
-        ,shout,depend,lie,cancel,convince,decide,repeat,scare,doubt,watch,harm,carry,fail,close,hurry,save
-    </string>
-    <string name="simple_verbs_4">
-        move,breath,cry,improve,disturb,translate,respect,matter,increase,decrease,miss,destroy,defend,touch,compete,wish,succeed,prepare,order,appear,disappear
-        ,owe,exist,invite,knock,repair,pass,conceal,remind,turn,return,annoy,complain,pretend,tie,connect,practice,switch,describe,solve,follow,sound,travel
-    </string>
-    <string name="simple_verbs_5">
-        enjoy,discuss,congratulate,guess,cough,pull,insist,push,sneeze,achieve,envy,hint,own,multiply,blame,concern,suffer,behave,add,fix
-        ,divide,accept,differ,mix,paint,notice,subtract,belong,care,offend,imagine,attack,avoid,please,invent,rid,fill,chew,force,pray,amaze
-    </string>
-    <string name="simple_verbs_6">
-        celebrate,hire,fire,cause,praise,consist,earn,consider,suspect,survive,interrupt,drag,rob,create,act,continue,warn,threaten,award,reward,rent,offer,interfere,influence
-        ,propose,develop,afford,marry,cover,express,yawn,treat,wound,fulfill,delay,beware,deny,object,bake,support,mention,realize,dare,invest,assemble,disassemble,bless,join,advertize
-    </string>
-
-
-    <string name="irregular_verbs_v1_1">
-        get,come,understand,tell,put,teach,buy,see,hear,let,read,drink,sleep,know,speak,eat,write,make,fight,give,drive,take,sit,run,go
-    </string>
-    <string name="irregular_verbs_v1_2">
-        bring,forbid,say,fly,break,stand,catch,build,show,sell,keep,wear,spend,win,forget,lose,mean,meet,send
-    </string>
-    <string name="irregular_verbs_v1_3">
-        feed,steal,cut,shoot,hold,make clear,feel,feel for,leave,upset,fall,sing,dream,choose,lie,deal,prove,spoil
-    </string>
-    <string name="irregular_verbs_v1_4">
-        hurt,begin,throw,strive,cost,hide,grow,burn,put,smell,lead,mislead
-    </string>
-    <string name="irregular_verbs_v1_5">
-        forgive,tear,become,bite,swear,hit,draw,beat,set
-    </string>
-    <string name="irregular_verbs_v1_6">
-        seek,spell,quit,wake,hang
-    </string>
-
-
-    <string name="irregular_verbs_v2_1">
-        got,came,understood,told,put,taught,bought,saw,heard,let,read,drank,slept,knew,spoke,ate,wrote,made,fought,gave,drove,took,sat,ran,went
-    </string>
-    <string name="irregular_verbs_v2_2">
-        brought,forbade,said,flew,broke,stood,caught,built,showed,sold,kept,wore,spent,won,forgot,lost,meant,met,sent
-    </string>
-    <string name="irregular_verbs_v2_3">
-        fed,stole,cut,shot,held,made clear,felt,felt for,left,upset,fell,sang,dreamed,chose,lay,dealt,proved,spoiled
-    </string>
-    <string name="irregular_verbs_v2_4">
-        hurt,began,threw,strove,cost,hid,grew,burned,put,smelled,led,misled
-    </string>
-    <string name="irregular_verbs_v2_5">
-        forgave,tore,became,bit,swore,hit,drew,beat,set
-    </string>
-    <string name="irregular_verbs_v2_6">
-        sought,spelt,quit,woke,hung
-    </string>
-
-
-    <string name="irregular_verbs_v3_1">
-        got,come,understood,told,put,taught,bought,seen,heard,let,read,drunk,slept,known,spoken,eaten,written,made,fought,given,driven,taken,sat,run,gone
-    </string>
-    <string name="irregular_verbs_v3_2">
-        brought,forbidden,said,flown,broken,stood,caught,built,shown,sold,kept,worn,spent,won,forgotten,lost,meant,met,sent
-    </string>
-    <string name="irregular_verbs_v3_3">
-        fed,stolen,cut,shot,held,made clear,felt,felt for,left,upset,fallen,sung,dreamed,chosen,lain,dealt,proven,spoiled
-    </string>
-    <string name="irregular_verbs_v3_4">
-        hurt,begun,thrown,striven,cost,hidden,grown,burned,put,smelled,led,misled
-    </string>
-    <string name="irregular_verbs_v3_5">
-        forgiven,torn,become,bitten,sworn,hit,drawn,beaten,set
-    </string>
-    <string name="irregular_verbs_v_6">
-        sought,spelt,quit,woken,hung
-    </string>
-
-
-    <string name="subjects">
-        Sam,Frank,defense,girl,government,people,hamburger,dog,grandfather,party,bird,shark,manager,friend,
-    </string>
-
-    <string name="names">
-        Sam,Frank,Britney,Selena,Bruno,Rebeca,Justin,Avril Lavigne,Alexandra,Taylor,my brother,her sister,his friend
-    </string>
-
-    <string name="adjective_1.1">
-        first,good,bad,big,hard,small,strong,noisy,next,lazy,similar,heavy,different,easy,angry,sad,smart,long,stupid,short,old,pretty,high,tall,young,low,new,cute,simple,happy,clear
-    </string>
-
-    <string name="adjective_1.2">
-        ready,cool,stubborn,poor,dark,loud,true,constant,experienced,inexperienced,nervous,false,temporary,calm,patient,impatient,normal,cruel,pleased,displeased,ashamed,usual
-    </string>
-
-    <string name="adjective_1.3">
-        attentive,inattentive,greedy,typical,whole,convenient,inconvenient,ancient,careful,thirsty,single,serious,great,double,smooth,brave,tiny,triple,main,basic,early,clean
-    </string>
-
-    <string name="adjective_1.4">
-        proud,rich,hungry,sweet,disgusting,fast/quick,sour,late,shy,nasty,perfect,curious,familiar,responsible,irresponsible,full,dirty,crazy,safe,warm,difficult,last,beautiful
-    </string>
-
-    <string name="adjective_2.1">
-        present,weak,cheap,left,wrong,sure,messy,pleasant,unpleasant,slow,afraid,sorry,far,able,unable,tired,fresh,healthy,colorful
-    </string>
-
-    <string name="adjective_2.2">
-        exact,strange,weird,polite,impolite,possible,impossible,tasty,crude,rude,guilty,legal,illegal,square,suitable,talented,gifted,firm
-    </string>
-
-    <string name="adjective_2.3">
-        expensive,inexpensive,wonderful,sick,right,sloppy,boring,neat,insolent,fragrant,close,modest,honest,dishonest,modern,wild,lucky,unlucky,huge,giant
-    </string>
-
-    <string name="adjective_2.4">
-        excellent,round,salty,favorite,dangerous,funny,empty,same,terrible,deep,silent,free,wide,active,light,narrow,slim,thin,thick,soft,foreign
-    </string>
-
-    <string name="adjective_2.5">
-        useful,important,famous,harmful,alive,interesting,dead,wet,cold,alone,busy,complicated,hot,dry,real,quiet,stinky,transparent,special
-    </string>
 
     <string-array name="negative_sentence_ru_qu">
         <item>Никто ранее не пытался сделать такую вещь</item>
@@ -666,7 +663,7 @@
         <item>She was afraid even to think about this.</item>
         <item>She is so shy to talk about this!</item>
         <item>The neighbor’s kids will be afraid of this dog.</item>
-        <item>Yesterday he was late to the work.</item>
+        <item>Yesterday he was late for the work.</item>
         <item>Oh, don’t you agree? You will be sorry about that yet!</item>
         <item>He is already sorry about his question.</item>
         <item>I was a bit shy to start that talk with her.</item>
@@ -1679,7 +1676,7 @@
         <item>I feel for you</item>
         <item>what are you looking for?</item>
         <item>he have to look after his brother</item>
-        <item>click here -find out more-</item>
+        <item>click here \"find out more\"</item>
         <item>if you bother me I’ll sort you out!</item>
         <item>sort out your priorities!</item>
 
@@ -1691,7 +1688,7 @@
 
         <item>to ask for money</item>
         <item>to ask about this</item>
-        <item>stop running. Let your happiness catch pu with you</item>
+        <item>stop running. Let your happiness catch up with you</item>
         <item>in a case of emergency, who should we count on?</item>
         <item>it’s easier to keep up than to catch up</item>
         <item>it as always has stolen up imperceptibly</item>
@@ -1888,7 +1885,7 @@
         <item>Did you see what car he had bought</item>
         <item>If I were you I would not argue with the police officer</item>
         <item>I thought I would finish by 5. I was wrong</item>
-        <item>Why are you saying I should have known it beforehand?</item>
+        <item>Why are you saying I should have known it in advance?</item>
         <item>I saw they were going to leave</item>
         <item>I was sure I would pass the test easily</item>
 
@@ -1921,7 +1918,7 @@
         <item>(с (времени)) today everything will be only in my way - that’s what Sally said Mike the next day after they had got married</item>
         <item>(множество/многие) of my friends have such problems, but some of them don’t</item>
         <item>she hates her neighbors, and (наоборое)</item>
-        <item>(большенство) of Americans give their preference to healthy lifestyle. - I wouldn’t call it "\ the most"\, your point of view is too optimistic</item>
+        <item>(большенство) of Americans give their preference to healthy lifestyle. - I wouldn’t call it \"the most\", your point of view is too optimistic</item>
         <item>I am very displeased with you and your work, Simpson. Since today you are fired! - Ah, it’s Ok! (все равно), i was going to quit. I’ve found much better place</item>
         <item>(около) eleven million people live in a big NYC, and almost all of them are ny good friends</item>
         <item>(втеченее/вродолжении) all the war she wrote him letters; and we will never know whether he received them or not</item>
@@ -1993,10 +1990,10 @@
         <item>воевать против..</item>
         <item>дружить с..</item>
         <item>шутить над..</item>
-        <item>вы те дети, которые (высмеивать, издуваться, прикалываться над) над моим тяжелым акцентом и .. фамилией</item>
+        <item>вы те дети, которые (высмеивать, издеваться, прикалываться над) над моим тяжелым акцентом и фамилией..</item>
         <item>это даже не имеет смысла</item>
         <item>сводить концы с концами</item>
-        <item>луди на срашивают, от куда мы берем наши идеи. Мы просто их придумываем</item>
+        <item>луди нас срашивают, от куда мы берем наши идеи. Мы просто их придумываем</item>
         <item>завтракать</item>
         <item>обедать - 1</item>
         <item>обедать - 2</item>
@@ -2031,7 +2028,209 @@
         <item>have a good night</item>
     </string-array>
 
-    <string-array name="word_formation">
+    <string-array name="word_formation_1_qu">
+        <item>Disorder</item>
+        <item>Disqualified</item>
+        <item>Dissatisfied</item>
+        <item>Illegal</item>
+        <item>Imbalanced</item>
+        <item>Immature</item>
+        <item>Immeasurable</item>
+        <item>Immoral</item>
+        <item>Immovable</item>
+        <item>Impatient</item>
+        <item>Impolite</item>
+        <item>Impossible</item>
+        <item>Inaccurate</item>
+        <item>Incomplete</item>
+        <item>Inconvenient</item>
+        <item>Ineffective</item>
+        <item>Informal</item>
+        <item>Invisible</item>
+        <item>Irrational</item>
+        <item>Irregular</item>
+        <item>Irrelevant</item>
+        <item>Irreparable</item>
+        <item>Irreplaceable</item>
+        <item>Unavailable</item>
+        <item>Unavoidable</item>
+        <item>Unbelievable</item>
+        <item>Unconscious</item>
+        <item>Unforeseen</item>
+        <item>Unforgivable</item>
+        <item>Unexpressed</item>
+        </string-array>
 
+    <string-array name="word_formation_1_an">
+        <item>беспорядок</item>
+        <item>дисквалифицированный отстраненный</item>
+        <item>недовольный, неудовлетворенный, раздосадованный</item>
+        <item>незаконный</item>
+        <item>несбалансированный</item>
+        <item>незрелый</item>
+        <item>неизмеримый</item>
+        <item>аморальный</item>
+        <item>недвижимый</item>
+        <item>нетерпеливый</item>
+        <item>невежливый</item>
+        <item>невозможный</item>
+        <item>неточный</item>
+        <item>незавершенный, неполный</item>
+        <item>неудобный</item>
+        <item>неэффективный</item>
+        <item>неформальный</item>
+        <item>невидимый</item>
+        <item>нерациональный</item>
+        <item>необычный</item>
+        <item>нерелевантный, ненужный, не относящийся к делу</item>
+        <item>неремонтируемый</item>
+        <item>незаменимый</item>
+        <item>недоступный</item>
+        <item>неизбежный, неминуемый</item>
+        <item>невероятный</item>
+        <item>бессознательный</item>
+        <item>непредвиденный</item>
+        <item>непростительный</item>
+        <item>невыраженный</item>
+        </string-array>
+
+    <string-array name="word_formation_2_qu">
+        <item>hopeless situation</item>
+        <item>bottomless pocket</item>
+        <item>defenseless children</item>
+        <item>breathless body</item>
+        <item>brainless people</item>
+        <item>fearless fighter</item>
+        <item>causeless anger</item>
+        <item>tearless shampoo</item>
+
+        <item>bountiful</item>
+        <item>careful</item>
+        <item>colorful</item>
+        <item>deceitful</item>
+        <item>disrespectful</item>
+        <item>distasteful</item>
+        <item>doubtful</item>
+        <item>forgetful</item>
+        <item>fruitful</item>
+        <item>harmful</item>
+        <item>hateful</item>
+        <item>peaceful</item>
+        <item>playful</item>
+        <item>successful</item>
+        <item>thoughtful</item>
+        <item>unfruitful</item>
+        <item>unsuccessful</item>
+        <item>useful</item>
+        <item>wonderful</item>
+    </string-array>
+
+        <string-array name="word_formation_2_an">
+        <item>безнадежная ситуация</item>
+        <item>бездонный карман</item>
+        <item>беззащитные дети</item>
+        <item>бездыханное тело</item>
+        <item>безмозглые люди</item>
+        <item>бесстрашный боец</item>
+        <item>беспричинный гнев</item>
+        <item>бесслезный шампунь</item>
+
+        <item>щедрый</item>
+        <item>осторожный, заботливый</item>
+        <item>красочный</item>
+        <item>обманчивый</item>
+        <item>неуважительный, невежливый</item>
+        <item>неприятный, противный</item>
+        <item>сомнительный</item>
+        <item>забывчивый</item>
+        <item>плодотворный</item>
+        <item>вредный, губительный, пагубный</item>
+        <item>ненавистный</item>
+        <item>мирный</item>
+        <item>игривый</item>
+        <item>успешный</item>
+        <item>вдумчивый</item>
+        <item>бесплодный, неплодородный</item>
+        <item>безуспешный</item>
+        <item>полезный</item>
+        <item>чудесный</item>
+    </string-array>
+
+    <string-array name="twins_qu">
+        <item>like | like</item>
+        <item>unlike | dislike</item>
+        <item>fine | fine</item>
+        <item>time | time</item>
+        <item>can | can</item>
+        <item>fast | fast</item>
+        <item>party (n) | party (v)</item>
+        <item>draw | draw</item>
+        <item>close (v) z | close (adj) s</item>
+        <item>used z | used s</item>
+        <item>presEnt (v) | prEsent (adj)</item>
+        <item>tear (v) e | tear (n) i</item>
+        <item>lie (v) | lie (v)</item>
+    </string-array>
+
+    <string-array name="twins_an">
+        <item>people like Bill usually like good jazz</item>
+        <item>unlike my friend I dislike this guy</item>
+        <item>they write out fines</item>
+        <item>how much time have you been in London? How many times have you been to London?</item>
+        <item>americans can eat everything they grow. And what they can’t have eaten the can</item>
+        <item>\"fasting\" does’t mean eating fast food!</item>
+        <item>a russian parties out of whole heart, often even to tears</item>
+        <item>draw money from ATM</item>
+        <item>the closest friend</item>
+        <item>I’m not used to being talked to in that rude way</item>
+        <item>the present President presented the presents to everyone who was present at the presentation</item>
+        <item>she tears people’s hearts with her terrific ballads</item>
+        <item>I have never yet been lied so insolently! This couch has never been lain on</item>
+    </string-array>
+
+    <string-array name="triangle_qu">
+        <item>этот звонок записывается</item>
+        <item>Паникувского бьют!!!</item>
+        <item>Мама, почему мы не идем? - Вашему папе объясняют правила дорожного движения</item>
+        <item>ей помогают встать после того, как она упала с лестницы</item>
+        <item>нашей Дейзи дают урок йоги</item>
+        <item>нашей Дейзи пытаются дать урок йоги</item>
+        <item>Джонни учат хорошим манерам</item>
+
+        <item>тебя взломали!</item>
+        <item>людей легче обмануть, чем убедить их, что их обманули</item>
+        <item>ребенка кормят</item>
+        <item>кошку накормили</item>
+
+        <item>Я просидел до 5 и делаю вид, что я весь в работе</item>
+        <item>Я прождал тебя весь день</item>
+        <item>я все лето пропела..</item>
+        <item>Я весь день продумал о тебе..</item>
+        <item>товарищу Бражневу показывают изобразительное искусство</item>
+        <item>товарищу Бражневу показали все изобразительное искусство</item>
+        <item>Я проговарила ему о нашем музее больше часа, но сильно сомневаюсь, что он слышал хоть слово</item>
+    </string-array>
+
+    <string-array name="triangle_an">
+        <item>this call is being recorder</item>
+        <item>Panikuvsky is being beaten!!!</item>
+        <item>Mom, why aren’t we going? - Your Dad is being explained the traffic rules</item>
+        <item>she is being helped to get up after she fell down on the stairs</item>
+        <item>our Daisy is being given a lesson of yoga</item>
+        <item>our Daisy is being tried to give a lesson of yoga</item>
+        <item>Johnny is being taught good manners</item>
+
+        <item>you have been hacked!</item>
+        <item>it’s easier to fool people than to convince them that they have been fooled</item>
+        <item>the baby is being fed</item>
+        <item>the cat has been fed</item>
+
+        <item>I have been sitting till 5 pretending I am all in work</item>
+        <item>I’ve been waiting for you all day long</item>
+        <item>I have been singing all the summer..</item>
+        <item>I’ve been thinking about you all day..</item>
+        <item>comrade Brazhnev is being shown fine arts</item>
+        <item>comrade Brazhnev has been shown all fine arts</item>
+        <item>I have been talking to him about our museum more than an hour, but I strongly doubt he has heard a word</item>
     </string-array>
 </resources>

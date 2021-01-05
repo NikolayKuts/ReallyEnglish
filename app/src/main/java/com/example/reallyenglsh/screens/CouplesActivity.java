@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -39,6 +40,7 @@ public class CouplesActivity extends AppCompatActivity {
     private List<String> listLessonQuestion = new ArrayList<>();
     private List<String> listLessonAnswer = new ArrayList<>();
     private List<Integer> listSavedIndexesOfLearnedCouples = new ArrayList<>();
+    private Switch switchShowAnswer;
 
 
     @Override
@@ -51,11 +53,12 @@ public class CouplesActivity extends AppCompatActivity {
         textViewChosenLists = findViewById(R.id.textViewChosenLists);
         textViewCounter = findViewById(R.id.textViewCounter);
 
-        Switch switchShowAnswer = findViewById(R.id.switchShowAnswer);
+        switchShowAnswer = findViewById(R.id.switchShowAnswer);
 
         switchShowAnswer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                textViewAnswer.clearAnimation();
                 if (isChecked) {
                     textViewAnswer.setVisibility(View.VISIBLE);
                 } else {
@@ -102,6 +105,10 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Miscellaneous [22]", false, R.array.miscellaneous_qu, R.array.miscellaneous_an));
         listOfMyCouplesList.add(getMyListCouples("Degetization [23]", false, R.array.degetization_qu, R.array.degetization_an));
         listOfMyCouplesList.add(getMyListCouples("Make & Have [23]", false, R.array.make_have_qu, R.array.make_have_an));
+        listOfMyCouplesList.add(getMyListCouples("Word formation # 1 [24]", false, R.array.word_formation_1_qu, R.array.word_formation_1_an));
+        listOfMyCouplesList.add(getMyListCouples("Word formation # 2 [24]", false, R.array.word_formation_2_qu, R.array.word_formation_2_an));
+        listOfMyCouplesList.add(getMyListCouples("Twins [25]", false, R.array.twins_qu, R.array.twins_an));
+        listOfMyCouplesList.add(getMyListCouples("Triangle [26]", false, R.array.triangle_qu, R.array.triangle_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
@@ -119,7 +126,9 @@ public class CouplesActivity extends AppCompatActivity {
 ////        Pattern pattern = Pattern.compile("([^A-Za-z]+)([a-zA-Z].+)");
 //
 //        for (String q : array) {
+//            q = q.replaceAll("[a-zA-Z\\s]+-\\s", "");
 //            Log.i("log", "<item>" + q + "</item>");
+////            [a-zA-Z\s]+
 //        }
 
     }
@@ -183,12 +192,26 @@ public class CouplesActivity extends AppCompatActivity {
 
         textViewCounter.setText(getQuantityOfLeftUnlearnedCouples());
         actAnimationOnNewIteration();
+        actAnimationOnTextViewCouples();
+        actAnimationOnTextViewAnswer();
     }
 
     private void actAnimationOnNewIteration() {
         if (listLessonQuestion.size() - 1 == listSavedIndexesOfLearnedCouples.size()) {
             Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink_anim);
             textViewCounter.startAnimation(animation);
+        }
+    }
+
+    private void actAnimationOnTextViewCouples() {
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.sample_anim);
+        textViewCouples.startAnimation(animation);
+    }
+
+    private void actAnimationOnTextViewAnswer() {
+        if (textViewAnswer.getVisibility() == View.VISIBLE) {
+            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.sample_anim_from_right);
+            textViewAnswer.startAnimation(animation);
         }
     }
 
