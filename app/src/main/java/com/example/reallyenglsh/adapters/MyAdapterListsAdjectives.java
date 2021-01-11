@@ -1,4 +1,4 @@
-package com.example.reallyenglsh;
+package com.example.reallyenglsh.adapters;
 
 import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
@@ -10,32 +10,32 @@ import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.reallyenglsh.MyListAdjective;
 import com.example.realyenglsh.R;
 
 import java.util.List;
 
-public class MyAdapterAdjectiveList extends RecyclerView.Adapter<MyAdapterAdjectiveList.AdjectiveListHolder> {
+public class MyAdapterListsAdjectives extends RecyclerView.Adapter<MyAdapterListsAdjectives.ListAdjectiveHolder> {
 
-    private List<MyListAdjective> listAdjective;
+    private final List<MyListAdjective> listAdjective;
 
-    public MyAdapterAdjectiveList(List<MyListAdjective> listAdjective) {
+    public MyAdapterListsAdjectives(List<MyListAdjective> listAdjective) {
         this.listAdjective = listAdjective;
     }
 
     @NonNull
     @Override
-    public AdjectiveListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ListAdjectiveHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dialog_adjective, parent, false);
-        return new AdjectiveListHolder(view);
+        return new ListAdjectiveHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdjectiveListHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListAdjectiveHolder holder, int position) {
         MyListAdjective myListAdjective = listAdjective.get(position);
         holder.checkBox.setText(myListAdjective.getNameList());
         holder.checkBox.setChecked(myListAdjective.isChecked());
         holder.setColor(myListAdjective.isChecked());
-
     }
 
     @Override
@@ -43,14 +43,12 @@ public class MyAdapterAdjectiveList extends RecyclerView.Adapter<MyAdapterAdject
         return listAdjective.size();
     }
 
-    public class AdjectiveListHolder extends RecyclerView.ViewHolder {
+    public class ListAdjectiveHolder extends RecyclerView.ViewHolder {
+        private final CheckBox checkBox;
 
-        private CheckBox checkBox;
-
-        public AdjectiveListHolder(@NonNull View itemView) {
+        public ListAdjectiveHolder(@NonNull View itemView) {
             super(itemView);
             checkBox = itemView.findViewById(R.id.checkBoxAdjective);
-
             checkBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -65,11 +63,11 @@ public class MyAdapterAdjectiveList extends RecyclerView.Adapter<MyAdapterAdject
         @SuppressLint("UseCompatLoadingForDrawables")
         public void setColor(boolean checked) {
             if (checked) {
-                checkBox.setTextColor(itemView.getResources().getColor(R.color.item_adjective_text_color_checked));
-                checkBox.setBackground(itemView.getResources().getDrawable(R.drawable.item_adjective_orange));
+                checkBox.setTextColor(itemView.getResources().getColor(R.color.dialog_lists_adjectives_item_color_checked));
+                checkBox.setBackground(itemView.getResources().getDrawable(R.drawable.item_adjective_checked));
             } else {
-                checkBox.setTextColor(itemView.getResources().getColor(R.color.item_adjective_text_color_unchecked));
-                checkBox.setBackground(itemView.getResources().getDrawable(R.drawable.item_adjective));
+                checkBox.setTextColor(itemView.getResources().getColor(R.color.dialog_lists_adjectives_item_color_unchecked));
+                checkBox.setBackground(itemView.getResources().getDrawable(R.drawable.item_adjective_unchecked));
             }
         }
 

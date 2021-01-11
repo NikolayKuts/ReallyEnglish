@@ -12,16 +12,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DownLoader extends AsyncTaskLoader<String> {
+public class TranslationDownLoader extends AsyncTaskLoader<String> {
     private final Bundle BUNDLE;
     private final String MAIN_URL = "https://wooordhunt.ru/word/";
 
-    public DownLoader(@NonNull Context context, Bundle bundle) {
+    public TranslationDownLoader(@NonNull Context context, Bundle bundle) {
         super(context);
         this.BUNDLE = bundle;
     }
@@ -58,9 +57,6 @@ public class DownLoader extends AsyncTaskLoader<String> {
                 content.append(line);
                 line = bufferedReader.readLine();
             }
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -73,7 +69,7 @@ public class DownLoader extends AsyncTaskLoader<String> {
 
     private String getTranslation (String loadedContent) {
         StringBuilder result = new StringBuilder();
-        Pattern pattern = Pattern.compile("<span class=\"t_inline_en\">([а-я,\\s]*)</span>");
+        Pattern pattern = Pattern.compile("<div class=\"t_inline_en\">([а-я,\\s]*)</div>");
         Matcher matcher = pattern.matcher(loadedContent);
 
         while (matcher.find()) {

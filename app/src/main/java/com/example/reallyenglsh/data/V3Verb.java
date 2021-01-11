@@ -9,10 +9,10 @@ public class V3Verb {
     private int id;
 
     @NonNull
-    @PrimaryKey(autoGenerate = false)
-    private String verb;
+    @PrimaryKey()
+    private final String verb;
 
-    public V3Verb(int id, String verb) {
+    public V3Verb(int id, @NonNull String verb) {
         this.id = id;
         this.verb = verb;
     }
@@ -25,11 +25,8 @@ public class V3Verb {
         this.id = id;
     }
 
+    @NonNull
     public String getVerb() {
         return verb;
-    }
-
-    public void setVerb(String verb) {
-        this.verb = verb;
     }
 }

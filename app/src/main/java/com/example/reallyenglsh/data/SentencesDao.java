@@ -5,13 +5,11 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
-
-import com.example.reallyenglsh.data.Sentence;
-
 import java.util.List;
 
 @Dao
 public interface SentencesDao {
+
     @Query("SELECT * FROM wrong_sentences")
     List<Sentence> getAllSentences();
 

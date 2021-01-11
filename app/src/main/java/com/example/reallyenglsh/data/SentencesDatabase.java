@@ -27,10 +27,6 @@ public abstract class SentencesDatabase extends RoomDatabase {
         return database;
     }
 
-
-
-
-
     public abstract SentencesDao sentencesDao();
     public abstract V3VerbDao v3VerbDao();
 }

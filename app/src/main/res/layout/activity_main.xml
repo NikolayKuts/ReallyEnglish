@@ -8,81 +8,33 @@
     tools:context="com.example.reallyenglsh.screens.MainActivity">
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
-        android:background="#474646"
-        android:onClick="onClickNextActivity"
-        android:text="1"
-        android:textColor="#777777"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/buttonToAlgorithmActivity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:background="#474646"
         android:onClick="onClickToAlgorithmLesson"
-        android:text="algorithm lesson"
+        android:text="@string/button_algorithm_lesson"
         android:textColor="#777777"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonToTableActivity" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
 
     <Button
         android:id="@+id/buttonToQuestionsActivityEnToEn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:background="#474646"
         android:onClick="onClickToCouplesActivityEnToEn"
-        android:text="Cuoples"
+        android:text="@string/button_couples"
         android:textColor="#777777"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonToAlgorithmActivity" />
-
-    <Button
-        android:id="@+id/buttonToTableActivity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:onClick="onClickToTable2"
-        android:text="2"
-        android:background="#474646"
-        android:textColor="#777777"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1"
-        app:layout_constraintVertical_bias="0.027" />
-
-    <Button
-        android:id="@+id/buttonToDoubleNegativeActiveity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#474646"
-        android:onClick="onClickToDoubleNegativeActivity"
-        android:text="Double Negative"
-        android:textColor="#777777"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonToQuestionsActivityEnToEn"
-        app:layout_constraintVertical_bias="0.036" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

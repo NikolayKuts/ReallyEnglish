@@ -1,7 +1,6 @@
 package com.example.reallyenglsh.data;
 
 import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -10,10 +9,10 @@ public class Sentence {
     private int id;
 
     @NonNull
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey()
     private String sentence;
 
-    public Sentence(int id, String sentence) {
+    public Sentence(int id, @NonNull String sentence) {
         this.id = id;
         this.sentence = sentence;
     }
@@ -31,15 +30,7 @@ public class Sentence {
         return sentence;
     }
 
-    public void setSentence(String sentence) {
+    public void setSentence(@NonNull String sentence) {
         this.sentence = sentence;
-    }
-
-    @Override
-    public String toString() {
-        return "Sentence{" +
-                "id=" + id +
-                ", sentence='" + sentence + '\'' +
-                '}';
     }
 }

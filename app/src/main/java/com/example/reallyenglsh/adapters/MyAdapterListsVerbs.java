@@ -1,4 +1,4 @@
-package com.example.reallyenglsh;
+package com.example.reallyenglsh.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,15 +9,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 
+import com.example.reallyenglsh.MyListOfVerbs;
 import com.example.realyenglsh.R;
 
 import java.util.List;
 
-public class MyAdapter extends BaseAdapter {
-    private Context context;
-    private List<MyListOfVerbs> list;
+public class MyAdapterListsVerbs extends BaseAdapter {
+    private final Context context;
+    private final List<MyListOfVerbs> list;
 
-    public MyAdapter(Context context, List<MyListOfVerbs> list) {
+    public MyAdapterListsVerbs(Context context, List<MyListOfVerbs> list) {
         this.context = context;
         this.list = list;
     }
@@ -39,12 +40,11 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         MyListOfVerbs myListOfVerbs = (MyListOfVerbs) getItem(position);
         ViewHolder holder;
 
         if(convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_list_view, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_list_verbs, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
@@ -55,19 +55,19 @@ public class MyAdapter extends BaseAdapter {
 
         if (myListOfVerbs.isChecked()) {
             holder.checkBox.setChecked(true);
-            holder.checkBox.setTextColor(convertView.getResources().getColor(R.color.dialog_check_box_checked_color));
+            holder.checkBox.setTextColor(convertView.getResources().getColor(R.color.dialog_verbs_item_checked_color));
         } else {
             holder.checkBox.setChecked(false);
-            holder.checkBox.setTextColor(convertView.getResources().getColor(R.color.check_box_unchecked_color));
+            holder.checkBox.setTextColor(convertView.getResources().getColor(R.color.dialog_verbs_item_unchecked_color));
         }
         holder.checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (holder.checkBox.isChecked()) {
-                    holder.checkBox.setTextColor(v.getResources().getColor(R.color.dialog_check_box_checked_color));
+                    holder.checkBox.setTextColor(v.getResources().getColor(R.color.dialog_verbs_item_checked_color));
                     holder.setAnimation(context, R.anim.fadein_short);
                 } else {
-                    holder.checkBox.setTextColor(v.getResources().getColor(R.color.check_box_unchecked_color));
+                    holder.checkBox.setTextColor(v.getResources().getColor(R.color.dialog_verbs_item_unchecked_color));
                     holder.setAnimation(context, R.anim.sample_anim);
                 }
                 if (myListOfVerbs.isChecked()) {
@@ -77,13 +77,11 @@ public class MyAdapter extends BaseAdapter {
                 }
             }
         });
-
         return convertView;
     }
 
     private static class ViewHolder {
         private final CheckBox checkBox;
-
 
         public ViewHolder(View view) {
             checkBox = view.findViewById(R.id.checkBoxVerbsList);
@@ -93,6 +91,5 @@ public class MyAdapter extends BaseAdapter {
             Animation animation = AnimationUtils.loadAnimation(context, idAnimationResource);
             checkBox.startAnimation(animation);
         }
-
     }
 }

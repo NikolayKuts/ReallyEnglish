@@ -1,12 +1,9 @@
   package com.example.reallyenglsh.screens;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,13 +29,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.reallyenglsh.DownLoader;
 import com.example.reallyenglsh.IOnCallbackHelper;
-import com.example.reallyenglsh.MainViewModel;
-import com.example.reallyenglsh.MyAdapterAdjectiveList;
+import com.example.reallyenglsh.data.MainViewModel;
+import com.example.reallyenglsh.adapters.MyAdapterListsAdjectives;
 import com.example.reallyenglsh.MyLoaderCallbacks;
 import com.example.reallyenglsh.data.V3Verb;
-import com.example.reallyenglsh.MyAdapter;
+import com.example.reallyenglsh.adapters.MyAdapterListsVerbs;
 import com.example.reallyenglsh.MyListAdjective;
 import com.example.reallyenglsh.MyListOfVerbs;
 import com.example.reallyenglsh.OnClickAudioContentPlayer;
@@ -165,7 +161,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfMyList.add(getMyListOfVerbs("Verbs # 3 (101 - 150)", false, R.string.simple_verbs_3, R.string.irregular_verbs_v1_3, R.string.irregular_verbs_v2_3, R.string.irregular_verbs_v3_3));
         listOfMyList.add(getMyListOfVerbs("Verbs # 4 (151 - 200)", false, R.string.simple_verbs_4, R.string.irregular_verbs_v1_4, R.string.irregular_verbs_v2_4, R.string.irregular_verbs_v3_4));
         listOfMyList.add(getMyListOfVerbs("Verbs # 5 (201 - 250)", false, R.string.simple_verbs_5, R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v2_5, R.string.irregular_verbs_v3_5));
-        listOfMyList.add(getMyListOfVerbs("Verbs # 6 (251 - 300", false, R.string.simple_verbs_6, R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v2_6, R.string.irregular_verbs_v2_6));
+        listOfMyList.add(getMyListOfVerbs("Verbs # 6 (251 - 300", false, R.string.simple_verbs_6, R.string.irregular_verbs_v1_6, R.string.irregular_verbs_v2_6, R.string.irregular_verbs_v3_6));
 
         listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #1", true, R.string.adjective_1_1));
         listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #2", false, R.string.adjective_1_2));
@@ -194,7 +190,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         imageButtonShowDialogVerbs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onClickShowDialogVerbs();
+                onClickShowDialogListsVerbs();
 //                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_to_left);
 //                imageButtonShowDialogVerbs.startAnimation(animation);
             }
@@ -211,7 +207,7 @@ public class AlgorithmActivity extends AppCompatActivity {
 
                 RecyclerView recyclerView = dialog.findViewById(R.id.recyclerViewDialogAdjective);
                 recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
-                recyclerView.setAdapter(new MyAdapterAdjectiveList(listOfMyAdjectiveList));
+                recyclerView.setAdapter(new MyAdapterListsAdjectives(listOfMyAdjectiveList));
 
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.show();
@@ -467,11 +463,11 @@ public class AlgorithmActivity extends AppCompatActivity {
         return -1;
     }
 
-    private void onClickShowDialogVerbs() {
+    private void onClickShowDialogListsVerbs() {
         Dialog dialog = new Dialog(AlgorithmActivity.this);
         dialog.setContentView(R.layout.dialog_verbs);
         ListView listView = dialog.findViewById(R.id.listView);
-        MyAdapter adapter = new MyAdapter(this, listOfMyList);
+        MyAdapterListsVerbs adapter = new MyAdapterListsVerbs(this, listOfMyList);
         listView.setAdapter(adapter);
 
         Button button = dialog.findViewById(R.id.buttonApplyDialogVerbs);

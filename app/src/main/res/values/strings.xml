@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Really English</string>
+    <string name="button_apply">apply</string>
+    <string name="title_dialog_lists_verbs">Choose what you want to learn</string>
+    <string name="button_algorithm_lesson">Algorithm lesson</string>
+    <string name="button_couples">Couples</string>
 
     <string-array name="strong_verbs">
         <item>can</item>
@@ -110,7 +114,7 @@
     <string name="irregular_verbs_v3_5">
         forgiven,torn,become,bitten,sworn,hit,drawn,beaten,set
     </string>
-    <string name="irregular_verbs_v_6">
+    <string name="irregular_verbs_v3_6">
         sought,spelt,quit,woken,hung
     </string>
 
@@ -1244,103 +1248,6 @@
         <item>Arnie shows (им) his achievements</item>
     </string-array>
 
-    <string-array name="possessive_case_qu">
-        <item>(моя) car was there</item>
-        <item>(твоя) car was there</item>
-        <item>(его) car was there</item>
-        <item>(ее) car was there</item>
-        <item>(наша) car was there</item>
-        <item>(их) car was there</item>
-        <item>(этого) car was there</item>
-        <item>They saw (меня) and (мою) dog</item>
-        <item>They saw (тебя) and (твою) car</item>
-        <item>They saw (его) and (его) cat</item>
-        <item>They saw (ее) and (ее) house</item>
-        <item>They saw (нас) and (ношу) daughter</item>
-        <item>They saw (их) and (их) friend</item>
-        <item>They saw (это) and (этого) dog</item>
-        <item>He has come with (своей) wife</item>
-        <item>She has come with (своем) husband</item>
-        <item>They have come with (своими) children</item>
-        <item>The children have come with (своими) hamsters</item>
-        <item>Every hamster had (своей) own food</item>
-    </string-array>
-
-    <string-array name="strengthened_forms_of_pos_case_qu">
-        <item>(ее) is told about that he’s able but lazy</item>
-        <item>Madame, i’m (ваш) forever!</item>
-        <item>All (наши) are on the spot!</item>
-        <item>Don’t touch, this is (мое)</item>
-        <item>Our children read books, but (их) watch TV</item>
-    </string-array>
-
-
-    <string-array name="self_qu">
-        <item>they see (себя)-selves in the mirror</item>
-        <item>people see (себя)-selves in the mirror</item>
-        <item>we see (себя)-selves in the mirror</item>
-        <item>I see (себя)-self in the mirror</item>
-        <item>you see (себя)-self/-selves in the mirror</item>
-        <item>she sees (себя)-self in the mirror</item>
-        <item>he sees (себя)-self in the mirror</item>
-        <item>the cat sees (себя)-self in the mirror</item>
-        <item>in this way they only deceive (себя)-selves</item>
-        <item>if you can’t decide for (себя)-self/selves, others will decide for you</item>
-    </string-array>
-
-    <string-array name="formulas_for_self_assembly_is_about_qu">
-        <item>в жизни главное вовремя поесть</item>
-        <item>в этом спорте главное мозги, дети</item>
-        <item>вот что главное в шоу-бизнесе</item>
-        <item>в любви главное чувства</item>
-    </string-array>
-
-    <string-array name="formulas_for_self_assembly_in_a_way_qu">
-        <item>по хорошему</item>
-        <item>по плохому</item>
-        <item>по старому</item>
-        <item>по современному</item>
-        <item>по умному</item>
-        <item>запомни! с сегоднешнего дня все будет по моему!</item>
-    </string-array>
-
-    <string-array name="formulas_for_self_assembly_on_own_qu">
-        <item>тебя по-прежнему поддерживают папа и мама, а я кормлюсь сама</item>
-        <item>попробуй перевести самостоятельно</item>
-        <item>думай самостоятельно</item>
-        <item>он уже может ходить в школу самостоятельно</item>
-        <item>ей уже можно водить самостоятельно</item>
-        <item>им следует yже питаться самостоятельно</item>
-        <item>у нее получильсть пройти самостоятельно</item>
-    </string-array>
-
-    <string-array name="formulas_for_self_assembly_no_matter_qu">
-        <item>не важно что случилось там</item>
-        <item>не важно как она сделала это</item>
-        <item>не важно кто купил ту машину</item>
-        <item>не важно когда он придет</item>
-        <item>не важно чей это кот</item>
-    </string-array>
-
-    <string-array name="formulas_for_self_assembly_out_of_qu">
-        <item>не из любопытства</item>
-        <item>из неновести</item>
-        <item>от боли</item>
-        <item>из любви к искуству</item>
-        <item>из уважения</item>
-        <item>не от злости</item>
-        <item>от голода</item>
-    </string-array>
-
-    <string-array name="formulas_for_self_assembly_ever_qu">
-        <item>что бы ты не сделал я люблю тебя</item>
-        <item>когда бы она не пришла он рад ее видеть</item>
-        <item>его ждут кудабы он не пришол</item>
-        <item>сколько бы они не приглосили друзей мы накормим всех</item>
-        <item>чей бы не был этот кот я накормлю его</item>
-        <item>кокую бы девушку ты не выбрал всеравно будешь сожелеть</item>
-    </string-array>
-
     <string-array name="object_case_an">
         <item>me</item>
         <item>you</item>
@@ -1373,6 +1280,28 @@
         <item>them</item>
     </string-array>
 
+    <string-array name="possessive_case_qu">
+        <item>(моя) car was there</item>
+        <item>(твоя) car was there</item>
+        <item>(его) car was there</item>
+        <item>(ее) car was there</item>
+        <item>(наша) car was there</item>
+        <item>(их) car was there</item>
+        <item>(этого) car was there</item>
+        <item>They saw (меня) and (мою) dog</item>
+        <item>They saw (тебя) and (твою) car</item>
+        <item>They saw (его) and (его) cat</item>
+        <item>They saw (ее) and (ее) house</item>
+        <item>They saw (нас) and (ношу) daughter</item>
+        <item>They saw (их) and (их) friend</item>
+        <item>They saw (это) and (этого) dog</item>
+        <item>He has come with (своей) wife</item>
+        <item>She has come with (своем) husband</item>
+        <item>They have come with (своими) children</item>
+        <item>The children have come with (своими) hamsters</item>
+        <item>Every hamster had (своей) own food</item>
+    </string-array>
+
     <string-array name="possessive_case_an">
         <item>my</item>
         <item>your</item>
@@ -1395,12 +1324,34 @@
         <item>its</item>
     </string-array>
 
+    <string-array name="strengthened_forms_of_pos_case_qu">
+        <item>(ее) is told about that he’s able but lazy</item>
+        <item>Madame, i’m (ваш) forever!</item>
+        <item>All (наши) are on the spot!</item>
+        <item>Don’t touch, this is (мое)</item>
+        <item>Our children read books, but (их) watch TV</item>
+    </string-array>
+
     <string-array name="strengthened_forms_of_pos_case_an">
         <item>hers</item>
         <item>yours</item>
         <item>ours</item>
         <item>mine</item>
         <item>theirs</item>
+    </string-array>
+
+
+    <string-array name="self_qu">
+        <item>they see (себя) in the mirror</item>
+        <item>people see (себя) in the mirror</item>
+        <item>we see (себя) in the mirror</item>
+        <item>I see (себя) in the mirror</item>
+        <item>you see (себя) in the mirror</item>
+        <item>she sees (себя) in the mirror</item>
+        <item>he sees (себя) in the mirror</item>
+        <item>the cat sees (себя) in the mirror</item>
+        <item>in this way they only deceive (себя)</item>
+        <item>if you can’t decide for (себя), others will decide for you</item>
     </string-array>
 
     <string-array name="self_an">
@@ -1416,6 +1367,13 @@
         <item>yourself/selves</item>
     </string-array>
 
+    <string-array name="formulas_for_self_assembly_is_about_qu">
+        <item>в жизни главное вовремя поесть</item>
+        <item>в этом спорте главное мозги, дети</item>
+        <item>вот что главное в шоу-бизнесе</item>
+        <item>в любви главное чувства</item>
+    </string-array>
+
     <string-array name="formulas_for_self_assembly_is_about_an">
         <item>life is about having your dinner on time</item>
         <item>this sport is all about brains, kids</item>
@@ -1423,13 +1381,32 @@
         <item>love is about feelings</item>
     </string-array>
 
-    <string-array name="formulas_for_self_assembly_i_a_way_an">
+    <string-array name="formulas_for_self_assembly_in_a_way_qu">
+        <item>по хорошему</item>
+        <item>по плохому</item>
+        <item>по старому</item>
+        <item>по современному</item>
+        <item>по умному</item>
+        <item>запомни! с сегоднешнего дня все будет по моему!</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_in_a_way_an">
         <item>in a good way</item>
         <item>in a bad way</item>
         <item>in an old way</item>
         <item>in a modern way</item>
         <item>in a smart way</item>
         <item>remember! since today everything will be in my way!</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_on_own_qu">
+        <item>тебя по-прежнему поддерживают папа и мама, а я кормлюсь сама</item>
+        <item>попробуй перевести самостоятельно</item>
+        <item>думай самостоятельно</item>
+        <item>он уже может ходить в школу самостоятельно</item>
+        <item>ей уже можно водить самостоятельно</item>
+        <item>им следует yже питаться самостоятельно</item>
+        <item>у нее получильсть пройти самостоятельно</item>
     </string-array>
 
     <string-array name="formulas_for_self_assembly_on_own_an">
@@ -1442,12 +1419,30 @@
         <item>she succeeded to walk on her own</item>
     </string-array>
 
+    <string-array name="formulas_for_self_assembly_no_matter_qu">
+        <item>не важно что случилось там</item>
+        <item>не важно как она сделала это</item>
+        <item>не важно кто купил ту машину</item>
+        <item>не важно когда он придет</item>
+        <item>не важно чей это кот</item>
+    </string-array>
+
     <string-array name="formulas_for_self_assembly_no_matter_an">
         <item>no matter what happened there</item>
         <item>no matter how she did this</item>
         <item>no matter who bought that car</item>
         <item>no matter when he will come</item>
         <item>no matter whose this cat is</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_out_of_qu">
+        <item>не из любопытства</item>
+        <item>из неновести</item>
+        <item>от боли</item>
+        <item>из любви к искуству</item>
+        <item>из уважения</item>
+        <item>не от злости</item>
+        <item>от голода</item>
     </string-array>
 
     <string-array name="formulas_for_self_assembly_out_of_an">
@@ -1458,6 +1453,15 @@
         <item>out of respect</item>
         <item>not out of anger</item>
         <item>out of hunger</item>
+    </string-array>
+
+    <string-array name="formulas_for_self_assembly_ever_qu">
+        <item>что бы ты не сделал я люблю тебя</item>
+        <item>когда бы она не пришла он рад ее видеть</item>
+        <item>его ждут кудабы он не пришол</item>
+        <item>сколько бы они не приглосили друзей мы накормим всех</item>
+        <item>чей бы не был этот кот я накормлю его</item>
+        <item>кокую бы девушку ты не выбрал всеравно будешь сожелеть</item>
     </string-array>
 
     <string-array name="formulas_for_self_assembly_ever_an">
@@ -1882,7 +1886,7 @@
         <item>You will see them if you look out the window</item>
         <item>I know he will come soon</item>
         <item>I think their kids are already sleeping at this time</item>
-        <item>Did you see what car he had bought</item>
+        <item>Did you see what car he had bought?</item>
         <item>If I were you I would not argue with the police officer</item>
         <item>I thought I would finish by 5. I was wrong</item>
         <item>Why are you saying I should have known it in advance?</item>
@@ -1919,7 +1923,7 @@
         <item>(множество/многие) of my friends have such problems, but some of them don’t</item>
         <item>she hates her neighbors, and (наоборое)</item>
         <item>(большенство) of Americans give their preference to healthy lifestyle. - I wouldn’t call it \"the most\", your point of view is too optimistic</item>
-        <item>I am very displeased with you and your work, Simpson. Since today you are fired! - Ah, it’s Ok! (все равно), i was going to quit. I’ve found much better place</item>
+        <item>I am very displeased with you and your work, Simpson. Since today you are fired! - Ah, it’s OK! (все равно), i was going to quit. I’ve found much better place</item>
         <item>(около) eleven million people live in a big NYC, and almost all of them are ny good friends</item>
         <item>(втеченее/вродолжении) all the war she wrote him letters; and we will never know whether he received them or not</item>
         <item>why are you so hurrying? I haven’t eaten (ещё)! But I have! Let’s go, or we’ll bee late!</item>
@@ -2232,5 +2236,145 @@
         <item>comrade Brazhnev is being shown fine arts</item>
         <item>comrade Brazhnev has been shown all fine arts</item>
         <item>I have been talking to him about our museum more than an hour, but I strongly doubt he has heard a word</item>
+    </string-array>
+
+    <string-array name="twins_2_qu">
+        <item>пока у меня есть пара свободных минут, я помогу тебе с клецками</item>
+        <item>она проводила выходные у мамы. Teм временем он был дома, приятно проводя время</item>
+        <item>ради твоих детей</item>
+        <item>и тогда все началось</item>
+        <item>с каких это пор это считается более красивым, чем это?</item>
+        <item>Ради бога, не думайте, что мне не нравится ваша музыка, но скажите, пожалуйста, до скольки вы будете веселиться?</item>
+        <item>Кто-нибудь может мне объяснить, как вышло, что Джордж Буш успешно окончил Гарвард, а Билла Гейтса выгнали оттуда?</item>
+        <item>как так получилось, что в доме все верх ногами?</item>
+        <item>с тех пор как я рассталась с Джастином все в моей жизни пошло наизнанку</item>
+        <item>перед моим домом есть красивый газон</item>
+        <item>вперед! лучшее еще впереди!</item>
+        <item>Кажется, я забыл кредитные карты. Нет другого выхода, как вернуться домой</item>
+        <item>не отставай!</item>
+        <item>коп смотрит из-за кустов</item>
+        <item>Постепенно, шаг за шагом, месяц за месяцем Вито превратился из застенчивого мальчика..</item>
+        <item>желаемый рост может быть достигнут посредством..</item>
+        <item>..надо учиться, тяжело работать и быть хорошей девочкой.. Я знаю буквально все, что они говорят слово в слово!</item>
+        <item>..но в особенности гениален он был в решении экономических проблем</item>
+        <item>\"Немного\" значит еще кое-что, в то время как \"мало\" значит буквально ничего</item>
+        <item>между двумя огнями</item>
+        <item>думаю, среди нас есть шпион..</item>
+        <item>не перебивайте его на середине предложения</item>
+        <item>ты ушел немедленно после того как тебя уволии</item>
+        <item>вот что называется ладить</item>
+        <item>вот что называется не ладить</item>
+        <item>тебе не кажется, что нам следует нанять другого повара?</item>
+        <item>бизнес идет отлично.. Ты не думаешь что пора нанять еще одного?</item>
+        <item>в самом начале</item>
+        <item>в самом конце</item>
+        <item>самый лучший</item>
+        <item>он уволился с работы, точнее его уволили</item>
+        <item>сейчас это, конечно, не болезнь как таковая</item>
+        <item>ты наконец моя, моя прелесть</item>
+    </string-array>
+
+    <string-array name="twins_2_an">
+        <item>while I’m having a couple of free minutes, I’ll help you with the dumplings</item>
+        <item>she was spending the weekend at Mom’s. Meanwhile he was at home, having a good time</item>
+        <item>for your children’s sake</item>
+        <item>and then everything got started</item>
+        <item>since when is this considered more beautiful than that?</item>
+        <item>for god’s sake don’t think I dislike your music, but please tell me until when you will be partying?</item>
+        <item>can anybody explain me how come that George Bush successfully graduated from Harward, but Bill Gates was thrown out of there?</item>
+        <item>how come that everything in the house is upside down?</item>
+        <item>since I parted with Justin, everything in my life went inside out</item>
+        <item>there is a nice lawn in front of my house</item>
+        <item>go ahead! the best is yet to come!</item>
+        <item>I seem to have forgotten the credit cards.. There’s no more option but getting back home</item>
+        <item>don’t get behind!</item>
+        <item>the cop is looking from behind the bushes</item>
+        <item>Gradually, step by step, month by month, Vito turned from a shy boy..</item>
+        <item>the desirable growth can be achieved by..</item>
+        <item>..should learn, work hard and be a good girl.. I know literally all they say word by word!</item>
+        <item>..but especially genius he was in solving economical problems</item>
+        <item>\"A little\" means still something, whereas \"little\" means literally nothing</item>
+        <item>between two fires</item>
+        <item>I think there’s a spy among us..</item>
+        <item>don’t interrupt him in the middle of a sentence</item>
+        <item>you left immediately after you had been fired</item>
+        <item>this is what is called getting along</item>
+        <item>and this is what is called getting across</item>
+        <item>doesn’t it seem to you we should hire come other cook?</item>
+        <item>the business goes excellent.. Don’t you think it’s time to hire another one?</item>
+        <item>in the very beginning</item>
+        <item>in the very end</item>
+        <item>very best</item>
+        <item>he quit the job, or rather he was fired</item>
+        <item>now this is, of course, not a disease, per se</item>
+        <item>you are main at last, my precious</item>
+    </string-array>
+
+    <string-array name="openers_qu">
+        <item>насколько я понимаю</item>
+        <item>насколько я вижу</item>
+        <item>насколько я осведомлен</item>
+        <item>насколько я понял из</item>
+        <item>насколько я знаю</item>
+        <item>насколько я предсравляю</item>
+        <item>насколько меня касаеться</item>
+        <item>что касается меня</item>
+        <item>с моей точки зрения</item>
+
+        <item>я счетаю</item>
+        <item>тем не менее</item>
+        <item>по моему мнению</item>
+        <item>я полагаю</item>
+        <item>мне кажется</item>
+        <item>Я боюсь показаться неправым, но</item>
+        <item>даже если/хотя</item>
+        <item>так сказать</item>
+        <item>Я не совсем уверен но</item>
+        <item>я сомневаюсь</item>
+
+        <item>несомненно</item>
+        <item>я убежден</item>
+        <item>как это хорошо известно</item>
+        <item>вобщем говоря</item>
+        <item>говоря объективно</item>
+        <item>по моему глубочайшему убеждению</item>
+        <item>в лучшем случае</item>
+        <item>судя по (некоторым признаком)</item>
+        <item>судя (по внешнему виду)</item>
+        <item>судя по (где, что, кто ..)</item>
+    </string-array>
+
+    <string-array name="openers_an">
+        <item>as far as I understand</item>
+        <item>as far as I see</item>
+        <item>as far as I’ve been informed</item>
+        <item>as far as I’ve understood from</item>
+        <item>as far as I know</item>
+        <item>as far as I imagine</item>
+        <item>as far as I’m concerned</item>
+        <item>what concerns to me</item>
+        <item>from my point of view</item>
+
+        <item>I consider</item>
+        <item>nevertheless</item>
+        <item>in my opinion</item>
+        <item>I suppose</item>
+        <item>it seems to me</item>
+        <item>I am afraid to seem wrong but</item>
+        <item>Even though</item>
+        <item>so to speak</item>
+        <item>I am not completely sure but</item>
+        <item>I doubt</item>
+
+        <item>undoubtedly</item>
+        <item>I am convinced</item>
+        <item>as it’s well known</item>
+        <item>generally speaking</item>
+        <item>saying objectively</item>
+        <item>by my deepest persuasion</item>
+        <item>in the best case</item>
+        <item>judging by (some indications)</item>
+        <item>judging (by his appearance)</item>
+        <item>judging by (where, what, who..)</item>
     </string-array>
 </resources>

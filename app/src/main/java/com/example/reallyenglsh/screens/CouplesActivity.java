@@ -4,37 +4,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.example.reallyenglsh.MyAdapterForCouples;
+import com.example.reallyenglsh.adapters.MyAdapterForCouples;
 import com.example.reallyenglsh.MyListCouples;
 import com.example.realyenglsh.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CouplesActivity extends AppCompatActivity {
 
-    private TextView textViewCouples;
+    private TextView textViewQuestion;
     private TextView textViewAnswer;
     private TextView textViewChosenLists;
-    private TextView textViewCounter;
-
 
     private List<MyListCouples> listOfMyCouplesList = new ArrayList<>();
     private List<String> listLessonQuestion = new ArrayList<>();
@@ -42,16 +36,23 @@ public class CouplesActivity extends AppCompatActivity {
     private List<Integer> listSavedIndexesOfLearnedCouples = new ArrayList<>();
     private Switch switchShowAnswer;
 
+    private LinearLayout linearLayoutCounter;
+    private TextView textViewQuantity;
+    private TextView textViewRest;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_couples);
 
-        textViewCouples = findViewById(R.id.textViewCouples);
+        textViewQuestion = findViewById(R.id.textViewQuestion);
         textViewAnswer = findViewById(R.id.textViewAnswer);
         textViewChosenLists = findViewById(R.id.textViewChosenLists);
-        textViewCounter = findViewById(R.id.textViewCounter);
+
+        linearLayoutCounter = findViewById(R.id.linearLayoutCounter);
+        textViewQuantity = findViewById(R.id.textViewQuantity);
+        textViewRest = findViewById(R.id.textViewRest);
 
         switchShowAnswer = findViewById(R.id.switchShowAnswer);
 
@@ -89,7 +90,7 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Strengthened forms of pos. case [15]", false, R.array.strengthened_forms_of_pos_case_qu, R.array.strengthened_forms_of_pos_case_an));
         listOfMyCouplesList.add(getMyListCouples("Self [15]", false, R.array.self_qu, R.array.self_an));
         listOfMyCouplesList.add(getMyListCouples("Is about [15]", false, R.array.formulas_for_self_assembly_is_about_qu, R.array.formulas_for_self_assembly_is_about_an));
-        listOfMyCouplesList.add(getMyListCouples("In a __ way [15]", false, R.array.formulas_for_self_assembly_in_a_way_qu, R.array.formulas_for_self_assembly_i_a_way_an));
+        listOfMyCouplesList.add(getMyListCouples("In a __ way [15]", false, R.array.formulas_for_self_assembly_in_a_way_qu, R.array.formulas_for_self_assembly_in_a_way_an));
         listOfMyCouplesList.add(getMyListCouples("On __ own [15]", false, R.array.formulas_for_self_assembly_on_own_qu, R.array.formulas_for_self_assembly_on_own_an));
         listOfMyCouplesList.add(getMyListCouples("No matter [15]", false, R.array.formulas_for_self_assembly_no_matter_qu, R.array.formulas_for_self_assembly_no_matter_an));
         listOfMyCouplesList.add(getMyListCouples("Out of [15]", false, R.array.formulas_for_self_assembly_out_of_qu, R.array.formulas_for_self_assembly_out_of_an));
@@ -109,27 +110,13 @@ public class CouplesActivity extends AppCompatActivity {
         listOfMyCouplesList.add(getMyListCouples("Word formation # 2 [24]", false, R.array.word_formation_2_qu, R.array.word_formation_2_an));
         listOfMyCouplesList.add(getMyListCouples("Twins [25]", false, R.array.twins_qu, R.array.twins_an));
         listOfMyCouplesList.add(getMyListCouples("Triangle [26]", false, R.array.triangle_qu, R.array.triangle_an));
+        listOfMyCouplesList.add(getMyListCouples("Twins # 2 [27]", false, R.array.twins_2_qu, R.array.twins_2_an));
+        listOfMyCouplesList.add(getMyListCouples("Openers [30]", false, R.array.openers_qu, R.array.openers_an));
 
         setContentForLesson();
         setContentForTextViewChosenLists();
-//        listSavedIndexesOfLearnedCouples = getFullListBySizeOfLessonList();
         onClickNextCouples(textViewAnswer);
 
-//        String s = "";
-//
-//        s = s.replaceAll("\\d+\\.\\t", "");
-////        s = s.replaceAll("\\s*\\n\\s*", ",");
-//        Log.i("log", s);
-//
-//        String[] array = s.split("\\s*\\n\\s*");
-//        Log.i("log", Arrays.asList(array).toString());
-////        Pattern pattern = Pattern.compile("([^A-Za-z]+)([a-zA-Z].+)");
-//
-//        for (String q : array) {
-//            q = q.replaceAll("[a-zA-Z\\s]+-\\s", "");
-//            Log.i("log", "<item>" + q + "</item>");
-////            [a-zA-Z\s]+
-//        }
 
     }
 
@@ -144,7 +131,6 @@ public class CouplesActivity extends AppCompatActivity {
                 listLessonAnswer.addAll(my.getListAnswers());
             }
         }
-
     }
 
     public void onClickShowDialogLists(View view) {
@@ -179,18 +165,18 @@ public class CouplesActivity extends AppCompatActivity {
         return new MyListCouples(nameOfList, isChecked, listCouples, listAnswers);
     }
 
-    private String getQuantityOfLeftUnlearnedCouples() {
-        int sizeListLesson = listLessonQuestion.size();
-        int leftSize = listSavedIndexesOfLearnedCouples.size();
-        return String.format("%s | %s", sizeListLesson, leftSize);
+    private void setContentCounter() {
+        textViewQuantity.setText(String.format("%s", listLessonQuestion.size()));
+        textViewRest.setText(String.format("%s", listSavedIndexesOfLearnedCouples.size()));
     }
 
     public void onClickNextCouples(View view) {
         int randomNumber = getRandomNumberOnWasNot();
-        textViewCouples.setText(listLessonQuestion.get(randomNumber));
+        textViewQuestion.setText(listLessonQuestion.get(randomNumber));
         textViewAnswer.setText(listLessonAnswer.get(randomNumber));
+        setContentCounter();
 
-        textViewCounter.setText(getQuantityOfLeftUnlearnedCouples());
+        actAnimationOnTextViewRest();
         actAnimationOnNewIteration();
         actAnimationOnTextViewCouples();
         actAnimationOnTextViewAnswer();
@@ -199,13 +185,13 @@ public class CouplesActivity extends AppCompatActivity {
     private void actAnimationOnNewIteration() {
         if (listLessonQuestion.size() - 1 == listSavedIndexesOfLearnedCouples.size()) {
             Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink_anim);
-            textViewCounter.startAnimation(animation);
+            linearLayoutCounter.startAnimation(animation);
         }
     }
 
     private void actAnimationOnTextViewCouples() {
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.sample_anim);
-        textViewCouples.startAnimation(animation);
+        textViewQuestion.startAnimation(animation);
     }
 
     private void actAnimationOnTextViewAnswer() {
@@ -213,6 +199,11 @@ public class CouplesActivity extends AppCompatActivity {
             Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.sample_anim_from_right);
             textViewAnswer.startAnimation(animation);
         }
+    }
+
+    private void actAnimationOnTextViewRest() {
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+        textViewRest.startAnimation(animation);
     }
 
     private int getRandomNumberOnWasNot() {
@@ -259,6 +250,4 @@ public class CouplesActivity extends AppCompatActivity {
             }
         }
     }
-
-
 }

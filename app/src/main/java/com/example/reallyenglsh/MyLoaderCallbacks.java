@@ -9,8 +9,8 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 public class MyLoaderCallbacks implements LoaderManager.LoaderCallbacks<String> {
-    private Context context;
-    private int id;
+    private final Context context;
+    private final int id;
     private IOnCallbackHelper helper;
 
     public MyLoaderCallbacks(Context context, int id) {
@@ -21,6 +21,7 @@ public class MyLoaderCallbacks implements LoaderManager.LoaderCallbacks<String> 
     public void setHelper(IOnCallbackHelper helper) {
         this.helper = helper;
     }
+
     public int getId () {
         return id;
     }
@@ -28,7 +29,7 @@ public class MyLoaderCallbacks implements LoaderManager.LoaderCallbacks<String> 
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return new DownLoader(context, args);
+        return new TranslationDownLoader(context, args);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.reallyenglsh;
+package com.example.reallyenglsh.data;
 
 import android.app.Application;
 import android.os.AsyncTask;
@@ -6,14 +6,9 @@ import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
-import com.example.reallyenglsh.data.Sentence;
-import com.example.reallyenglsh.data.SentencesDatabase;
-import com.example.reallyenglsh.data.V3Verb;
-
 import java.util.concurrent.ExecutionException;
 
 public class MainViewModel extends AndroidViewModel {
-
     private static SentencesDatabase database;
 
     public MainViewModel(@NonNull Application application) {
@@ -29,9 +24,7 @@ public class MainViewModel extends AndroidViewModel {
         int result = -1;
         try {
             result = new GetMaxIdTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return result;
@@ -41,9 +34,7 @@ public class MainViewModel extends AndroidViewModel {
         int result = -1;
         try {
             result = new GetCountSentencesTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return result;
@@ -52,16 +43,15 @@ public class MainViewModel extends AndroidViewModel {
     public boolean isSentenceInDB(String textSentence) {
         boolean result = false;
         try {
-            result = new IsSentenceInDBTask().execute(textSentence).get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+            return  new IsSentenceInDBTask().execute(textSentence).get();
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return result;
     }
 
     private static class InsertTask extends AsyncTask<Sentence, Void, Void> {
+
         @Override
         protected Void doInBackground(Sentence... sentences) {
             if (sentences != null && sentences.length > 0) {
@@ -101,9 +91,7 @@ public class MainViewModel extends AndroidViewModel {
         int result = -1;
         try {
             result = new GetMaxIdOfV3VerbTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return result;
@@ -113,9 +101,7 @@ public class MainViewModel extends AndroidViewModel {
         int result = -1;
         try {
             result = new GetCountV3VerbsTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return result;
@@ -125,9 +111,7 @@ public class MainViewModel extends AndroidViewModel {
         boolean result = false;
         try {
             result = new IsV3VerbInDBTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return result;

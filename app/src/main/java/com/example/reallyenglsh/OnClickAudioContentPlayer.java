@@ -37,7 +37,6 @@ public class OnClickAudioContentPlayer implements View.OnClickListener {
                     mp.release();
                     v.clearAnimation();
                 }
-//            v.clearAnimation();
             });
             player.prepareAsync();
         } catch (IOException e) {

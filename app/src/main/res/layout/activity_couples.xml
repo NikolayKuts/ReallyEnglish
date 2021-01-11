@@ -8,7 +8,7 @@
     android:background="@color/background_activity_color">
 
     <TextView
-        android:id="@+id/textViewCouples"
+        android:id="@+id/textViewQuestion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="272dp"
@@ -16,7 +16,7 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:text="TextView"
-        android:textColor="@color/dialog_check_box_checked_color"
+        android:textColor="@color/dialog_verbs_item_checked_color"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCouples"
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuestion"
         app:layout_constraintVertical_bias="0.042" />
 
     <Button
@@ -83,7 +83,6 @@
         android:id="@+id/textViewChosenLists"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:layout_marginTop="52dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
@@ -91,22 +90,50 @@
         android:textColor="@color/chosen_lists"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/buttonShowLists"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewCounter"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/linearLayoutCounter"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#DD886C"
-        android:textSize="20sp"
+        android:orientation="horizontal"
         android:paddingStart="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewCouples"
-        app:layout_constraintEnd_toEndOf="@+id/textViewChosenLists"
+        app:layout_constraintEnd_toStartOf="@+id/buttonShowLists"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textViewChosenLists"
-        app:layout_constraintTop_toBottomOf="@+id/textViewChosenLists"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewChosenLists">
+
+        <TextView
+            android:id="@+id/textViewQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="#DD886C"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewVerticalLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:layout_weight="1"
+            android:text="|"
+            android:textColor="#7BC4CD"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewRest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="#95BD66"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

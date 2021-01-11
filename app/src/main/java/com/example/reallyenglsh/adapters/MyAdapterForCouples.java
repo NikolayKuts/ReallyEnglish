@@ -1,4 +1,4 @@
-package com.example.reallyenglsh;
+package com.example.reallyenglsh.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +10,14 @@ import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.reallyenglsh.MyListCouples;
 import com.example.realyenglsh.R;
 
 import java.util.List;
 
 public class MyAdapterForCouples extends RecyclerView.Adapter<MyAdapterForCouples.CouplesListHolder> {
 
-    private List<MyListCouples> listMyListCouples;
+    private final List<MyListCouples> listMyListCouples;
 
     public MyAdapterForCouples(List<MyListCouples> listMyListCouples) {
         this.listMyListCouples = listMyListCouples;
@@ -36,13 +37,10 @@ public class MyAdapterForCouples extends RecyclerView.Adapter<MyAdapterForCouple
         holder.checkBoxList.setChecked(myListCouples.isChecked());
         holder.setTextColorOnCheckBox(myListCouples.isChecked());
 
-        holder.checkBoxList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myListCouples.setChecked(holder.checkBoxList.isChecked());
-                holder.setTextColorOnCheckBox(holder.checkBoxList.isChecked());
-                holder.setAnimation(R.anim.fadein_shortest);
-            }
+        holder.checkBoxList.setOnClickListener(v -> {
+            myListCouples.setChecked(holder.checkBoxList.isChecked());
+            holder.setTextColorOnCheckBox(holder.checkBoxList.isChecked());
+            holder.startAnimation();
         });
     }
 
@@ -51,26 +49,24 @@ public class MyAdapterForCouples extends RecyclerView.Adapter<MyAdapterForCouple
         return listMyListCouples.size();
     }
 
-    public class CouplesListHolder extends RecyclerView.ViewHolder {
+    public static class CouplesListHolder extends RecyclerView.ViewHolder {
+        private final CheckBox checkBoxList;
 
-        CheckBox checkBoxList;
-
-        public CouplesListHolder(@NonNull View itemView) {
+        private CouplesListHolder(@NonNull View itemView) {
             super(itemView);
             checkBoxList = itemView.findViewById(R.id.checkBoxList);
         }
 
-        public void setTextColorOnCheckBox(boolean checked) {
+        private void setTextColorOnCheckBox(boolean checked) {
             if (checked) {
-                checkBoxList.setTextColor(itemView.getResources().getColor(R.color.check_box_text_color_checked));
+                checkBoxList.setTextColor(itemView.getResources().getColor(R.color.dialog_lists_couples_checked));
             } else {
-                checkBoxList.setTextColor(itemView.getResources().getColor(R.color.check_box_text_color_unchecked));
+                checkBoxList.setTextColor(itemView.getResources().getColor(R.color.dialog_lists_couples_unchecked));
             }
         }
 
-
-        private void setAnimation(int idAnimationResource) {
-            Animation animation = AnimationUtils.loadAnimation(checkBoxList.getContext(), idAnimationResource);
+        private void startAnimation() {
+            Animation animation = AnimationUtils.loadAnimation(checkBoxList.getContext(), R.anim.fadein_shortest);
             checkBoxList.startAnimation(animation);
         }
     }
