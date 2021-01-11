@@ -46,8 +46,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import static com.example.reallyenglsh.screens.Table1Activity.getWordFromList;
-
 public class AlgorithmActivity extends AppCompatActivity {
     private ImageView imageViewTenseObject, imageViewTypeOfSentence;
     private TextView textViewSentence;
@@ -90,6 +88,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_algorithm);
+
         loaderManager = LoaderManager.getInstance(this);
         myLoaderCallbacks = new MyLoaderCallbacks(getApplicationContext(), 1);
 
@@ -601,7 +600,6 @@ public class AlgorithmActivity extends AppCompatActivity {
         } else {
             imageView.setVisibility(View.INVISIBLE);
         }
-
     }
 
 //    private class OnClickAudioContentPlayer implements View.OnClickListener {
@@ -653,6 +651,12 @@ public class AlgorithmActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("word", word);
         return bundle;
+    }
+
+    public static String getWordFromList(List<String> list) {
+        Random random = new Random();
+        int numberRandom = random.nextInt(list.size());
+        return list.get(numberRandom);
     }
 
 

@@ -10,28 +10,25 @@
 
     <TextView
         android:id="@+id/textViewTranslation"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="#CCCCCC"
-        android:textSize="14dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:textColor="@color/algorithm_activity_text_view_translation"
+        android:textSize="16sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutVerbForms"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutVerbForms" />
 
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:onClick="onClickNext"
-        android:text="Next"
+        android:text="@string/algorithm_activity_button_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +43,8 @@
 
     <ImageView
         android:id="@+id/imageTenseObject"
-        android:layout_width="172dp"
-        android:layout_height="142dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +52,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/coach" />
+        app:srcCompat="@drawable/coach"
+        android:contentDescription="@string/image_type_tense" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -75,14 +73,15 @@
         android:id="@+id/textViewSentence"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
         android:gravity="center"
         android:textColor="#FFEB3B"
         android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonToTableActivity"
@@ -94,18 +93,14 @@
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.936" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <Switch
         android:id="@+id/switchIrregularVerb"
         android:layout_width="80dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSentence"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
@@ -138,7 +133,6 @@
         android:id="@+id/checkBoxTenseFuture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="30dp"
         android:button="@null"
         android:drawableRight="@drawable/check_box"
@@ -147,6 +141,7 @@
         android:textColor="@color/check_box_tense_unchecked_color"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/checkBoxTensePresent"
+        app:layout_constraintBottom_toTopOf="@id/checkBoxSimple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -154,7 +149,6 @@
         android:id="@+id/checkBoxTensePast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:button="@null"
         android:drawableRight="@drawable/check_box"
@@ -164,13 +158,13 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/checkBoxTensePresent"
+        app:layout_constraintBottom_toTopOf="@id/checkBoxToBe"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/checkBoxTensePresent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:button="@null"
         android:checked="true"
         android:drawableRight="@drawable/check_box"
@@ -178,10 +172,10 @@
         android:text="Present"
         android:textColor="@color/check_box_tense_checked_color"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/checkBoxTensePast"
         app:layout_constraintStart_toEndOf="@id/checkBoxTenseFuture"
-        tools:layout_editor_absoluteX="152dp" />
+        app:layout_constraintBottom_toTopOf="@id/checkBoxStrong"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/checkBoxToBe"
@@ -194,7 +188,7 @@
         android:text="To Be"
         android:textColor="@color/dialog_verbs_item_unchecked_color"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewSentence"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/checkBoxStrong"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxTensePast" />
@@ -209,7 +203,7 @@
         android:text="Strong"
         android:textColor="@color/dialog_verbs_item_unchecked_color"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewSentence"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/checkBoxToBe"
         app:layout_constraintStart_toEndOf="@+id/checkBoxSimple"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxTensePresent" />
@@ -226,7 +220,7 @@
         android:text="Simple"
         android:textColor="@color/check_box_checked_color"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewSentence"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@id/checkBoxStrong"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxTenseFuture" />
@@ -237,12 +231,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSentence"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/textViewSentence">
 
         <TextView
             android:id="@+id/textViewV1"
@@ -257,7 +249,7 @@
         <TextView
             android:id="@+id/textViewV3"
             style="@style/text_view_v_form"
-            android:textColor="#ACD878"/>
+            android:textColor="#ACD878" />
     </LinearLayout>
 
     <LinearLayout
@@ -265,12 +257,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.356">
+        app:layout_constraintVertical_bias="0.40">
 
         <CheckBox
             android:id="@+id/checkBoxMinus"
@@ -318,5 +310,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButtonShowDialogVerbs"
         app:layout_constraintVertical_bias="0.052"
         app:srcCompat="@drawable/button_adj" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

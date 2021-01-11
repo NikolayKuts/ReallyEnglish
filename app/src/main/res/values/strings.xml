@@ -4,6 +4,11 @@
     <string name="title_dialog_lists_verbs">Choose what you want to learn</string>
     <string name="button_algorithm_lesson">Algorithm lesson</string>
     <string name="button_couples">Couples</string>
+    <string name="couples_activity_button_next">Next couple</string>
+    <string name="button_lists">Lists</string>
+    <string name="couples_activity_linear_layout_vertical_line">|</string>
+    <string name="algorithm_activity_button_next">Next</string>
+    <string name="image_type_tense">type of tense</string>
 
     <string-array name="strong_verbs">
         <item>can</item>

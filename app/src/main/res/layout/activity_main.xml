@@ -9,13 +9,9 @@
 
     <Button
         android:id="@+id/buttonToAlgorithmActivity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#474646"
+        style="@style/main_activity_button"
         android:onClick="onClickToAlgorithmLesson"
         android:text="@string/button_algorithm_lesson"
-        android:textColor="#777777"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,15 +20,10 @@
 
     <Button
         android:id="@+id/buttonToQuestionsActivityEnToEn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#474646"
+        style="@style/main_activity_button"
         android:onClick="onClickToCouplesActivityEnToEn"
         android:text="@string/button_couples"
-        android:textColor="#777777"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonToAlgorithmActivity" />
 

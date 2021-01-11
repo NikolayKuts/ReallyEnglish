@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -34,7 +35,6 @@ public class CouplesActivity extends AppCompatActivity {
     private List<String> listLessonQuestion = new ArrayList<>();
     private List<String> listLessonAnswer = new ArrayList<>();
     private List<Integer> listSavedIndexesOfLearnedCouples = new ArrayList<>();
-    private Switch switchShowAnswer;
 
     private LinearLayout linearLayoutCounter;
     private TextView textViewQuantity;
@@ -54,7 +54,8 @@ public class CouplesActivity extends AppCompatActivity {
         textViewQuantity = findViewById(R.id.textViewQuantity);
         textViewRest = findViewById(R.id.textViewRest);
 
-        switchShowAnswer = findViewById(R.id.switchShowAnswer);
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch switchShowAnswer = findViewById(R.id.switchShowAnswer);
 
         switchShowAnswer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -116,8 +117,6 @@ public class CouplesActivity extends AppCompatActivity {
         setContentForLesson();
         setContentForTextViewChosenLists();
         onClickNextCouples(textViewAnswer);
-
-
     }
 
 
@@ -158,7 +157,6 @@ public class CouplesActivity extends AppCompatActivity {
 
     private MyListCouples getMyListCouples(String nameOfList, boolean isChecked, int idResCouples, int idResAnswers) {
         AlgorithmActivity algorithmActivity = new AlgorithmActivity();
-
         ArrayList<String> listCouples = algorithmActivity.getArrayListFromStringRes(this, idResCouples);
         List<String> listAnswers = algorithmActivity.getArrayListFromStringRes(this, idResAnswers);
 
