@@ -87,7 +87,7 @@
         android:id="@+id/buttonToTableActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wrong Sentence"
+        android:text="@string/button_wrong_sentence"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
@@ -105,15 +105,14 @@
 
     <Switch
         android:id="@+id/switchShowPrompt"
-        android:layout_width="65dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="43dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonNext"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonToTableActivity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toEndOf="@+id/buttonToTableActivity"
+        app:layout_constraintTop_toTopOf="@+id/buttonToTableActivity"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <ImageView
@@ -127,67 +126,48 @@
         app:layout_constraintStart_toStartOf="@+id/imageTenseObject"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/plus" />
+        app:srcCompat="@drawable/plus"
+        android:contentDescription="@string/image_type_sentence" />
 
     <CheckBox
         android:id="@+id/checkBoxTenseFuture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/check_box_type_tense"
         android:layout_marginStart="30dp"
-        android:button="@null"
-        android:drawableRight="@drawable/check_box"
-        android:drawablePadding="5dp"
-        android:text="Future"
-        android:textColor="@color/check_box_tense_unchecked_color"
-        android:textSize="20sp"
+        android:drawableEnd="@drawable/check_box"
+        android:text="@string/check_box_future"
         app:layout_constraintEnd_toStartOf="@+id/checkBoxTensePresent"
         app:layout_constraintBottom_toTopOf="@id/checkBoxSimple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBoxTensePast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:button="@null"
-        android:drawableRight="@drawable/check_box"
-        android:drawablePadding="5dp"
-        android:text="Past"
-        android:textColor="@color/check_box_tense_unchecked_color"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/checkBoxTensePresent"
-        app:layout_constraintBottom_toTopOf="@id/checkBoxToBe"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
         android:id="@+id/checkBoxTensePresent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:button="@null"
-        android:checked="true"
-        android:drawableRight="@drawable/check_box"
-        android:drawablePadding="5dp"
-        android:text="Present"
-        android:textColor="@color/check_box_tense_checked_color"
-        android:textSize="20sp"
+        style="@style/check_box_type_tense"
+        android:textColor="@color/check_box_tense_checked"
+        android:drawableEnd="@drawable/check_box"
+        android:text="@string/check_box_present"
         app:layout_constraintEnd_toStartOf="@id/checkBoxTensePast"
         app:layout_constraintStart_toEndOf="@id/checkBoxTenseFuture"
         app:layout_constraintBottom_toTopOf="@id/checkBoxStrong"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBoxToBe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxTensePast"
+        style="@style/check_box_type_tense"
         android:layout_marginEnd="30dp"
-        android:button="@null"
-        android:drawableLeft="@drawable/check_box_type_of_verb"
-        android:drawablePadding="5dp"
-        android:text="To Be"
-        android:textColor="@color/dialog_verbs_item_unchecked_color"
-        android:textSize="20sp"
+        android:drawableEnd="@drawable/check_box"
+        android:text="@string/check_box_past"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkBoxTensePresent"
+        app:layout_constraintBottom_toTopOf="@id/checkBoxToBe"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxToBe"
+        style="@style/check_box_type_verbs"
+        android:layout_marginEnd="30dp"
+        android:drawableStart="@drawable/check_box_type_of_verb"
+        android:text="@string/check_box_to_be"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/checkBoxStrong"
@@ -195,14 +175,9 @@
 
     <CheckBox
         android:id="@+id/checkBoxStrong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:button="@null"
-        android:drawableLeft="@drawable/check_box_type_of_verb"
-        android:drawablePadding="5dp"
-        android:text="Strong"
-        android:textColor="@color/dialog_verbs_item_unchecked_color"
-        android:textSize="20sp"
+        style="@style/check_box_type_verbs"
+        android:drawableStart="@drawable/check_box_type_of_verb"
+        android:text="@string/check_box_strong"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/checkBoxToBe"
         app:layout_constraintStart_toEndOf="@+id/checkBoxSimple"
@@ -210,16 +185,12 @@
 
     <CheckBox
         android:id="@+id/checkBoxSimple"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        style="@style/check_box_type_verbs"
         android:layout_marginStart="30dp"
-        android:button="@null"
         android:checked="true"
-        android:drawableLeft="@drawable/check_box_type_of_verb"
-        android:drawablePadding="5dp"
-        android:text="Simple"
-        android:textColor="@color/check_box_checked_color"
-        android:textSize="20sp"
+        android:drawableStart="@drawable/check_box_type_of_verb"
+        android:text="@string/check_box_simple"
+        android:textColor="@color/check_box_checked"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@id/checkBoxStrong"
         app:layout_constraintStart_toStartOf="parent"
@@ -239,17 +210,17 @@
         <TextView
             android:id="@+id/textViewV1"
             style="@style/text_view_v_form"
-            android:textColor="#F8C982" />
+            android:textColor="@color/verb_form_v1" />
 
         <TextView
             android:id="@+id/textViewV2"
             style="@style/text_view_v_form"
-            android:textColor="#FF9B0A" />
+            android:textColor="@color/verb_form_v2" />
 
         <TextView
             android:id="@+id/textViewV3"
             style="@style/text_view_v_form"
-            android:textColor="#ACD878" />
+            android:textColor="@color/verb_form_v3" />
     </LinearLayout>
 
     <LinearLayout
@@ -267,49 +238,47 @@
         <CheckBox
             android:id="@+id/checkBoxMinus"
             style="@style/check_box_sign"
-            android:text="-" />
+            android:text="@string/sign_minus" />
 
         <CheckBox
             android:id="@+id/checkBoxPlus"
             style="@style/check_box_sign"
             android:checked="true"
-            android:text="+" />
+            android:text="@string/sign_plus" />
 
         <CheckBox
             android:id="@+id/checkBoxQuestion"
             style="@style/check_box_sign"
-            android:text="?" />
+            android:text="@string/sign_question" />
 
         <CheckBox
             android:id="@+id/checkBoxMinusQuestion"
             style="@style/check_box_sign"
-            android:text="-?" />
+            android:text="@string/sign_minus_question" />
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/imageButtonShowDialogVerbs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/algorithm_activity_image_button_show"
         android:layout_marginTop="24dp"
-        android:background="#008A8F83"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/button_verbs" />
+        app:srcCompat="@drawable/button_verbs"
+        android:contentDescription="@string/image_button_verbs" />
 
     <ImageButton
         android:id="@+id/imageButtonShowDialogAdjectives"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#008A8F83"
+        style="@style/algorithm_activity_image_button_show"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButtonShowDialogVerbs"
         app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/button_adj" />
+        app:srcCompat="@drawable/button_adj"
+        android:contentDescription="@string/image_button_adjectives"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"

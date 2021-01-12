@@ -14,7 +14,7 @@
         android:button="@null"
         android:drawableEnd="@drawable/dialog_check_box"
         android:drawablePadding="0dp"
-        android:textColor="@color/check_box_tense_unchecked_color"
+        android:textColor="@color/check_box_tense_unchecked"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

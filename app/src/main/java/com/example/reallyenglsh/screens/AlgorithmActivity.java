@@ -128,13 +128,13 @@ public class AlgorithmActivity extends AppCompatActivity {
         checkBoxTypeOfSentenceMinusQu = findViewById(R.id.checkBoxMinusQuestion);
 
 
-        checkBoxTenseFuture.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTenseFuture, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
-        checkBoxTensePresent.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTensePresent, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
-        checkBoxTensePast.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTensePast, R.color.check_box_tense_checked_color, R.color.check_box_tense_unchecked_color));
+        checkBoxTenseFuture.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTenseFuture, R.color.check_box_tense_checked, R.color.check_box_tense_unchecked));
+        checkBoxTensePresent.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTensePresent, R.color.check_box_tense_checked, R.color.check_box_tense_unchecked));
+        checkBoxTensePast.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTensePast, R.color.check_box_tense_checked, R.color.check_box_tense_unchecked));
 
-        checkBoxTypeOfVerbSimple.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbSimple, R.color.check_box_checked_color, R.color.check_box_unchecked_color));
-        checkBoxTypeOfVerbStrong.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbStrong, R.color.check_box_checked_color, R.color.check_box_unchecked_color));
-        checkBoxTypeOfVerbToBe.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbToBe, R.color.check_box_checked_color, R.color.check_box_unchecked_color));
+        checkBoxTypeOfVerbSimple.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbSimple, R.color.check_box_checked, R.color.check_box_unchecked));
+        checkBoxTypeOfVerbStrong.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbStrong, R.color.check_box_checked, R.color.check_box_unchecked));
+        checkBoxTypeOfVerbToBe.setOnClickListener(new TextColorOnCheckedSetter(checkBoxTypeOfVerbToBe, R.color.check_box_checked, R.color.check_box_unchecked));
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
@@ -354,7 +354,7 @@ public class AlgorithmActivity extends AppCompatActivity {
             textViewV1.setText(listOfLessonVerbsIrregularV1.get(index));
             textViewV2.setText(listOfLessonVerbsIrregularV2.get(index));
             textViewV3.setText(listOfLessonVerbsIrregularV3.get(index));
-            setTextViewVColor(R.color.textView_color_v2, R.color.textView_color_v3);
+            setTextViewVColor(R.color.verb_form_v2, R.color.verb_form_v3);
         } else {
             textViewV1.setText(verb);
 
@@ -367,7 +367,7 @@ public class AlgorithmActivity extends AppCompatActivity {
             }
             textViewV2.setText(verb);
             textViewV3.setText("[reg]");
-            setTextViewVColor(R.color.textView_color_v2, R.color.textView_color_v3_note);
+            setTextViewVColor(R.color.verb_form_v2, R.color.verb_form_note);
         }
     }
 
@@ -375,7 +375,7 @@ public class AlgorithmActivity extends AppCompatActivity {
         textViewV1.setText("");
         textViewV2.setText(word);
         textViewV3.setText("[adj]");
-        setTextViewVColor(R.color.textView_color_toBe_word, R.color.textView_color_v3_note);
+        setTextViewVColor(R.color.verb_form_toBe, R.color.verb_form_note);
     }
 
     private void setTextViewVColor(int idResColorV2, int idResColorV3) {

@@ -9,6 +9,23 @@
     <string name="couples_activity_linear_layout_vertical_line">|</string>
     <string name="algorithm_activity_button_next">Next</string>
     <string name="image_type_tense">type of tense</string>
+    <string name="button_wrong_sentence">Wrong sentence</string>
+    <string name="image_type_sentence">type of sentence</string>
+    <string name="image_button_verbs">verbs</string>
+    <string name="image_button_adjectives">adjectives</string>
+
+    <string name="check_box_future">Future</string>
+    <string name="check_box_present">Present</string>
+    <string name="check_box_past">Past</string>
+
+    <string name="check_box_simple">Simple</string>
+    <string name="check_box_strong">Strong</string>
+    <string name="check_box_to_be">To Be</string>
+
+    <string name="sign_minus">-</string>
+    <string name="sign_plus">+</string>
+    <string name="sign_question">\?</string>
+    <string name="sign_minus_question">-?</string>
 
     <string-array name="strong_verbs">
         <item>can</item>

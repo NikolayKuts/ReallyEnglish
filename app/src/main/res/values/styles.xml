@@ -50,4 +50,28 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="check_box_type_tense">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/check_box_tense_unchecked</item>
+    </style>
+
+    <style name="check_box_type_verbs">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/check_box_unchecked</item>
+    </style>
+
+    <style name="algorithm_activity_image_button_show">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
 </resources>
