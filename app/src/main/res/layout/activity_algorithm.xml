@@ -143,6 +143,7 @@
     <CheckBox
         android:id="@+id/checkBoxTensePresent"
         style="@style/check_box_type_tense"
+        android:checked="true"
         android:textColor="@color/check_box_tense_checked"
         android:drawableEnd="@drawable/check_box"
         android:text="@string/check_box_present"

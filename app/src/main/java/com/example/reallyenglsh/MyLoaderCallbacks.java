@@ -22,20 +22,20 @@ public class MyLoaderCallbacks implements LoaderManager.LoaderCallbacks<String> 
         this.helper = helper;
     }
 
-    public int getId () {
+    public int getId() {
         return id;
     }
 
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return new TranslationDownLoader(context, args);
+        return helper.onCreateLoader(args);
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         if (helper != null) {
-            helper.onLoadFinished(data);
+            helper.onLoadFinished(loader, data);
         }
     }
 

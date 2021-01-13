@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,6 +31,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reallyenglsh.IOnCallbackHelper;
+import com.example.reallyenglsh.DownLoader;
+import com.example.reallyenglsh.StringResourcesAssembler;
 import com.example.reallyenglsh.data.MainViewModel;
 import com.example.reallyenglsh.adapters.MyAdapterListsAdjectives;
 import com.example.reallyenglsh.MyLoaderCallbacks;
@@ -46,7 +49,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class AlgorithmActivity extends AppCompatActivity {
+import javax.annotation.Nullable;
+
+  public class AlgorithmActivity extends AppCompatActivity {
     private ImageView imageViewTenseObject, imageViewTypeOfSentence;
     private TextView textViewSentence;
     private TextView textViewV1, textViewV2, textViewV3;
@@ -177,8 +182,14 @@ public class AlgorithmActivity extends AppCompatActivity {
 
         myLoaderCallbacks.setHelper(new IOnCallbackHelper() {
             @Override
-            public void onLoadFinished(String data) {
-                textViewTranslation.setText(data);
+            public Loader<String> onCreateLoader(@Nullable Bundle args) {
+                return new DownLoader(getApplicationContext(), args);
+            }
+
+            @Override
+            public void onLoadFinished(Loader<String> loader, String data) {
+                DownLoader downLoader = (DownLoader) loader;
+                textViewTranslation.setText(downLoader.getTranslation(data));
                 loaderManager.destroyLoader(myLoaderCallbacks.getId());
             }
         });

@@ -4,14 +4,14 @@ import java.util.List;
 
 public class MyListCouples {
     private final String nameOfList;
-    private final List<String> listCouples;
+    private final List<String> listQuestion;
     private final List<String> listAnswers;
     private boolean isChecked;
 
-    public MyListCouples(String nameOfList, boolean isChecked, List<String> listCouples, List<String> listAnswers) {
+    public MyListCouples(String nameOfList, boolean isChecked, List<String> listQuestion, List<String> listAnswers) {
         this.nameOfList = nameOfList;
         this.isChecked = isChecked;
-        this.listCouples = listCouples;
+        this.listQuestion = listQuestion;
         this.listAnswers = listAnswers;
     }
 
@@ -19,8 +19,8 @@ public class MyListCouples {
         return nameOfList;
     }
 
-    public List<String> getListCouples() {
-        return listCouples;
+    public List<String> getListQuestion() {
+        return listQuestion;
     }
 
     public List<String> getListAnswers() {

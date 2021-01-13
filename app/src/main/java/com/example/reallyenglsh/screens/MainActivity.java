@@ -40,4 +40,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClickToRepeatZoneActivity(View view) {
+        Intent intent = new Intent(this, RepeatZoneActivity.class);
+        startActivity(intent);
+    }
 }

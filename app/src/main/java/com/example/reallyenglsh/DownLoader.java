@@ -16,11 +16,11 @@ import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TranslationDownLoader extends AsyncTaskLoader<String> {
+public class DownLoader extends AsyncTaskLoader<String> {
     private final Bundle BUNDLE;
     private final String MAIN_URL = "https://wooordhunt.ru/word/";
 
-    public TranslationDownLoader(@NonNull Context context, Bundle bundle) {
+    public DownLoader(@NonNull Context context, Bundle bundle) {
         super(context);
         this.BUNDLE = bundle;
     }
@@ -64,10 +64,10 @@ public class TranslationDownLoader extends AsyncTaskLoader<String> {
                 connection.disconnect();
             }
         }
-        return getTranslation(content.toString());
+        return content.toString();
     }
 
-    private String getTranslation (String loadedContent) {
+    public String getTranslation (String loadedContent) {
         StringBuilder result = new StringBuilder();
         Pattern pattern = Pattern.compile("<div class=\"t_inline_en\">([а-я,\\s]*)</div>");
         Matcher matcher = pattern.matcher(loadedContent);
@@ -77,4 +77,28 @@ public class TranslationDownLoader extends AsyncTaskLoader<String> {
         }
         return result.toString();
     }
+
+    public String getTranscription(String loadedContent) {
+        StringBuilder result = new StringBuilder();
+        String word = BUNDLE.getString("word");
+
+        String s = String.format("<span\\stitle=\"американская\\sтранскрипция\\sслова\\s%s\"\\sclass=\"transcription\">\\s(\\Q|\\E\\w+\\Q|\\E)</span>", word);
+        Pattern pattern = Pattern.compile(s);
+        Matcher matcher = pattern.matcher(loadedContent);
+
+        while (matcher.find()) {
+            result.append(matcher.group(1));
+        }
+        return result.toString();
+    }
+
+//    public String getResultByIndex(String loadedContent) {
+//        if (index == INDEX_GET_TRANSLATION_METHOD) {
+//            return getTranslation(loadedContent);
+//        } else if (index == INDEX_GET_TRANSCRIPTION_METHOD){
+//            return getTranscription(loadedContent);
+//        } else {
+//            return "The given index of method is incorrect";
+//        }
+//    }
 }

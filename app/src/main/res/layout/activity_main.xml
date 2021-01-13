@@ -16,16 +16,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.42" />
 
     <Button
-        android:id="@+id/buttonToQuestionsActivityEnToEn"
+        android:id="@+id/buttonToCouplesActivity"
         style="@style/main_activity_button"
         android:onClick="onClickToCouplesActivityEnToEn"
         android:text="@string/button_couples"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonToAlgorithmActivity" />
+
+    <Button
+        android:id="@+id/buttonToRepeatZone"
+        style="@style/main_activity_button"
+        android:layout_width="0dp"
+        android:onClick="onClickToRepeatZoneActivity"
+        android:text="@string/button_repeat_zone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonToCouplesActivity" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

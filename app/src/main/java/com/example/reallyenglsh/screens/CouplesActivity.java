@@ -126,7 +126,7 @@ public class CouplesActivity extends AppCompatActivity {
 
         for (MyListCouples my : listOfMyCouplesList) {
             if (my.isChecked()) {
-                listLessonQuestion.addAll(my.getListCouples());
+                listLessonQuestion.addAll(my.getListQuestion());
                 listLessonAnswer.addAll(my.getListAnswers());
             }
         }

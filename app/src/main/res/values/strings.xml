@@ -13,6 +13,7 @@
     <string name="image_type_sentence">type of sentence</string>
     <string name="image_button_verbs">verbs</string>
     <string name="image_button_adjectives">adjectives</string>
+    <string name="button_repeat_zone">Repeat zone</string>
 
     <string name="check_box_future">Future</string>
     <string name="check_box_present">Present</string>
@@ -1516,7 +1517,7 @@
         <item>она не хотела, чтобы я знал..</item>
         <item>я предпочитал, чтобы они объясняли медленнее..</item>
         <item>родители хотели, чтобы мы убрали наши комнаты</item>
-        <item>Марлин хотела, чтобу ее любили</item>
+        <item>Марлин хотела, чтобы ее любили</item>
         <item>молодому человеку нужно, чтобы ему помогли</item>
         <item>я хочу, чтобы мне объяснили</item>
         <item>она хотела,чтобы на нее посмотрели</item>
@@ -1548,7 +1549,7 @@
         <item>she didn’t want me to know..</item>
         <item>I preferred them to explain slowly..</item>
         <item>the parents wanted us to clean our rooms..</item>
-        <item>Marilyn wanted to be laved</item>
+        <item>Marilyn wanted to be loved</item>
         <item>the young man needs to be helped</item>
         <item>I want to be explained</item>
         <item>she wanted to be looked at</item>
@@ -2085,7 +2086,7 @@
         <item>Unforeseen</item>
         <item>Unforgivable</item>
         <item>Unexpressed</item>
-        </string-array>
+    </string-array>
 
     <string-array name="word_formation_1_an">
         <item>беспорядок</item>
@@ -2118,7 +2119,7 @@
         <item>непредвиденный</item>
         <item>непростительный</item>
         <item>невыраженный</item>
-        </string-array>
+    </string-array>
 
     <string-array name="word_formation_2_qu">
         <item>hopeless situation</item>
@@ -2151,7 +2152,7 @@
         <item>wonderful</item>
     </string-array>
 
-        <string-array name="word_formation_2_an">
+    <string-array name="word_formation_2_an">
         <item>безнадежная ситуация</item>
         <item>бездонный карман</item>
         <item>беззащитные дети</item>
