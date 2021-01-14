@@ -27,6 +27,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="TextView"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
         android:textColor="#9EBC7D"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

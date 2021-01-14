@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -32,12 +31,13 @@ import android.widget.Toast;
 
 import com.example.reallyenglsh.IOnCallbackHelper;
 import com.example.reallyenglsh.DownLoader;
+import com.example.reallyenglsh.MyListWords;
+import com.example.reallyenglsh.StringResourcesAssembler;
 import com.example.reallyenglsh.data.MainViewModel;
 import com.example.reallyenglsh.adapters.MyAdapterListsAdjectives;
 import com.example.reallyenglsh.MyLoaderCallbacks;
 import com.example.reallyenglsh.data.V3Verb;
 import com.example.reallyenglsh.adapters.MyAdapterListsVerbs;
-import com.example.reallyenglsh.MyListAdjective;
 import com.example.reallyenglsh.MyListOfVerbs;
 import com.example.reallyenglsh.OnClickAudioContentPlayer;
 import com.example.realyenglsh.R;
@@ -71,7 +71,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     private MyLoaderCallbacks myLoaderCallbacks;
 
     private List<MyListOfVerbs> listOfMyList = new ArrayList<>();
-    private List<MyListAdjective> listOfMyAdjectiveList = new ArrayList<>();
+    private List<MyListWords> listOfMyAdjectiveList = new ArrayList<>();
     private List<String> listOfLessonVerbsSimple;
     private List<String> listOfLessonVerbsIrregularV1;
     private List<String> listOfLessonVerbsIrregularV2;
@@ -149,8 +149,12 @@ public class AlgorithmActivity extends AppCompatActivity {
         listIdBackgroundImageQuestionSentence = getListIdDrawableRes(R.drawable.tense_way_future_qu, R.drawable.tense_way_present_qu, R.drawable.tense_way_past_qu);
         listIdBackgroundImageNegativeQuestionSentence = getListIdDrawableRes(R.drawable.tense_way_future_negative_qu, R.drawable.tense_way_present_negative_qu, R.drawable.tense_way_past_negative_qu);
 
-        listOfNames = getArrayListFromStringRes(this, R.array.personal_pronouns, R.string.names);
-        listOfVerbsStrong = getArrayListFromStringRes(this, R.array.strong_verbs);
+        StringResourcesAssembler assembler = new StringResourcesAssembler(this);
+//        listOfNames = getArrayListFromStringRes(this, R.array.personal_pronouns, R.string.names);
+//        listOfVerbsStrong = getArrayListFromStringRes(this, R.array.strong_verbs);
+
+        listOfNames = assembler.getListFromMixRes(R.array.personal_pronouns, R.string.names);
+        listOfVerbsStrong = assembler.getListFormArrayRes(R.array.strong_verbs);
 //        listOfAdjective = getArrayListFromStringResources(this, null, R.string.adjective);
 
         listOfLessonVerbsSimple = new ArrayList<>();
@@ -164,36 +168,15 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfMyList.add(getMyListOfVerbs("Verbs # 4 (151 - 200)", false, R.string.simple_verbs_4, R.string.irregular_verbs_v1_4, R.string.irregular_verbs_v2_4, R.string.irregular_verbs_v3_4));
         listOfMyList.add(getMyListOfVerbs("Verbs # 5 (201 - 250)", false, R.string.simple_verbs_5, R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v2_5, R.string.irregular_verbs_v3_5));
         listOfMyList.add(getMyListOfVerbs("Verbs # 6 (251 - 300", false, R.string.simple_verbs_6, R.string.irregular_verbs_v1_6, R.string.irregular_verbs_v2_6, R.string.irregular_verbs_v3_6));
+//
 
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #1", true, R.string.adjective_1_1));
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #2", false, R.string.adjective_1_2));
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #3", false, R.string.adjective_1_3));
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #4", false, R.string.adjective_1_4));
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #5", true, R.string.adjective_2_1));
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #6", false, R.string.adjective_2_2));
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #7", false, R.string.adjective_2_3));
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #8", false, R.string.adjective_2_4));
-        listOfMyAdjectiveList.add(getMyAdjectiveList("Adjectives #9", false, R.string.adjective_2_5));
+        listOfMyAdjectiveList.add(new MyListWords("Adjectives # 1", true, assembler.getListFromStringRes(R.string.adjective_1)));
+        listOfMyAdjectiveList.add(new MyListWords("Adjectives # 2", false, assembler.getListFromStringRes(R.string.adjective_2)));
+        listOfMyAdjectiveList.add(new MyListWords("Adjectives # 3", false, assembler.getListFromStringRes(R.string.adjective_3)));
+        listOfMyAdjectiveList.add(new MyListWords("Adjectives # 4", false, assembler.getListFromStringRes(R.string.adjective_4)));
 
         setCheckedMyListOfVerbs();
         setCheckedMyListAdjective();
-//
-//        myLoaderCallbacks.setHelper(new IOnCallbackHelper() {
-//            @Override
-//            public Loader<String> onCreateLoader(@Nullable Bundle args) {
-//                return new DownLoader(getApplicationContext(), args);
-//            }
-//
-//            @Override
-//            public void onLoadFinished(Loader<String> loader, String data) {
-//                DownLoader downLoader = (DownLoader) loader;
-//                textViewTranslation.setText(downLoader.getTranslation(data));
-//                loaderManager.destroyLoader(myLoaderCallbacks.getId());
-//            }
-//        });
-
-//        loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(), myLoaderCallbacks);
-
 
         imageButtonShowDialogVerbs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -419,30 +402,6 @@ public class AlgorithmActivity extends AppCompatActivity {
         }
     }
 
-    public String[] getArrayFromArrayResources(Context context, int id) {
-        return context.getResources().getStringArray(id);
-    }
-
-    public String[] getArrayFromResources(int id) {
-        return getString(id).split(",");
-    }
-
-    public ArrayList<String> getArrayListFromStringRes(Context context, Integer idArrayResource, int... idResource) {
-        List<String[]> listOfArgsId = new ArrayList<>();
-        ArrayList<String> stringList = new ArrayList<>();
-
-        if (idArrayResource != null) {
-            listOfArgsId.add(getArrayFromArrayResources(context, idArrayResource));
-        }
-        for (int id : idResource) {
-            listOfArgsId.add(getArrayFromResources(id));
-        }
-        for (String[] s : listOfArgsId) {
-            stringList.addAll(Arrays.asList(s));
-        }
-        return stringList;
-    }
-
     private ArrayList<Integer> getListIdDrawableRes(int... id) {
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i : id) {
@@ -615,21 +574,15 @@ public class AlgorithmActivity extends AppCompatActivity {
         return sentence;
     }
 
-    private MyListOfVerbs getMyListOfVerbs(String name, boolean b, int idResSimpleVerb, int idResIrregularV1, int idResIrregularV2, int idResIrregularV3) {
-        List<String> listOfVerbsSimple = getArrayListFromStringRes(this, null, idResSimpleVerb);
-        List<String> listOfVerbsIrregularV1 = getArrayListFromStringRes(this, null, idResIrregularV1);
-        List<String> listOfVerbsIrregularV2 = getArrayListFromStringRes(this, null, idResIrregularV2);
-        List<String> listOfVerbsIrregularV3 = getArrayListFromStringRes(this, null, idResIrregularV3);
+    private MyListOfVerbs getMyListOfVerbs(String name, boolean checked, int idResSimpleVerb, int idResIrregularV1, int idResIrregularV2, int idResIrregularV3) {
+        StringResourcesAssembler assembler = new StringResourcesAssembler(this);
+        List<String> simpleVerbs = assembler.getListFromStringRes(idResSimpleVerb);
+        List<String> irregularVerbsV1 = assembler.getListFromStringRes(idResIrregularV1);
+        List<String> irregularVerbsV2 = assembler.getListFromStringRes(idResIrregularV2);
+        List<String> irregularVerbsV3 = assembler.getListFromStringRes(idResIrregularV3);
 
-        return new MyListOfVerbs(name, b, listOfVerbsSimple, listOfVerbsIrregularV1, listOfVerbsIrregularV2, listOfVerbsIrregularV3);
+        return new MyListOfVerbs(name, checked, simpleVerbs, irregularVerbsV1, irregularVerbsV2, irregularVerbsV3);
     }
-
-    private MyListAdjective getMyAdjectiveList(String nameList, boolean isChecked, int idResAdjective) {
-        List<String> listAdjective = getArrayListFromStringRes(this, null, idResAdjective);
-
-        return new MyListAdjective(nameList, isChecked, listAdjective);
-    }
-
     private void setImage(ImageView imageView, List<Integer> list, int randomNumber) {
         if (randomNumber != -1) {
             imageView.setImageResource(list.get(randomNumber));
@@ -642,9 +595,9 @@ public class AlgorithmActivity extends AppCompatActivity {
     private void setCheckedMyListAdjective() {
         listOfLessonAdjective.clear();
 
-        for (MyListAdjective my : listOfMyAdjectiveList) {
+        for (MyListWords my : listOfMyAdjectiveList) {
             if (my.isChecked()) {
-                listOfLessonAdjective.addAll(my.getListAdjective());
+                listOfLessonAdjective.addAll(my.getListWords());
             }
         }
     }

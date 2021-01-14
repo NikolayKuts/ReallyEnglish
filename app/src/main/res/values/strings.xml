@@ -149,40 +149,30 @@
         Sam,Frank,Britney,Selena,Bruno,Rebeca,Justin,Avril Lavigne,Alexandra,Taylor,my brother,her sister,his friend
     </string>
 
-    <string name="adjective_1.1">
-        first,good,bad,big,hard,small,strong,noisy,next,lazy,similar,heavy,different,easy,angry,sad,smart,long,stupid,short,old,pretty,high,tall,young,low,new,cute,simple,happy,clear
+    <string name="adjective_1">
+         first,good,bad,big,hard,small,strong,noisy,next,lazy,similar,heavy,different,easy,angry,sad,smart,long,stupid,short,old,pretty,high,tall,young,low,new,
+        cute,simple,happy,clear,clean,usual,ready,cool,stubborn,poor,dark,loud,true,constant,experienced,inexperienced,nervous,false,temporary,calm,patient,impatient
+    </string>
+    <string name="adjective_2">
+        normal,cruel,pleased,displeased,ashamed,attentive,inattentive,greedy,typical,whole,convenient,inconvenient,ancient,careful,thirsty,single,serious,great,double,
+        smooth,brave,tiny,triple,main,basic,early,proud,rich,hungry,sweet,disgusting,fast,quick,sour,late,shy,nasty,perfect,curious,familiar,responsible,irresponsible,full,dirty,crazy
     </string>
 
-    <string name="adjective_1.2">
-        ready,cool,stubborn,poor,dark,loud,true,constant,experienced,inexperienced,nervous,false,temporary,calm,patient,impatient,normal,cruel,pleased,displeased,ashamed,usual
+    <string name="adjective_3">
+        present,weak,cheap,left,wrong,sure,messy,pleasant,unpleasant,slow,afraid,sorry,far,able,unable,tired,fresh,useful,important,famous,harmful,alive,interesting,dead,wet,cold,
+        alone,busy,complicated,hot,dry,real,quiet,stinky,transparent,special,excellent,round,much/many,salty,favorite,dangerous,funny,empty,same,terrible,deep,silent,free,wide,active
+    </string>
+    <string name="adjective_4">
+        light,narrow,slim,thin,thick,soft,foreign,healthy,colorful,expensive,inexpensive,wonderful,sick,right,sloppy,boring,neat,insolent,fragrant,close,modest,honest,dishonest,
+        modern,wild,lucky,unlucky,huge,giant,exact,strange, weird,polite,impolite,possible,impossible,tasty,crude,rude,guilty,legal,illegal,square,suitable,talented,gifted,firm
     </string>
 
-    <string name="adjective_1.3">
-        attentive,inattentive,greedy,typical,whole,convenient,inconvenient,ancient,careful,thirsty,single,serious,great,double,smooth,brave,tiny,triple,main,basic,early,clean
+    <string name="adjective_like_verbs">
+        afraid,shy,sorry,silent,late,sick,proud,squeamish,present,absent,indignant,patient,jealous,picky
     </string>
 
-    <string name="adjective_1.4">
-        proud,rich,hungry,sweet,disgusting,fast/quick,sour,late,shy,nasty,perfect,curious,familiar,responsible,irresponsible,full,dirty,crazy,safe,warm,difficult,last,beautiful
-    </string>
-
-    <string name="adjective_2.1">
-        present,weak,cheap,left,wrong,sure,messy,pleasant,unpleasant,slow,afraid,sorry,far,able,unable,tired,fresh,healthy,colorful
-    </string>
-
-    <string name="adjective_2.2">
-        exact,strange,weird,polite,impolite,possible,impossible,tasty,crude,rude,guilty,legal,illegal,square,suitable,talented,gifted,firm
-    </string>
-
-    <string name="adjective_2.3">
-        expensive,inexpensive,wonderful,sick,right,sloppy,boring,neat,insolent,fragrant,close,modest,honest,dishonest,modern,wild,lucky,unlucky,huge,giant
-    </string>
-
-    <string name="adjective_2.4">
-        excellent,round,salty,favorite,dangerous,funny,empty,same,terrible,deep,silent,free,wide,active,light,narrow,slim,thin,thick,soft,foreign
-    </string>
-
-    <string name="adjective_2.5">
-        useful,important,famous,harmful,alive,interesting,dead,wet,cold,alone,busy,complicated,hot,dry,real,quiet,stinky,transparent,special
+    <string name="twins">
+        meanwhile,for..`s sake,since,until,ahead,gradually,desirable,literally,especially,between,among,immediately,along,across,another,rather,per se,at last,whereas
     </string>
 
     <string-array name="couples_english_qu">

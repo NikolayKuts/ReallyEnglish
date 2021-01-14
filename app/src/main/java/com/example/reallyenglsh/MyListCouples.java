@@ -2,20 +2,20 @@ package com.example.reallyenglsh;
 
 import java.util.List;
 
-public class MyListCouples {
+public class MyListCouples implements IAdapterHelper {
     private final String nameOfList;
     private final List<String> listQuestion;
     private final List<String> listAnswers;
-    private boolean isChecked;
+    private boolean checked;
 
-    public MyListCouples(String nameOfList, boolean isChecked, List<String> listQuestion, List<String> listAnswers) {
+    public MyListCouples(String nameOfList, boolean checked, List<String> listQuestion, List<String> listAnswers) {
         this.nameOfList = nameOfList;
-        this.isChecked = isChecked;
+        this.checked = checked;
         this.listQuestion = listQuestion;
         this.listAnswers = listAnswers;
     }
 
-    public String getNameOfList() {
+    public String getNameList() {
         return nameOfList;
     }
 
@@ -28,10 +28,10 @@ public class MyListCouples {
     }
 
     public boolean isChecked() {
-        return isChecked;
+        return checked;
     }
 
     public void setChecked(boolean checked) {
-        isChecked = checked;
+        this.checked = checked;
     }
 }

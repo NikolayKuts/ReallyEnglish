@@ -17,7 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.example.reallyenglsh.adapters.MyAdapterForCouples;
+import com.example.reallyenglsh.StringResourcesAssembler;
+import com.example.reallyenglsh.adapters.MyAdapterListCouples;
 import com.example.reallyenglsh.MyListCouples;
 import com.example.realyenglsh.R;
 
@@ -138,7 +139,7 @@ public class CouplesActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.dialog_couples);
 
         RecyclerView recyclerView = dialog.findViewById(R.id.recyclerViewCouplesList);
-        MyAdapterForCouples adapter = new MyAdapterForCouples(listOfMyCouplesList);
+        MyAdapterListCouples adapter = new MyAdapterListCouples(listOfMyCouplesList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
@@ -156,9 +157,9 @@ public class CouplesActivity extends AppCompatActivity {
     }
 
     private MyListCouples getMyListCouples(String nameOfList, boolean isChecked, int idResCouples, int idResAnswers) {
-        AlgorithmActivity algorithmActivity = new AlgorithmActivity();
-        ArrayList<String> listCouples = algorithmActivity.getArrayListFromStringRes(this, idResCouples);
-        List<String> listAnswers = algorithmActivity.getArrayListFromStringRes(this, idResAnswers);
+        StringResourcesAssembler assembler = new StringResourcesAssembler(this);
+        List<String> listCouples = assembler.getListFormArrayRes(idResCouples);
+        List<String> listAnswers = assembler.getListFormArrayRes(idResAnswers);
 
         return new MyListCouples(nameOfList, isChecked, listCouples, listAnswers);
     }
@@ -231,9 +232,9 @@ public class CouplesActivity extends AppCompatActivity {
         for (MyListCouples my : listOfMyCouplesList) {
             if (my.isChecked()) {
                 if (namesChosenLists.length() == 0) {
-                    namesChosenLists.append(my.getNameOfList());
+                    namesChosenLists.append(my.getNameList());
                 } else {
-                    namesChosenLists.append(",  ").append(my.getNameOfList());
+                    namesChosenLists.append(",  ").append(my.getNameList());
                 }
             }
         }
@@ -242,6 +243,7 @@ public class CouplesActivity extends AppCompatActivity {
 
     private void setSmoothScrollToLastItem(RecyclerView recyclerView) {
         for (int i = listOfMyCouplesList.size() - 1; i > 0; i--) {
+            MyListCouples myListCouples = (MyListCouples) listOfMyCouplesList.get(i);
             if (listOfMyCouplesList.get(i).isChecked()) {
                 recyclerView.smoothScrollBy(0, i * 63, null, i * 150);
                 break;

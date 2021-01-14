@@ -10,16 +10,17 @@ import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.reallyenglsh.IAdapterHelper;
 import com.example.reallyenglsh.MyListCouples;
 import com.example.realyenglsh.R;
 
 import java.util.List;
 
-public class MyAdapterForCouples extends RecyclerView.Adapter<MyAdapterForCouples.CouplesListHolder> {
+public class MyAdapterListCouples extends RecyclerView.Adapter<MyAdapterListCouples.CouplesListHolder> {
 
     private final List<MyListCouples> listMyListCouples;
 
-    public MyAdapterForCouples(List<MyListCouples> listMyListCouples) {
+    public MyAdapterListCouples(List<MyListCouples> listMyListCouples) {
         this.listMyListCouples = listMyListCouples;
     }
 
@@ -32,8 +33,8 @@ public class MyAdapterForCouples extends RecyclerView.Adapter<MyAdapterForCouple
 
     @Override
     public void onBindViewHolder(@NonNull CouplesListHolder holder, int position) {
-        MyListCouples myListCouples = listMyListCouples.get(position);
-        holder.checkBoxList.setText(myListCouples.getNameOfList());
+        IAdapterHelper myListCouples = (IAdapterHelper) listMyListCouples.get(position);
+        holder.checkBoxList.setText(myListCouples.getNameList());
         holder.checkBoxList.setChecked(myListCouples.isChecked());
         holder.setTextColorOnCheckBox(myListCouples.isChecked());
 

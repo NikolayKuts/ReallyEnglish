@@ -35,8 +35,11 @@
     <color name="dialog_lists_couples_checked">#DD9B38</color>
     <color name="dialog_lists_couples_unchecked">#989898</color>
 
-    <color name="dialog_lists_adjectives_item_color_checked">#A6C87D</color>
-    <color name="dialog_lists_adjectives_item_color_unchecked">#FFFFFF</color>
+    <color name="dialog_lists_adjectives_item_checked">#A6C87D</color>
+    <color name="dialog_lists_adjectives_item_unchecked">#C6C6C6</color>
+
+    <color name="dialog_lists_words_item_checked">#B5DD86</color>
+    <color name="dialog_lists_words_item_unchecked">#9E9E9E</color>
 
     <color name="check_box_tense_checked">#DFDFDF</color>
     <color name="check_box_tense_unchecked">#858585</color>
