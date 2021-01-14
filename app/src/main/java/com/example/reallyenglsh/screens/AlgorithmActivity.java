@@ -1,4 +1,4 @@
-  package com.example.reallyenglsh.screens;
+package com.example.reallyenglsh.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -32,7 +32,6 @@ import android.widget.Toast;
 
 import com.example.reallyenglsh.IOnCallbackHelper;
 import com.example.reallyenglsh.DownLoader;
-import com.example.reallyenglsh.StringResourcesAssembler;
 import com.example.reallyenglsh.data.MainViewModel;
 import com.example.reallyenglsh.adapters.MyAdapterListsAdjectives;
 import com.example.reallyenglsh.MyLoaderCallbacks;
@@ -51,8 +50,8 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-  public class AlgorithmActivity extends AppCompatActivity {
-    private ImageView imageViewTenseObject, imageViewTypeOfSentence;
+public class AlgorithmActivity extends AppCompatActivity {
+    private ImageView imageViewTypeOfTense, imageViewTypeOfSentence;
     private TextView textViewSentence;
     private TextView textViewV1, textViewV2, textViewV3;
     private CheckBox checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast;
@@ -78,15 +77,14 @@ import javax.annotation.Nullable;
     private List<String> listOfLessonVerbsIrregularV2;
     private List<String> listOfLessonVerbsIrregularV3;
 
-    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence, listIdBackgroundImageNegativeSentence
-            , listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
+    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence, listIdBackgroundImageNegativeSentence, listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
 
     private List<String> listOfNames;
     private List<String> listOfVerbsStrong;
     private List<String> listOfLessonAdjective = new ArrayList<>();
 
     private String wrongSentence = "", wrongV3PassiveVerb = "";
-    private int randomNumberOfTense = -1, randomNumberTypeOfSentence = -1;
+    private int randomNumberTypeOfTense = -1, randomNumberTypeOfSentence = -1;
     private boolean isSwitchShowPromptOn;
 
     @Override
@@ -97,8 +95,8 @@ import javax.annotation.Nullable;
         loaderManager = LoaderManager.getInstance(this);
         myLoaderCallbacks = new MyLoaderCallbacks(getApplicationContext(), 1);
 
-        imageViewTenseObject = findViewById(R.id.imageTenseObject);
-        imageViewTenseObject.setImageResource(R.drawable.coach);
+        imageViewTypeOfTense = findViewById(R.id.imageTenseObject);
+        imageViewTypeOfTense.setImageResource(R.drawable.coach);
         imageViewTypeOfSentence = findViewById(R.id.imageViewTypeOfSentence);
 
         textViewSentence = findViewById(R.id.textViewSentence);
@@ -179,20 +177,20 @@ import javax.annotation.Nullable;
 
         setCheckedMyListOfVerbs();
         setCheckedMyListAdjective();
-
-        myLoaderCallbacks.setHelper(new IOnCallbackHelper() {
-            @Override
-            public Loader<String> onCreateLoader(@Nullable Bundle args) {
-                return new DownLoader(getApplicationContext(), args);
-            }
-
-            @Override
-            public void onLoadFinished(Loader<String> loader, String data) {
-                DownLoader downLoader = (DownLoader) loader;
-                textViewTranslation.setText(downLoader.getTranslation(data));
-                loaderManager.destroyLoader(myLoaderCallbacks.getId());
-            }
-        });
+//
+//        myLoaderCallbacks.setHelper(new IOnCallbackHelper() {
+//            @Override
+//            public Loader<String> onCreateLoader(@Nullable Bundle args) {
+//                return new DownLoader(getApplicationContext(), args);
+//            }
+//
+//            @Override
+//            public void onLoadFinished(Loader<String> loader, String data) {
+//                DownLoader downLoader = (DownLoader) loader;
+//                textViewTranslation.setText(downLoader.getTranslation(data));
+//                loaderManager.destroyLoader(myLoaderCallbacks.getId());
+//            }
+//        });
 
 //        loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(), myLoaderCallbacks);
 
@@ -252,7 +250,7 @@ import javax.annotation.Nullable;
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 isSwitchShowPromptOn = b;
-                if (randomNumberOfTense != -1) {
+                if (randomNumberTypeOfTense != -1) {
                     setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
                 }
             }
@@ -276,66 +274,72 @@ import javax.annotation.Nullable;
         textViewV3.setOnClickListener(new OnClickAudioContentPlayer());
 
 
-
-
     }
 
     public void onClickNext(View view) {
-        Random random = new Random();
-        randomNumberTypeOfSentence = getRandomNumberOnChecked(checkBoxTypeOfSentenceMinus, checkBoxTypeOfSentencePlus, checkBoxTypeOfSentenceQu, checkBoxTypeOfSentenceMinusQu);
-        randomNumberOfTense = getRandomNumberOnChecked(checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast);   // 0 - future, 1 - present, 2 - past
-        setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
-        int randomNumberOfToBe = random.nextInt(3);
-
-        setImage(imageViewTenseObject, listIdTenseObject, randomNumberOfTense);
+        randomNumberTypeOfSentence = getRandomNumberByTypeSentence();
+        randomNumberTypeOfTense = getRandomNumberByTypeTense();     // 0 - future, 1 - present, 2 - past
+        setImage(imageViewTypeOfTense, listIdTenseObject, randomNumberTypeOfTense);
         setImage(imageViewTypeOfSentence, listIdImageTypeOfSentence, randomNumberTypeOfSentence);
+
+        setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
 
         wrongSentence = "";
         wrongV3PassiveVerb = "";
         String sentence = "";
         String name = getWordFromList(listOfNames);
         ArrayList<String> listOfLessonVerbsSimpleIrregular = new ArrayList<>(listOfLessonVerbsSimple);
-        listOfLessonVerbsSimpleIrregular.addAll(listOfLessonVerbsIrregularV1);
-        String simpleIrregularVerb = getWordFromList(listOfLessonVerbsSimpleIrregular);
+        listOfLessonVerbsSimpleIrregular.addAll(listOfLessonVerbsIrregularV1);;
+        String word = getWordFromList(listOfLessonVerbsSimpleIrregular);
 
-        int randomNumberOfWay = getRandomNumberOnChecked(checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe);    // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
+        int randomNumberOfWay = getRandomNumberTypeOfWay();    // 0 - simple verbs, 1 - strong verbs, 2 (else) - ing & adjective
         if (randomNumberOfWay == -1) {
             showToast();
         } else {
             if (randomNumberOfWay == 0) {   // simple
-                sentence = getSentenceWithSimpleVerb(name, simpleIrregularVerb, listOfLessonVerbsSimpleIrregular);
+                sentence = getSentenceWithSimpleVerb(name, word, listOfLessonVerbsSimpleIrregular);
             } else if (randomNumberOfWay == 1) {    // strong
-                sentence = getSentenceWithStrongVerb(name, simpleIrregularVerb);
+                sentence = getSentenceWithStrongVerb(name, word);
             } else {    // ToBe
-
+                Random random = new Random();
+                int randomNumberOfToBe = random.nextInt(3);
                 if (randomNumberOfToBe == 0) {   // - ing
-                    sentence = getSentenceWithToBeIngForm(name, simpleIrregularVerb);
+                    sentence = getSentenceWithToBeIngForm(name, word);
                 } else if (randomNumberOfToBe == 1) {  // adjective
-                    String adjective = getWordFromList(listOfLessonAdjective);
-                    sentence = String.format("%s %s", name, adjective);
-                    loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(adjective), myLoaderCallbacks);
-                    setWordOfToBeAdjective(adjective);
-//                    textViewTranslation.setText(getTranslateContent(adjective));
+                    word = getWordFromList(listOfLessonAdjective);
+                    sentence = String.format("%s %s", name, word);
                 } else {  // passive verb
-                    if (listOfLessonVerbsIrregularV1.contains(simpleIrregularVerb)) {
-                        sentence = getSentenceWithToBeV3Verb(name, simpleIrregularVerb);
+                    if (listOfLessonVerbsIrregularV1.contains(word)) {
+                        sentence = getSentenceWithToBeV3Verb(name, word);
                     } else {  // simple -ed
-                        sentence = getSentenceWithToBeSimplePassiveVerb(name, simpleIrregularVerb);
+                        sentence = getSentenceWithToBeSimplePassiveVerb(name, word);
                     }
                 }
             }
         }
 
-        if (randomNumberOfWay != 2 || randomNumberOfToBe != 1) {
-            loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(simpleIrregularVerb), myLoaderCallbacks);
-            setFormsOfIrregularVerb(simpleIrregularVerb);
-//            textViewTranslation.setText(getTranslateContent(simpleIrregularVerb));
-        }
+        String finalSentence = sentence;
+        String finalWord = word;
+        myLoaderCallbacks.setHelper(new IOnCallbackHelper() {
+            @Override
+            public Loader<String> onCreateLoader(@Nullable Bundle args) {
+                return new DownLoader(getApplicationContext(), args);
+            }
+
+            @Override
+            public void onLoadFinished(Loader<String> loader, String data) {
+                DownLoader downLoader = (DownLoader) loader;
+                textViewTranslation.setText(downLoader.getTranslation(data));
+                textViewSentence.setText(finalSentence);
+                setFormsByTypeWord(finalWord);
+                loaderManager.destroyLoader(myLoaderCallbacks.getId());
+            }
+        });
 
         if (!viewModel.isSentenceInDB(wrongSentence)) {
-            textViewSentence.setText(sentence);
+            loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(word), myLoaderCallbacks);
         } else if (!viewModel.isV3VerbInDB(wrongV3PassiveVerb)) {
-            textViewSentence.setText(sentence);
+            loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(word), myLoaderCallbacks);
         } else {
             onClickNext(view);
         }
@@ -352,12 +356,13 @@ import javax.annotation.Nullable;
         toast.show();
     }
 
-//    private void setEmptyOnTextViewOfFormsOfIrregularVerb() {
-//        textViewV1.setText("-//-");
-//        textViewV2.setText("-//-");
-//        textViewV3.setText("-//-");
-//        setTextViewVColor(R.color.textView_color_v1, R.color.textView_color_v1);
-//    }
+    private void setFormsByTypeWord(String word) {
+        if (listOfLessonAdjective.contains(word)) {
+            setWordOfToBeAdjective(word);
+        } else {
+            setFormsOfIrregularVerb(word);
+        }
+    }
 
     private void setFormsOfIrregularVerb(String verb) {
         if (listOfLessonVerbsIrregularV1.contains(verb)) {
@@ -396,15 +401,15 @@ import javax.annotation.Nullable;
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void setConstraintLayoutBackgroundImage(boolean b) {
-        if (b && randomNumberOfTense != -1) {
+        if (b && randomNumberTypeOfTense != -1) {
             if (randomNumberTypeOfSentence == 0) {  // [-]
-                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageNegativeSentence.get(randomNumberOfTense)));
+                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageNegativeSentence.get(randomNumberTypeOfTense)));
             } else if (randomNumberTypeOfSentence == 1) {   // [+]
-                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImages.get(randomNumberOfTense)));
+                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImages.get(randomNumberTypeOfTense)));
             } else if (randomNumberTypeOfSentence == 2) {   // [?]
-                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageQuestionSentence.get(randomNumberOfTense)));
+                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageQuestionSentence.get(randomNumberTypeOfTense)));
             } else if (randomNumberTypeOfSentence == 3) {    // [-?]
-                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageNegativeQuestionSentence.get(randomNumberOfTense)));
+                constraintLayout.setBackground(getResources().getDrawable(listIdBackgroundImageNegativeQuestionSentence.get(randomNumberTypeOfTense)));
             } else {
                 constraintLayout.setBackground(getResources().getDrawable(R.drawable.tense_way_base));
             }
@@ -446,6 +451,15 @@ import javax.annotation.Nullable;
         return arrayList;
     }
 
+    private void setImage() {
+        randomNumberTypeOfSentence = getRandomNumberByTypeSentence();
+        randomNumberTypeOfTense = getRandomNumberByTypeTense();     // 0 - future, 1 - present, 2 - past
+        setConstraintLayoutBackgroundImage(isSwitchShowPromptOn);
+        setImage(imageViewTypeOfTense, listIdTenseObject, randomNumberTypeOfTense);
+        setImage(imageViewTypeOfSentence, listIdImageTypeOfSentence, randomNumberTypeOfSentence);
+
+    }
+
     private void addWrongV3VerbToDB(String wrongV3Verb) {
         int maxIdV3Verb = viewModel.getMaxIdOfV3Verb();
         viewModel.insertV3Verb(new V3Verb(maxIdV3Verb + 1, wrongV3Verb));
@@ -473,6 +487,18 @@ import javax.annotation.Nullable;
         return -1;
     }
 
+    private int getRandomNumberByTypeSentence() {
+        return getRandomNumberOnChecked(checkBoxTypeOfSentenceMinus, checkBoxTypeOfSentencePlus, checkBoxTypeOfSentenceQu, checkBoxTypeOfSentenceMinusQu);
+    }
+
+    private int getRandomNumberByTypeTense() {
+        return getRandomNumberOnChecked(checkBoxTenseFuture, checkBoxTensePresent, checkBoxTensePast);
+    }
+
+    private int getRandomNumberTypeOfWay() {
+        return getRandomNumberOnChecked(checkBoxTypeOfVerbSimple, checkBoxTypeOfVerbStrong, checkBoxTypeOfVerbToBe);
+    }
+
     private void onClickShowDialogListsVerbs() {
         Dialog dialog = new Dialog(AlgorithmActivity.this);
         dialog.setContentView(R.layout.dialog_verbs);
@@ -494,9 +520,9 @@ import javax.annotation.Nullable;
     }
 
     private class TextColorOnCheckedSetter implements View.OnClickListener {
-        private CheckBox checkBox;
-        private int idColorOnChecked;
-        private int idColorOnUnChecked;
+        private final CheckBox checkBox;
+        private final int idColorOnChecked;
+        private final int idColorOnUnChecked;
 
         TextColorOnCheckedSetter(CheckBox checkBox, int idColorOnChecked, int idColorOnUnChecked) {
             this.checkBox = checkBox;
@@ -550,7 +576,7 @@ import javax.annotation.Nullable;
 
     private String getSentenceWithStrongVerb(String name, String simpleIrregularVerb) {
         String strongVerb = getWordFromList(listOfVerbsStrong);
-        if (randomNumberOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
+        if (randomNumberTypeOfTense != 1 && (strongVerb.equals("would") || strongVerb.equals("should"))) {
             strongVerb = getWordFromList(Arrays.asList("can", "may", "must"));
         }
         wrongSentence = String.format("%s_%s", strongVerb, simpleIrregularVerb);
@@ -613,41 +639,6 @@ import javax.annotation.Nullable;
         }
     }
 
-//    private class OnClickAudioContentPlayer implements View.OnClickListener {
-//        @Override
-//        public void onClick(View v) {
-//
-//            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein);
-//            v.startAnimation(animation);
-//
-//            String word = ((TextView) v).getText().toString();
-//            Log.i("log_word", word);
-//            MediaPlayer player = new MediaPlayer();
-//            try {
-//                player.setDataSource(String.format("https://wooordhunt.ru/data/sound/sow/us/%s.mp3", word));
-//
-//                player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//                    @Override
-//                    public void onPrepared(MediaPlayer mp) {
-//                        mp.start();
-//                    }
-//                });
-//
-//                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//                    @Override
-//                    public void onCompletion(MediaPlayer mp) {
-//                        mp.release();
-//                        v.clearAnimation();
-//                    }
-////            v.clearAnimation();
-//                });
-//                player.prepareAsync();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-
     private void setCheckedMyListAdjective() {
         listOfLessonAdjective.clear();
 
@@ -658,7 +649,7 @@ import javax.annotation.Nullable;
         }
     }
 
-    private Bundle getBundleWord (String word) {
+    private Bundle getBundleWord(String word) {
         Bundle bundle = new Bundle();
         bundle.putString("word", word);
         return bundle;
@@ -670,59 +661,4 @@ import javax.annotation.Nullable;
         return list.get(numberRandom);
     }
 
-
-//    private static class DownLoadTask extends AsyncTask<String, Void, String> {
-//        URL url;
-//        StringBuilder sb = new StringBuilder();
-//        HttpURLConnection urlConnection;
-//
-//        @Override
-//        protected String doInBackground(String... strings) {
-//            try {
-//                url = new URL(strings[0]);
-//                urlConnection = (HttpURLConnection) url.openConnection();
-//                InputStream inputStream = urlConnection.getInputStream();
-//                InputStreamReader reader = new InputStreamReader(inputStream);
-//                BufferedReader bufferedReader = new BufferedReader(reader);
-//                String line = bufferedReader.readLine();
-//
-//                while (line != null) {
-//                    sb.append(line);
-//                    line = bufferedReader.readLine();
-//                }
-//
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            } finally {
-//                if (urlConnection != null) {
-//                    urlConnection.disconnect();
-//                }
-//            }
-//            return sb.toString();
-//        }
-//    }
-//    private String getTranslateContent(String word) {
-//        DownLoadTask loadTask = new DownLoadTask();
-//        String url = String.format("https://wooordhunt.ru/word/%s", word);
-//        String content = "";
-//        StringBuilder result = new StringBuilder();
-//        try {
-//            content = loadTask.execute(url).get();
-//
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Pattern pattern = Pattern.compile("<span class=\"t_inline_en\">([а-я,\\s]*)</span>");
-//        Matcher matcher = pattern.matcher(content);
-//
-//        while (matcher.find()) {
-//            result.append(matcher.group(1));
-//        }
-//        return result.toString();
-//    }
 }
