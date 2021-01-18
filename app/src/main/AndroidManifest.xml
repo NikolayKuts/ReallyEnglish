@@ -12,11 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.reallyenglsh.screens.RepeatZoneActivity"></activity>
-        <activity android:name="com.example.reallyenglsh.screens.DoubleNegativeActivity" />
         <activity android:name="com.example.reallyenglsh.screens.CouplesActivity" />
         <activity android:name="com.example.reallyenglsh.screens.AlgorithmActivity" />
-        <activity android:name="com.example.reallyenglsh.screens.Table2Activity" />
-        <activity android:name="com.example.reallyenglsh.screens.Table1Activity" />
         <activity android:name="com.example.reallyenglsh.screens.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

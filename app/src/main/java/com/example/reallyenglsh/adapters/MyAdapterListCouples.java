@@ -11,17 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.reallyenglsh.IAdapterHelper;
-import com.example.reallyenglsh.MyListCouples;
+import com.example.reallyenglsh.data.CoupleList;
 import com.example.realyenglsh.R;
 
 import java.util.List;
 
 public class MyAdapterListCouples extends RecyclerView.Adapter<MyAdapterListCouples.CouplesListHolder> {
 
-    private final List<MyListCouples> listMyListCouples;
+    private final List<CoupleList> listCoupleList;
 
-    public MyAdapterListCouples(List<MyListCouples> listMyListCouples) {
-        this.listMyListCouples = listMyListCouples;
+    public MyAdapterListCouples(List<CoupleList> listCoupleList) {
+        this.listCoupleList = listCoupleList;
     }
 
     @NonNull
@@ -33,7 +33,7 @@ public class MyAdapterListCouples extends RecyclerView.Adapter<MyAdapterListCoup
 
     @Override
     public void onBindViewHolder(@NonNull CouplesListHolder holder, int position) {
-        IAdapterHelper myListCouples = (IAdapterHelper) listMyListCouples.get(position);
+        IAdapterHelper myListCouples = listCoupleList.get(position);
         holder.checkBoxList.setText(myListCouples.getNameList());
         holder.checkBoxList.setChecked(myListCouples.isChecked());
         holder.setTextColorOnCheckBox(myListCouples.isChecked());
@@ -47,7 +47,7 @@ public class MyAdapterListCouples extends RecyclerView.Adapter<MyAdapterListCoup
 
     @Override
     public int getItemCount() {
-        return listMyListCouples.size();
+        return listCoupleList.size();
     }
 
     public static class CouplesListHolder extends RecyclerView.ViewHolder {

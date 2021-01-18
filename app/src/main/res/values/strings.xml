@@ -6,7 +6,7 @@
     <string name="button_couples">Couples</string>
     <string name="couples_activity_button_next">Next couple</string>
     <string name="button_lists">Lists</string>
-    <string name="couples_activity_linear_layout_vertical_line">|</string>
+    <string name="counter_vertical_line">|</string>
     <string name="algorithm_activity_button_next">Next</string>
     <string name="image_type_tense">type of tense</string>
     <string name="button_wrong_sentence">Wrong sentence</string>
@@ -14,6 +14,9 @@
     <string name="image_button_verbs">verbs</string>
     <string name="image_button_adjectives">adjectives</string>
     <string name="button_repeat_zone">Repeat zone</string>
+    <string name="repeat_zone_button_next">Next</string>
+    <string name="button_back">Back</string>
+    <string name="counter_zero">0</string>
 
     <string name="check_box_future">Future</string>
     <string name="check_box_present">Present</string>

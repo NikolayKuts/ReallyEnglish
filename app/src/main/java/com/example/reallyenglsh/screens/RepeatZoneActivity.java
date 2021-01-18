@@ -42,7 +42,6 @@ public class RepeatZoneActivity extends AppCompatActivity {
 
     private LoaderManager loaderManager;
     private MyLoaderCallbacks myLoaderCallbacks;
-    private MyLoaderCallbacks transcriptionLoader;
 
     private List<MyListWords> lists = new ArrayList<>();
     private List<String> listLesson = new ArrayList<>();
@@ -75,30 +74,14 @@ public class RepeatZoneActivity extends AppCompatActivity {
         lists.add(new MyListWords("verbs # 4", false, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_4, R.string.irregular_verbs_v1_4, R.string.irregular_verbs_v2_4, R.string.irregular_verbs_v3_4)));
         lists.add(new MyListWords("verbs # 5", false, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_5, R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v2_5, R.string.irregular_verbs_v3_5)));
         lists.add(new MyListWords("verbs # 6", false, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_6, R.string.irregular_verbs_v1_6, R.string.irregular_verbs_v2_6, R.string.irregular_verbs_v3_6)));
-//        lists.add(new MyListAllWords("Twins", R.string.twins, false, this));
 
-//        lists.add(new MyListAllWords("adjective like verb", false,));
         lists.add(new MyListWords("adjective # 1", false, assembler.getListFromStringRes(R.string.adjective_1)));
         lists.add(new MyListWords("adjective # 2", false, assembler.getListFromStringRes(R.string.adjective_2)));
         lists.add(new MyListWords("adjective # 3", false, assembler.getListFromStringRes(R.string.adjective_3)));
         lists.add(new MyListWords("adjective # 4", false, assembler.getListFromStringRes(R.string.adjective_4)));
 
-
         lists.add(new MyListWords("Adjectives like verbs", false, assembler.getListFromStringRes(R.string.adjective_like_verbs)));
         lists.add(new MyListWords("Twins", false, assembler.getListFromStringRes(R.string.twins)));
-
-//        lists.add(new MyListWords("adjective #1.1", false, assembler.getListFromStringRes(R.string.adjective_1_1)));
-//        lists.add(new MyListWords("adjective #1.2", false, assembler.getListFromStringRes(R.string.adjective_1_2)));
-//        lists.add(new MyListWords("adjective #2.1", false, assembler.getListFromStringRes(R.string.adjective_1_3)));
-//        lists.add(new MyListWords("adjective #2.2", false, assembler.getListFromStringRes(R.string.adjective_1_4)));
-//        lists.add(new MyListWords("adjective #1.1", false, assembler.getListFromStringRes(R.string.adjective_2_1)));
-//        lists.add(new MyListWords("adjective #1.2", false, assembler.getListFromStringRes(R.string.adjective_2_2)));
-//        lists.add(new MyListWords("adjective #2.1", false, assembler.getListFromStringRes(R.string.adjective_2_3)));
-//        lists.add(new MyListWords("adjective #2.2", false, assembler.getListFromStringRes(R.string.adjective_2_4)));
-//        lists.add(new MyListWords("adjective #2.2", false, assembler.getListFromStringRes(R.string.adjective_2_5)));
-
-
-
 
         setCheckedLists();
 
@@ -118,23 +101,10 @@ public class RepeatZoneActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.INVISIBLE);
             }
 
-//            @Override
-//            public Loader<HashMap<String, String>> onCreateGetLoader(Bundle bundle) {
-//                progressBar.setVisibility(View.VISIBLE);
-//                return new ContentLoader(getApplicationContext(), bundle);
-//            }
-//
-//            @Override
-//            public void onLoadFinished(HashMap<String, String> data) {
-//                setTextContent(data);
-//                loaderManager.destroyLoader(myLoaderCallbacksTranslation.getId());
-//                progressBar.setVisibility(View.INVISIBLE);
-//            }
         });
 
 
         loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(), myLoaderCallbacks);
-//        loaderManager.restartLoader(transcriptionLoader.getId(),getBundleWord(),transcriptionLoader);
 
         onClickNext(textViewWord);
 
@@ -153,7 +123,6 @@ public class RepeatZoneActivity extends AppCompatActivity {
                         if (numberWord <= listLesson.size()) {
                             indexWord = numberWord - 1;
                             setWord();
-//                            setTextContent();
                             loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(), myLoaderCallbacks);
                             setCounter();
                             dialog.dismiss();
@@ -165,7 +134,6 @@ public class RepeatZoneActivity extends AppCompatActivity {
 
 
     }
-
 
     public void onClickNext(View view) {
         indexWord++;
@@ -244,16 +212,4 @@ public class RepeatZoneActivity extends AppCompatActivity {
             }
         }
     }
-
-//    private MyListAllWords getMyListAllWordsAdjectives(String name, boolean isChecked, int...idRes) {
-//        StringResourcesAssembler assembler = new StringResourcesAssembler(this);
-//        List<String> list = assembler.getListAdjective(idRes);
-//        return new MyListAllWords(name, isChecked, list);
-//    }
-//
-//    private MyListAllWords getMyListAllWordsVerbs(String name, boolean isChecked, int idSimple, int idIrregularV1, int idIrregularV2, int idIrregularV3) {
-//        StringResourcesAssembler assembler = new StringResourcesAssembler(this);
-//        List<String> list = assembler.getListVerbsOfAllTypes(idSimple, idIrregularV1, idIrregularV2, idIrregularV3);
-//        return new MyListAllWords(name, isChecked, list);
-//    }
 }

@@ -2,7 +2,6 @@ package com.example.reallyenglsh.adapters;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
-import android.graphics.fonts.FontFamily;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,7 @@ import com.example.realyenglsh.R;
 import java.util.List;
 
 public class MyAdapterListWords extends RecyclerView.Adapter<MyAdapterListWords.MyHolder> {
-    private List<MyListWords> list;
+    private final List<MyListWords> list;
 
     public MyAdapterListWords(List<MyListWords> list) {
         this.list = list;
@@ -45,7 +44,7 @@ public class MyAdapterListWords extends RecyclerView.Adapter<MyAdapterListWords.
     }
 
     public class MyHolder extends RecyclerView.ViewHolder {
-        private CheckBox checkBox;
+        private final CheckBox checkBox;
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,9 +68,6 @@ public class MyAdapterListWords extends RecyclerView.Adapter<MyAdapterListWords.
                     checkBox.setBackground(checkBox.getResources().getDrawable(R.drawable.item_adjective_checked));
                     checkBox.setTypeface(typeface);
                 } else {
-//                typeface = Typeface.createFromAsset(checkBox.getResources().getAssets(), "fonts/sans-serif.ttf");
-//                typeface = ResourcesCompat.getFont(checkBox.getContext(), );
-//                    typeface = Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL);
                     checkBox.setTextColor(checkBox.getResources().getColor(R.color.dialog_lists_words_item_unchecked));
                     checkBox.setBackground(checkBox.getResources().getDrawable(R.drawable.item_adjective_unchecked));
                     checkBox.setTypeface(Typeface.SANS_SERIF, Typeface.NORMAL);

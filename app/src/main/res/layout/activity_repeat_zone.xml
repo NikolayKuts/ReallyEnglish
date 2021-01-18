@@ -9,91 +9,72 @@
 
     <TextView
         android:id="@+id/textViewWord"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="304dp"
-        android:gravity="center"
-        android:text="TextView"
+        style="@style/repeat_zone_text_view"
         android:textColor="#C3CF47"
         android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
 
     <TextView
         android:id="@+id/textViewTranslation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="TextView"
-        android:paddingStart="13dp"
-        android:paddingEnd="13dp"
+        style="@style/repeat_zone_text_view"
         android:textColor="#9EBC7D"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTranscription"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTranscription" />
 
     <TextView
         android:id="@+id/textViewTranscription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/repeat_zone_text_view"
         android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:text="TextView"
         android:textColor="#C1C1C1"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewWord" />
-
-    <Button
-        android:id="@+id/buttonNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
-        android:onClick="onClickNext"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
 
     <Button
         android:id="@+id/buttonLists"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClickChooseList"
-        android:text="Lists"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/button_lists"
+        app:layout_constraintBottom_toTopOf="@+id/textViewWord"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.23000002" />
 
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClickBack"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/button_back"
         app:layout_constraintEnd_toStartOf="@+id/buttonNext"
-        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickNext"
+        android:text="@string/repeat_zone_button_next"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+        app:layout_constraintStart_toEndOf="@id/buttonBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonBack"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayoutCounter"
         android:layout_width="wrap_content"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/textViewWord"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,33 +83,22 @@
 
         <TextView
             android:id="@+id/textViewCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:text="0"
-            android:textColor="#FFC107"
-            android:textSize="20sp" />
+            style="@style/repeat_zone_counter_text_view"
+            android:text="@string/counter_zero"
+            android:textColor="#FFC107" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/repeat_zone_counter_text_view"
             android:layout_margin="1dp"
-            android:layout_weight="1"
-            android:text="|"
-            android:textColor="#00BCD4"
-            android:textSize="20sp" />
+            android:text="@string/counter_vertical_line"
+            android:textColor="#00BCD4" />
 
         <TextView
             android:id="@+id/textViewQuantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:text="0"
-            android:textColor="#CDDC39"
-            android:textSize="20sp" />
+            style="@style/repeat_zone_counter_text_view"
+            android:text="@string/counter_zero"
+            android:textColor="#CDDC39" />
     </LinearLayout>
 
     <ProgressBar
@@ -137,12 +107,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonLists"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintTop_toTopOf="@+id/buttonLists" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,9 @@ import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class MainViewModel extends AndroidViewModel {
@@ -15,6 +18,80 @@ public class MainViewModel extends AndroidViewModel {
         super(application);
         database = SentencesDatabase.getInstance(getApplication());
     }
+
+
+    public void insertCoupleList(CoupleList myListCouples) {
+        new InsertCoupleListTask().execute(myListCouples);
+    }
+    private static class InsertCoupleListTask extends AsyncTask<CoupleList, Void, Void> {
+        @Override
+        protected Void doInBackground(CoupleList... myListCouples) {
+            CoupleList savedCoupleList = myListCouples[0];
+            database.coupleListDao().insertMyListCouple(savedCoupleList);
+            return null;
+        }
+    }
+
+    public void insertListOfCoupleList(List<CoupleList> listOfCoupleList) {
+        new InsertListOfCoupleList().execute(listOfCoupleList);
+    }
+    private static class InsertListOfCoupleList extends AsyncTask<List<CoupleList>, Void, Void> {
+        @Override
+        protected Void doInBackground(List<CoupleList>... lists) {
+            database.coupleListDao().insertListOfCoupleLists(lists[0]);
+            return null;
+        }
+    }
+
+    public List<CoupleList> getListOfSavedCoupleListInDB() {
+        List<CoupleList> result = new ArrayList<>();
+        try {
+            result =  new GetListSavedCoupleListFromDBTask().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    private static class GetListSavedCoupleListFromDBTask extends AsyncTask<Void, Void, List<CoupleList>> {
+        @Override
+        protected List<CoupleList> doInBackground(Void... voids) {
+            return database.coupleListDao().getAllSavedCoupleLists();
+        }
+    }
+
+    public boolean isDBSavedCoupleListsEmpty() {
+        boolean result = false;
+        try {
+            result = new IsDBSavedCoupleListsEmptyTask().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    private static class IsDBSavedCoupleListsEmptyTask extends AsyncTask<Void, Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            return database.coupleListDao().getCount() == 0;
+        }
+    }
+
+    public void clearDbSavedCoupleLists() {
+        new ClearDBSavedCoupleLists().execute();
+    }
+    private static class ClearDBSavedCoupleLists extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            database.coupleListDao().clearDBSavedCoupleLists();
+            return null;
+        }
+    }
+
+
+
 
     public void insertSentence(Sentence sentence) {
         new InsertTask().execute(sentence);
