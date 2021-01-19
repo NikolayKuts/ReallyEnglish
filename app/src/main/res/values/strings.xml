@@ -13,7 +13,7 @@
     <string name="image_type_sentence">type of sentence</string>
     <string name="image_button_verbs">verbs</string>
     <string name="image_button_adjectives">adjectives</string>
-    <string name="button_repeat_zone">Repeat zone</string>
+    <string name="button_repeat_zone">Repetition zone</string>
     <string name="repeat_zone_button_next">Next</string>
     <string name="button_back">Back</string>
     <string name="counter_zero">0</string>
@@ -177,6 +177,8 @@
     <string name="twins">
         meanwhile,for..`s sake,since,until,ahead,gradually,desirable,literally,especially,between,among,immediately,along,across,another,rather,per se,at last,whereas
     </string>
+    <string name="note_adjective">[adj]</string>
+    <string name="note_regular">[reg]</string>
 
     <string-array name="couples_english_qu">
         <item>It can take much time. (Сколько?)</item>

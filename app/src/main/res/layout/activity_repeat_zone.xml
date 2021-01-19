@@ -30,11 +30,11 @@
     <TextView
         android:id="@+id/textViewTranscription"
         style="@style/repeat_zone_text_view"
-        android:layout_marginTop="12dp"
         android:textColor="#C1C1C1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewWord" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/buttonLists"
@@ -119,6 +119,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWord">
+
+        <TextView
+            android:id="@+id/textViewV1Form"
+            style="@style/text_view_v_form"
+            android:textColor="@color/verb_form_v1" />
+
+        <TextView
+            android:id="@+id/textViewV2Form"
+            style="@style/text_view_v_form"
+            android:textColor="@color/verb_form_v2" />
+
+        <TextView
+            android:id="@+id/textViewV3Form"
+            style="@style/text_view_v_form"
+            android:textColor="@color/verb_form_v3" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,7 @@ import com.example.reallyenglsh.MyLoaderCallbacks;
 import com.example.reallyenglsh.DownLoader;
 import com.example.reallyenglsh.OnClickAudioContentPlayer;
 import com.example.reallyenglsh.StringResourcesAssembler;
+import com.example.reallyenglsh.WordFormsSetter;
 import com.example.reallyenglsh.adapters.MyAdapterListWords;
 import com.example.realyenglsh.R;
 
@@ -39,6 +40,10 @@ public class RepeatZoneActivity extends AppCompatActivity {
     private TextView textViewQuantity;
     private LinearLayout linearLayoutCounter;
     private ProgressBar progressBar;
+
+    private TextView textViewV1Form, textViewV2Form, textViewV3Form;
+    private List<String> irregularVerbsV1, irregularVerbsV2, irregularVerbsV3;
+    private List<String> simpleVerbs;
 
     private LoaderManager loaderManager;
     private MyLoaderCallbacks myLoaderCallbacks;
@@ -63,6 +68,15 @@ public class RepeatZoneActivity extends AppCompatActivity {
         linearLayoutCounter = findViewById(R.id.linearLayoutCounter);
         progressBar = findViewById(R.id.progressBar);
 
+        textViewV1Form = findViewById(R.id.textViewV1Form);
+        textViewV2Form = findViewById(R.id.textViewV2Form);
+        textViewV3Form = findViewById(R.id.textViewV3Form);
+
+        textViewV1Form.setOnClickListener(new OnClickAudioContentPlayer());
+        textViewV2Form.setOnClickListener(new OnClickAudioContentPlayer());
+        textViewV3Form.setOnClickListener(new OnClickAudioContentPlayer());
+
+
         textViewWord.setOnClickListener(new OnClickAudioContentPlayer());
 
 
@@ -84,6 +98,21 @@ public class RepeatZoneActivity extends AppCompatActivity {
         lists.add(new MyListWords("Twins", false, assembler.getListFromStringRes(R.string.twins)));
 
         setCheckedLists();
+        irregularVerbsV1 = assembler.getListFromStringRes(R.string.irregular_verbs_v1_1, R.string.irregular_verbs_v1_2,
+                R.string.irregular_verbs_v1_3,R.string.irregular_verbs_v1_4,
+                R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v1_6);
+
+        irregularVerbsV2 = assembler.getListFromStringRes(R.string.irregular_verbs_v2_1, R.string.irregular_verbs_v2_2,
+                R.string.irregular_verbs_v2_3, R.string.irregular_verbs_v2_4,
+                R.string.irregular_verbs_v2_5, R.string.irregular_verbs_v2_6);
+
+        irregularVerbsV3 = assembler.getListFromStringRes(R.string.irregular_verbs_v3_1, R.string.irregular_verbs_v3_2,
+                R.string.irregular_verbs_v3_3, R.string.irregular_verbs_v3_4,
+                R.string.irregular_verbs_v3_5, R.string.irregular_verbs_v3_6);
+
+        simpleVerbs = assembler.getListFromStringRes(R.string.simple_verbs_1, R.string.simple_verbs_2,
+                R.string.simple_verbs_3, R.string.simple_verbs_4,
+                R.string.simple_verbs_5, R.string.simple_verbs_6);
 
         myLoaderCallbacks = new MyLoaderCallbacks(getApplicationContext(), 1);
         myLoaderCallbacks.setHelper(new IOnCallbackHelper() {
@@ -96,6 +125,7 @@ public class RepeatZoneActivity extends AppCompatActivity {
             @Override
             public void onLoadFinished(Loader<String> loader, String data) {
                 DownLoader downLoader = (DownLoader) loader;
+                setWordForms();
                 setTextContent(downLoader.getTranslation(data), downLoader.getTranscription(data));
                 loaderManager.destroyLoader(myLoaderCallbacks.getId());
                 progressBar.setVisibility(View.INVISIBLE);
@@ -161,6 +191,11 @@ public class RepeatZoneActivity extends AppCompatActivity {
         }
     }
 
+    private void setWordForms() {
+        WordFormsSetter formsSetter = new WordFormsSetter(textViewV1Form, textViewV2Form, textViewV3Form, this);
+        formsSetter.setWordForms(word, simpleVerbs, irregularVerbsV1, irregularVerbsV2, irregularVerbsV3);
+    }
+
     private void setTextContent(String translation, String transcription) {
         textViewTranslation.setText(translation);
         textViewTranscription.setText(transcription);
@@ -205,7 +240,6 @@ public class RepeatZoneActivity extends AppCompatActivity {
 
     private void setCheckedLists() {
         listLesson.clear();
-
         for (MyListWords my : lists) {
             if (my.isChecked()) {
                 listLesson.addAll(my.getListWords());

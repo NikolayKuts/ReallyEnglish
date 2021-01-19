@@ -22,22 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-//        viewModel.insertCoupleList(new CoupleList("test", 0));
-//        viewModel.insertCoupleList(new CoupleList("test1", 1));
-//        viewModel.insertCoupleList(new CoupleList("test2", 0));
-//        viewModel.clearDbSavedCoupleLists();
-//        deleteDatabase("really_english.db");
 //        viewModel.clearAllSavedCouples();
-
-        ArrayList<String> arrayListTest = getArrayListFromResources(getResources().getString(R.string.simple_verbs_1));
-        Log.i("arrayList", arrayListTest.toString());
-    }
-
-    private ArrayList<String> getArrayListFromResources(String stringResources) {
-        ArrayList<String> arrayList = new ArrayList<>();
-        String[] stringArgs = stringResources.split(",");
-        Collections.addAll(arrayList, stringArgs);
-        return arrayList;
     }
 
     public void onClickToAlgorithmLesson(View view) {

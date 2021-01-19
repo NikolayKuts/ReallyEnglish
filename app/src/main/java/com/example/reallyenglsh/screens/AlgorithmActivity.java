@@ -33,6 +33,7 @@ import com.example.reallyenglsh.IOnCallbackHelper;
 import com.example.reallyenglsh.DownLoader;
 import com.example.reallyenglsh.MyListWords;
 import com.example.reallyenglsh.StringResourcesAssembler;
+import com.example.reallyenglsh.WordFormsSetter;
 import com.example.reallyenglsh.data.MainViewModel;
 import com.example.reallyenglsh.adapters.MyAdapterListsAdjectives;
 import com.example.reallyenglsh.MyLoaderCallbacks;
@@ -77,7 +78,9 @@ public class AlgorithmActivity extends AppCompatActivity {
     private List<String> listOfLessonVerbsIrregularV2;
     private List<String> listOfLessonVerbsIrregularV3;
 
-    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence, listIdBackgroundImageNegativeSentence, listIdBackgroundImageQuestionSentence, listIdBackgroundImageNegativeQuestionSentence;
+    private List<Integer> listIdTenseObject, listIdBackgroundImages, listIdImageTypeOfSentence,
+            listIdBackgroundImageNegativeSentence, listIdBackgroundImageQuestionSentence,
+            listIdBackgroundImageNegativeQuestionSentence;
 
     private List<String> listOfNames;
     private List<String> listOfVerbsStrong;
@@ -340,46 +343,14 @@ public class AlgorithmActivity extends AppCompatActivity {
     }
 
     private void setFormsByTypeWord(String word) {
+        WordFormsSetter formsSetter = new WordFormsSetter(textViewV1, textViewV2, textViewV3, this);
         if (listOfLessonAdjective.contains(word)) {
-            setWordOfToBeAdjective(word);
+//            setWordOfToBeAdjective(word);
+            formsSetter.setFormByToBeWord(word);
         } else {
-            setFormsOfIrregularVerb(word);
+//            setFormsOfIrregularVerb(word);
+            formsSetter.setVerbForms(word, listOfLessonVerbsIrregularV1, listOfLessonVerbsIrregularV2, listOfLessonVerbsIrregularV3);
         }
-    }
-
-    private void setFormsOfIrregularVerb(String verb) {
-        if (listOfLessonVerbsIrregularV1.contains(verb)) {
-            int index = listOfLessonVerbsIrregularV1.indexOf(verb);
-            textViewV1.setText(listOfLessonVerbsIrregularV1.get(index));
-            textViewV2.setText(listOfLessonVerbsIrregularV2.get(index));
-            textViewV3.setText(listOfLessonVerbsIrregularV3.get(index));
-            setTextViewVColor(R.color.verb_form_v2, R.color.verb_form_v3);
-        } else {
-            textViewV1.setText(verb);
-
-            if (verb.endsWith("e")) {
-                verb = verb + "d";
-            } else if (verb.matches("\\w+[^aeiouy]y")) {
-                verb = verb.substring(0, verb.length() - 1) + "ied";
-            } else {          //else if (simpleIrregularVerb.matches("\\w+[aeiouy]y"))
-                verb = verb + "ed";
-            }
-            textViewV2.setText(verb);
-            textViewV3.setText("[reg]");
-            setTextViewVColor(R.color.verb_form_v2, R.color.verb_form_note);
-        }
-    }
-
-    private void setWordOfToBeAdjective(String word) {
-        textViewV1.setText("");
-        textViewV2.setText(word);
-        textViewV3.setText("[adj]");
-        setTextViewVColor(R.color.verb_form_toBe, R.color.verb_form_note);
-    }
-
-    private void setTextViewVColor(int idResColorV2, int idResColorV3) {
-        textViewV2.setTextColor(getResources().getColor(idResColorV2));
-        textViewV3.setTextColor(getResources().getColor(idResColorV3));
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
