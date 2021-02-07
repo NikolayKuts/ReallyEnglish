@@ -2,15 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textViewCounter"
+    <EditText
+        android:id="@+id/editTextNumberCounter"
+        android:fontFamily="@font/farsan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_margin="12dp"
+        android:ems="10"
+        android:autofillHints="no"
+        android:gravity="center"
+        android:hint="@string/dialog_counter_choose_number_of_word"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,20 +24,10 @@
         android:id="@+id/buttonCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="apply"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/button_apply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCounter" />
 
-    <EditText
-        android:id="@+id/editTextNumberCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCounter" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

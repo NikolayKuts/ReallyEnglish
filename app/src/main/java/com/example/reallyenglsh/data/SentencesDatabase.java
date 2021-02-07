@@ -15,6 +15,7 @@ public abstract class SentencesDatabase extends RoomDatabase {
     private static SentencesDatabase database;
     private static final String DB_NAME = "really_english.db";
     private static final Object LOCK = new Object();
+
     private final static Migration MIGRATION_1_2 = new Migration(1, 2) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {

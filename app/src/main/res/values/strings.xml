@@ -17,6 +17,9 @@
     <string name="repeat_zone_button_next">Next</string>
     <string name="button_back">Back</string>
     <string name="counter_zero">0</string>
+    <string name="note_adjective">[adj]</string>
+    <string name="note_regular">[reg]</string>
+    <string name="dialog_counter_choose_number_of_word">Choose number of word</string>
 
     <string name="check_box_future">Future</string>
     <string name="check_box_present">Present</string>
@@ -177,8 +180,6 @@
     <string name="twins">
         meanwhile,for..`s sake,since,until,ahead,gradually,desirable,literally,especially,between,among,immediately,along,across,another,rather,per se,at last,whereas
     </string>
-    <string name="note_adjective">[adj]</string>
-    <string name="note_regular">[reg]</string>
 
     <string-array name="couples_english_qu">
         <item>It can take much time. (Сколько?)</item>
@@ -1135,7 +1136,7 @@
         <item>никто никогда не делал это</item>
         <item>никто никогда не слышал об этом</item>
         <item>я всегда видел его в это время</item>
-        <item>он всегда был ответственным</item>responsible
+        <item>он всегда был ответственным</item>
         <item>они всегда работали по правилам</item>
         <item>мой сосед всегда жил здесь</item>
         <item>тебе следовало подумать об это заранее</item>
@@ -1207,31 +1208,31 @@
     </string-array>
 
     <string-array name="express_1_an">
-        <item>Она живет в большом красивом доме.She lives in a big beautiful house</item>
-        <item>Иногда она покупала нам шоколадные конфеты.Sometimes she bought us chocolate candy</item>
-        <item>Они отдыхали каждые десять минут.They rested every ten minutes</item>
-        <item>Однажды ты сможешь это сделать.You’ll do it one day</item>
-        <item>Она часто навещала родителей.</item>
-        <item>Там он был богатым человеком.He was a rich man there</item>
-        <item>Какой торт мы купим?What cake will we buy?</item>
-        <item>Он пил много кофе.He drank much coffee</item>
-        <item>Этот парень будет большим начальником.This guy will be a big boss</item>
-        <item>Тебе можно оставаться там.You may stay there</item>
-        <item>Кто научил вас так делать?Who taught you to do this?</item>
-        <item>Я не мог их понять.I couldn’t understand them</item>
-        <item>Я приходил домой очень поздно.I came home very late</item>
-        <item>Что вы будете пить?What will you drink?</item>
-        <item>Моя подруга видела тебя там. Что ты там делал?My friend has seen you there. What did you do there</item>
-        <item>Ты должен был знать об этом раньше.</item>
-        <item>Почему мы все обязаны слушать этого человека?Why must we listen to this person?</item>
-        <item>Никто раньше не слышал о таких вещах.Nobody heard about such things before</item>
-        <item>Где ты собираешься покупать дом?Where are you going to buy a house?</item>
-        <item>Я очень хочу увидеть Париж.I want to see Paris very much</item>
-        <item>Сто лет назад никто еще не думал об этом.Nobody thought about this hundred years ago yet</item>
-        <item>Это происходило очень часто.It happened very often</item>
-        <item>Все готово. Вы можете приходить.</item>
-        <item>Куда мы пойдем после этого?Where will we go after this?</item>
-        <item>Кто давал тебе деньги?Who gave you money?</item>
+        <item>She lives in a big beautiful house</item>
+        <item>Sometimes she bought us chocolate candy</item>
+        <item>They rested every ten minutes</item>
+        <item>You’ll do it one day</item>
+        <item>She often visited the patents</item>
+        <item>He was a rich man there</item>
+        <item>What cake will we buy?</item>
+        <item>He drank much coffee</item>
+        <item>This guy will be a big boss</item>
+        <item>You may stay there</item>
+        <item>Who taught you to do this?</item>
+        <item>I couldn’t understand them</item>
+        <item>I came home very late</item>
+        <item>What will you drink?</item>
+        <item>My friend has seen you there. What did you do there</item>
+        <item>I had to know about this before</item>
+        <item>Why must we listen to this person?</item>
+        <item>Nobody heard about such things before</item>
+        <item>Where are you going to buy a house?</item>
+        <item>I want to see Paris very much</item>
+        <item>Nobody thought about this hundred years ago yet</item>
+        <item>It happened very often</item>
+        <item>Все готово. Вы можете приходить.Everything is ready. You may come</item>
+        <item>Where will we go after this?</item>
+        <item>Who gave you money?</item>
     </string-array>
 
     <string-array name="object_case_qu">
@@ -1854,7 +1855,7 @@
         <item>To solve the issue, we should write a letter to the Congress.</item>
         <item>To learn more about him, look in the Wikipedia.</item>
         <item>to be able to do it, you should study hard.</item>
-        <item>To finish the porridge you need to take a big spoon.</item>
+        <item>To have eaten the porridge you need to take a big spoon.</item>
         <item>Solving the issue is your responsibility.</item>
         <item>Finding a job is the first thing you must do.</item>
         <item>Discovering more about it is unbelievably interesting.</item>
@@ -1863,7 +1864,7 @@
         <item>Not to be shy to sing in public you need to have a good voice at least.</item>
         <item>To know about it, it’s enough to study once a week.</item>
         <item>Knowing about it is important.</item>
-        <item>finishing the porridge before you go is my condition</item>
+        <item>having eaten the porridge before you go is my condition</item>
         <item>To survive in a present-day city the thing you have to have is the money</item>
         <item>Surviving in a present-day city is not easy.</item>
         <item>Sitting on a couch is’t enough for success.</item>
@@ -1924,27 +1925,27 @@
         <item>come (вовремя), we will count on you!</item>
         <item>(среди) all her friends the best and the truest one was Jessica Moore</item>
         <item>everyone, I repeat, everyone - (включая) even you, Jason Biggs - has to start his work at eight thirty sharp</item>
-        <item>the sisters were going to ho to the night club, and their Dad wasn’t (против) it</item>
+        <item>the sisters were going to the night club, and their Dad wasn’t (против) it</item>
         <item>he earned his bread (главный образом | впервую очередь) by selling his pictures to rich tourists from Europe.</item>
         <item>we all (заисключением) of you will go to the theater. I repeat, everyone (кроме) you!!!</item>
         <item>(внезапно) I’ve heard a strange noise from outside</item>
-        <item>the meat ws cooked (точно) as I had ordered</item>
+        <item>the meat was cooked (точно) as I had ordered</item>
         <item>how many people live in the USA? - (приблизительно) three hundred millions</item>
         <item>she was (едва) 18 and (еле-еле | с трудом) understood what expected her in Hollywood</item>
         <item>did you like Paris? - (не совсем)</item>
         <item>of course, (частично) you’re right</item>
         <item>(прежде всего), son, you have to get a diploma and find a good job</item>
         <item>(посравнению с) some of African countries their level of life is pretty high</item>
-        <item>i have a question, Mr.Ford. - as always, you’re (не вовремя), Simpson! I’m too busy now!</item>
+        <item>I have a question, Mr.Ford - as always, you’re (не вовремя), Simpson! I’m too busy now!</item>
         <item>yesterday we saw you coming into that new Irish bur. (Кстати), who was that beautiful blonde you were with?</item>
         <item>(с (времени)) today everything will be only in my way - that’s what Sally said Mike the next day after they had got married</item>
-        <item>(множество/многие) of my friends have such problems, but some of them don’t</item>
-        <item>she hates her neighbors, and (наоборое)</item>
+        <item>(множество/многие) my friends have such problems, but some of them don’t</item>
+        <item>she hates her neighbors, and (наоборот)</item>
         <item>(большенство) of Americans give their preference to healthy lifestyle. - I wouldn’t call it \"the most\", your point of view is too optimistic</item>
         <item>I am very displeased with you and your work, Simpson. Since today you are fired! - Ah, it’s OK! (все равно), i was going to quit. I’ve found much better place</item>
-        <item>(около) eleven million people live in a big NYC, and almost all of them are ny good friends</item>
+        <item>(около) eleven million people live in a big NYC, and almost all of them are my good friends</item>
         <item>(втеченее/вродолжении) all the war she wrote him letters; and we will never know whether he received them or not</item>
-        <item>why are you so hurrying? I haven’t eaten (ещё)! But I have! Let’s go, or we’ll bee late!</item>
+        <item>why are you so hurrying? I haven’t eaten (ещё)! But I have! Let’s go, or we’ll be late!</item>
         <item>(после) your so-called "\cleaning"\ everything in my room is upside down!</item>
         <item>what? Do you say there’s nothing interesting in life? Just open you eyes and look (вокруг) you!</item>
         <item>I am not going to wait (до) you finish your explanations</item>
@@ -1970,9 +1971,10 @@
         <item>out of time</item>
         <item>by the way</item>
         <item>since</item>
-        <item>a lot</item>
+        <item>a lot of</item>
         <item>vice versa</item>
         <item>the most</item>
+        <item>anyway</item>
         <item>about</item>
         <item>during</item>
         <item>yet</item>

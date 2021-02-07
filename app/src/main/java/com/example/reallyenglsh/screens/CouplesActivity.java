@@ -261,7 +261,7 @@ public class CouplesActivity extends AppCompatActivity {
     private void setSmoothScrollToLastItem(RecyclerView recyclerView) {
         for (int i = listOfCoupleList.size() - 1; i > 0; i--) {
             if (listOfCoupleList.get(i).isChecked()) {
-                recyclerView.smoothScrollBy(0, i * 90, null, i * 100);
+                recyclerView.smoothScrollBy(0, i * 80, null, i * 100);
                 break;
             }
         }

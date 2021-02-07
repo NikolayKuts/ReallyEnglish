@@ -13,16 +13,12 @@ public class StringResourcesAssembler {
         this.context = context;
     }
 
-    public List<String> getListVerbsOfAllTypes(int idSimple, int idIrregularV1, int idIrregularV2, int idIrregularV3) {
-        return getListFromStringRes(idSimple, idIrregularV1, idIrregularV2, idIrregularV3);
+    public List<String> getListV1Simple(int idSimple, int idIrregularV1) {
+        return getListFromStringRes(idSimple, idIrregularV1);
     }
 
     public List<String> getListFormArrayRes(int idArrayRes) {
         return getListFromArrayRes(idArrayRes);
-    }
-
-    private List<String> getListFromStringRes(int id) {
-        return Arrays.asList(context.getString(id).split(","));
     }
 
     public List<String> getListFromMixRes(int idArrayRes, int idStringRes) {
@@ -30,6 +26,10 @@ public class StringResourcesAssembler {
         result.addAll(getListFromArrayRes(idArrayRes));
         result.addAll(getListFromStringRes(idStringRes));
         return result;
+    }
+
+    private List<String> getListFromStringRes(int id) {
+        return Arrays.asList(context.getString(id).split("\\s*,\\s*"));
     }
 
     private List<String> getListFromArrayRes(int id) {

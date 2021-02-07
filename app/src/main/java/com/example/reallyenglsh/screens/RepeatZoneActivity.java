@@ -82,12 +82,12 @@ public class RepeatZoneActivity extends AppCompatActivity {
 
         StringResourcesAssembler assembler = new StringResourcesAssembler(this);
 
-        lists.add(new MyListWords("verbs # 1", true, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_1, R.string.irregular_verbs_v1_1, R.string.irregular_verbs_v2_1, R.string.irregular_verbs_v3_1)));
-        lists.add(new MyListWords("verbs # 2", false, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_2, R.string.irregular_verbs_v1_2, R.string.irregular_verbs_v2_2, R.string.irregular_verbs_v3_2)));
-        lists.add(new MyListWords("verbs # 3", false, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_3, R.string.irregular_verbs_v1_3, R.string.irregular_verbs_v2_3, R.string.irregular_verbs_v3_3)));
-        lists.add(new MyListWords("verbs # 4", false, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_4, R.string.irregular_verbs_v1_4, R.string.irregular_verbs_v2_4, R.string.irregular_verbs_v3_4)));
-        lists.add(new MyListWords("verbs # 5", false, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_5, R.string.irregular_verbs_v1_5, R.string.irregular_verbs_v2_5, R.string.irregular_verbs_v3_5)));
-        lists.add(new MyListWords("verbs # 6", false, assembler.getListVerbsOfAllTypes(R.string.simple_verbs_6, R.string.irregular_verbs_v1_6, R.string.irregular_verbs_v2_6, R.string.irregular_verbs_v3_6)));
+        lists.add(new MyListWords("verbs # 1", true, assembler.getListV1Simple(R.string.simple_verbs_1, R.string.irregular_verbs_v1_1)));
+        lists.add(new MyListWords("verbs # 2", false, assembler.getListV1Simple(R.string.simple_verbs_2, R.string.irregular_verbs_v1_2)));
+        lists.add(new MyListWords("verbs # 3", false, assembler.getListV1Simple(R.string.simple_verbs_3, R.string.irregular_verbs_v1_3)));
+        lists.add(new MyListWords("verbs # 4", false, assembler.getListV1Simple(R.string.simple_verbs_4, R.string.irregular_verbs_v1_4)));
+        lists.add(new MyListWords("verbs # 5", false, assembler.getListV1Simple(R.string.simple_verbs_5, R.string.irregular_verbs_v1_5)));
+        lists.add(new MyListWords("verbs # 6", false, assembler.getListV1Simple(R.string.simple_verbs_6, R.string.irregular_verbs_v1_6)));
 
         lists.add(new MyListWords("adjective # 1", false, assembler.getListFromStringRes(R.string.adjective_1)));
         lists.add(new MyListWords("adjective # 2", false, assembler.getListFromStringRes(R.string.adjective_2)));
@@ -134,7 +134,7 @@ public class RepeatZoneActivity extends AppCompatActivity {
         });
 
 
-        loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(), myLoaderCallbacks);
+//        loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(), myLoaderCallbacks);
 
         onClickNext(textViewWord);
 
@@ -149,9 +149,13 @@ public class RepeatZoneActivity extends AppCompatActivity {
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int numberWord = Integer.parseInt(editText.getText().toString());
-                        if (numberWord <= listLesson.size()) {
-                            indexWord = numberWord - 1;
+                        String stringNumber = editText.getText().toString();
+                        if (stringNumber.isEmpty()) {
+                            stringNumber = "1";
+                        }
+                        int number = Integer.parseInt(stringNumber);
+                        if (number <= listLesson.size()) {
+                            indexWord = number - 1;
                             setWord();
                             loaderManager.restartLoader(myLoaderCallbacks.getId(), getBundleWord(), myLoaderCallbacks);
                             setCounter();
@@ -182,13 +186,10 @@ public class RepeatZoneActivity extends AppCompatActivity {
     private void setWord() {
         if (indexWord >= listLesson.size()) {
             indexWord = 0;
-            word = listLesson.get(indexWord);
         } else if (indexWord < 0) {
             indexWord = listLesson.size() - 1;
-            word = listLesson.get(indexWord);
-        } else {
-            word = listLesson.get(indexWord);
         }
+            word = listLesson.get(indexWord);
     }
 
     private void setWordForms() {
