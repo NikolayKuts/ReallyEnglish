@@ -31,7 +31,7 @@ import android.widget.Toast;
 
 import com.example.reallyenglsh.IOnCallbackHelper;
 import com.example.reallyenglsh.DownLoader;
-import com.example.reallyenglsh.MyListWords;
+import com.example.reallyenglsh.MyWordList;
 import com.example.reallyenglsh.StringResourcesAssembler;
 import com.example.reallyenglsh.WordFormsSetter;
 import com.example.reallyenglsh.data.MainViewModel;
@@ -72,7 +72,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     private MyLoaderCallbacks myLoaderCallbacks;
 
     private List<MyListOfVerbs> listOfMyList = new ArrayList<>();
-    private List<MyListWords> listOfMyAdjectiveList = new ArrayList<>();
+    private List<MyWordList> listOfMyAdjectiveList = new ArrayList<>();
     private List<String> listOfLessonVerbsSimple;
     private List<String> listOfLessonVerbsIrregularV1;
     private List<String> listOfLessonVerbsIrregularV2;
@@ -173,10 +173,10 @@ public class AlgorithmActivity extends AppCompatActivity {
         listOfMyList.add(getMyListOfVerbs("Verbs # 6 (251 - 300", false, R.string.simple_verbs_6, R.string.irregular_verbs_v1_6, R.string.irregular_verbs_v2_6, R.string.irregular_verbs_v3_6));
 //
 
-        listOfMyAdjectiveList.add(new MyListWords("Adjectives # 1", true, assembler.getListFromStringRes(R.string.adjective_1)));
-        listOfMyAdjectiveList.add(new MyListWords("Adjectives # 2", false, assembler.getListFromStringRes(R.string.adjective_2)));
-        listOfMyAdjectiveList.add(new MyListWords("Adjectives # 3", false, assembler.getListFromStringRes(R.string.adjective_3)));
-        listOfMyAdjectiveList.add(new MyListWords("Adjectives # 4", false, assembler.getListFromStringRes(R.string.adjective_4)));
+        listOfMyAdjectiveList.add(new MyWordList("Adjectives # 1", true, assembler.getListFromStringRes(R.string.adjective_1)));
+        listOfMyAdjectiveList.add(new MyWordList("Adjectives # 2", false, assembler.getListFromStringRes(R.string.adjective_2)));
+        listOfMyAdjectiveList.add(new MyWordList("Adjectives # 3", false, assembler.getListFromStringRes(R.string.adjective_3)));
+        listOfMyAdjectiveList.add(new MyWordList("Adjectives # 4", false, assembler.getListFromStringRes(R.string.adjective_4)));
 
         setCheckedMyListOfVerbs();
         setCheckedMyListAdjective();
@@ -566,7 +566,7 @@ public class AlgorithmActivity extends AppCompatActivity {
     private void setCheckedMyListAdjective() {
         listOfLessonAdjective.clear();
 
-        for (MyListWords my : listOfMyAdjectiveList) {
+        for (MyWordList my : listOfMyAdjectiveList) {
             if (my.isChecked()) {
                 listOfLessonAdjective.addAll(my.getListWords());
             }

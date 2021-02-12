@@ -11,15 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.reallyenglsh.MyListWords;
+import com.example.reallyenglsh.MyWordList;
 import com.example.realyenglsh.R;
 
 import java.util.List;
 
 public class MyAdapterListWords extends RecyclerView.Adapter<MyAdapterListWords.MyHolder> {
-    private final List<MyListWords> list;
+    private final List<MyWordList> list;
 
-    public MyAdapterListWords(List<MyListWords> list) {
+    public MyAdapterListWords(List<MyWordList> list) {
         this.list = list;
     }
 
@@ -32,7 +32,7 @@ public class MyAdapterListWords extends RecyclerView.Adapter<MyAdapterListWords.
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
-        MyListWords myList = list.get(position);
+        MyWordList myList = list.get(position);
         holder.checkBox.setText(myList.getName());
         holder.checkBox.setChecked(myList.isChecked());
         holder.setColor(myList.isChecked());

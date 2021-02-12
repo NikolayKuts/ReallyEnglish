@@ -1,6 +1,7 @@
 package com.example.reallyenglsh.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,13 +19,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.reallyenglsh.IOnCallbackHelper;
-import com.example.reallyenglsh.MyListWords;
+import com.example.reallyenglsh.MyWordList;
 import com.example.reallyenglsh.MyLoaderCallbacks;
 import com.example.reallyenglsh.DownLoader;
 import com.example.reallyenglsh.OnClickAudioContentPlayer;
 import com.example.reallyenglsh.StringResourcesAssembler;
 import com.example.reallyenglsh.WordFormsSetter;
 import com.example.reallyenglsh.adapters.MyAdapterListWords;
+import com.example.reallyenglsh.data.MainViewModel;
 import com.example.realyenglsh.R;
 
 import java.util.ArrayList;
@@ -47,8 +50,9 @@ public class RepeatZoneActivity extends AppCompatActivity {
 
     private LoaderManager loaderManager;
     private MyLoaderCallbacks myLoaderCallbacks;
+    private MainViewModel viewModel;
 
-    private List<MyListWords> lists = new ArrayList<>();
+    private List<MyWordList> lists = new ArrayList<>();
     private List<String> listLesson = new ArrayList<>();
     private int indexWord = -1;
     private String word;
@@ -76,26 +80,30 @@ public class RepeatZoneActivity extends AppCompatActivity {
         textViewV2Form.setOnClickListener(new OnClickAudioContentPlayer());
         textViewV3Form.setOnClickListener(new OnClickAudioContentPlayer());
 
+        viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
         textViewWord.setOnClickListener(new OnClickAudioContentPlayer());
 
 
         StringResourcesAssembler assembler = new StringResourcesAssembler(this);
 
-        lists.add(new MyListWords("verbs # 1", true, assembler.getListV1Simple(R.string.simple_verbs_1, R.string.irregular_verbs_v1_1)));
-        lists.add(new MyListWords("verbs # 2", false, assembler.getListV1Simple(R.string.simple_verbs_2, R.string.irregular_verbs_v1_2)));
-        lists.add(new MyListWords("verbs # 3", false, assembler.getListV1Simple(R.string.simple_verbs_3, R.string.irregular_verbs_v1_3)));
-        lists.add(new MyListWords("verbs # 4", false, assembler.getListV1Simple(R.string.simple_verbs_4, R.string.irregular_verbs_v1_4)));
-        lists.add(new MyListWords("verbs # 5", false, assembler.getListV1Simple(R.string.simple_verbs_5, R.string.irregular_verbs_v1_5)));
-        lists.add(new MyListWords("verbs # 6", false, assembler.getListV1Simple(R.string.simple_verbs_6, R.string.irregular_verbs_v1_6)));
+        lists.add(new MyWordList("verbs # 1", false, assembler.getListV1Simple(R.string.simple_verbs_1, R.string.irregular_verbs_v1_1)));
+        lists.add(new MyWordList("verbs # 2", false, assembler.getListV1Simple(R.string.simple_verbs_2, R.string.irregular_verbs_v1_2)));
+        lists.add(new MyWordList("verbs # 3", false, assembler.getListV1Simple(R.string.simple_verbs_3, R.string.irregular_verbs_v1_3)));
+        lists.add(new MyWordList("verbs # 4", false, assembler.getListV1Simple(R.string.simple_verbs_4, R.string.irregular_verbs_v1_4)));
+        lists.add(new MyWordList("verbs # 5", false, assembler.getListV1Simple(R.string.simple_verbs_5, R.string.irregular_verbs_v1_5)));
+        lists.add(new MyWordList("verbs # 6", false, assembler.getListV1Simple(R.string.simple_verbs_6, R.string.irregular_verbs_v1_6)));
 
-        lists.add(new MyListWords("adjective # 1", false, assembler.getListFromStringRes(R.string.adjective_1)));
-        lists.add(new MyListWords("adjective # 2", false, assembler.getListFromStringRes(R.string.adjective_2)));
-        lists.add(new MyListWords("adjective # 3", false, assembler.getListFromStringRes(R.string.adjective_3)));
-        lists.add(new MyListWords("adjective # 4", false, assembler.getListFromStringRes(R.string.adjective_4)));
+        lists.add(new MyWordList("adjective # 1", false, assembler.getListFromStringRes(R.string.adjective_1)));
+        lists.add(new MyWordList("adjective # 2", false, assembler.getListFromStringRes(R.string.adjective_2)));
+        lists.add(new MyWordList("adjective # 3", false, assembler.getListFromStringRes(R.string.adjective_3)));
+        lists.add(new MyWordList("adjective # 4", false, assembler.getListFromStringRes(R.string.adjective_4)));
 
-        lists.add(new MyListWords("Adjectives like verbs", false, assembler.getListFromStringRes(R.string.adjective_like_verbs)));
-        lists.add(new MyListWords("Twins", false, assembler.getListFromStringRes(R.string.twins)));
+        lists.add(new MyWordList("Adjectives like verbs", false, assembler.getListFromStringRes(R.string.adjective_like_verbs)));
+        lists.add(new MyWordList("Twins", false, assembler.getListFromStringRes(R.string.twins)));
+
+        setListFlagsByDB();
+//        viewModel.insertListOfMyListWords(lists);
 
         setCheckedLists();
         irregularVerbsV1 = assembler.getListFromStringRes(R.string.irregular_verbs_v1_1, R.string.irregular_verbs_v1_2,
@@ -228,6 +236,7 @@ public class RepeatZoneActivity extends AppCompatActivity {
                 indexWord = -1;
                 onClickNext(v);
                 setCounter();
+                saveChosenLists();
                 dialog.dismiss();
             }
         });
@@ -241,10 +250,40 @@ public class RepeatZoneActivity extends AppCompatActivity {
 
     private void setCheckedLists() {
         listLesson.clear();
-        for (MyListWords my : lists) {
+        boolean thereIsChecked = false;
+
+        for (MyWordList my : lists) {
             if (my.isChecked()) {
                 listLesson.addAll(my.getListWords());
+                thereIsChecked = true;
             }
         }
+
+        if (!thereIsChecked) {
+            MyWordList myWordList = lists.get(0);
+            myWordList.setChecked(true);
+            listLesson.addAll(myWordList.getListWords());
+        }
+    }
+
+    private void setListFlagsByDB() {
+        List<MyWordList> listsFromDB = new ArrayList<>(viewModel.getMyWordLists());
+        boolean thereIsChecked = false;
+
+        for (int i = 0; i < listsFromDB.size(); i++) {
+            boolean checked = listsFromDB.get(i).isChecked();
+            lists.get(i).setChecked(checked);
+            if (checked) {
+                thereIsChecked = true;
+            }
+        }
+
+        if (!thereIsChecked) {
+            lists.get(0).setChecked(true);
+        }
+    }
+
+    private void saveChosenLists() {
+        viewModel.insertListOfMyListWords(lists);
     }
 }

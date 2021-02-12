@@ -10,16 +10,16 @@ import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.reallyenglsh.MyListWords;
+import com.example.reallyenglsh.MyWordList;
 import com.example.realyenglsh.R;
 
 import java.util.List;
 
 public class MyAdapterListsAdjectives extends RecyclerView.Adapter<MyAdapterListsAdjectives.ListAdjectiveHolder> {
 
-    private final List<MyListWords> listAdjective;
+    private final List<MyWordList> listAdjective;
 
-    public MyAdapterListsAdjectives(List<MyListWords> listAdjective) {
+    public MyAdapterListsAdjectives(List<MyWordList> listAdjective) {
         this.listAdjective = listAdjective;
     }
 
@@ -32,7 +32,7 @@ public class MyAdapterListsAdjectives extends RecyclerView.Adapter<MyAdapterList
 
     @Override
     public void onBindViewHolder(@NonNull ListAdjectiveHolder holder, int position) {
-        MyListWords myListAdjective = listAdjective.get(position);
+        MyWordList myListAdjective = listAdjective.get(position);
         holder.checkBox.setText(myListAdjective.getName());
         holder.checkBox.setChecked(myListAdjective.isChecked());
         holder.setColor(myListAdjective.isChecked());
@@ -54,8 +54,8 @@ public class MyAdapterListsAdjectives extends RecyclerView.Adapter<MyAdapterList
                 public void onClick(View v) {
                     MediaPlayer mediaPlayer = MediaPlayer.create(itemView.getContext(), R.raw.button_click);
 //                    listAdjective.get(getAdapterPosition()).setChecked(checkBox.isChecked());
-                    MyListWords myListWords = listAdjective.get(getAdapterPosition());
-                    myListWords.setChecked(checkBox.isChecked());
+                    MyWordList myWordList = listAdjective.get(getAdapterPosition());
+                    myWordList.setChecked(checkBox.isChecked());
                     setColor(checkBox.isChecked());
                     mediaPlayer.start();
                 }

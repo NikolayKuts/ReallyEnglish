@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -134,7 +135,6 @@ public class CouplesActivity extends AppCompatActivity {
 
     }
 
-
     private void setContentForLesson() {
         listLessonQuestion.clear();
         listLessonAnswer.clear();
@@ -259,9 +259,12 @@ public class CouplesActivity extends AppCompatActivity {
     }
 
     private void setSmoothScrollToLastItem(RecyclerView recyclerView) {
+        float density = getApplicationContext().getResources().getDisplayMetrics().density;
+        int pixels = (int) (33 * density);
+
         for (int i = listOfCoupleList.size() - 1; i > 0; i--) {
             if (listOfCoupleList.get(i).isChecked()) {
-                recyclerView.smoothScrollBy(0, i * 80, null, i * 100);
+                recyclerView.smoothScrollBy(0, i * pixels, null, i * 100);
                 break;
             }
         }

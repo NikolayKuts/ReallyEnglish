@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
 
+import com.example.reallyenglsh.MyWordList;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -222,6 +224,33 @@ public class MainViewModel extends AndroidViewModel {
         @Override
         protected Boolean doInBackground(String... strings) {
             return database.v3VerbDao().isV3VerbInDB(strings[0]);
+        }
+    }
+
+    public void insertListOfMyListWords(List<MyWordList> lists) {
+        new InsertListOfMyListWordsTask().execute(lists);
+    }
+    private static class InsertListOfMyListWordsTask extends AsyncTask<List<MyWordList>, Void, Void> {
+        @Override
+        protected Void doInBackground(List<MyWordList>... lists) {
+            database.myWordListDao().insertListOfMyWordList(lists[0]);
+            return null;
+        }
+    }
+
+    public List<MyWordList> getMyWordLists() {
+        List<MyWordList> result = null;
+        try {
+            result = new GetMyWordListsTask().execute().get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    private static class GetMyWordListsTask extends AsyncTask<Void, Void, List<MyWordList>> {
+        @Override
+        protected List<MyWordList> doInBackground(Void... voids) {
+            return database.myWordListDao().getAllMyWordLists();
         }
     }
 }
