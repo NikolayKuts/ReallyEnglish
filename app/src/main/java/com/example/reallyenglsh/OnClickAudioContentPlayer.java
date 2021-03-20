@@ -19,7 +19,6 @@ public class OnClickAudioContentPlayer implements View.OnClickListener {
         v.startAnimation(animation);
 
         String word = ((TextView) v).getText().toString();
-        Log.i("log_word", word);
         MediaPlayer player = new MediaPlayer();
         try {
             player.setDataSource(String.format("https://wooordhunt.ru/data/sound/sow/us/%s.mp3", word));
