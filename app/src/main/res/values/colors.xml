@@ -49,4 +49,5 @@
 
     <color name="dialog_verbs_item_unchecked_color">#858585</color>
     <color name="dialog_verbs_item_checked_color">#CBE8D638</color>
+    <color name="sentence_text_algorithm_activity">#FFEB3B</color>
 </resources>
