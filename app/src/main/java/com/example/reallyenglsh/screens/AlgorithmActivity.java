@@ -184,6 +184,8 @@ public class AlgorithmActivity extends AppCompatActivity {
         imageButtonShowDialogVerbs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Animation animation = AnimationUtils.loadAnimation(AlgorithmActivity.this, R.anim.button_click);
+                v.startAnimation(animation);
                 onClickShowDialogListsVerbs();
 //                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_to_left);
 //                imageButtonShowDialogVerbs.startAnimation(animation);
@@ -193,6 +195,8 @@ public class AlgorithmActivity extends AppCompatActivity {
         imageButtonShowDialogAdjective.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Animation animation = AnimationUtils.loadAnimation(AlgorithmActivity.this, R.anim.button_click);
+                v.startAnimation(animation);
                 Dialog dialog = new Dialog(v.getContext());
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.setContentView(R.layout.dialog_adjective);
