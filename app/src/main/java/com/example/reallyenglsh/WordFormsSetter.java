@@ -65,7 +65,7 @@ public class WordFormsSetter {
         textViewV1.setText(verb);
         if (verb.endsWith("e")) {
             verb = verb + "d";
-        } else if (verb.matches("\\w+[aeiouy]y")) {
+        } else if (verb.matches("\\w+[^aeiouy]y")) {
             verb = verb.substring(0, verb.length() - 1) + "ied";
         } else {          //else if (simpleIrregularVerb.matches("\\w+[aeiouy]y"))
             verb = verb + "ed";
